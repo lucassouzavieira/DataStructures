@@ -1,0 +1,64 @@
+﻿Build started 12/20/2015 5:28:39 PM.
+     1>Project "c:\Users\lucas vieira\documents\visual studio 2015\Projects\DataStructures\DataStructures\DataStructures.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D CODE_ANALYSIS /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze /analyze:plugin"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\\bin\localespc.dll" /errorReport:prompt   /analyze:quiet ..\..\DSProject\DSProject\DSProject\ArrayQueue.c ..\..\DSProject\DSProject\DSProject\ArrayStack.c ..\..\DSProject\DSProject\DSProject\AVLTree.c ..\..\DSProject\DSProject\DSProject\BinarySearchTree.c ..\..\DSProject\DSProject\DSProject\CircleList.c ..\..\DSProject\DSProject\DSProject\DoublyLinkedList.c ..\..\DSProject\DSProject\DSProject\Heap.c ..\..\DSProject\DSProject\DSProject\LinkedList.c ..\..\DSProject\DSProject\DSProject\Programa.c ..\..\DSProject\DSProject\DSProject\Queue.c ..\..\DSProject\DSProject\DSProject\SortingAlgorithms.c ..\..\DSProject\DSProject\DSProject\Stack.c ..\..\DSProject\DSProject\DSProject\Vector.c
+         Vector.c
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\vector.c(76): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+         Stack.c
+         SortingAlgorithms.c
+         Queue.c
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\queue.c(83): warning C4477: 'printf' : format string '%ld' requires an argument of type 'long', but variadic argument 1 has type 'long *'
+         Programa.c
+         LinkedList.c
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\linkedlist.c(153): warning C4033: 'RemoveElementLinkedList' must return a value
+         Heap.c
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\heap.c(52): warning C4552: '>=': operator has no effect; expected operator with side-effect
+         DoublyLinkedList.c
+         CircleList.c
+         BinarySearchTree.c
+         AVLTree.c
+         ArrayStack.c
+         ArrayQueue.c
+         Running Code Analysis for C/C++...
+         Generating Code...
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\linkedlist.c(163): warning C4716: 'RemoveElementLinkedList': must return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\lucas vieira\documents\visual studio 2015\Projects\DataStructures\Debug\DataStructures.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"c:\users\lucas vieira\documents\visual studio 2015\Projects\DataStructures\Debug\DataStructures.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\lucas vieira\documents\visual studio 2015\Projects\DataStructures\Debug\DataStructures.lib" /MACHINE:X86 Debug\ArrayQueue.obj
+         Debug\ArrayStack.obj
+         Debug\AVLTree.obj
+         Debug\BinarySearchTree.obj
+         Debug\CircleList.obj
+         Debug\DoublyLinkedList.obj
+         Debug\Heap.obj
+         Debug\LinkedList.obj
+         Debug\Programa.obj
+         Debug\Queue.obj
+         Debug\SortingAlgorithms.obj
+         Debug\Stack.obj
+         Debug\Vector.obj
+         DataStructures.vcxproj -> c:\users\lucas vieira\documents\visual studio 2015\Projects\DataStructures\Debug\DataStructures.exe
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\arrayqueue.c(31): warning C6011: Dereferencing NULL pointer 'myArrayQueue'. 
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\arraystack.c(30): warning C6011: Dereferencing NULL pointer 'myArrayStack'. 
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\binarysearchtree.c(38): warning C6031: Return value ignored: 'scanf'.
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\binarysearchtree.c(48): warning C6031: Return value ignored: 'scanf'.
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\doublylinkedlist.c(91): warning C28182: Dereferencing NULL pointer. 'myDoublyList->startOfList' contains the same NULL value as 'aux' did. 
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\doublylinkedlist.c(138): warning C6031: Return value ignored: 'scanf'.
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\doublylinkedlist.c(171): warning C6031: Return value ignored: 'scanf'.
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\doublylinkedlist.c(227): warning C6001: Using uninitialized memory '*aux'.
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\linkedlist.c(86): warning C6011: Dereferencing NULL pointer 'newNode'. 
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\linkedlist.c(170): warning C6001: Using uninitialized memory '*aux'.
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\queue.c(58): warning C6011: Dereferencing NULL pointer 'newNode'. 
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\queue.c(83): warning C6273: Non-integer passed as _Param_(2) when an integer is required in call to 'printf' Actual type: 'long *':  if a pointer value is being passed, %p should be used.
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\sortingalgorithms.c(138): warning C6386: Buffer overrun while writing to 'tmp':  the writable size is '(unsigned long)numberOfElements*sizeof(long)' bytes, but '8' bytes might be written.
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\sortingalgorithms.c(150): warning C6385: Reading invalid data from 'tmp':  the readable size is '(unsigned long)numberOfElements*sizeof(long)' bytes, but '8' bytes may be read.
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\sortingalgorithms.c(376): warning C6386: Buffer overrun while writing to 'count':  the writable size is '(unsigned long)range*sizeof((*vector))' bytes, but '8' bytes might be written.
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\sortingalgorithms.c(386): warning C6011: Dereferencing NULL pointer 'count'. 
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\stack.c(59): warning C6011: Dereferencing NULL pointer 'previous'. 
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\vector.c(65): warning C6031: Return value ignored: 'fscanf'.
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\vector.c(56): warning C6011: Dereferencing NULL pointer 'vector'. 
+     1>c:\users\lucas vieira\documents\visual studio 2015\projects\dsproject\dsproject\dsproject\vector.c(86): warning C6386: Buffer overrun while writing to 'vector':  the writable size is '(unsigned long)numberOfElements*sizeof(long)' bytes, but '8' bytes might be written.
+     1>Done Building Project "c:\Users\lucas vieira\documents\visual studio 2015\Projects\DataStructures\DataStructures\DataStructures.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:20.48

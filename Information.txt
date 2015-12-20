@@ -1,0 +1,108 @@
+############################################################################################
+Documentação e Convenções
+
+Por favor, definir as váriaveis, funções e bibliotecas com nome em inglês
+(Facilita o uso do código por mais pessoas, 
+consequentemente a correção e caso precise de ajuda em fóruns internacionais)
+
+IDE utilizada: Visual Studio 2013
+
+Estruturada
+
+Nome de Variáveis: Lower CamelCase
+Nome de Funções: Upper CamelCase
+Nome das Structs: Upper CamelCase
+Redefinição de nome das Structs: Lower CamelCase
+Nome dos arquivos headers de biblioteca: Upper CamelCase
+Nome dos arquivos de código-fonte: Upper CamelCase 
+
+*Usar 'new' preferencialmente à 'malloc'
+(Facilita a vida kkk)
+
+Orientada a Objetos
+
+Nome de Atributos: Lower CamelCase
+Nome de Variáveis: Lower CamelCase
+Nome de Métodos de Classe: Lower CamelCase
+Nome dos arquivos headers de Classes: Upper CamelCase
+Nome dos arquivos de código-fonte de Classes: Upper CamelCase 
+
+#################################################################################################
+Comentários
+(Isso pode ser deixado mais pro fim do projeto, pois serão todos revisados)
+
+*Seguir padrões do C++
+*Deverão ser traduzidos para inglês ao fim do projeto
+*Haverá duas versões em cada paradigma. Uma com todos os comentários em inglês e a outra em português
+
+###################################################################################################
+Estruturas a Serem Implemetadas
+(Provavelmente outras bibliotecas deverão 
+ser criadas para adicionar funcionalidades/suporte às estruturas)
+
+@ Já implementada
+$ Implementada Parcialmente / Revisar
+% Não implementada
+
+*Estruturada
+@	**list Encadeada
+@	**list Duplamente Encadeada
+@	**list Circular
+%	**list Circular Duplamente Encadeada
+@	**Pilha
+@	**Fila
+
+@	**Árvore Binária
+$	**Árvore AVL
+$	**Árvore Red-Black
+%	**Árvore B
+%	**Árvore B+
+
+$	**Grafos
+%	**Algoritmo de Prim
+%	**Algoritmo de Kruskal
+%	**Algoritmo de Djikstra
+
+%	*Hash Simples
+
+@	Vector
+
+
+Orientada a Objetos
+%	**list Encadeada
+%	**list Duplamente Encadeada
+%	**list Circular
+%	**list Circular Duplamente Encadeada
+%	**Pilha
+%	**Fila
+
+%	**Árvore Binária
+%	**Árvore AVL
+%	**Árvore Red-Black
+%	**Árvore B
+%	**Árvore B+
+
+%	**Grafos
+%	**Algoritmo de Prim
+%	**Algoritmo de Kruskal
+%	**Algoritmo de Djikstra
+
+%	*Hash Simples
+############################################################################################
+/**
+	Este arquivo é parte do projeto Data Structures
+
+    Este é um software livre; você pode redistribuí-lo e/ou 
+    modificá-lo dentro dos termos da Licença Pública Geral GNU como 
+    publicada pela Fundação do Software Livre (FSF); na versão 3 da 
+    Licença, ou (na sua opinião) qualquer versão.
+
+    Este programa é distribuído na esperança de que possa ser  útil, 
+    mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
+    a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
+    Licença Pública Geral GNU para maiores detalhes.
+
+    Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
+    com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+
+	Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
