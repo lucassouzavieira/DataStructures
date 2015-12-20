@@ -2,12 +2,11 @@
 Documentação e Convenções
 
 Por favor, definir as váriaveis, funções e bibliotecas com nome em inglês
-(Facilita o uso do código por mais pessoas, 
-consequentemente a correção e caso precise de ajuda em fóruns internacionais)
+(Facilita o uso do código por mais pessoas, consequentemente a correção e se necessário, pedir ajuda em fóruns internacionais)
 
-IDE utilizada: Visual Studio 2013
+IDE utilizada: Visual Studio 2015
 
-Estruturada
+Estruturada (C)
 
 Nome de Variáveis: Lower CamelCase
 Nome de Funções: Upper CamelCase
@@ -16,20 +15,13 @@ Redefinição de nome das Structs: Lower CamelCase
 Nome dos arquivos headers de biblioteca: Upper CamelCase
 Nome dos arquivos de código-fonte: Upper CamelCase 
 
-*Usar 'new' preferencialmente à 'malloc'
-(Facilita a vida kkk)
+Orientada a Objetos (C++)
 
-Orientada a Objetos
-
-Nome de Atributos: Lower CamelCase
-Nome de Variáveis: Lower CamelCase
-Nome de Métodos de Classe: Lower CamelCase
-Nome dos arquivos headers de Classes: Upper CamelCase
-Nome dos arquivos de código-fonte de Classes: Upper CamelCase 
+Padrões C++ 
 
 #################################################################################################
 Comentários
-(Isso pode ser deixado mais pro fim do projeto, pois serão todos revisados)
+(Devem ser todos revisados ao fim do projeto)
 
 *Seguir padrões do C++
 *Deverão ser traduzidos para inglês ao fim do projeto
@@ -45,15 +37,18 @@ $ Implementada Parcialmente / Revisar
 % Não implementada
 
 *Estruturada
-@	**list Encadeada
-@	**list Duplamente Encadeada
-@	**list Circular
-%	**list Circular Duplamente Encadeada
-@	**Pilha
-@	**Fila
+@	Lista Encadeada
+@	Lista Duplamente Encadeada
+@	Lista Circular
+%	Lista Circular Duplamente Encadeada
+@	Pilha
+@	Fila
+@	Pilha (Estática)
+@	Fila (Estática)
+@	Heap
 
 @	**Árvore Binária
-$	**Árvore AVL
+@	**Árvore AVL
 $	**Árvore Red-Black
 %	**Árvore B
 %	**Árvore B+
@@ -88,21 +83,20 @@ Orientada a Objetos
 %	**Algoritmo de Djikstra
 
 %	*Hash Simples
-############################################################################################
+##################################################################
 /**
-	Este arquivo é parte do projeto Data Structures
+Este arquivo é parte do projeto Data Structures
+Este é um software livre; você pode redistribuí-lo e/ou
+modificá-lo dentro dos termos da Licença Pública Geral GNU como
+publicada pela Fundação do Software Livre (FSF); na versão 3 da
+Licença, ou (na sua opinião) qualquer versão.
+Este programa é distribuído na esperança de que possa ser  útil,
+mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
+a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
+Licença Pública Geral GNU para maiores detalhes.
+Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
+com este programa, Se não, veja <http://www.gnu.org/licenses/>.
 
-    Este é um software livre; você pode redistribuí-lo e/ou 
-    modificá-lo dentro dos termos da Licença Pública Geral GNU como 
-    publicada pela Fundação do Software Livre (FSF); na versão 3 da 
-    Licença, ou (na sua opinião) qualquer versão.
-
-    Este programa é distribuído na esperança de que possa ser  útil, 
-    mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
-    a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
-    Licença Pública Geral GNU para maiores detalhes.
-
-    Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-    com este programa, Se não, veja <http://www.gnu.org/licenses/>.
-
-	Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
+Arquivo: {Arquivo}.c
+Descrição: Implementação para {Estrutura}
+Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/

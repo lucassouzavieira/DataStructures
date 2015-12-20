@@ -35,12 +35,9 @@ list CreateLinkedList(){
 // Verifica uma lista encadeada (se vazia)
 int CheckLinkedList(list* myList){
 	if(myList->nodes == 0){
-		printf("Lista vazia!\n");
 		return -1;
-	} else {
-		printf("A lista nao esta vazia!\n");
-		return 1;
 	}
+	return 1;
 }
 
 // Insere no início da lista
