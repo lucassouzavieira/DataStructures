@@ -21,13 +21,16 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #ifndef TAD_H
 #define TAD_H
 
-// Listas, Pilhas e Filas dinâmicas
+/******************************************************************************
+Listas, Pilhas e Filas
+******************************************************************************/
+// Nó simples
 struct node{
 	long int key;
 	struct node* pointer;
 };
 
-// Listas Duplas
+// Nó duplo
 struct DoubleNode {
 	long int key;
 	struct DoubleNode* next;
@@ -37,12 +40,14 @@ struct DoubleNode {
 typedef struct DoubleNode dnode;
 typedef struct node node;
 
+// Lista
 struct List {
 	node* list;
 	node* last;
 	long int nodes;
 };
 
+// Lista Circular
 struct CircleList {
 	node* list;
 	node* startOfList;
@@ -50,6 +55,7 @@ struct CircleList {
 	long int nodes;
 };
 
+// Lista Dupla
 struct DoublyList {
 	dnode* list;
 	dnode* startOfList;
@@ -57,33 +63,39 @@ struct DoublyList {
 	long int nodes;
 };
 
+// Pilha
 struct Stack {
 	node* stack;
 	node* top;
 	long int nodes;
 };
 
+//Fila
 struct Queue {
 	node* queue;
 	node* endOfQueue;
 	long int nodes;
 };
 
-// Pilhas e Filas Dinâmicas
+// Pilha e Fila Estáticas
 struct Array {
 	long int* vector;
 	long int size;
 	long int last;
 };
 
-// Heaps
+/******************************************************************************
+Heap
+******************************************************************************/
 struct Heap{
 	long int *vector;
 	long int elements;
 	long int maxElements;
 };
 
-// Grafos
+/******************************************************************************
+Grafos
+******************************************************************************/
 struct Graph{
 	int weighing;
 	int vertices;
@@ -91,22 +103,37 @@ struct Graph{
 
 };
 
-// Árvores Binárias
+/******************************************************************************
+Árvores Binárias
+******************************************************************************/
+// Árvore Binária de Busca
 struct nodeBST{
 	long int key;
 	struct nodeBST* right;
 	struct nodeBST* left;
 };
+typedef struct nodeBST nodetree;
 
-//Árvores AVL
+struct BinarySearchTree{
+	nodetree* root;
+	long int nodes;
+};
+
+//Árvore AVL
 struct nodeAVL{
 	long int key;
 	int balanceFactor;
 	struct nodeAVL* right;
 	struct nodeAVL* left;
 };
+typedef struct nodeAVL nodeavl;
 
-//Árvores Red-Black
+struct AVLTree{
+	nodeavl* root;
+	long int nodes;
+};
+
+//Árvore Red-Black
 enum Color { RED = 0, BLACK = 1 };
 typedef enum Color Color;
 
@@ -118,19 +145,30 @@ struct nodeRB{
 	struct nodeRB* left;
 	struct nodeRB* father;
 };
+typedef struct nodeRB noderb;
 
-// Convenções de nome
+struct RedBlackTree{
+	noderb* root;
+	long int nodes;
+};
+
+/******************************************************************************
+Redefinição de nomes
+******************************************************************************/
 typedef struct Array array;
 typedef struct List list;
 typedef struct CircleList circlelist;
 typedef struct DoublyList doublylist;
 typedef struct Stack stack;
 typedef struct Queue queue;
-typedef struct nodeBST nodetree;
-typedef struct nodeRB noderb;
-typedef struct nodeAVL nodeavl;
 typedef struct Heap heap;
+typedef struct BinarySearchTree BSTree;
+typedef struct AVLTree AVLTree;
+typedef struct RedBlackTree RBTree;
 
+/******************************************************************************
+Estruturas Auxiliares
+******************************************************************************/
 // Auxiliar nos desenhos das árvores
 struct Branches{
 	struct Branches *previous;

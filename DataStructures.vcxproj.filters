@@ -15,92 +15,91 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-    <Text Include="..\..\DSProject\DSProject\DSProject\Information.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\DSProject\DSProject\DSProject\ArrayQueue.c">
+    <ClCompile Include="ArrayQueue.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DSProject\DSProject\DSProject\ArrayStack.c">
+    <ClCompile Include="ArrayStack.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DSProject\DSProject\DSProject\AVLTree.c">
+    <ClCompile Include="AVLTree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DSProject\DSProject\DSProject\BinarySearchTree.c">
+    <ClCompile Include="BinarySearchTree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DSProject\DSProject\DSProject\CircleList.c">
+    <ClCompile Include="CircleList.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DSProject\DSProject\DSProject\DoublyLinkedList.c">
+    <ClCompile Include="DoublyLinkedList.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DSProject\DSProject\DSProject\Heap.c">
+    <ClCompile Include="Heap.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DSProject\DSProject\DSProject\LinkedList.c">
+    <ClCompile Include="LinkedList.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DSProject\DSProject\DSProject\Programa.c">
+    <ClCompile Include="Programa.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DSProject\DSProject\DSProject\Queue.c">
+    <ClCompile Include="Queue.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DSProject\DSProject\DSProject\SortingAlgorithms.c">
+    <ClCompile Include="SortingAlgorithms.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DSProject\DSProject\DSProject\Stack.c">
+    <ClCompile Include="Stack.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DSProject\DSProject\DSProject\Vector.c">
+    <ClCompile Include="Vector.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\DSProject\DSProject\DSProject\ArrayQueue.h">
+    <ClInclude Include="ArrayQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DSProject\DSProject\DSProject\ArrayStack.h">
+    <ClInclude Include="ArrayStack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DSProject\DSProject\DSProject\AVLTree.h">
+    <ClInclude Include="AVLTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DSProject\DSProject\DSProject\BinarySearchTree.h">
+    <ClInclude Include="BinarySearchTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DSProject\DSProject\DSProject\CircleList.h">
+    <ClInclude Include="CircleList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DSProject\DSProject\DSProject\DoublyLinkedList.h">
+    <ClInclude Include="DoublyLinkedList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DSProject\DSProject\DSProject\Graph.h">
+    <ClInclude Include="Graph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DSProject\DSProject\DSProject\Heap.h">
+    <ClInclude Include="Heap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DSProject\DSProject\DSProject\LinkedList.h">
+    <ClInclude Include="LinkedList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DSProject\DSProject\DSProject\Queue.h">
+    <ClInclude Include="Queue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DSProject\DSProject\DSProject\SortingAlgorithms.h">
+    <ClInclude Include="SortingAlgorithms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DSProject\DSProject\DSProject\Stack.h">
+    <ClInclude Include="Stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DSProject\DSProject\DSProject\TAD.h">
+    <ClInclude Include="TAD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DSProject\DSProject\DSProject\Vector.h">
+    <ClInclude Include="Vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Information.txt" />
   </ItemGroup>
 </Project>

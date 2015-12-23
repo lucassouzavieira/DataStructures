@@ -137,16 +137,15 @@ void ListElementsLinkedList(list* myList){
 }
 
 // Remove elements
-list RemoveElementLinkedList(list* myList, long int element){
-	node* current;
+void RemoveElementLinkedList(list* myList, long int element){
+	node* current = myList->list;
 	node* previous = NULL;
-	current = myList->list;
 	while(current != NULL && current->key != element ){
 		previous = current;
 		current = current->pointer;
 	}
 	if(current == NULL){
-		printf("element nao encontrado\n");
+		printf("Elemento nao encontrado\n");
 		return;
 	}
 	if(previous == NULL){

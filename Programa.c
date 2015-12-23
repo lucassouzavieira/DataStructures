@@ -34,6 +34,31 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "BinarySearchTree.h"
 #include "AVLTree.h"
 
+
+// Testa as funções da Lista Encadeada
+void LinkedListTest() {
+	list myList;
+	myList = CreateLinkedList();
+	InsertAtStartLinkedList(&myList, 1);
+	InsertAtStartLinkedList(&myList, 2);
+	InsertAtStartLinkedList(&myList, 3);
+	ListElementsLinkedList(&myList);
+	printf("\n");
+	InsertAtEndLinkedList(&myList, 10);
+	InsertAtEndLinkedList(&myList, 11);	
+	InsertAtEndLinkedList(&myList, 12);
+	ListElementsLinkedList(&myList);
+	printf("\n");
+	InsertAtMiddleLinkedList(&myList, 7);
+	InsertAtMiddleLinkedList(&myList, 9);
+	InsertAtMiddleLinkedList(&myList, 8);
+	ListElementsLinkedList(&myList);
+	printf("\n");
+	RemoveElementLinkedList(&myList, 2);
+	RemoveElementLinkedList(&myList, 10);
+	ListElementsLinkedList(&myList);
+	printf("Nodes: %ld \n", myList.nodes);
+}
 // Testa as funções de Inserção e Remoção de Heap
 void HeapTest() {
 	heap* myHeap = CreateHeap(10);
@@ -77,21 +102,23 @@ void AVLTest() {
 
 // Teste da Árvore Binária
 void BSTTest() {
-	nodetree* myTree = CreateBST();
-	myTree = InsertInBST(myTree);
-	myTree = InsertInBST(myTree);
-	myTree = InsertInBST(myTree);
-	myTree = InsertInBST(myTree);
-	myTree = InsertInBST(myTree);
-	myTree = InsertInBST(myTree);
-	myTree = InsertInBST(myTree);
-	myTree = InsertInBST(myTree);
-	DrawBST(myTree, 0, 0);
-	myTree = RemoveBST(myTree, 10);
+	BSTree myTree = CreateBST();
+	InsertInBST(&myTree, 20);
+	InsertInBST(&myTree, 21);
+	InsertInBST(&myTree, 10);
+	InsertInBST(&myTree, 5);
+	InsertInBST(&myTree, 25);
+	InsertInBST(&myTree, 60);
+	InsertInBST(&myTree, 12);
+	InsertInBST(&myTree, 34);
+	InsertInBST(&myTree, 11);
+	DrawBST(&myTree);
+	RemoveBST(&myTree, 10);
+	DrawBST(&myTree);
 }
 
 int main (void){
-	AVLTest();
+	LinkedListTest();
 	system("pause");
 	return 0;
 }
