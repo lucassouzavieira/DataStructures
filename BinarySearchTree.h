@@ -20,28 +20,28 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "TAD.h"
 
 // Criar a árvore  
-nodetree* CreateBST();
+BSTree CreateBST();
 
 // Insere um elemento na árvore 
-nodetree* InsertInBST(nodetree* myTree);
+void InsertInBST(BSTree* myTree, long int key);
 
 // Remove um elemento da árvore 
-nodetree* RemoveBST(nodetree* myTree, long int key);
+void RemoveBST(BSTree* myTree, long int key);
 
 // Busca um elemento na Árvore 
-nodetree* SearchBST(nodetree* myTree, long int key);
+nodetree* SearchBST(BSTree* myTree, long int key);
 
 // Maneiras de percorrer a árvore 
-void PreOrderBST(nodetree* myTree);
-void InorderBST(nodetree* myTree);
-void PostOrderBST(nodetree* myTree);
+void PreOrderBST(BSTree* myTree);
+void InOrderBST(BSTree* myTree);
+void PostOrderBST(BSTree* myTree);
 
 // Ilustra a estrutura da árvore - r-e-d (Préordem)  
-void DrawBST(nodetree* myTree, branches *previous, int left);
+void DrawBST(BSTree* myTree);
 
 // Descobrir a altura da árvore 
-int HeightOfBST(nodetree* myTree);
+int HeightOfBST(BSTree* myTree);
 
 // Destruir a árvore 
-void DestroyBST(nodetree* myTree);
+void DestroyBST(BSTree* myTree);
 #endif // !BST_H
