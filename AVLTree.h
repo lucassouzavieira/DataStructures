@@ -20,21 +20,21 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "TAD.h"
 
 /*Criar uma Árvore AVL*/
-nodeavl* CreateAVLTree();
+AVLTree CreateAVLTree();
 
 /*Inserir elementos na Árvore AVL*/
-nodeavl* InsertInAVLTree(nodeavl* myTree, long int key);
+void InsertInAVLTree(AVLTree* myTree, long int key);
 
 /*Buscar elementos na Árvore AVL*/
-nodeavl* SearchAVLTree(nodeavl* myTree, long int key);
+nodeavl* SearchAVLTree(AVLTree* myTree, long int key);
 
 /*Remover elemento na Árvore AVL*/
-nodeavl* RemoveAVLTree(nodeavl* myTree, long int key);
+void RemoveAVLTree(AVLTree* myTree, long int key);
 
 /*Destruir a árvore AVL*/
-void DestroyAVLTree(nodeavl* myTree);
+void DestroyAVLTree(AVLTree* myTree);
 
 /*Desenha a árvore AVL*/
-void DrawAVLTree(nodeavl* myTree, branches *previous, int left);
+void DrawAVLTree(AVLTree* myTree);
 
 #endif // AVLTREE_H

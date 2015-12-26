@@ -40,14 +40,15 @@ int HeightAVLTree(nodeavl* myTree){
 }
 
 // Criar uma Árvore AVL
-nodeavl* CreateAVLTree(){
-	nodeavl* myTree;
-	myTree = NULL;
+AVLTree CreateAVLTree(){
+	AVLTree myTree;
+	myTree.root = NULL;
+	myTree.nodes = 0;
 	return myTree;
 }
 
 // Inserir elementos na Árvore AVL
-nodeavl* InsertInAVLTree(nodeavl* myTree, long int key){
+nodeavl* InsertAVLTree(nodeavl* myTree, long int key){
 	if (myTree == NULL){
 		nodeavl* newNode = (nodeavl*) malloc(sizeof(nodeavl));;
 		if (newNode == NULL){
@@ -62,18 +63,23 @@ nodeavl* InsertInAVLTree(nodeavl* myTree, long int key){
 		return myTree;
 	} else {
 		if (key < myTree->key) {
-			myTree->left = InsertInAVLTree(myTree->left, key);
+			myTree->left = InsertAVLTree(myTree->left, key);
 		} else {
-			myTree->right = InsertInAVLTree(myTree->right, key);
+			myTree->right = InsertAVLTree(myTree->right, key);
 		}
 	}
 	myTree = MaintenanceAVLTree(myTree); // Verifica a manutenção
 	return myTree;
 }
 
+void InsertInAVLTree(AVLTree* myTree, long int key) {
+	myTree->root = InsertAVLTree(myTree->root, key);
+	myTree->nodes++;
+}
+
 // Buscar elementos na Árvore AVL
-nodeavl* SearchAVLTree(nodeavl* myTree, long int key){
-	nodeavl* aux = myTree;
+nodeavl* SearchAVLTree(AVLTree* myTree, long int key){
+	nodeavl* aux = myTree->root;
 	while (aux != NULL){
 		if (key < aux->key){
 			aux = aux->left;
@@ -89,7 +95,7 @@ nodeavl* SearchAVLTree(nodeavl* myTree, long int key){
 }
 
 // Recebe um nó, faz a busca e o remove da árvore
-nodeavl* RemoveAVLTree(nodeavl* myTree, long int key){
+nodeavl* RemoveAVL(nodeavl* myTree, long int key){
 	nodeavl *toRemove = myTree;
 	nodeavl	*father = NULL;
 	nodeavl	*substitute; 
@@ -146,16 +152,26 @@ nodeavl* RemoveAVLTree(nodeavl* myTree, long int key){
 	return myTree;
 }
 
+void RemoveAVLTree(AVLTree* myTree, long int key) {
+	myTree->root = RemoveAVL(myTree->root, key);
+	myTree->nodes--;
+}
+
 // Destruir a árvore AVL
-void DestroyAVLTree(nodeavl* myTree){
+void DestroyAVL(nodeavl* myTree){
 	if (myTree == NULL){
 		return;
 	} else {
-		DestroyAVLTree(myTree->left);
-		DestroyAVLTree(myTree->right);
+		DestroyAVL(myTree->left);
+		DestroyAVL(myTree->right);
 		free(myTree);
 		myTree = NULL;
 	}
+}
+
+void DestroyAVLTree(AVLTree* myTree) {
+	DestroyAVL(myTree->root);
+	myTree->nodes = 0;
 }
 
 // Calcular o Fator de Balaceamento
@@ -285,7 +301,7 @@ nodeavl* MaintenanceAVLTree(nodeavl* myTree){
 	return myTree;
 }
 
-// Desenha ligações entre os nós da árvore
+// Desenham a árvore binária
 void ShowBranchAVL(branches *t){
 	if (!t){
 		return;
@@ -294,8 +310,7 @@ void ShowBranchAVL(branches *t){
 	printf(t->str);
 }
 
-// Desenha a árvore binária
-void DrawAVLTree(nodeavl* myTree, branches *previous, int left){
+void DrawAVL(nodeavl* myTree, branches *previous, int left){
 	if (myTree == NULL){
 		return;
 	}
@@ -303,7 +318,7 @@ void DrawAVLTree(nodeavl* myTree, branches *previous, int left){
 	branches show = { previous, "    " };
 	char *show_str = show.str;
 
-	DrawAVLTree(myTree->left, &show, 1);
+	DrawAVL(myTree->left, &show, 1);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
 	if (!previous){
 		show.str = "---";
@@ -323,8 +338,12 @@ void DrawAVLTree(nodeavl* myTree, branches *previous, int left){
 	}
 	show.str = "   |";
 
-	DrawAVLTree(myTree->right, &show, 0);
+	DrawAVL(myTree->right, &show, 0);
 	if (!previous){
 		printf("");
 	}
+}
+
+void DrawAVLTree(AVLTree* myTree) {
+	DrawAVL(myTree->root, 0, 0);
 }
