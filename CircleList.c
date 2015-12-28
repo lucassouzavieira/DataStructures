@@ -47,8 +47,6 @@ void InsertAtCircleList(circlelist* myList, long int element) {
 		if (newNode != NULL) {
 			newNode->key = element;
 			myList->list = newNode;
-			myList->startOfList = newNode;
-			myList->endOfList = newNode;
 			newNode->pointer = myList->list;
 			myList->nodes++;
 		}
@@ -57,9 +55,7 @@ void InsertAtCircleList(circlelist* myList, long int element) {
 		newNode = (node *)(malloc(sizeof(node)));
 		if (newNode != NULL) {
 			newNode->pointer = myList->list;
-			myList->endOfList->pointer = newNode;
 			myList->list = newNode;
-			myList->startOfList = myList->list;
 			myList->nodes++;
 		}
 	}

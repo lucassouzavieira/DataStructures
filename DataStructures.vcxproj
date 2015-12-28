@@ -176,9 +176,6 @@
     <ClInclude Include="TAD.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Information.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
