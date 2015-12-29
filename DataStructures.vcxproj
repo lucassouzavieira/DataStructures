@@ -146,35 +146,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ArrayQueue.c" />
-    <ClCompile Include="ArrayStack.c" />
-    <ClCompile Include="AVLTree.c" />
-    <ClCompile Include="BinarySearchTree.c" />
-    <ClCompile Include="CircleList.c" />
-    <ClCompile Include="DoublyLinkedList.c" />
-    <ClCompile Include="Heap.c" />
-    <ClCompile Include="LinkedList.c" />
+    <ClCompile Include="Array\ArrayQueue.c" />
+    <ClCompile Include="Array\ArrayStack.c" />
+    <ClCompile Include="BinaryTrees\AVLTree.c" />
+    <ClCompile Include="BinaryTrees\BinarySearchTree.c" />
+    <ClCompile Include="Lists\CircleList.c" />
+    <ClCompile Include="Lists\DoublyLinkedList.c" />
+    <ClCompile Include="Heap\Heap.c" />
+    <ClCompile Include="Lists\LinkedList.c" />
     <ClCompile Include="Programa.c" />
-    <ClCompile Include="Queue.c" />
-    <ClCompile Include="SortingAlgorithms.c" />
-    <ClCompile Include="Stack.c" />
-    <ClCompile Include="Vector.c" />
+    <ClCompile Include="Queue\Queue.c" />
+    <ClCompile Include="Vector\SortingAlgorithms.c" />
+    <ClCompile Include="Stack\Stack.c" />
+    <ClCompile Include="Vector\Vector.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArrayQueue.h" />
-    <ClInclude Include="ArrayStack.h" />
-    <ClInclude Include="AVLTree.h" />
-    <ClInclude Include="BinarySearchTree.h" />
-    <ClInclude Include="CircleList.h" />
-    <ClInclude Include="DoublyLinkedList.h" />
-    <ClInclude Include="Graph.h" />
-    <ClInclude Include="Heap.h" />
-    <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="Queue.h" />
-    <ClInclude Include="SortingAlgorithms.h" />
-    <ClInclude Include="Stack.h" />
+    <ClInclude Include="Array\ArrayQueue.h" />
+    <ClInclude Include="Array\ArrayStack.h" />
+    <ClInclude Include="BinaryTrees\AVLTree.h" />
+    <ClInclude Include="BinaryTrees\BinarySearchTree.h" />
+    <ClInclude Include="Lists\CircleList.h" />
+    <ClInclude Include="Lists\DoublyLinkedList.h" />
+    <ClInclude Include="Graphs\Graph.h" />
+    <ClInclude Include="Heap\Heap.h" />
+    <ClInclude Include="Lists\LinkedList.h" />
+    <ClInclude Include="Queue\Queue.h" />
+    <ClInclude Include="Vector\SortingAlgorithms.h" />
+    <ClInclude Include="Stack\Stack.h" />
     <ClInclude Include="TAD.h" />
-    <ClInclude Include="Vector.h" />
+    <ClInclude Include="Vector\Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

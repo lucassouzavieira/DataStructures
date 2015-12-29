@@ -23,16 +23,16 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "TAD.h"
-#include "Vector.h"
-#include "LinkedList.h"
-#include "CircleList.h"
-#include "DoublyLinkedList.h"
-#include "Stack.h"
-#include "Queue.h"
-#include "Heap.h"
-#include "SortingAlgorithms.h"
-#include "BinarySearchTree.h"
-#include "AVLTree.h"
+#include "Vector\Vector.h"
+#include "Vector\SortingAlgorithms.h"
+#include "Lists\LinkedList.h"
+#include "Lists\CircleList.h"
+#include "Lists\DoublyLinkedList.h"
+#include "Stack\Stack.h"
+#include "Queue\Queue.h"
+#include "Heap\Heap.h"
+#include "BinaryTrees\BinarySearchTree.h"
+#include "BinaryTrees\AVLTree.h"
 
 
 // Testa as funções da Lista Encadeada
