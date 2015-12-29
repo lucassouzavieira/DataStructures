@@ -25,9 +25,9 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 Listas, Pilhas e Filas
 ******************************************************************************/
 // Nó simples
-struct node{
+struct Node{
 	long int key;
-	struct node* pointer;
+	struct Node* pointer;
 };
 
 // Nó duplo
@@ -38,7 +38,7 @@ struct DoubleNode {
 };
 
 typedef struct DoubleNode dnode;
-typedef struct node node;
+typedef struct Node node;
 
 // Lista
 struct List {
@@ -50,8 +50,6 @@ struct List {
 // Lista Circular
 struct CircleList {
 	node* list;
-	node* startOfList;
-	node* endOfList;
 	long int nodes;
 };
 

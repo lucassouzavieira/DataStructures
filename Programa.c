@@ -87,17 +87,17 @@ void HeapTest() {
 
 // Teste da Árvore AVL
 void AVLTest() {
-	nodeavl* myTree = CreateAVLTree();
-	myTree = InsertInAVLTree(myTree, 10);
-	myTree = InsertInAVLTree(myTree, 11);
-	myTree = InsertInAVLTree(myTree, 12);
-	myTree = InsertInAVLTree(myTree, 13);
-	myTree = InsertInAVLTree(myTree, 14);
-	myTree = InsertInAVLTree(myTree, 15);
-	myTree = InsertInAVLTree(myTree, 5);
-	DrawAVLTree(myTree, 0 ,0);
-	myTree = RemoveAVLTree(myTree, 12);
-	DrawAVLTree(myTree, 0, 0);
+	AVLTree myTree = CreateAVLTree();
+	InsertInAVLTree(&myTree, 10);
+	InsertInAVLTree(&myTree, 11);
+	InsertInAVLTree(&myTree, 12);
+	InsertInAVLTree(&myTree, 13);
+	InsertInAVLTree(&myTree, 14);
+	InsertInAVLTree(&myTree, 15);
+	InsertInAVLTree(&myTree, 5);
+	DrawAVLTree(&myTree);
+	RemoveAVLTree(&myTree, 12);
+	DrawAVLTree(&myTree);
 }
 
 // Teste da Árvore Binária
@@ -112,13 +112,20 @@ void BSTTest() {
 	InsertInBST(&myTree, 12);
 	InsertInBST(&myTree, 34);
 	InsertInBST(&myTree, 11);
+	InsertInBST(&myTree, 100);
+	InsertInBST(&myTree, 120);
+	InsertInBST(&myTree, 90);
 	DrawBST(&myTree);
-	RemoveBST(&myTree, 10);
+	RemoveBST(&myTree, 21);
+	InsertInBST(&myTree, -2);
+	InsertInBST(&myTree, -10);
+	InsertInBST(&myTree, 2);
+	InsertInBST(&myTree, 4);
 	DrawBST(&myTree);
 }
 
 int main (void){
-	LinkedListTest();
+	AVLTest();
 	system("pause");
 	return 0;
 }

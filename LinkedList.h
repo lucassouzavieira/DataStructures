@@ -41,7 +41,10 @@ void InsertAtEndLinkedList(list* myList, long int element);
 node* SearchLinkedList(list* myList, long int element);
 
 // Mostrar os elementos
-void ListElementsLinkedList(list* myList);	
+void ListElementsLinkedList(list* myList);
+
+// Retorna uma lista com os elementos em ordem invertida
+list ReverseLinkedList(list* myList);
 
 // Remove elementos
 void RemoveElementLinkedList(list* myList, long int element); 

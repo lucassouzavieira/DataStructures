@@ -104,9 +104,8 @@ void InsertAtEndLinkedList(list* myList, long int element){
 		newNode->key = element;
 		newNode->pointer = NULL;
 	} 
-	node* current;
-	node* previous;
-	current = myList->list;
+	node* current = myList->list;
+	node* previous = NULL;
 	while(current->pointer != NULL){
 		current = current->pointer;
 		previous = current;
@@ -134,6 +133,16 @@ void ListElementsLinkedList(list* myList){
 		printf("%ld \n", aux->key);
 		aux = aux->pointer;
 	}
+}
+
+// Retorna uma lista com os elementos em ordem invertida
+list ReverseLinkedList(list* myList) {
+	list reverseList = CreateLinkedList();
+	node* current = myList->list;
+	while (current != NULL) {
+		InsertAtStartLinkedList(&reverseList, current->key);
+	}
+	return reverseList;
 }
 
 // Remove elements
