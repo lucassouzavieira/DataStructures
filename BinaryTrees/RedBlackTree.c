@@ -56,7 +56,7 @@ noderb* SearchRedBlackTree(RBTree* mytree, long int key);
 void RemoveRedBlackTree(RBTree* mytree, long int key);
 
 /*Destruir a árvore Red-Black*/
-void DestroyRedBlackTree(AVLTree* myTree);
+void DestroyRedBlackTree(RBTree* myTree);
 
 /*Destruir a árvore Red-Black*/
 void DrawRedBlackTree(RBTree* myTree);
