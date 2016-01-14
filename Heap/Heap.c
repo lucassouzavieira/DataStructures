@@ -28,7 +28,8 @@ void MaxHeapfy(heap* myHeap, long int position);
 void MaxHeapSort(long int* vector, long int numberOfElements);
 
 // Criar um novo heap
-heap* CreateHeap(long int maxElements) {
+heap* CreateHeap (long int maxElements)
+{
 	heap* myHeap = (heap*)malloc(sizeof(heap));
 	if (myHeap != NULL) {
 		myHeap->vector = (long int*)malloc((maxElements)*sizeof(long int));
@@ -41,13 +42,15 @@ heap* CreateHeap(long int maxElements) {
 }
 
 // Destruir um heap
-void DestroyHeap(heap* myHeap) {
+void DestroyHeap (heap* myHeap)
+{
 	free(myHeap->vector);
 	free(myHeap);
 }
 
 // Build Heap
-void BuildHeap(heap* myHeap) {
+void BuildHeap (heap* myHeap) 
+{
 	if (myHeap->elements == myHeap->maxElements) {
 		for (long int i = (myHeap->elements) / 2; i--; i >= 1) {
 			MaxHeapfy(myHeap, i);
@@ -56,7 +59,8 @@ void BuildHeap(heap* myHeap) {
 }
 
 // Reorganiza o heap caso o elemento i possa ser maior que seus filhos
-void MaxHeapfy(heap* myHeap, long int position){
+void MaxHeapfy (heap* myHeap, long int position)
+{
 	long int left = LEFT(position);
 	long int right = RIGHT(position);
 	long int aux;
@@ -78,7 +82,8 @@ void MaxHeapfy(heap* myHeap, long int position){
 }
 
 // Insere um novo elemento no heap
-int InsertInHeap(heap* myHeap, long int key) {
+int InsertInHeap (heap* myHeap, long int key) 
+{
 	long int aux;
 	long int position;
 	if (myHeap->elements == myHeap->maxElements) {
@@ -98,7 +103,8 @@ int InsertInHeap(heap* myHeap, long int key) {
 }
 
 // Remove o elemento de maior prioridade no heap
-long int RemoveHeap(heap* myHeap) {
+long int RemoveHeap (heap* myHeap)
+{
 	if (myHeap->elements == 0) {
 		printf("Heap Vazio \n");
 		return 0;
@@ -112,13 +118,15 @@ long int RemoveHeap(heap* myHeap) {
 }
 
 // Exibe o Heap
-void ShowHeap(heap* myHeap) {
+void ShowHeap (heap* myHeap)
+{
 	ShowVector(myHeap->vector, myHeap->elements);
 }
 
 // HEAP SORT
 // Cria um Heap de Máximo dado um vetor
-void MaxHeapSort(long int* vector, long int numberOfElements) {
+void MaxHeapSort (long int* vector, long int numberOfElements)
+{
 	//Checar se o Heap está vazio
 	if (numberOfElements == 0) {
 		printf("O Heap esta vazio! \n");

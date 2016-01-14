@@ -25,7 +25,8 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "..\TAD.h"
 
 //Cria uma pilha
-array* ArrayStackCreate(long int size){
+array* ArrayStackCreate (long int size)
+{
 	array* myArrayStack = (array *)malloc(sizeof(array));
 	myArrayStack->size = size;
 	myArrayStack->vector = (long int*)malloc(size*sizeof(long int));
@@ -34,15 +35,17 @@ array* ArrayStackCreate(long int size){
 }
 
 //Verifica se a pilha está vazia ou não 
-int ArrayStackCheck(array* myArrayStack) {
-	if (myArrayStack->last == 0) {
+int ArrayStackCheck (array* myArrayStack) 
+{
+	if (myArrayStack->last == 0){
 		return -1;
 	}
 	return 1;
 }
 
 //Remove um elemento da pilha 
-array* ArrayStackPop(array* myArrayStack) {
+array* ArrayStackPop (array* myArrayStack) 
+{
 	if (myArrayStack->last == 0) {
 		printf("Pilha Vazia! \n");
 		return myArrayStack;
@@ -52,7 +55,8 @@ array* ArrayStackPop(array* myArrayStack) {
 }
 
 //Insere um elemento na pilha 
-array* ArrayStackPush(array* myArrayStack, long int element) {
+array* ArrayStackPush (array* myArrayStack, long int element) 
+{
 	if (myArrayStack->last == myArrayStack->size - 1) {
 		printf("Pilha cheia! \n");
 		return myArrayStack;
@@ -63,14 +67,16 @@ array* ArrayStackPush(array* myArrayStack, long int element) {
 }
 
 //Imprime todos os elementos da pilha 
-void ArrayStackConsult(array* myArrayStack) {
+void ArrayStackConsult (array* myArrayStack) 
+{
 	for (long int i = 0; i <= myArrayStack->last; i++) {
 		printf("%ld \n", myArrayStack->vector[i]);
 	}
 }
 
 //Apaga os elementos e libera memória 
-array* ArrayStackDestroy(array* myArrayStack) {
+array* ArrayStackDestroy (array* myArrayStack) 
+{
 	free(myArrayStack->vector);
 	return myArrayStack;
 }

@@ -25,8 +25,9 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include <stdio.h>
 #include "..\TAD.h"
 
-//Cria uma fila 
-array* ArrayQueueCreate(long int size) {
+//Cria e retorna uma fila estática 
+array* ArrayQueueCreate (long int size) 
+{
 	array* myArrayQueue = (array *)malloc(sizeof(array));
 	myArrayQueue->size = size;
 	myArrayQueue->vector = (long int*)malloc(size*sizeof(long int));
@@ -35,16 +36,18 @@ array* ArrayQueueCreate(long int size) {
 }
 
 //Verifica se há elementos na fila 
-int ArrayQueueCheck(array* myArrayQueue) {
-	if (myArrayQueue->last == 0) {
+int ArrayQueueCheck (array* myArrayQueue) 
+{
+	if (myArrayQueue->last == 0){
 		return -1;
 	}
 	return 1;
 }
 
 //Insere elementos na fila 
-array* ArrayQueueEnqueue(array* myArrayQueue, long int element) {
-	if (myArrayQueue->last == myArrayQueue->size - 1) {
+array* ArrayQueueEnqueue (array* myArrayQueue, long int element) 
+{
+	if (myArrayQueue->last == myArrayQueue->size - 1){
 		printf("Pilha cheia! \n");
 		return myArrayQueue;
 	}
@@ -54,8 +57,9 @@ array* ArrayQueueEnqueue(array* myArrayQueue, long int element) {
 }
 
 //Remove elementos da fila 
-array* ArrayQueueDequeue(array* myArrayQueue) {
-	if (myArrayQueue->last == 0) {
+array* ArrayQueueDequeue (array* myArrayQueue)
+{
+	if (myArrayQueue->last == 0){
 		printf("Fila vazia! \n");
 		return myArrayQueue;
 	}
@@ -67,14 +71,16 @@ array* ArrayQueueDequeue(array* myArrayQueue) {
 }
 
 //Imprime os elementos da fila 
-void ArrayQueueConsult(array* myArrayQueue) {
+void ArrayQueueConsult (array* myArrayQueue) 
+{
 	for (long int i = 0; i <= myArrayQueue->last; i++) {
 		printf("%ld \n", myArrayQueue->vector[i]);
 	}
 }
 
 //Apaga todos os elementos e libera memória 
-array* ArrayQueueDestroy(array* myArrayQueue) {
+array* ArrayQueueDestroy (array* myArrayQueue) 
+{
 	free(myArrayQueue->vector);
 	return myArrayQueue;
 }

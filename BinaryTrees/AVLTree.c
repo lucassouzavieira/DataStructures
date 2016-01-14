@@ -25,7 +25,8 @@ nodeavl* MaintenanceAVLTree(nodeavl* myTree);
 int CalculateBalanceFactor(nodeavl* mynode);
 
 // Recebe a árvore (ou uma sub-árvore) e cálcula sua altura
-int HeightAVLTree(nodeavl* myTree){
+int HeightAVLTree(nodeavl* myTree)
+{
 	if (myTree == NULL){
 		return 0;
 	} else {
@@ -40,7 +41,8 @@ int HeightAVLTree(nodeavl* myTree){
 }
 
 // Criar uma Árvore AVL
-AVLTree CreateAVLTree(){
+AVLTree CreateAVLTree()
+{
 	AVLTree myTree;
 	myTree.root = NULL;
 	myTree.nodes = 0;
@@ -48,7 +50,8 @@ AVLTree CreateAVLTree(){
 }
 
 // Inserir elementos na Árvore AVL
-nodeavl* InsertAVLTree(nodeavl* myTree, long int key){
+nodeavl* InsertAVLTree (nodeavl* myTree, long int key)
+{
 	if (myTree == NULL){
 		nodeavl* newNode = (nodeavl*) malloc(sizeof(nodeavl));;
 		if (newNode == NULL){
@@ -72,13 +75,15 @@ nodeavl* InsertAVLTree(nodeavl* myTree, long int key){
 	return myTree;
 }
 
-void InsertInAVLTree(AVLTree* myTree, long int key) {
+void InsertInAVLTree (AVLTree* myTree, long int key) 
+{
 	myTree->root = InsertAVLTree(myTree->root, key);
 	myTree->nodes++;
 }
 
 // Buscar elementos na Árvore AVL
-nodeavl* SearchAVLTree(AVLTree* myTree, long int key){
+nodeavl* SearchAVLTree (AVLTree* myTree, long int key)
+{
 	nodeavl* aux = myTree->root;
 	while (aux != NULL){
 		if (key < aux->key){
@@ -95,7 +100,8 @@ nodeavl* SearchAVLTree(AVLTree* myTree, long int key){
 }
 
 // Recebe um nó, faz a busca e o remove da árvore
-nodeavl* RemoveAVL(nodeavl* myTree, long int key){
+nodeavl* RemoveAVL (nodeavl* myTree, long int key)
+{
 	nodeavl *toRemove = myTree;
 	nodeavl	*father = NULL;
 	nodeavl	*substitute; 
@@ -152,13 +158,15 @@ nodeavl* RemoveAVL(nodeavl* myTree, long int key){
 	return myTree;
 }
 
-void RemoveAVLTree(AVLTree* myTree, long int key) {
+void RemoveAVLTree (AVLTree* myTree, long int key)
+{
 	myTree->root = RemoveAVL(myTree->root, key);
 	myTree->nodes--;
 }
 
 // Destruir a árvore AVL
-void DestroyAVL(nodeavl* myTree){
+void DestroyAVL (nodeavl* myTree)
+{
 	if (myTree == NULL){
 		return;
 	} else {
@@ -169,13 +177,15 @@ void DestroyAVL(nodeavl* myTree){
 	}
 }
 
-void DestroyAVLTree(AVLTree* myTree) {
+void DestroyAVLTree (AVLTree* myTree) 
+{
 	DestroyAVL(myTree->root);
 	myTree->nodes = 0;
 }
 
 // Calcular o Fator de Balaceamento
-int CalculateBalanceFactor(nodeavl* mynode){
+int CalculateBalanceFactor (nodeavl* mynode)
+{
 	if (mynode == NULL){
 		return 0;
 	} else {
@@ -186,7 +196,8 @@ int CalculateBalanceFactor(nodeavl* mynode){
 }
 
 // Ajustar os Fatores de Balanceamento de todos os nós da árvore
-void SetbalanceFactor(nodeavl* myTree){
+void SetbalanceFactor (nodeavl* myTree)
+{
 	if (myTree != NULL){
 		myTree->balanceFactor = (HeightAVLTree(myTree->left) - HeightAVLTree(myTree->right));
 		SetbalanceFactor(myTree->left);
@@ -198,7 +209,8 @@ void SetbalanceFactor(nodeavl* myTree){
 }
 
 // Funções utilitárias para as rotações
-nodeavl* RotateRightAVLTree(nodeavl* mynode){
+nodeavl* RotateRightAVLTree (nodeavl* mynode)
+{
 	nodeavl* aux = mynode->left;
 	if (aux->right != NULL) {
 		/* Se o filho do nó atual tem sub-árvore à direita
@@ -212,7 +224,8 @@ nodeavl* RotateRightAVLTree(nodeavl* mynode){
 	return aux;
 }
 
-nodeavl* RotateLeftAVLTree(nodeavl* mynode){
+nodeavl* RotateLeftAVLTree (nodeavl* mynode)
+{
 	nodeavl* aux = mynode->right;
 	if (aux->left != NULL){
 		/* Se o filho do nó atual tem sub-árvore à esquerda
@@ -226,7 +239,8 @@ nodeavl* RotateLeftAVLTree(nodeavl* mynode){
 	return aux;
 }
 
-nodeavl* DoubleRotateRightAVLTree(nodeavl* mynode){
+nodeavl* DoubleRotateRightAVLTree (nodeavl* mynode)
+{
 	nodeavl* leftChild = mynode->left;
 	nodeavl* rightGrandson = leftChild->right;
 	if (rightGrandson->left != NULL){
@@ -250,7 +264,8 @@ nodeavl* DoubleRotateRightAVLTree(nodeavl* mynode){
 	return rightGrandson;
 }
 
-nodeavl* DoubleRotateLeftAVLTree(nodeavl* mynode){
+nodeavl* DoubleRotateLeftAVLTree (nodeavl* mynode)
+{
 	nodeavl* rightChild = mynode->right;
 	nodeavl* leftGrandson = rightChild->left;
 	if (leftGrandson->left != NULL) {
@@ -275,7 +290,8 @@ nodeavl* DoubleRotateLeftAVLTree(nodeavl* mynode){
 }
 
 //Manter a Árvore Balanceada
-nodeavl* MaintenanceAVLTree(nodeavl* myTree){
+nodeavl* MaintenanceAVLTree (nodeavl* myTree)
+{
 	if (myTree != NULL){
 		SetbalanceFactor(myTree);
 		myTree->balanceFactor = CalculateBalanceFactor(myTree);
@@ -302,7 +318,8 @@ nodeavl* MaintenanceAVLTree(nodeavl* myTree){
 }
 
 // Desenham a árvore binária
-void ShowBranchAVL(branches *t){
+void ShowBranchAVL (branches *t)
+{
 	if (!t){
 		return;
 	}
@@ -310,7 +327,8 @@ void ShowBranchAVL(branches *t){
 	printf(t->str);
 }
 
-void DrawAVL(nodeavl* myTree, branches *previous, int left){
+void DrawAVL (nodeavl* myTree, branches *previous, int left)
+{
 	if (myTree == NULL){
 		return;
 	}
@@ -344,6 +362,7 @@ void DrawAVL(nodeavl* myTree, branches *previous, int left){
 	}
 }
 
-void DrawAVLTree(AVLTree* myTree) {
+void DrawAVLTree (AVLTree* myTree) 
+{
 	DrawAVL(myTree->root, 0, 0);
 }

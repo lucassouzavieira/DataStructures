@@ -22,7 +22,8 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "..\TAD.h"
 
 //Criar a árvore
-BSTree CreateBST(){
+BSTree CreateBST ()
+{
 	BSTree myBSTree;
 	myBSTree.root = NULL;
 	myBSTree.nodes = 0;
@@ -30,7 +31,8 @@ BSTree CreateBST(){
 }
 
 //Insere um elemento na árvore
-void InsertInBST(BSTree* myTree, long int key) {
+void InsertInBST (BSTree* myTree, long int key)
+{
 	if (myTree->root == NULL){
 		// Árvore vazia
 		nodetree* newNode = (nodetree *)(malloc(sizeof(nodetree)));
@@ -70,7 +72,8 @@ void InsertInBST(BSTree* myTree, long int key) {
 
 // Remoção de um elemento qualquer da árvore
 // Busca o elemento mais à direita
-nodetree* MostRight(nodetree* tree) {
+nodetree* MostRight (nodetree* tree)
+{
 	if (tree->right != NULL) {
 		return MostRight(tree->right);
 	} else {
@@ -84,7 +87,8 @@ nodetree* MostRight(nodetree* tree) {
 	}
 }
 // Busca o elemento mais à esquerda
-nodetree* MostLeft(nodetree* tree) {
+nodetree* MostLeft (nodetree* tree) 
+{
 	if (tree->left != NULL) {
 		return MostLeft(tree->left);
 	} else {
@@ -98,7 +102,8 @@ nodetree* MostLeft(nodetree* tree) {
 	}
 }
 // Busca e remove elementos da árvore binária
-nodetree* RemoveBSTree(nodetree* myTree, long int key) {
+nodetree* RemoveBSTree (nodetree* myTree, long int key)
+{
 	nodetree *toRemove = myTree;
 	nodetree *father = NULL;
 	nodetree *substitute;
@@ -159,13 +164,15 @@ nodetree* RemoveBSTree(nodetree* myTree, long int key) {
 	return myTree;
 }
 
-void RemoveBST(BSTree* myTree, long int key) {
+void RemoveBST (BSTree* myTree, long int key) 
+{
 	myTree->root = RemoveBSTree(myTree->root, key);
 	myTree->nodes--;
 }
 
 //Busca um elemento na Árvore
-nodetree* SearchBST(BSTree* myTree, long int key){
+nodetree* SearchBST (BSTree* myTree, long int key)
+{
 	nodetree* aux = myTree->root;
 	while (aux != NULL){
 		if (key < aux->key){
@@ -181,7 +188,8 @@ nodetree* SearchBST(BSTree* myTree, long int key){
 
 //Percorrer a árvore
 //Pré-ordem
-void PreOrderBSTree(nodetree* tree) {
+void PreOrderBSTree (nodetree* tree)
+{
 	if (tree == NULL) {
 		return;
 	}
@@ -192,12 +200,14 @@ void PreOrderBSTree(nodetree* tree) {
 	}
 }
 
-void PreOrderBST(BSTree* myTree){
+void PreOrderBST (BSTree* myTree)
+{
 	PreOrderBSTree(myTree->root);
 }
 
 //Em Ordem
-void InOrderBSTree(nodetree* tree) {
+void InOrderBSTree (nodetree* tree)
+{
 	if (tree == NULL) {
 		return;
 	}
@@ -208,12 +218,14 @@ void InOrderBSTree(nodetree* tree) {
 	}
 }
 
-void InOrderBST(BSTree* myTree){
+void InOrderBST (BSTree* myTree)
+{
 	InOrderBSTree(myTree->root);
 }
 
 //Pos-Órdem
-void PostOrderBSTree(nodetree* tree){
+void PostOrderBSTree (nodetree* tree)
+{
 	if (tree == NULL){
 		return;
 	}
@@ -224,12 +236,14 @@ void PostOrderBSTree(nodetree* tree){
 	}
 }
 
-void PostOrderBST(BSTree* myTree) {
+void PostOrderBST(BSTree* myTree)
+{
 	PostOrderBSTree(myTree->root);
 }
 
 //Descobrir a altura da árvore
-int HeightOfBSTree(nodetree* myTree){
+int HeightOfBSTree (nodetree* myTree)
+{
 	if (myTree == NULL){
 		return 1;
 	} else {
@@ -243,12 +257,14 @@ int HeightOfBSTree(nodetree* myTree){
 	}
 }
 
-int HeightOfBST(BSTree* myTree) {
+int HeightOfBST (BSTree* myTree)
+{
 	return HeightOfBSTree(myTree->root);
 }
 
 //Destruir a árvore
-void DestroyBSTree(nodetree* myTree){
+void DestroyBSTree (nodetree* myTree) 
+{
 	if (myTree == NULL){
 		return;
 	} else {
@@ -259,13 +275,15 @@ void DestroyBSTree(nodetree* myTree){
 	}
 }
 
-void DestroyBST(BSTree* myTree){
+void DestroyBST (BSTree* myTree)
+{
 	DestroyBSTree(myTree->root);
 }
 
 // Desenha a árvore binária
 // Mostra traços ligando os nós
-void ShowBranch(branches *t){
+void ShowBranch (branches *t)
+{
 	if (!t){
 		return;
 	}
@@ -274,7 +292,8 @@ void ShowBranch(branches *t){
 }
 
 // Desenha a árvore
-void DrawBSTree(nodetree* myTree, branches *previous, int Left){
+void DrawBSTree (nodetree* myTree, branches *previous, int Left)
+{
 	if (myTree == NULL){
 		return;
 	}
@@ -309,6 +328,7 @@ void DrawBSTree(nodetree* myTree, branches *previous, int Left){
 }
 
 // Desenha a árvore binária
-void DrawBST(BSTree* myTree) {
+void DrawBST(BSTree* myTree) 
+{
 	DrawBSTree(myTree->root, 0, 0);
 }

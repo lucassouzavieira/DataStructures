@@ -24,7 +24,8 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "..\TAD.h"
 
 // Cria uma lista encadeada
-list CreateLinkedList(){
+list CreateLinkedList ()
+{
 	list myList;
 	myList.list = NULL;
 	myList.last = NULL;
@@ -33,7 +34,8 @@ list CreateLinkedList(){
 }
 
 // Verifica uma lista encadeada (se vazia)
-int CheckLinkedList(list* myList){
+int CheckLinkedList (list* myList)
+{
 	if(myList->nodes == 0){
 		return -1;
 	}
@@ -41,7 +43,8 @@ int CheckLinkedList(list* myList){
 }
 
 // Insere no início da lista
-void InsertAtStartLinkedList(list* myList, long int element){
+void InsertAtStartLinkedList (list* myList, long int element)
+{
 	node* newNode;
 	newNode = (node *)(malloc(sizeof(node)));
 	if(newNode != NULL){
@@ -64,7 +67,8 @@ void InsertAtStartLinkedList(list* myList, long int element){
 }
 
 // Insere no meio da lista
-void InsertAtMiddleLinkedList(list* myList, long int element) {
+void InsertAtMiddleLinkedList (list* myList, long int element) 
+{
 	node* newNode;
 	newNode = (node *)(malloc(sizeof(node)));
 	if (newNode != NULL){
@@ -97,7 +101,8 @@ void InsertAtMiddleLinkedList(list* myList, long int element) {
 }
 
 // Insere no fim da lista
-void InsertAtEndLinkedList(list* myList, long int element){
+void InsertAtEndLinkedList (list* myList, long int element)
+{
 	node* newNode;
 	newNode = (node *)(malloc(sizeof(node)));
 	if(newNode != NULL){
@@ -116,7 +121,8 @@ void InsertAtEndLinkedList(list* myList, long int element){
 }
 
 // Busca
-node* SearchLinkedList(list* myList, long int element) {
+node* SearchLinkedList (list* myList, long int element)
+{
 	node* aux;
 	aux = myList->list;
 	while (aux != NULL && aux->key != element){
@@ -126,7 +132,8 @@ node* SearchLinkedList(list* myList, long int element) {
 }
 
 // Mostrar os elements
-void ListElementsLinkedList(list* myList){
+void ListElementsLinkedList (list* myList)
+{
 	node* aux;
 	aux = myList->list;
 	while(aux != NULL){
@@ -136,7 +143,8 @@ void ListElementsLinkedList(list* myList){
 }
 
 // Retorna uma lista com os elementos em ordem invertida
-list ReverseLinkedList(list* myList) {
+list ReverseLinkedList (list* myList) 
+{
 	list reverseList = CreateLinkedList();
 	node* current = myList->list;
 	while (current != NULL) {
@@ -146,7 +154,8 @@ list ReverseLinkedList(list* myList) {
 }
 
 // Remove elements
-void RemoveElementLinkedList(list* myList, long int element){
+void RemoveElementLinkedList (list* myList, long int element)
+{
 	node* current = myList->list;
 	node* previous = NULL;
 	while(current != NULL && current->key != element ){
@@ -168,7 +177,8 @@ void RemoveElementLinkedList(list* myList, long int element){
 }
 
 // Destruir a lista
-int DestroyLinkedList(list* myList){
+int DestroyLinkedList (list* myList)
+{
 	node* aux = NULL;
 	int teste;
 	while (myList->list != NULL) {

@@ -27,7 +27,8 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 node* top;
 
 //Cria uma pilha
-stack CreateStack(){
+stack CreateStack ()
+{
 	stack myStack;
 	myStack.stack = NULL;
 	myStack.top = NULL;
@@ -36,7 +37,8 @@ stack CreateStack(){
 }
 
 //Verifica se a pilha está vazia ou não
-int CheckStack(stack* myStack){
+int CheckStack (stack* myStack) 
+{
 	if (myStack->stack == NULL){
 		return -1;
 	}
@@ -44,7 +46,8 @@ int CheckStack(stack* myStack){
 }
 
 //Remove um elemento da pist
-void Pop(stack* myStack) {
+void Pop (stack* myStack)
+{
 	if (myStack->stack == NULL){
 		printf("Pilha vazia! \n");
 		return;
@@ -62,7 +65,8 @@ void Pop(stack* myStack) {
 }
 
 //Insere um elemento na pilha 
-void Push(stack* myStack, int element) {
+void Push (stack* myStack, int element)
+{
 	node* newNode;
 	newNode = (node *)(malloc(sizeof(node)));
 	if (newNode != NULL){
@@ -83,7 +87,8 @@ void Push(stack* myStack, int element) {
 }
 
 //Imprime todos os elementos da pilha 
-void ConsultStack(stack* myStack) {
+void ConsultStack (stack* myStack) 
+{
 	node* aux = myStack->stack;
 	while (aux != NULL){
 		printf("%ld ->", aux->key);
@@ -92,7 +97,8 @@ void ConsultStack(stack* myStack) {
 }
 
 //Apaga os elementos e libera memória 
-int DestroyStack(stack* myStack){
+int DestroyStack (stack* myStack)
+{
 	node* aux = myStack->stack;
 	node* node_rem = NULL;
 	while (aux != NULL){

@@ -26,7 +26,8 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 
 //Cria uma fila
-queue CreateQueue() {
+queue CreateQueue ()
+{
 	queue myQueue;
 	myQueue.queue = NULL;
 	myQueue.endOfQueue = NULL;
@@ -35,7 +36,8 @@ queue CreateQueue() {
 }
 
 //Verifica se a fila está vazia ou não
-int CheckQueue(queue* myQueue){
+int CheckQueue (queue* myQueue)
+{
 	if (myQueue->queue == NULL){
 		return -1;
 	}
@@ -43,7 +45,8 @@ int CheckQueue(queue* myQueue){
 }
 
 //Insere elementos na fila
-void Enqueue(queue* myQueue, long int element) {
+void Enqueue (queue* myQueue, long int element)
+{
 	node* newNode;
 	newNode = (node*)(malloc(sizeof(node)));
 	if (myQueue->queue == NULL){
@@ -64,7 +67,8 @@ void Enqueue(queue* myQueue, long int element) {
 }
 
 //Remove elementos da fila 
-void Dequeue(queue* myQueue){
+void Dequeue (queue* myQueue)
+{
 	if (myQueue->queue == NULL){
 		printf("A Fila esta vazia!\n");
 		return;
@@ -77,7 +81,8 @@ void Dequeue(queue* myQueue){
 }
 
 //Imprime os elementos da fila 
-void ConsultQueue(queue* myQueue){
+void ConsultQueue (queue* myQueue)
+{
 	node* aux = myQueue->queue;
 	while (aux != NULL){
 		printf("%ld ->", &aux->key);
@@ -86,7 +91,8 @@ void ConsultQueue(queue* myQueue){
 }
 
 //Apaga todos os elementos e libera memória 
-int DestroyQueue(queue* myQueue){
+int DestroyQueue (queue* myQueue)
+{
 	node* aux = myQueue->queue;
 	node* node_rem = NULL;
 	while (aux != NULL) {

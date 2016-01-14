@@ -24,7 +24,8 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "..\TAD.h"
 
 //Cria uma list duplamente encadeada
-doublylist CreateDLinkedList(){
+doublylist CreateDLinkedList ()
+{
 	doublylist myDoublyList;
 	myDoublyList.list = NULL;
 	myDoublyList.startOfList = NULL;
@@ -34,7 +35,8 @@ doublylist CreateDLinkedList(){
 }
 
 //Verifica se há elementos na lista
-int CheckDLinkedList(doublylist* myDoublyList){
+int CheckDLinkedList (doublylist* myDoublyList)
+{
 	if (myDoublyList->list == NULL){
 		return -1;
 	}
@@ -42,7 +44,8 @@ int CheckDLinkedList(doublylist* myDoublyList){
 }
 
 //Insere elementos no início da lista
-void InsertAtStartDLinkedList(doublylist* myDoublyList, long int element){
+void InsertAtStartDLinkedList (doublylist* myDoublyList, long int element)
+{
 	dnode* newNode;
 	newNode = (dnode *)(malloc(sizeof(dnode))); 
 	if (newNode != NULL){
@@ -65,7 +68,8 @@ void InsertAtStartDLinkedList(doublylist* myDoublyList, long int element){
 }
 
 //Insere elementos no meio da lista
-void InsertAtMiddleDLinkedList(doublylist* myDoublyList, long int element){
+void InsertAtMiddleDLinkedList (doublylist* myDoublyList, long int element)
+{
 	dnode* newNode;
 	newNode = (dnode *)(malloc(sizeof(dnode)));
 	if (newNode != NULL){
@@ -109,7 +113,8 @@ void InsertAtMiddleDLinkedList(doublylist* myDoublyList, long int element){
 }
 
 //Insere elementos no fim da lista
-void InsertAtEndDLinkedList(doublylist* myDoublyList, long int element) {
+void InsertAtEndDLinkedList (doublylist* myDoublyList, long int element)
+{
 	dnode* newNode;
 	newNode = (dnode *)(malloc(sizeof(dnode)));
 	if (newNode != NULL){
@@ -131,7 +136,8 @@ void InsertAtEndDLinkedList(doublylist* myDoublyList, long int element) {
 }
 
 //Busca um dado elemento na lista
-dnode* SearchElementDLinkedList(doublylist* myDoublyList, long int element) {
+dnode* SearchElementDLinkedList (doublylist* myDoublyList, long int element)
+{
 	int parametro; 
 	dnode* aux;
 	printf("Busca Lista Duplamente Encadeada\n1 - Do inicio para o final \t2 - Do final para o inicio\n");
@@ -163,7 +169,8 @@ dnode* SearchElementDLinkedList(doublylist* myDoublyList, long int element) {
 }
 
 //Imprime todos os elementos da lista
-void ListElementsDLinkedList(doublylist* myDoublyList) {
+void ListElementsDLinkedList (doublylist* myDoublyList) 
+{
 	int parametro;
 	dnode* current;
 
@@ -188,7 +195,8 @@ void ListElementsDLinkedList(doublylist* myDoublyList) {
 }
 
 //Remove um dado elemento da lista
-void RemoveElementDLinkedList(doublylist* myDoublyList, long int element) {
+void RemoveElementDLinkedList (doublylist* myDoublyList, long int element)
+{
 	dnode* aux = myDoublyList->list; 
 	while (aux != NULL) { 
 		if (aux->key == element) { 
@@ -220,7 +228,8 @@ void RemoveElementDLinkedList(doublylist* myDoublyList, long int element) {
 }
 
 //Apaga toda a lista e libera memória
-int DestroyDLinkedList(doublylist* myDoublyList) {
+int DestroyDLinkedList (doublylist* myDoublyList)
+{
 	dnode* aux = NULL;
 	int teste = 0;
 	while (myDoublyList->list != NULL) {

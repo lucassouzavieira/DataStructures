@@ -27,7 +27,8 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 long int _count_merge_sort = 0;
 
 // BUBBLE SORT
-long int* BubbleSort(long int* vector, long int numberOfElements){
+long int* BubbleSort (long int* vector, long int numberOfElements)
+{
 	// Primeiro laço percorre todo o vetor
 	long int aux = 0;
 	for (long int i = 1; i <= numberOfElements; i++){
@@ -46,7 +47,8 @@ long int* BubbleSort(long int* vector, long int numberOfElements){
 	return vector;
 }
 
-long int* BubbleSortImproved(long int* vector, long int numberOfElements){
+long int* BubbleSortImproved (long int* vector, long int numberOfElements)
+{
 	// Primeiro laço percorre todo o vector 
 	long int aux;
 	for (long int i = 0; i < numberOfElements; i++){
@@ -65,7 +67,8 @@ long int* BubbleSortImproved(long int* vector, long int numberOfElements){
 }
 
 // INSERTION SORT
-long int* InsertionSort(long int* vector, long int numberOfElements, ...){
+long int* InsertionSort (long int* vector, long int numberOfElements)
+{
 	long int j;
 	long int eleito;
 	// Primeiro laço percorre todo o vector , menos a primeira posição 
@@ -85,7 +88,8 @@ long int* InsertionSort(long int* vector, long int numberOfElements, ...){
 }
 
 // SELECTION SORT
-long int* SelectionSort(long int* vector, long int numberOfElements){
+long int* SelectionSort (long int* vector, long int numberOfElements)
+{
 	long int i;
 	long int pos; // Posição
 	long int eleito;
@@ -109,7 +113,8 @@ long int* SelectionSort(long int* vector, long int numberOfElements){
 }
 
 // MERGE SORT
-void merge(long int* vector, long int numberOfElements) {
+void merge (long int* vector, long int numberOfElements)
+{
 	long int meio;
 	long int i, j, k;
 	long int* tmp;
@@ -153,7 +158,8 @@ void merge(long int* vector, long int numberOfElements) {
 	free(tmp);
 }
 
-void MergeSort(long int* vector, long int numberOfElements) {
+void MergeSort (long int* vector, long int numberOfElements)
+{
 	// Variáveis auxiliares
 	long int meio;
 	//Divide o vector ao meio e efetua as chamadas recursivas
@@ -166,7 +172,8 @@ void MergeSort(long int* vector, long int numberOfElements) {
 }
 
 // QUICK SORT
-void quick(long int* vector, long int pos_inicio, long int pos_final){
+void quick (long int* vector, long int pos_inicio, long int pos_final)
+{
 	long int i = pos_inicio;
 	long int j = pos_final;
 	long int pivo = vector[(pos_inicio + pos_final) / 2]; // Pivo é o elemento central do vector
@@ -195,7 +202,8 @@ void quick(long int* vector, long int pos_inicio, long int pos_final){
 	}
 }
 
-long int* QuickSort(long int* vector, long int numberOfElements){
+long int* QuickSort (long int* vector, long int numberOfElements)
+{
 	long int pos_inicio = 0;
 	long int pos_final = numberOfElements;
 	//Efetua a chamada ao procedimento quick
@@ -205,7 +213,8 @@ long int* QuickSort(long int* vector, long int numberOfElements){
 }
 
 // HEAP SORT
-void HeapSort(long int* vector, long int numberOfElements){
+void HeapSort (long int* vector, long int numberOfElements)
+{
 	//Checar se o Heap está vazio
 	if (numberOfElements == 0){
 		printf("O Heap esta vazio! \n");
@@ -252,7 +261,8 @@ void HeapSort(long int* vector, long int numberOfElements){
 }
 
 // COMB SORT
-long int* CombSort(long int* vector, long int numberOfElements){
+long int* CombSort (long int* vector, long int numberOfElements)
+{
 	long int i, j, jump, aux, changes = 1;
 	jump = numberOfElements;
 
@@ -280,7 +290,8 @@ long int* CombSort(long int* vector, long int numberOfElements){
 }
 
 // SHELL SORT
-void shell_sort_phase(long int* vector, long int numberOfElements, int jump){
+void shell_sort_phase (long int* vector, long int numberOfElements, int jump)
+{
 	/*Executa como se fosse um Insertion Sort em elementos de []
 	na faixa dada
 	Se o jump = 1, então executa como o Insertion Sort comum
@@ -298,7 +309,8 @@ void shell_sort_phase(long int* vector, long int numberOfElements, int jump){
 	//Fim da função
 }
 
-long int* ShellSort(long int* vector, long int numberOfElements){
+long int* ShellSort (long int* vector, long int numberOfElements)
+{
 	/* o jump deve se aproximar de uma progressão geométrica.
 	A seguinte sequência é a mais comhecida em termos de número médio
 	de comparações feitas */
@@ -312,7 +324,8 @@ long int* ShellSort(long int* vector, long int numberOfElements){
 }
 
 //GnoME SORT
-long int* GnomeSort(long int* vector, long int numberOfElements){
+long int* GnomeSort (long int* vector, long int numberOfElements)
+{
 	long int aux;
 	for (long int i = 0; i <= numberOfElements;){
 		if (vector[i - 1] <= vector[i]){
@@ -335,7 +348,8 @@ long int* GnomeSort(long int* vector, long int numberOfElements){
 
 
 //BOGO SORT
-int sorting(long int* vector, long int elements){
+int sorting (long int* vector, long int elements)
+{
 	long int n = elements; 
 	// Compara todos os elementos do vector a partir do último
 	while (--n >= 1) {
@@ -346,7 +360,8 @@ int sorting(long int* vector, long int elements){
 	return 1;
 }
 
-void shuffle(long int* vector, long int elements){
+void shuffle (long int* vector, long int elements)
+{
 	long int aux, r; 
 	for (long int i = 0; i < elements; i++){
 		//Realiza a troca de posições
@@ -357,7 +372,8 @@ void shuffle(long int* vector, long int elements){
 	}
 }
 
-long int* BogoSort(long int* vector, long int elements){
+long int* BogoSort (long int* vector, long int elements)
+{
 	while (!sorting(vector, elements)){
 		shuffle(vector, elements);
 	}
@@ -365,7 +381,8 @@ long int* BogoSort(long int* vector, long int elements){
 }
 
 //COUTING SORT
-int CSorting(long int* vector, long int elements, long int min, long int max){
+int CSorting (long int* vector, long int elements, long int min, long int max)
+{
 	long int i, k;
 
 	long int range = max - min + 1; // Determinando faixa
@@ -391,7 +408,8 @@ int CSorting(long int* vector, long int elements, long int min, long int max){
 	return EXIT_SUCCESS;
 }
 
-long int* CoutingSort(long int* vector, long int elements){
+long int* CoutingSort (long int* vector, long int elements)
+{
 	/* Algoritmo de ordenação Couting Sort (Ordenação por contagem)
 		Determina uma faixa de valores em que os elementos dos vectores estão, 
 		encontramdo maior e o menor elemento do vector; Logo, para todo 

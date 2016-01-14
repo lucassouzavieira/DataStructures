@@ -24,7 +24,8 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "..\TAD.h"
 
 //Cria uma lista circular 
-circlelist CreateCircleList() {
+circlelist CreateCircleList ()
+{
 	circlelist myList;
 	myList.list = NULL;
 	myList.nodes = 0;
@@ -32,7 +33,8 @@ circlelist CreateCircleList() {
 }
 
 //Verifica se a lista está vazia ou não  
-int CheckCircleList(circlelist* myList) {
+int CheckCircleList (circlelist* myList)
+{
 	if (myList->list == NULL) {
 		return -1;
 	}
@@ -40,7 +42,8 @@ int CheckCircleList(circlelist* myList) {
 }
 
 //Insere novos elements na lista
-void InsertAtCircleList(circlelist* myList, long int element) {
+void InsertAtCircleList (circlelist* myList, long int element)
+{
 	if (myList->list == NULL) {
 		node* newNode;
 		newNode = (node *)(malloc(sizeof(node)));
@@ -62,7 +65,8 @@ void InsertAtCircleList(circlelist* myList, long int element) {
 }
 
 //Busca um dado valor na lista
-node* SearchElementCircleList(circlelist* myList, long int element) {
+node* SearchElementCircleList (circlelist* myList, long int element) 
+{
 	node* aux = myList->list;
 
 	while (aux != myList->list && aux->key != element) {
@@ -77,7 +81,8 @@ node* SearchElementCircleList(circlelist* myList, long int element) {
 }
 
 //Imprime todos os elements da lista
-void ListElementsCircleList(circlelist* myList) {
+void ListElementsCircleList (circlelist* myList)
+{
 	node* aux = myList->list;
 	if (myList->nodes == 0) {
 		printf("Lista vazia! \n");
@@ -91,7 +96,8 @@ void ListElementsCircleList(circlelist* myList) {
 }
 
 //Apaga toda a lista e libera a memória 
-void RemoveElementCircleList(circlelist* myList, long int element) {
+void RemoveElementCircleList (circlelist* myList, long int element)
+{
 	node* current = myList->list;
 	node* previous = NULL;
 	while (current != myList->list && current->key != element) {
@@ -112,7 +118,8 @@ void RemoveElementCircleList(circlelist* myList, long int element) {
 }
 
 // Destuir a Lista
-int DestroyCircleList(circlelist* myList) {
+int DestroyCircleList(circlelist* myList)
+{
 	node* aux = myList->list;
 	int teste;
 	while (aux != myList->list) {
