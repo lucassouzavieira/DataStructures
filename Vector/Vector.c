@@ -26,7 +26,8 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "..\TAD.h"
 
 // Imprime os elementos do vetor
-void ShowVector(long int *vector, long int numberOfElements) {
+void ShowVector (long int *vector, long int numberOfElements)
+{
 	long int* aux = vector;
 	for (long int i = 0; i < numberOfElements; i++) {
 		printf("%ld \n", aux[i]);
@@ -34,7 +35,8 @@ void ShowVector(long int *vector, long int numberOfElements) {
 }
 
 // Salva o vetor em um arquivo txt
-int SaveVector(const char* address, long int *vector, long int numberOfElements) {
+int SaveVector (const char* address, long int *vector, long int numberOfElements)
+{
 	FILE* file;
 	file = fopen(address, "w");
 	if (file == NULL) {
@@ -51,7 +53,8 @@ int SaveVector(const char* address, long int *vector, long int numberOfElements)
 }
 
 // Recupera o vetor de um arquivo
-long int* RetrieveVector(const char* address, long *vector, long int numberOfElements) {
+long int* RetrieveVector (const char* address, long *vector, long int numberOfElements)
+{
 	vector = (long int*)malloc((numberOfElements)*sizeof(long int));
 	*vector = 0;
 	FILE* file;
@@ -70,7 +73,8 @@ long int* RetrieveVector(const char* address, long *vector, long int numberOfEle
 }
 
 // Cria um vetor com números aleatórios
-long int* CreateRandomVector(long int numberOfElements) {
+long int* CreateRandomVector (long int numberOfElements)
+{
 	/* A função gera inteiros aleatórios entre -1.310.680 e +1.638.350
 	Última modificação de faixa em 05/12/2015, às 4:42PM */
 	srand(time(NULL));
