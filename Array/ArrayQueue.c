@@ -18,8 +18,6 @@ Arquivo: ArrayQueue.c
 Descrição: Implementação de estruturas tipo fila estática
 Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
-#ifndef ARRAYQUEUE_H
-#define ARRAYQUEUE_H
 #define MAX 50;
 #include <stdlib.h>
 #include <stdio.h>
@@ -84,5 +82,3 @@ array* ArrayQueueDestroy (array* myArrayQueue)
 	free(myArrayQueue->vector);
 	return myArrayQueue;
 }
-
-#endif // !ARRAYQUEUE_H

@@ -18,8 +18,6 @@ Arquivo: ArrayStack.h
 Descrição: Definições para estruturas do tipo pilhas estáticas
 Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
-#ifndef ARRAYSTACK_H
-#define ARRAYSTACK_H
 #include <stdlib.h>
 #include <stdio.h>
 #include "..\TAD.h"
@@ -80,5 +78,3 @@ array* ArrayStackDestroy (array* myArrayStack)
 	free(myArrayStack->vector);
 	return myArrayStack;
 }
-
-#endif // ARRAYSTACK_H

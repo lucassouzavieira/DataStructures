@@ -36,7 +36,8 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 
 // Testa as funções da Lista Encadeada
-void LinkedListTest() {
+void LinkedListTest()
+{
 	list myList;
 	myList = CreateLinkedList();
 	InsertAtStartLinkedList(&myList, 1);
@@ -60,7 +61,8 @@ void LinkedListTest() {
 	printf("Nodes: %ld \n", myList.nodes);
 }
 // Testa as funções de Inserção e Remoção de Heap
-void HeapTest() {
+void HeapTest()
+{
 	heap* myHeap = CreateHeap(10);
 	InsertInHeap(myHeap, 12);
 	InsertInHeap(myHeap, 22);
@@ -86,7 +88,8 @@ void HeapTest() {
 }
 
 // Teste da Árvore AVL
-void AVLTest() {
+void AVLTest() 
+{
 	AVLTree myTree = CreateAVLTree();
 	InsertInAVLTree(&myTree, 10);
 	InsertInAVLTree(&myTree, 11);
@@ -101,7 +104,8 @@ void AVLTest() {
 }
 
 // Teste da Árvore Binária
-void BSTTest() {
+void BSTTest()
+{
 	BSTree myTree = CreateBST();
 	InsertInBST(&myTree, 20);
 	InsertInBST(&myTree, 21);
