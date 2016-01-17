@@ -155,8 +155,10 @@
     <ClCompile Include="Lists\DoublyLinkedList.c" />
     <ClCompile Include="Heap\Heap.c" />
     <ClCompile Include="Lists\LinkedList.c" />
+    <ClCompile Include="Lists\SkipList.c" />
     <ClCompile Include="Programa.c" />
-    <ClCompile Include="Queue\Queue.c" />
+    <ClCompile Include="Queues\Deque.c" />
+    <ClCompile Include="Queues\Queue.c" />
     <ClCompile Include="Vector\SortingAlgorithms.c" />
     <ClCompile Include="Stack\Stack.c" />
     <ClCompile Include="Vector\Vector.c" />
@@ -172,7 +174,9 @@
     <ClInclude Include="Graphs\Graph.h" />
     <ClInclude Include="Heap\Heap.h" />
     <ClInclude Include="Lists\LinkedList.h" />
-    <ClInclude Include="Queue\Queue.h" />
+    <ClInclude Include="Lists\SkipList.h" />
+    <ClInclude Include="Queues\Deque.h" />
+    <ClInclude Include="Queues\Queue.h" />
     <ClInclude Include="Vector\SortingAlgorithms.h" />
     <ClInclude Include="Stack\Stack.h" />
     <ClInclude Include="TAD.h" />

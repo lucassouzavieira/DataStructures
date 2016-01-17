@@ -33,9 +33,6 @@
     <ClCompile Include="Lists\CircleList.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Queue\Queue.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Vector\SortingAlgorithms.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -57,6 +54,15 @@
     <ClCompile Include="BinaryTrees\RedBlackTree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Queues\Queue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Queues\Deque.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lists\SkipList.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TAD.h">
@@ -75,9 +81,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Lists\CircleList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Queue\Queue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graphs\Graph.h">
@@ -102,6 +105,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BinaryTrees\RedBlackTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Queues\Queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Queues\Deque.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lists\SkipList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

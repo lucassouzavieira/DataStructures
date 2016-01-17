@@ -29,7 +29,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "Lists\CircleList.h"
 #include "Lists\DoublyLinkedList.h"
 #include "Stack\Stack.h"
-#include "Queue\Queue.h"
+#include "Queues\Queue.h"
 #include "Heap\Heap.h"
 #include "BinaryTrees\BinarySearchTree.h"
 #include "BinaryTrees\AVLTree.h"
