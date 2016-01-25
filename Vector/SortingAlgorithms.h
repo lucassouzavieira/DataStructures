@@ -1,6 +1,5 @@
 /**
 Este arquivo é parte do projeto Data Structures
-
 Este é um software livre; você pode redistribuí-lo e/ou
 modificá-lo dentro dos termos da Licença Pública Geral GNU como
 publicada pela Fundação do Software Livre (FSF); na versão 3 da
@@ -12,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.x
+com este programa, Se não, veja <http://www.gnu.org/licenses/>.
 
 Arquivo: SortingAlgorithms.h
 Descrição: Definição de algoritmos de ordenação

@@ -1,6 +1,5 @@
 /**
 Este arquivo é parte do projeto Data Structures
-/*
 Este é um software livre; você pode redistribuí-lo e/ou
 modificá-lo dentro dos termos da Licença Pública Geral GNU como
 publicada pela Fundação do Software Livre (FSF); na versão 3 da
@@ -15,7 +14,7 @@ Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
 com este programa, Se não, veja <http://www.gnu.org/licenses/>.
 
 Arquivo: ArrayQueue.h
-Descrição: Definições para estruturas tipo fila estática
+Descrição: Definições para estruturas do tipo filas estáticas
 Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #ifndef ARRAYQUEUE_H

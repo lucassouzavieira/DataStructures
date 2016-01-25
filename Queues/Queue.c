@@ -1,6 +1,5 @@
 /**
 Este arquivo é parte do projeto Data Structures
-
 Este é um software livre; você pode redistribuí-lo e/ou
 modificá-lo dentro dos termos da Licença Pública Geral GNU como
 publicada pela Fundação do Software Livre (FSF); na versão 3 da
