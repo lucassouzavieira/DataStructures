@@ -25,7 +25,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "..\TAD.h"
 
 //Cria uma fila 
-array* ArrayQueueCreate();
+array* ArrayQueueCreate(unsigned long int size);
 
 //Verifica se há elementos na fila 
 int ArrayQueueCheck(array* myArrayQueue);

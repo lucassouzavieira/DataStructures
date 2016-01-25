@@ -23,7 +23,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "..\TAD.h"
 
 //Cria uma pilha estática
-array* ArrayStackCreate(long int size);
+array* ArrayStackCreate(unsigned long int size);
 
 //Verifica se a pilha está vazia ou não 
 int ArrayStackCheck(array* mystack);

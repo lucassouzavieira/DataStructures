@@ -65,20 +65,20 @@ struct DoublyList {
 struct Stack {
 	node* stack;
 	node* top;
-	long int nodes;
+	unsigned long int nodes;
 };
 
 //Fila
 struct Queue {
 	node* queue;
 	node* endOfQueue;
-	long int nodes;
+	unsigned long int nodes;
 };
 
 // Pilha e Fila Estáticas
 struct Array {
 	long int* vector;
-	long int size;
+	unsigned long int size;
 	long int last;
 };
 

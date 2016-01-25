@@ -23,7 +23,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "..\TAD.h"
 
 //Cria uma pilha
-array* ArrayStackCreate (long int size)
+array* ArrayStackCreate (unsigned long int size)
 {
 	array* myArrayStack = (array *)malloc(sizeof(array));
 	myArrayStack->size = size;

@@ -24,7 +24,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "..\TAD.h"
 
 //Cria e retorna uma fila estática 
-array* ArrayQueueCreate (long int size) 
+array* ArrayQueueCreate (unsigned long int size) 
 {
 	array* myArrayQueue = (array *)malloc(sizeof(array));
 	myArrayQueue->size = size;
