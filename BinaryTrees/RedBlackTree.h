@@ -26,7 +26,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 RBTree CreateRedBlackTree();
 
 /*Inserir elementos na Árvore Red-Black*/
-void InsertInRedBlackTree(RBTree* mytree);
+void InsertInRedBlackTree(RBTree* mytree, long int key);
 
 /*Buscar elementos na Árvore Red-Black*/
 noderb* SearchRedBlackTree(RBTree* mytree, long int key);
