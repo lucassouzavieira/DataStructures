@@ -32,7 +32,7 @@ void InsertInRedBlackTree(RBTree* mytree, long int key);
 noderb* SearchRedBlackTree(RBTree* mytree, long int key);
 
 /*Remover elemento na Árvore Red-Black*/
-void RemoveRedBlackTree(RBTree* mytree, long int key);
+noderb* RemoveRedBlackTree(RBTree* mytree, long int key);
 
 void DestroyRedBlackTree(RBTree* myTree);
 

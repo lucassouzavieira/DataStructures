@@ -24,8 +24,37 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 Funções Utilitárias
 ******************************************************************************/
 /*Funções utilitárias para as rotações*/
-void RotateRightRedBlackTree(noderb* mytree, noderb* root, noderb* pivot);
-void RotateLeftRedBlackTree(noderb* mytree, noderb* root, noderb* pivot);
+noderb* RotateRightRedBlackTree(noderb* mynode) 
+{
+	noderb* aux = mynode->left;
+	if (aux->right != NULL) {
+		/* Se o filho do nó atual tem sub-árvore à direita
+		Então o nó atual terá como filho a sub-árvore esquerda do filho*/
+		mynode->left = aux->right;
+	}
+	else {
+		mynode->left = NULL;
+	}
+	// O nó atual vira filho direito do seu próprio filho
+	aux->right = mynode;
+	return aux;
+}
+
+noderb* RotateLeftRedBlackTree(noderb* mynode) 
+{
+	noderb* aux = mynode->right;
+	if (aux->left != NULL) {
+		/* Se o filho do nó atual tem sub-árvore à esquerda
+		Então o nó atual terá como filho a sub-árvore direita do filho*/
+		mynode->right = aux->left;
+	}
+	else {
+		mynode->right = NULL;
+	}
+	// O nó atual vira filho esquerda do seu próprio filho
+	aux->left = mynode;
+	return aux;
+}
 
 //Funções utilitárias para 'parentes'
 //Retorna o número de filhos diretos de um nó
@@ -220,7 +249,7 @@ void ChangeColor(noderb* mynode) {
 }
 
 // Verifica as condições das cores de todos os nós e promove ajustes
-void ColorFixeUp(noderb* mytree) {
+void ColorFixUp(noderb* mytree) {
 	if (mytree == NULL) {
 		return;
 	} else {
@@ -243,6 +272,18 @@ void ColorFixeUp(noderb* mytree) {
 	return;
 }
 
+// Inicializa um nó
+noderb* CreateRedBlackNode(long int key) 
+{
+	noderb* newNode;
+	newNode->key = key;
+	newNode->blackHeight = 0;
+	newNode->color = RED;
+	newNode->father = NULL;
+	newNode->left = NULL;
+	newNode->right = NULL;
+	return newNode;
+}
 /* Desenha a Árvore Red-Black*/
 void DrawRedBlackTree(noderb* mytree, branches *previous, int left);
 
@@ -258,13 +299,62 @@ RBTree CreateRedBlackTree() {
 }
 
 /*Inserir elementos na Árvore Red-Black*/
-void InsertInRedBlackTree(RBTree* mytree, long int key);
+void FixUpRedBlackTree(noderb* tree, noderb* newNode) {
+	while (Father(newNode)->color == RED) {
+		if (Father(newNode) == GrandFather(newNode)->left) {
+			noderb* uncle = Uncle(newNode);
+			uncle = GrandFather(newNode)->right;
+			if (uncle->color == RED) {
+				Father(newNode)->color = BLACK;
+				uncle->color = BLACK;
+				GrandFather(newNode)->color = RED;
+				newNode = GrandFather(newNode);
+			} else {
+
+			}
+		} 
+	}
+}
+
+void InsertInRedBlackTree(RBTree* mytree, long int key)
+{
+	noderb* newNode = CreateRedBlackNode(key);
+	noderb* current = mytree->root;
+	noderb* father = NULL;
+	// Encontra e define o pai
+	while (current != NULL)
+	{
+		if (current->key <= newNode->key) {
+			father = current;
+			current = current->right;
+		} else {
+			father = current;
+			current = current->left;
+		}
+	}
+	if (father->key > newNode->key) {
+		father->left = newNode;
+		newNode->father = father;
+	}
+	else if (father->key <= newNode->key) {
+		father->right = newNode;
+		newNode->father = father;
+	}
+	mytree->nodes++;
+	FixUpRedBlackTree(mytree->root, newNode);
+}
 
 /*Buscar elementos na Árvore Red-Black*/
 noderb* SearchRedBlackTree(RBTree* mytree, long int key);
 
 /*Remover elemento na Árvore Red-Black*/
-void RemoveRedBlackTree(RBTree* mytree, long int key);
+noderb* RemoveRedBlackTree(RBTree* mytree, long int key) {
+	if (mytree == NULL) {
+
+	} else {
+
+	}
+}
 
 /*Destruir a árvore Red-Black*/
 void DestroyRedBlackTree(RBTree* myTree);

@@ -62,10 +62,10 @@ void InsertInBST (BSTree* myTree, long int key)
 				father = current;
 				current = current->left;
 			}
-		} if (father->key > newNode->key){
+		} 
+		if (father->key > newNode->key){
 			father->left = newNode;
-		}
-		else if (father->key <= newNode->key){
+		} else if (father->key <= newNode->key){
 			father->right = newNode;
 		}
 	}

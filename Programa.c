@@ -19,6 +19,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #define _CRT_SECURE_NO_WARNINGS 1 // Desabilita verificações de segurança
 
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include "TAD.h"
@@ -31,9 +32,9 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "Queues\Queue.h"
 #include "Heap\Heap.h"
 #include "BinaryTrees\BinarySearchTree.h"
-#include "BinaryTrees\AVLTree.h"
+#include "BinaryTrees\AVLTree.h" */
 
-
+/*
 // Testa as funções da Lista Encadeada
 void LinkedListTest()
 {
@@ -125,10 +126,30 @@ void BSTTest()
 	InsertInBST(&myTree, 2);
 	InsertInBST(&myTree, 4);
 	DrawBST(&myTree);
-}
+} */
 
-int main (void){
-	AVLTest();
-	system("pause");
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+	int numbers[10] = { 0 };
+	int i;
+	for (i = 0; i < 10; i++) {
+		scanf("%d", &numbers[i]);
+	}
+
+	int smallest = numbers[0];
+	int largest = numbers[0];
+	for (i = 0; i < 10; i++) {
+		if (numbers[i] < smallest) {
+			smallest = numbers[i];
+		}
+	}
+	for (i = 0; i < 10; i++) {
+		if (numbers[i] > largest) {
+			largest = numbers[i];
+		}
+	}
+	printf("%d\n", largest);
+	printf("%d", smallest);
 	return 0;
 }
