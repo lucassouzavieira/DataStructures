@@ -179,7 +179,6 @@ void RemoveElementLinkedList (list* myList, long int element)
 int DestroyLinkedList (list* myList)
 {
 	node* aux = NULL;
-	int teste;
 	while (myList->list != NULL) {
 		aux = myList->list->pointer;
 		free(myList->list);

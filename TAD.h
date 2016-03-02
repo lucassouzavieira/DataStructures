@@ -67,7 +67,7 @@ struct Stack {
 	unsigned long int nodes;
 };
 
-//Fila
+//Fila e Deque
 struct Queue {
 	node* queue;
 	node* endOfQueue;

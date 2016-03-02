@@ -131,25 +131,6 @@ void BSTTest()
 #include <stdio.h>
 #include <stdlib.h>
 int main() {
-	int numbers[10] = { 0 };
-	int i;
-	for (i = 0; i < 10; i++) {
-		scanf("%d", &numbers[i]);
-	}
-
-	int smallest = numbers[0];
-	int largest = numbers[0];
-	for (i = 0; i < 10; i++) {
-		if (numbers[i] < smallest) {
-			smallest = numbers[i];
-		}
-	}
-	for (i = 0; i < 10; i++) {
-		if (numbers[i] > largest) {
-			largest = numbers[i];
-		}
-	}
-	printf("%d\n", largest);
-	printf("%d", smallest);
+	system("pause");
 	return 0;
 }

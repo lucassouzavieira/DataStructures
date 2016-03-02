@@ -120,7 +120,6 @@ void RemoveElementCircleList (circlelist* myList, long int element)
 int DestroyCircleList(circlelist* myList)
 {
 	node* aux = myList->list;
-	int teste;
 	while (aux != myList->list) {
 		aux = myList->list;
 		free(myList->list);
