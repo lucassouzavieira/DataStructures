@@ -8,6 +8,7 @@ Lista Circular (CircleList)
 Fila Estática (ArrayQueue)  
 Pilha Estática (ArrayStack)  
 Fila (Queue)  
+Deque (Deque)  
 Pilha (Stack)  
 Heap (Heap)
 
@@ -27,8 +28,8 @@ Couting Sort
 
 ## Árvores Binárias
 Árvore Binária de Busca (BinarySearchTree)  
-Árvore AVL (AVLTree)
-
+Árvore AVL (AVLTree)  
+Árvore Rubro-Negra (RedBlackTree)  
 
 
 
