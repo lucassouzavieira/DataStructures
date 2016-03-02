@@ -16,6 +16,10 @@ $RECYCLE.BIN/
 *.obj
 *.xml
 
+# Visual Studio Files
+*.tlog
+*.lastbuildstate
+
 # Windows shortcuts
 *.lnk
 
