@@ -23,7 +23,27 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 /******************************************************************************
 Funções Utilitárias
 ******************************************************************************/
-/*Funções utilitárias para as rotações*/
+
+//Retorna o pai do nó atual
+noderb* Father(noderb* mynode)
+{
+	return mynode->father;
+}
+
+//Retorna o irmão do nó atual
+noderb* Brother(noderb* mynode) 
+{
+	noderb* father = Father(mynode);
+	if (father == NULL)
+		return NULL;
+	if (father->key > mynode->key) {
+		return father->right;
+	} else {
+		return father->left;
+	}
+}
+
+//Rotação à direita sobre o nó
 noderb* RotateRightRedBlackTree(noderb* mynode) 
 {
 	noderb* aux = mynode->left;
@@ -40,6 +60,7 @@ noderb* RotateRightRedBlackTree(noderb* mynode)
 	return aux;
 }
 
+//Rotação à esquerda sobre o nó
 noderb* RotateLeftRedBlackTree(noderb* mynode) 
 {
 	noderb* aux = mynode->right;
@@ -56,110 +77,7 @@ noderb* RotateLeftRedBlackTree(noderb* mynode)
 	return aux;
 }
 
-//Funções utilitárias para 'parentes'
-//Retorna o número de filhos diretos de um nó
-int CountChildren(noderb* mynode) 
-{
-	int Children = 0;
-	if (mynode == NULL) {
-		return Children;
-	}
-	if (mynode->left != NULL) {
-		Children = Children + 1;
-	}
-	if (mynode->right != NULL) {
-		Children = Children + 1;
-	}
-	return Children;
-}
-
-//Retorna o irmão de um nó, se existir
-noderb* Brother(noderb* mynode) 
-{
-	if (mynode == NULL) {
-		// Não existe nó
-		return NULL;
-	}
-	else {
-		if (Father(mynode) == NULL) {
-			// Nó não tem father (Raiz)
-			return NULL;
-		}
-		else {
-			if (mynode->key >= Father(mynode)->key) {
-				// Filho maior que o father, logo, este filho é da direita
-				// e seu irmão da esquerda
-				return Father(mynode)->left;
-			}
-			else {
-				// Filho menor que o father, logo, este filho é da esquerda
-				// e seu irmão da direita
-				return Father(mynode)->right;
-			}
-		}
-	}
-}
-
-//Retorna o tio de um nó
-noderb* Uncle(noderb* mynode)
-{
-	if (mynode == NULL) {
-		return NULL;
-	}
-	else {
-		noderb* child = mynode;
-		noderb* father = Father(mynode);
-		noderb* grandfather = GrandFather(mynode);
-		if ((Father(mynode) == NULL) && (GrandFather(mynode) == NULL)) {
-			return NULL;
-		}
-		// Descobrir se o tio é filho righteito ou leftuerdo do avô
-		if (father == grandfather->left) {
-			// Se o father é o filho da left, então o tio é filho da righteita
-			return grandfather->right;
-		}
-		else {
-			// E se o father é o filho da righteita, então o tio é da left
-			return grandfather->left;
-		}
-	}
-}
-
-//Retorna o pai de um nó
-noderb* Father(noderb* mynode)
-{
-	if (mynode == NULL) {
-		return NULL;
-	}
-	else {
-		return mynode->father;
-	}
-}
-
-//Retorna o avô de um nó
-noderb* GrandFather(noderb* mynode)
-{
-	if (mynode == NULL) {
-		return NULL;
-	}
-	else {
-		return mynode->father->father;
-	}
-}
-
-//Retorna o bisavô de um nó
-noderb* GreatGrandFather(noderb* mynode) 
-{
-	if (mynode == NULL) {
-		return NULL;
-	}
-	else {
-		return GrandFather(Father(mynode));
-	}
-}
-
-/*Funções utilitárias para Altura Negra e Cores*/
-// Balanceia a altura negra de todos os nós
+//Balanceia a altura negra de todos os nós
 int BlackHeight(noderb* mynode) 
 {
 	if (mynode == NULL) {
@@ -190,6 +108,7 @@ int BlackHeight(noderb* mynode)
 	}
 }
 
+//Calcula a altura da árvore
 int Height(noderb* mytree) 
 {
 	if (mytree == NULL) {
@@ -209,6 +128,7 @@ int Height(noderb* mytree)
 	}
 }
 
+//Recalcula a altura negra de todos os nós da árvore
 void SetBlackHeight(noderb* mytree)
 {
 	if (mytree != NULL) {
@@ -219,30 +139,26 @@ void SetBlackHeight(noderb* mytree)
 		if ((BlackHeight(mytree->left) == BlackHeight(mytree->right))) {
 			// Nesse caso, a árvore está perfeitamente balaceada
 			mytree->blackHeight = BlackHeight(mytree->left);
-			// mytree->BlackHeight = BlackHeight(mytree->right);
+			//mytree->BlackHeight = BlackHeight(mytree->right);
 		} else {
 			// Retorna -1 para a altura negra do nó que está desbalanceado
 			mytree->blackHeight = -1;
 		}
-
 	} else {
 		// Retorna se não houver árvore
 		return;
 	}
-	// Retorna ao fim do ajuste
 	return;
 }
 
-// Muda a color de um nó
+//Altera a cor de um nó
 void ChangeColor(noderb* mynode) {
 	if (mynode == NULL) {
 		return;
 	}
 	if (mynode->color == RED) {
-		// Se nó for vermelho, muda para preto
 		mynode->color = BLACK;
 	} else {
-		// Se for preto, muda pra vermelho
 		mynode->color = RED;
 	}
 	return;
@@ -253,8 +169,8 @@ void ColorFixUp(noderb* mytree) {
 	if (mytree == NULL) {
 		return;
 	} else {
-		ColorFixeUp(mytree->right);
-		ColorFixeUp(mytree->left);
+		ColorFixUp(mytree->right);
+		ColorFixUp(mytree->left);
 		if (mytree->blackHeight == -1) {
 			if (Brother(mytree) == NULL) {
 				if (mytree->right != NULL) {
@@ -275,7 +191,7 @@ void ColorFixUp(noderb* mytree) {
 // Inicializa um nó
 noderb* CreateRedBlackNode(long int key) 
 {
-	noderb* newNode;
+	noderb* newNode = (noderb*) malloc(sizeof(noderb));
 	newNode->key = key;
 	newNode->blackHeight = 0;
 	newNode->color = RED;
@@ -284,77 +200,8 @@ noderb* CreateRedBlackNode(long int key)
 	newNode->right = NULL;
 	return newNode;
 }
-/* Desenha a Árvore Red-Black*/
-void DrawRedBlackTree(noderb* mytree, branches *previous, int left);
 
 /******************************************************************************
 Funções Gerais
 ******************************************************************************/
-/*Criar uma Árvore Red-Black*/
-RBTree CreateRedBlackTree() {
-	RBTree myTree;
-	myTree.nodes = 0;
-	myTree.root = NULL;
-	return myTree;
-}
 
-/*Inserir elementos na Árvore Red-Black*/
-void FixUpRedBlackTree(noderb* tree, noderb* newNode) {
-	while (Father(newNode)->color == RED) {
-		if (Father(newNode) == GrandFather(newNode)->left) {
-			noderb* uncle = Uncle(newNode);
-			uncle = GrandFather(newNode)->right;
-			if (uncle->color == RED) {
-				Father(newNode)->color = BLACK;
-				uncle->color = BLACK;
-				GrandFather(newNode)->color = RED;
-				newNode = GrandFather(newNode);
-			} else {
-
-			}
-		} 
-	}
-}
-
-void InsertInRedBlackTree(RBTree* mytree, long int key)
-{
-	noderb* newNode = CreateRedBlackNode(key);
-	noderb* current = mytree->root;
-	noderb* father = NULL;
-	// Encontra e define o pai
-	while (current != NULL)
-	{
-		if (current->key <= newNode->key) {
-			father = current;
-			current = current->right;
-		} else {
-			father = current;
-			current = current->left;
-		}
-	}
-	if (father->key > newNode->key) {
-		father->left = newNode;
-		newNode->father = father;
-	}
-	else if (father->key <= newNode->key) {
-		father->right = newNode;
-		newNode->father = father;
-	}
-	mytree->nodes++;
-	FixUpRedBlackTree(mytree->root, newNode);
-}
-
-/*Buscar elementos na Árvore Red-Black*/
-noderb* SearchRedBlackTree(RBTree* mytree, long int key);
-
-/*Remover elemento na Árvore Red-Black*/
-noderb* RemoveRedBlackTree(RBTree* mytree, long int key) {
-	if (mytree == NULL) {
-
-	} else {
-
-	}
-}
-
-/*Destruir a árvore Red-Black*/
-void DestroyRedBlackTree(RBTree* myTree);
