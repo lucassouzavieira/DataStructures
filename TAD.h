@@ -74,6 +74,12 @@ struct Queue {
 	unsigned long int nodes;
 };
 
+struct Deque {
+	node* startOfQueue;
+	node* endOfQueue;
+	unsigned long int nodes;
+};
+
 // Pilha e Fila Estáticas
 struct Array {
 	long int* vector;
@@ -158,6 +164,7 @@ typedef struct CircleList circlelist;
 typedef struct DoublyList doublylist;
 typedef struct Stack stack;
 typedef struct Queue queue;
+typedef struct Deque deque;
 typedef struct Heap heap;
 typedef struct BinarySearchTree BSTree;
 typedef struct AVLTree AVLTree;

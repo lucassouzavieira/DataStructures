@@ -13,8 +13,8 @@ Licença Pública Geral GNU para maiores detalhes.
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
 com este programa, Se não, veja <http://www.gnu.org/licenses/>.
 
-Arquivo: RedBlackTree.c
-Descrição: Implementação para estruturas do tipo árvore rubro-negra
+Arquivo: RedBlackTree.h
+Descrição: Definição para estruturas do tipo árvore rubro-negra
 Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #ifndef REDBLACKTREE_H

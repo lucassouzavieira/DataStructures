@@ -122,22 +122,22 @@ void InsertAtEndLinkedList (list* myList, long int element)
 // Busca
 node* SearchLinkedList (list* myList, long int element)
 {
-	node* aux;
-	aux = myList->list;
-	while (aux != NULL && aux->key != element){
-		aux = aux->pointer;
+	node* current;
+	current = myList->list;
+	while (current != NULL && current->key != element){
+		current = current->pointer;
 	}
-	return aux;
+	return current;
 }
 
 // Mostrar os elements
 void ListElementsLinkedList (list* myList)
 {
-	node* aux;
-	aux = myList->list;
-	while(aux != NULL){
-		printf("%ld \n", aux->key);
-		aux = aux->pointer;
+	node* current;
+	current = myList->list;
+	while(current != NULL){
+		printf("%ld \n", current->key);
+		current = current->pointer;
 	}
 }
 
@@ -178,11 +178,11 @@ void RemoveElementLinkedList (list* myList, long int element)
 // Destruir a lista
 int DestroyLinkedList (list* myList)
 {
-	node* aux = NULL;
+	node* current = NULL;
 	while (myList->list != NULL) {
-		aux = myList->list->pointer;
+		current = myList->list->pointer;
 		free(myList->list);
-		myList->list = aux;
+		myList->list = current;
 	}
 	return CheckLinkedList(myList);
 }
