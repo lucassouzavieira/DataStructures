@@ -205,3 +205,71 @@ noderb* CreateRedBlackNode(long int key)
 Funções Gerais
 ******************************************************************************/
 
+/*Criar uma Árvore Red-Black*/
+RBTree CreateRedBlackTree()
+{
+	RBTree myTree;
+	myTree.nodes = 0;
+	myTree.root = NULL;
+	return myTree;
+}
+
+/*Inserir elementos na Árvore Red-Black*/
+void InsertInRedBlackTree(RBTree* myTree, long int key)
+{
+	if (myTree->root == NULL) {
+		// Árvore vazia
+		noderb* newNode = (noderb *)(malloc(sizeof(noderb)));
+		if (newNode != NULL) {
+			newNode->key = key;
+			newNode->right = NULL;
+			newNode->left = NULL;
+			newNode->father = NULL;
+			newNode->blackHeight = 0;
+			newNode->color = RED;
+		}
+		myTree->root = newNode;
+	} else {
+		noderb* newNode = (noderb *)(malloc(sizeof(noderb)));
+		if (newNode != NULL) {
+			newNode->key = key;
+			newNode->right = NULL;
+			newNode->left = NULL;
+			newNode->father = NULL;
+			newNode->blackHeight = 0;
+			newNode->color = RED;
+		}
+		// Buscar a posição da nova folha
+		noderb* father = NULL;
+		noderb* current = myTree->root;
+		while (current != NULL) {
+			if (current->key <= newNode->key) {
+				father = current;
+				current = current->right;
+			} else if (current->key > newNode->key) {
+				father = current;
+				current = current->left;
+			}
+		}
+		if (father->key > newNode->key) {
+			father->left = newNode;
+			newNode->father = father;
+		} else if (father->key <= newNode->key) {
+			father->right = newNode;
+			newNode->father = father;
+		}
+	}
+	myTree->nodes++;
+	// InsertFixedUp();
+}
+
+/*Buscar elementos na Árvore Red-Black*/
+noderb* SearchRedBlackTree(RBTree* mytree, long int key);
+
+/*Remover elemento na Árvore Red-Black*/
+noderb* RemoveRedBlackTree(RBTree* mytree, long int key);
+
+void DestroyRedBlackTree(RBTree* myTree);
+
+/*Destruir a árvore Red-Black*/
+void DrawRedBlackTree(RBTree* myTree);

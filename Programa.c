@@ -19,7 +19,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #define _CRT_SECURE_NO_WARNINGS 1 // Desabilita verificações de segurança
 
-/*
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "TAD.h"
@@ -32,9 +32,8 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "Queues\Queue.h"
 #include "Heap\Heap.h"
 #include "BinaryTrees\BinarySearchTree.h"
-#include "BinaryTrees\AVLTree.h" */
+#include "BinaryTrees\AVLTree.h"
 
-/*
 // Testa as funções da Lista Encadeada
 void LinkedListTest()
 {
@@ -60,6 +59,7 @@ void LinkedListTest()
 	ListElementsLinkedList(&myList);
 	printf("Nodes: %ld \n", myList.nodes);
 }
+
 // Testa as funções de Inserção e Remoção de Heap
 void HeapTest()
 {
@@ -126,7 +126,7 @@ void BSTTest()
 	InsertInBST(&myTree, 2);
 	InsertInBST(&myTree, 4);
 	DrawBST(&myTree);
-} */
+}
 
 #include <stdio.h>
 #include <stdlib.h>
