@@ -15,6 +15,9 @@ $RECYCLE.BIN/
 *.msp
 *.obj
 *.xml
+*.log
+*.pbd
+*.project
 
 # Visual Studio Files
 *.tlog
