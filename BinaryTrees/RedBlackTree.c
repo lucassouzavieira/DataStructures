@@ -201,11 +201,19 @@ noderb* CreateRedBlackNode(long int key)
 	return newNode;
 }
 
+// Troca as cores
+void swapColors(noderb* firstNode, noderb* secondNode) 
+{
+	Color tempColor = firstNode->color;
+	firstNode->color = secondNode->color;
+	secondNode->color = tempColor;
+}
+
 /******************************************************************************
 Funções Gerais
 ******************************************************************************/
 
-/*Criar uma Árvore Red-Black*/
+// Criar uma Árvore Red-Black
 RBTree CreateRedBlackTree()
 {
 	RBTree myTree;
@@ -214,7 +222,72 @@ RBTree CreateRedBlackTree()
 	return myTree;
 }
 
-/*Inserir elementos na Árvore Red-Black*/
+// Ajusta as propriedades da árvore após a inserção
+void InsertFixUp(noderb* root, noderb* newNode) 
+{
+	noderb* father = NULL;
+	noderb* uncle = NULL;
+	noderb* grandFather = NULL;
+	while ((newNode != root) && (newNode->color != BLACK)
+		&& (Father(newNode)->color == RED)) {
+		father = Father(newNode);
+		grandFather = Father(Father(newNode));
+
+		// Caso 1:
+		// O pai do novo nó é o filho esquerdo do avô
+		if (father == grandFather->left) {
+			uncle = grandFather->right;
+			if ((uncle != NULL) && (uncle->color == RED)) {
+				grandFather->color = RED;
+				father->color = BLACK;
+				uncle->color = BLACK;
+				newNode = grandFather;
+			}
+			else {
+				// Caso 2:
+				// O novo nó é filho direito
+				if (newNode == father->right) {
+					RotateLeftRedBlackTree(father);
+					newNode = father;
+					father = newNode->father;
+				}
+
+				// Caso 3:
+				// O novo nó é filho esquerdo
+				RotateRightRedBlackTree(grandFather);
+				swapColors(father, grandFather);
+				newNode = father;
+			}
+		} else {
+			noderb* uncle = grandFather->left;
+			// Caso 1:
+			// O tio é vermelho 
+			if ((uncle != NULL) && (uncle->color == RED)){
+				grandFather->color = RED;
+				father->color = BLACK;
+				uncle->color = BLACK;
+				newNode = grandFather;
+			} else {
+				// Caso 2:
+				// Novo nó é filho esquerdo
+				if (newNode == father->left){
+					RotateRightRedBlackTree(father);
+					newNode = father;
+					father = newNode->father;
+				}
+				// Caso 3:
+				// Novo nó é filho direito
+				RotateLeftRedBlackTree(grandFather);
+				swapColors(father, grandFather);
+				newNode = father;
+			}
+		}
+	 }
+	root->color = BLACK;
+	SetBlackHeight(root);
+}
+
+// Inserir elementos na Árvore Red-Black
 void InsertInRedBlackTree(RBTree* myTree, long int key)
 {
 	if (myTree->root == NULL) {

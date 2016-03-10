@@ -19,21 +19,6 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #define _CRT_SECURE_NO_WARNINGS 1 // Desabilita verificações de segurança
 
-
-#include <stdio.h>
-#include <stdlib.h>
-#include "TAD.h"
-#include "Vector\Vector.h"
-#include "Vector\SortingAlgorithms.h"
-#include "Lists\LinkedList.h"
-#include "Lists\CircleList.h"
-#include "Lists\DoublyLinkedList.h"
-#include "Stack\Stack.h"
-#include "Queues\Queue.h"
-#include "Heap\Heap.h"
-#include "BinaryTrees\BinarySearchTree.h"
-#include "BinaryTrees\AVLTree.h"
-
 // Testa as funções da Lista Encadeada
 void LinkedListTest()
 {
@@ -130,7 +115,8 @@ void BSTTest()
 
 #include <stdio.h>
 #include <stdlib.h>
-int main() {
-	system("pause");
-	return 0;
+
+int main()
+{
+	// Test Calls
 }

@@ -148,6 +148,7 @@ list ReverseLinkedList (list* myList)
 	node* current = myList->list;
 	while (current != NULL) {
 		InsertAtStartLinkedList(&reverseList, current->key);
+		current = current->pointer;
 	}
 	return reverseList;
 }
