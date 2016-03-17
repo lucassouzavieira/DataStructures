@@ -43,6 +43,7 @@ long int* BubbleSort (long int* vector, long int numberOfElements)
 			}
 		}
 	}
+
 	return vector;
 }
 

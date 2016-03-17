@@ -115,6 +115,17 @@ void BSTTest()
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "TAD.h"
+#include "Vector\Vector.h"
+#include "Vector\SortingAlgorithms.h"
+#include "Lists\LinkedList.h"
+#include "Lists\CircleList.h"
+#include "Lists\DoublyLinkedList.h"
+#include "Stack\Stack.h"
+#include "Queues\Queue.h"
+#include "Heap\Heap.h"
+#include "BinaryTrees\BinarySearchTree.h"
+#include "BinaryTrees\AVLTree.h"
 
 int main()
 {

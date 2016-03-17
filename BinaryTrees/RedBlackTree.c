@@ -290,9 +290,9 @@ void InsertFixUp(noderb* root, noderb* newNode)
 // Inserir elementos na Árvore Red-Black
 void InsertInRedBlackTree(RBTree* myTree, long int key)
 {
+	noderb* newNode = (noderb *)(malloc(sizeof(noderb)));
 	if (myTree->root == NULL) {
 		// Árvore vazia
-		noderb* newNode = (noderb *)(malloc(sizeof(noderb)));
 		if (newNode != NULL) {
 			newNode->key = key;
 			newNode->right = NULL;
@@ -303,7 +303,6 @@ void InsertInRedBlackTree(RBTree* myTree, long int key)
 		}
 		myTree->root = newNode;
 	} else {
-		noderb* newNode = (noderb *)(malloc(sizeof(noderb)));
 		if (newNode != NULL) {
 			newNode->key = key;
 			newNode->right = NULL;
@@ -333,7 +332,7 @@ void InsertInRedBlackTree(RBTree* myTree, long int key)
 		}
 	}
 	myTree->nodes++;
-	// InsertFixedUp();
+	InsertFixUp(myTree->root, newNode);
 }
 
 /*Buscar elementos na Árvore Red-Black*/
