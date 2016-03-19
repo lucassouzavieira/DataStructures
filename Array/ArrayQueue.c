@@ -46,8 +46,8 @@ array* ArrayQueueEnqueue (array* myArrayQueue, long int element)
 		printf("Pilha cheia! \n");
 		return myArrayQueue;
 	}
-	myArrayQueue->last++;
 	myArrayQueue->vector[myArrayQueue->last] = element;
+	myArrayQueue->last++;
 	return myArrayQueue;
 }
 

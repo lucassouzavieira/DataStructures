@@ -44,7 +44,7 @@ int ArrayStackCheck (array* myArrayStack)
 array* ArrayStackPop (array* myArrayStack) 
 {
 	if (myArrayStack->last == 0) {
-		printf("Pilha Vazia! \n");
+		printf("Empty stack! \n");
 		return myArrayStack;
 	}
 	myArrayStack->last--;
@@ -55,11 +55,11 @@ array* ArrayStackPop (array* myArrayStack)
 array* ArrayStackPush (array* myArrayStack, long int element) 
 {
 	if (myArrayStack->last == myArrayStack->size - 1) {
-		printf("Pilha cheia! \n");
+		printf("Full stack! n");
 		return myArrayStack;
 	}
-	myArrayStack->last++;
 	myArrayStack->vector[myArrayStack->last] = element;
+	myArrayStack->last++;
 	return myArrayStack;
 }
 

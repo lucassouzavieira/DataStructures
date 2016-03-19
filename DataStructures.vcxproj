@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Array\ArrayList.c" />
     <ClCompile Include="Array\ArrayQueue.c" />
     <ClCompile Include="Array\ArrayStack.c" />
     <ClCompile Include="BinaryTrees\AVLTree.c" />
@@ -159,11 +160,13 @@
     <ClCompile Include="Programa.c" />
     <ClCompile Include="Queues\Deque.c" />
     <ClCompile Include="Queues\Queue.c" />
+    <ClCompile Include="Vector\SearchAlgorithms.c" />
     <ClCompile Include="Vector\SortingAlgorithms.c" />
     <ClCompile Include="Stack\Stack.c" />
     <ClCompile Include="Vector\Vector.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Array\ArrayList.h" />
     <ClInclude Include="Array\ArrayQueue.h" />
     <ClInclude Include="Array\ArrayStack.h" />
     <ClInclude Include="BinaryTrees\AVLTree.h" />
@@ -177,6 +180,7 @@
     <ClInclude Include="Lists\SkipList.h" />
     <ClInclude Include="Queues\Deque.h" />
     <ClInclude Include="Queues\Queue.h" />
+    <ClInclude Include="Vector\SearchAlgorithms.h" />
     <ClInclude Include="Vector\SortingAlgorithms.h" />
     <ClInclude Include="Stack\Stack.h" />
     <ClInclude Include="TAD.h" />
