@@ -19,8 +19,6 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #ifndef ARRAYQUEUE_H
 #define ARRAYQUEUE_H
-#define MAX 50;
-
 #include "..\TAD.h"
 
 //Cria uma fila 

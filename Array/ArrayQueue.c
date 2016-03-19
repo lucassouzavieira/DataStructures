@@ -17,7 +17,6 @@ Arquivo: ArrayQueue.c
 Descrição: Implementações para estruturas do tipo filas estáticas
 Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
-#define MAX 50;
 #include <stdlib.h>
 #include <stdio.h>
 #include "..\TAD.h"
@@ -35,9 +34,8 @@ array* ArrayQueueCreate (unsigned long int size)
 //Verifica se há elementos na fila 
 int ArrayQueueCheck (array* myArrayQueue) 
 {
-	if (myArrayQueue->last == 0){
+	if (myArrayQueue->last == 0)
 		return -1;
-	}
 	return 1;
 }
 

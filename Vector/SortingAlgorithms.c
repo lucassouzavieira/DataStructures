@@ -17,11 +17,13 @@ Arquivo: SortingAlgorithms.c
 Descrição: Implementação de algoritmos de ordenação
 Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
-#define _CRT_SECURE_NO_WARNINGS 1; 
+#define _CRT_SECURE_NO_WARNINGS 1 
+#define SEARCH_FAILURE 0000
 
 #include <stdlib.h>
 #include <stdio.h>
 #include "..\TAD.h"
+#include "SortingAlgorithms.h"
 
 long int _count_merge_sort = 0;
 

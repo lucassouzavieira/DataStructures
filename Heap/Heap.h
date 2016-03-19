@@ -38,4 +38,3 @@ void ShowHeap(heap* myHeap);
 // Cria um Heap de Máximo dado um vetor
 void MaxHeapSort(long int* vector, long int numberOfElements);
 #endif // !HEAP_H
-

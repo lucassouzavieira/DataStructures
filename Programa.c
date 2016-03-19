@@ -18,6 +18,19 @@ Descrição: Teste das implementações das estruturas de dados
 Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #define _CRT_SECURE_NO_WARNINGS 1 // Desabilita verificações de segurança
+#include <stdio.h>
+#include <stdlib.h>
+#include "TAD.h"
+#include "Vector\Vector.h"
+#include "Vector\SortingAlgorithms.h"
+#include "Lists\LinkedList.h"
+#include "Lists\CircleList.h"
+#include "Lists\DoublyLinkedList.h"
+#include "Stack\Stack.h"
+#include "Queues\Queue.h"
+#include "Heap\Heap.h"
+#include "BinaryTrees\BinarySearchTree.h"
+#include "BinaryTrees\AVLTree.h"
 
 // Testa as funções da Lista Encadeada
 void LinkedListTest()
@@ -93,41 +106,60 @@ void BSTTest()
 {
 	BSTree myTree = CreateBST();
 	InsertInBST(&myTree, 20);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, 21);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, 10);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, 5);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, 25);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, 60);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, 12);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, 34);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, 11);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, 100);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, 120);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, 90);
 	DrawBST(&myTree);
+	system("pause");
 	RemoveBST(&myTree, 21);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, -2);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, -10);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, 2);
+	DrawBST(&myTree);
+	system("pause");
 	InsertInBST(&myTree, 4);
 	DrawBST(&myTree);
+	system("pause");
 }
-
-#include <stdio.h>
-#include <stdlib.h>
-#include "TAD.h"
-#include "Vector\Vector.h"
-#include "Vector\SortingAlgorithms.h"
-#include "Lists\LinkedList.h"
-#include "Lists\CircleList.h"
-#include "Lists\DoublyLinkedList.h"
-#include "Stack\Stack.h"
-#include "Queues\Queue.h"
-#include "Heap\Heap.h"
-#include "BinaryTrees\BinarySearchTree.h"
-#include "BinaryTrees\AVLTree.h"
 
 int main()
 {
-	// Test Calls
+	BSTTest();
+	return 0;
 }
