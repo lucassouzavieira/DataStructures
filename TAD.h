@@ -160,6 +160,11 @@ Algoritmos de Compressão de Strings
 
 typedef enum CompressionAlgorithm {RLE = 0, HUFFMAN = 1} CompressionAlgorithm;
 
+typedef struct String {
+	char* string;
+	unsigned int length;
+} string;
+
 /******************************************************************************
 Redefinição de nomes
 ******************************************************************************/

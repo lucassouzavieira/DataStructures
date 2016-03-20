@@ -28,16 +28,17 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #define IO_ERROR -1
 #define IO_SUCESS 0
 #define BINARY 2
+#define LINE_MAX_LENGTH 500
 
 #define CHAR_TO_INT(char)character){return atoi(character);} // Converte um char em um inteiro
 
 // Converte um inteiro para binário
-char* intToBin(int toConvert);
+string* intToBin(int toConvert);
 
 // Salva a string em um arquivo incluindo informações sobre a compressão realizada
-int toFile(char* string, char* filename,CompressionAlgorithm algorithm);
+int toFile(string* myString, char* filename, CompressionAlgorithm algorithm);
 
 // Recupera a string de um arquivo
-char* fromFile(char* filename);
+string* fromFile(char* filename);
 
 #endif // STRINGUTILITIES_H

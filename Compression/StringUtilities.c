@@ -24,7 +24,7 @@ unsigned int getLines(char* fileName)
 {
 	unsigned int countLines = 0;
 	int character = 0;
-	FILE* file = fopen(fileName, "rb");
+	FILE* file = fopen(fileName, "r");
 	while ((character = fgetc(file) != EOF)){
 		if (character == '\n')
 			countLines++;
@@ -32,28 +32,43 @@ unsigned int getLines(char* fileName)
 	return countLines++;
 }
 
-// Converte um inteiro para binário
-inline char* intToBin(int toConvert)
+// Obtem o número de caracteres no arquivo
+unsigned int getCharacteres(char* fileName)
 {
-	char* binarySequence;
-	itoa(toConvert, binarySequence, BINARY);
+	unsigned int countChars = 0;
+	int character = 0;
+	FILE* file = fopen(fileName, "r");
+	while ((character = fgetc(file) != EOF)) {
+		if (character != '\n')
+			countChars++;
+	}
+	return countChars;
+}
+
+// Converte um inteiro para binário
+inline string* intToBin(int toConvert)
+{
+	string* binarySequence;
+	//itoa(toConvert, binarySequence->string, BINARY); // Usada em alguns compiladores mais antigos
+	_itoa(toConvert, binarySequence->string, BINARY);
+	binarySequence->length = strlen(binarySequence->string);
 	return binarySequence;
 }
 
 // Salva a string em um arquivo incluindo informações sobre a compressão realizada
-inline int toFile(char * string, char * filename, CompressionAlgorithm algorithm)
+int toFile(string* myString, char* filename, CompressionAlgorithm algorithm)
 {
 	FILE* file;
-	file = fopen(filename, "wb");
+	file = fopen(filename, "w");
 	if (file == NULL) {
 		printf("Failed to save file! \n");
 		return IO_ERROR;;
 	}
 	fflush(stdout);
-	fprintf(file, "%s \n", intToBin(algorithm));
-	for (int i = 0; i < strlen(string); i++) {
+	//fprintf(file, "%s \n", intToBin(algorithm));
+	for (int i = 0; i < strlen(myString->string); i++) {
 		fflush(stdout);
-		fprintf(file, "%s \n", string[i]);
+		fputc(myString->string[i], file);
 	}
 	fclose(file);
 	printf("Successfully saved file! \n");
@@ -61,8 +76,17 @@ inline int toFile(char * string, char * filename, CompressionAlgorithm algorithm
 }
 
 // Recupera a string de um arquivo
-inline char* fromFile(char * filename)
+string* fromFile(char* filename)
 {
-	
+	FILE* file;
+	file = fopen(filename, "r");
+	int lines;
+	string* myString = (string*)malloc(sizeof(string));
+	myString->string = (char*)malloc(LINE_MAX_LENGTH*sizeof(char));
+	myString->length = 50;
+	if (file == NULL)
+		return NULL;
+	lines = getLines(filename);
+	while (fgets(myString->string, LINE_MAX_LENGTH, file)){}
+	return myString;
 }
-
