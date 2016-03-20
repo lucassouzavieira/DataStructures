@@ -39,7 +39,7 @@ int SaveVector (const char* address, long int *vector, long int numberOfElements
 	FILE* file;
 	file = fopen(address, "w");
 	if (file == NULL) {
-		printf("Falha ao salvar arquivo! \n"); 
+		printf("Failed to save file! \n"); 
 		return -1;
 	}
 	for (long int i = 0; i < numberOfElements; i++) {
@@ -47,7 +47,7 @@ int SaveVector (const char* address, long int *vector, long int numberOfElements
 		fprintf(file, "%ld \n", vector[i]);
 	}
 	fclose(file);
-	printf("Arquivo salvo com sucesso! \n");
+	printf("Successfully saved file! \n");
 	return 0;
 }
 

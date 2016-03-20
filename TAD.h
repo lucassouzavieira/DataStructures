@@ -154,6 +154,11 @@ struct RedBlackTree{
 	noderb* root;
 	long int nodes;
 };
+/******************************************************************************
+Algoritmos de Compressão de Strings
+******************************************************************************/
+
+typedef enum CompressionAlgorithm {RLE = 0, HUFFMAN = 1} CompressionAlgorithm;
 
 /******************************************************************************
 Redefinição de nomes

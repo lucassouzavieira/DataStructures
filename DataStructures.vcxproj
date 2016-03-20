@@ -152,6 +152,8 @@
     <ClCompile Include="BinaryTrees\AVLTree.c" />
     <ClCompile Include="BinaryTrees\BinarySearchTree.c" />
     <ClCompile Include="BinaryTrees\RedBlackTree.c" />
+    <ClCompile Include="Compression\Huffman.c" />
+    <ClCompile Include="Compression\RLE.c" />
     <ClCompile Include="Lists\CircleList.c" />
     <ClCompile Include="Lists\DoublyLinkedList.c" />
     <ClCompile Include="Heap\Heap.c" />
@@ -172,6 +174,10 @@
     <ClInclude Include="BinaryTrees\AVLTree.h" />
     <ClInclude Include="BinaryTrees\BinarySearchTree.h" />
     <ClInclude Include="BinaryTrees\RedBlackTree.h" />
+    <ClInclude Include="Compression\StringUtilities.c" />
+    <ClInclude Include="Compression\Huffman.h" />
+    <ClInclude Include="Compression\RLE.h" />
+    <ClInclude Include="Compression\StringUtilities.h" />
     <ClInclude Include="Lists\CircleList.h" />
     <ClInclude Include="Lists\DoublyLinkedList.h" />
     <ClInclude Include="Graphs\Graph.h" />
