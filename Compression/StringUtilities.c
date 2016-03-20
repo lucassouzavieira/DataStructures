@@ -19,13 +19,44 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #include "StringUtilities.h"
 
+// Converte um char em um inteiro
+inline int charToInt(char character)
+{
+	return atoi(character);
+}
+
+// Converte um inteiro para binário
+inline string* intToBin(int toConvert)
+{
+	string* binarySequence;
+	//itoa(toConvert, binarySequence->string, BINARY); // Usada em alguns compiladores mais antigos
+	_itoa(toConvert, binarySequence->string, BINARY);
+	binarySequence->length = strlen(binarySequence->string);
+	return binarySequence;
+}
+
+// Converte uma string para o correspondente em binário
+inline string* strToBin(string* myString)
+{
+	strOptimize(myString);
+	int character;
+	string* binarySequence = (string*)malloc(sizeof(string));
+	binarySequence->string = (char*)malloc(LINE_MAX_LENGTH*sizeof(char));
+	for (int i = 0; i < myString->length; i++) {
+		character = charToInt(myString->string[i]);
+		strConcatenate(binarySequence, intToBin(character));
+	}
+	return binarySequence;
+}
+
+
 // Obtem o número de linhas do arquivo
 unsigned int getLines(char* fileName)
 {
 	unsigned int countLines = 0;
 	int character = 0;
 	FILE* file = fopen(fileName, "r");
-	while ((character = fgetc(file) != EOF)){
+	while ((character = fgetc(file) != EOF)) {
 		if (character == '\n')
 			countLines++;
 	}
@@ -43,21 +74,6 @@ unsigned int getCharacteres(char* fileName)
 			countChars++;
 	}
 	return countChars;
-}
-
-// Converte um inteiro para binário
-inline string* intToBin(int toConvert)
-{
-	string* binarySequence;
-	//itoa(toConvert, binarySequence->string, BINARY); // Usada em alguns compiladores mais antigos
-	_itoa(toConvert, binarySequence->string, BINARY);
-	binarySequence->length = strlen(binarySequence->string);
-	return binarySequence;
-}
-
-string * strToBin(string myString)
-{
-	return NULL;
 }
 
 // Salva a string em um arquivo incluindo informações sobre a compressão realizada

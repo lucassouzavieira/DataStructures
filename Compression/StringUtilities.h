@@ -30,17 +30,17 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #define BINARY 2
 #define LINE_MAX_LENGTH 5000
 
-#define CHAR_TO_INT(char)character){return atoi(character);} // Converte um char em um inteiro
-
 /******************************************************************************
 Funções Utilitárias
 ******************************************************************************/
+// Converte um char em um inteiro
+int charToInt(char character);
 
 // Converte um inteiro para binário
 string* intToBin(int toConvert);
 
 // Converte uma string para binário
-string* strToBin(string myString);
+string* strToBin(string* myString);
 
 // Salva a string em um arquivo incluindo informações sobre a compressão realizada
 int toFile(string* myString, char* filename, CompressionAlgorithm algorithm);
