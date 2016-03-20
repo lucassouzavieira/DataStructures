@@ -31,6 +31,10 @@ Couting Sort
 Árvore AVL (AVLTree)  
 Árvore Rubro-Negra (RedBlackTree)  
 
+## Processamento de Texto  
+Run-Lenghth Enconding (RLE)  
+Algoritmo de Huffman (Huffman)  
+
 
 
 
