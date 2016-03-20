@@ -55,6 +55,11 @@ inline string* intToBin(int toConvert)
 	return binarySequence;
 }
 
+string * strToBin(string myString)
+{
+	return NULL;
+}
+
 // Salva a string em um arquivo incluindo informações sobre a compressão realizada
 int toFile(string* myString, char* filename, CompressionAlgorithm algorithm)
 {
@@ -89,4 +94,57 @@ string* fromFile(char* filename)
 	lines = getLines(filename);
 	while (fgets(myString->string, LINE_MAX_LENGTH, file)){}
 	return myString;
+}
+
+// Concatena duas strings
+void strConcatenate(string * firstString, string * sndString)
+{
+	if (firstString == NULL || sndString == NULL || 
+		firstString->string == NULL || sndString->string == NULL) 
+		return;
+	strOptimize(firstString);
+	strOptimize(sndString);
+	char* strConcat = (char*)malloc((firstString->length + sndString->length + 1)*sizeof(char));
+	strcat(strConcat, firstString->string);
+	strcat(strConcat, sndString->string);
+	free(firstString->string);
+	firstString->string = strConcat;
+	strOptimize(firstString);
+}
+
+// Copia uma string para outra
+void strCopy(string * firstString, string * sndString)
+{
+	if (firstString == NULL || sndString == NULL ||
+		firstString->string == NULL || sndString->string == NULL)
+		return;
+	strOptimize(firstString);
+	strOptimize(sndString);
+	char* strCopy = (char*)malloc((firstString->length + sndString->length)*sizeof(char));
+	strcpy(firstString->string, sndString->string);
+	strOptimize(firstString);
+}
+
+// Compara duas strings
+int strCompare(string * firstString, string * sndString)
+{
+	if (firstString == NULL || sndString == NULL ||
+		firstString->string == NULL || sndString->string == NULL)
+		return;
+	strOptimize(firstString);
+	strOptimize(sndString);
+	return strcmp(firstString->string, sndString->string);
+}
+
+// Otimiza o uso de memória para armazenar a string
+void strOptimize(string * myString)
+{
+	if (myString == NULL || myString->string == NULL)
+		return;
+	int length = strlen(myString->string);
+	char* strTemp = myString->string;
+	free(myString->string);
+	myString->string = (char*)malloc((length + 1)*sizeof(char));
+	myString->string = strTemp;
+	free(strTemp);
 }
