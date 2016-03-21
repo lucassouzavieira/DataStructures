@@ -20,13 +20,23 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "StringUtilities.h"
 
 // Converte um char em um inteiro
-inline int charToInt(char character)
+int charToInt(char character)
 {
-	return atoi(character);
+	return 0;
+}
+
+// Converte um inteiro para string
+string* intToString(int integer)
+{
+	string* myString = (string*)malloc(sizeof(string));
+	// itoa(integer, myString->string, DECIMAL); // Usada em alguns compiladores mais antigos
+	_itoa(integer, myString->string, DECIMAL);
+	strOptimize(myString);
+	return myString;
 }
 
 // Converte um inteiro para binário
-inline string* intToBin(int toConvert)
+string* intToBin(int toConvert)
 {
 	string* binarySequence;
 	//itoa(toConvert, binarySequence->string, BINARY); // Usada em alguns compiladores mais antigos
@@ -36,7 +46,7 @@ inline string* intToBin(int toConvert)
 }
 
 // Converte uma string para o correspondente em binário
-inline string* strToBin(string* myString)
+string* strToBin(string* myString)
 {
 	strOptimize(myString);
 	int character;
@@ -48,7 +58,6 @@ inline string* strToBin(string* myString)
 	}
 	return binarySequence;
 }
-
 
 // Obtem o número de linhas do arquivo
 unsigned int getLines(char* fileName)
@@ -109,6 +118,7 @@ string* fromFile(char* filename)
 		return NULL;
 	lines = getLines(filename);
 	while (fgets(myString->string, LINE_MAX_LENGTH, file)){}
+	strOptimize(myString);
 	return myString;
 }
 
@@ -146,21 +156,19 @@ int strCompare(string * firstString, string * sndString)
 {
 	if (firstString == NULL || sndString == NULL ||
 		firstString->string == NULL || sndString->string == NULL)
-		return;
+		return IO_ERROR;
 	strOptimize(firstString);
 	strOptimize(sndString);
 	return strcmp(firstString->string, sndString->string);
 }
 
 // Otimiza o uso de memória para armazenar a string
-void strOptimize(string * myString)
+void strOptimize(string* myString)
 {
 	if (myString == NULL || myString->string == NULL)
 		return;
 	int length = strlen(myString->string);
 	char* strTemp = myString->string;
-	free(myString->string);
-	myString->string = (char*)malloc((length + 1)*sizeof(char));
+	myString->string = (char*)malloc(length*(sizeof(char)));
 	myString->string = strTemp;
-	free(strTemp);
 }

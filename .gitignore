@@ -18,6 +18,8 @@ $RECYCLE.BIN/
 *.log
 *.pbd
 *.project
+*.idb
+*.pdb
 
 # Visual Studio Files
 *.tlog

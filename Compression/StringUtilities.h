@@ -19,7 +19,6 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #ifndef STRINGUTILITIES_H
 #define STRINGUTILITIES_H
-
 #include "../TAD.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -28,13 +27,16 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #define IO_ERROR -1
 #define IO_SUCESS 0
 #define BINARY 2
-#define LINE_MAX_LENGTH 5000
+#define DECIMAL 10
 
 /******************************************************************************
 Funções Utilitárias
 ******************************************************************************/
 // Converte um char em um inteiro
 int charToInt(char character);
+
+// Converte um inteiro para string
+string* intToString(int integer);
 
 // Converte um inteiro para binário
 string* intToBin(int toConvert);
@@ -56,7 +58,6 @@ void strCopy(string* firstString, string* sndString);
 
 // Compara duas strings
 int strCompare(string* firstString, string* sndString);
-
 
 /******************************************************************************
 Funções para otimização da estrutura string

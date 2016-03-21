@@ -19,6 +19,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #ifndef TAD_H
 #define TAD_H
+#define LINE_MAX_LENGTH 500
 
 /******************************************************************************
 Listas, Pilhas e Filas
@@ -164,6 +165,11 @@ typedef struct String {
 	char* string;
 	unsigned int length;
 } string;
+
+typedef struct RLEControlNode {
+	char character;
+	int occurrences;
+} rlecodenode;
 
 /******************************************************************************
 Redefinição de nomes

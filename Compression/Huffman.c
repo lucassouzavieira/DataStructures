@@ -18,4 +18,13 @@ Descrição: Implementação de funções para codificação de Huffman
 Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #include "Huffman.h"
-#include "StringUtilities.h"
+
+string * encodeHuffman(string * myString)
+{
+	return NULL;
+}
+
+string * decodeHuffman(string * myString)
+{
+	return NULL;
+}

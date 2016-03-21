@@ -140,10 +140,10 @@
     <ClInclude Include="Compression\Huffman.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Compression\StringUtilities.h">
+    <ClInclude Include="Compression\StringUtilities.c">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Compression\StringUtilities.c">
+    <ClInclude Include="Compression\StringUtilities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

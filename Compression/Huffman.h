@@ -19,5 +19,15 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #ifndef HUFFMAN_H
 #define HUFFMAN_H
+#include "../TAD.h"
+#include "StringUtilities.h"
+#include <stdio.h>
+#include <string.h>
+
+// Codifica uma string e retorna a sequência codificada
+string* encodeHuffman(string* myString);
+
+// Decodifica uma string e retorna a sequência decodificada
+string* decodeHuffman(string* myString);
 
 #endif // HUFFMAN_H

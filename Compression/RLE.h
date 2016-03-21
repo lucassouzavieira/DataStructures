@@ -19,14 +19,17 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #ifndef RLE_H
 #define RLE_H
+#define _CRT_SECURE_NO_WARNINGS 1
+#define NUMBER_ESTIMED_REPETITION 8
 #include "../TAD.h"
+#include "StringUtilities.h"
 #include <stdio.h>
 #include <string.h>
 
 // Codifica uma string e retorna a sequência codificada
-char* encodeRLE(char* myString);
+string* encodeRLE(string* myString);
 
 // Decodifica uma string e retorna a sequência decodificada
-char* decodeRLE(char* myString);
+string* decodeRLE(string* myString);
 
-#endif // !RLE_H
+#endif // RLE_H
