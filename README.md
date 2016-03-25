@@ -26,6 +26,9 @@ Gnome Sort
 Bogo Sort  
 Couting Sort  
 
+## Pesquisa  
+Busca Binária (SearchAlgorithms)  
+
 ## Árvores Binárias
 Árvore Binária de Busca (BinarySearchTree)  
 Árvore AVL (AVLTree)  
