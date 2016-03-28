@@ -17,7 +17,7 @@ Arquivo: LinkedList.c
 Descrição: Implementação de Lista encadeada simples
 Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
-#define _CRT_SECURE_NO_WARNINGS 1;
+#define _CRT_SECURE_NO_WARNINGS 1
 #include <stdlib.h>
 #include <stdio.h>
 #include "..\TAD.h"

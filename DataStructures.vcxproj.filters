@@ -69,10 +69,10 @@
     <ClCompile Include="Vector\SearchAlgorithms.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Compression\RLE.c">
+    <ClCompile Include="Compression\Utilities.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Compression\Huffman.c">
+    <ClCompile Include="Compression\RLE.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -134,16 +134,10 @@
     <ClInclude Include="Vector\SearchAlgorithms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Compression\Utilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Compression\RLE.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Compression\Huffman.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Compression\StringUtilities.c">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Compression\StringUtilities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

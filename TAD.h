@@ -162,7 +162,7 @@ Algoritmos de Compressão de Strings
 typedef enum CompressionAlgorithm {RLE = 0, HUFFMAN = 1} CompressionAlgorithm;
 
 typedef struct RLEControlNode {
-	char character;
+	char* character;
 	int occurrences;
 } rlecodenode;
 

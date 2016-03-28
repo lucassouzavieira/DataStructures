@@ -14,22 +14,18 @@ Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
 com este programa, Se não, veja <http://www.gnu.org/licenses/>.
 
 Arquivo: RLE.h
-Descrição: Definição de funções para decodificação RLE
+Descrição: Algoritmo RLE para Compressão de Texto
 Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #ifndef RLE_H
 #define RLE_H
-#define _CRT_SECURE_NO_WARNINGS 1
-#define NUMBER_ESTIMED_REPETITION 8
-#include "../TAD.h"
-#include "StringUtilities.h"
+#include "..\TAD.h"
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
-// Codifica uma string e retorna a sequência codificada
-string* encodeRLE(string* myString);
+char* encodeRLE(char* myString);
 
-// Decodifica uma string e retorna a sequência decodificada
-string* decodeRLE(string* myString);
+char* decodeRLE(char* myString);
 
-#endif // RLE_H
+#endif //RLE_H

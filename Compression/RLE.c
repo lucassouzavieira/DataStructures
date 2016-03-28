@@ -13,104 +13,94 @@ Licença Pública Geral GNU para maiores detalhes.
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
 com este programa, Se não, veja <http://www.gnu.org/licenses/>.
 
-Arquivo: RLE.c
-Descrição: Implementação das funções para decodificação RLE
+Arquivo: RLE.h
+Descrição: Algoritmo RLE para Compressão de Texto
 Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 #include "RLE.h"
-#define _CRT_SECURE_NO_WARNINGS 1;
-
+#include "Utilities.h"
+#include <stdio.h>
+#include <stdlib.h>
+#define _CRT_SECURE_NO_WARNINGS
 /*********************************************************************************************
 Run-Length Encoding:
-	*Conjunto de Caracteres: A-Za-z ; 0-9;
-	*Delimitadores: '@' para repetição de letras (A-Za-z); 
-					'#' para repetição de números (0-9)
-					'-' para espaços em branco
-					'$' para repetição de espaços em branco
-					'&' para repetição dos demais caracteres
-					'R' para identificação dessa codificação no arquivo
+*Conjunto de Caracteres: A-Za-z ; 0-9;
+*Delimitadores: '@' para repetição de caracteres (A-Za-z);
+				'-' para espaços em branco
+				'RLE' para identificação dessa codificação no arquivo
 
-	*Exemplo:	Input:	'aaaaawwwwab   hhhhrrttttt332'
-				Output: '@4a@4wab$3-@4h@2r@5t#232'
+*Exemplo:	Input:	'aaaaawwwwab   hhhhrrttttt332'
+			Output: '@4a@4wab$3-@4h@2r@5t#232'
 
 Tabela ASCII usada como base: <http://ic.unicamp.br/~everton/aulas/hardware/tabelaASCII.pdf>
 **********************************************************************************************/
 
-// Avalia as repetições
-char* generateRLECode(rlecodenode* codingVector, int vectorSize)
-{
-	if (codingVector == NULL || vectorSize <= 0)
-		return NULL;
-	char rleEncoded[LINE_MAX_LENGTH];
-	for (int i = 0; i <= vectorSize; i++) {
-		int character = charToInt(codingVector[i].character);
-		if (character == 32) {
-			// Caractere é um espaço em branco (' ')
-			if (codingVector[i].occurrences == 1) {
-				strcat(rleEncoded, '-');
-			} else {
-				strcat(rleEncoded,'$');
-				strcat(rleEncoded, intToString(codingVector[i].occurrences));
-				strcat(rleEncoded, '-');
-			}
-		} else if ((character > 64 && character < 91) || (character > 96 && character < 123)) {
-			// Caractere está em [A - Z] ou em [a - z]
-			if (codingVector[i].occurrences == 1) {
-				strcat(rleEncoded, codingVector[i].character);
-			} else {
-				strcat(rleEncoded, '@');
-				strcat(rleEncoded, intToString(codingVector[i].occurrences));
-				strcat(rleEncoded, codingVector[i].character);
-			}
-		} else if ((character > 47 && character < 59)) {
-			// Caractere está entre [0 - 9]
-			if (codingVector[i].occurrences == 1) {
-				strcat(rleEncoded, codingVector[i].character);
-			} else {
-				strcat(rleEncoded, '#');
-				strcat(rleEncoded, intToString(codingVector[i].occurrences));
-				strcat(rleEncoded, codingVector[i].character);
-			} 
-		} else {
-			// Caractere é outro qualquer
-			/*
-			if (codingVector[i].occurrences == 1) {
-				strcat(rleEncoded, codingVector[i].character);
-			} else {
-				strcat(rleEncoded, '&');
-				strcat(rleEncoded, intToString(codingVector[i].occurrences));
-				strcat(rleEncoded, codingVector[i].character);
-			}*/
-		}
-	} // End for
-	return rleEncoded;
-}
 
-// Codifica uma string e retorna a sequência codificada
-string* encodeRLE(string* myString)
+// Retorna a string codificada pelo RLE
+char* encodeRLE(char* myString)
 {
-	//strOptimize(myString);
-	printf("encodeRLE: %s \n", myString->string);
-	string* encodedString = (string*)malloc(sizeof(string));
-	rlecodenode* coding = (rlecodenode*)malloc((myString->length)*(sizeof(rlecodenode)));
-	for (int i = 0; i < myString->length; i++) {
-		if (i == 0) {
-			coding[i].character = myString->string[i];
-			coding[i].occurrences = 1;
-		} else if (coding[i - 1].character == myString->string[i]) {
-			coding[i - 1].occurrences++;
+	FILE* tmpFile = fopen("tmpOutPutFile", "w");
+	int occurrences = 1;
+	const char* encodedString = NULL;
+	if (myString == NULL)
+		return NULL;
+	for (int i = 1; myString[i - 1] != '\0'; i++) {
+		if (myString[i] == myString[i - 1]) {
+			occurrences++;
+		} else if (occurrences < 4) {
+			// Otimização para RLE
+			for (int j = 1; j <= occurrences; j++) {
+				fflush(stdout);
+				fprintf(tmpFile, "%c", myString[i - 1]);
+			}
+			occurrences = 1;
 		} else {
-			coding[i].character = myString->string[i];
-			coding[i].occurrences = 1;
+			fflush(stdout);
+			fprintf(tmpFile, "@%c%d", myString[i - 1], occurrences);
+			occurrences = 1;
 		}
 	}
-	encodedString->string = generateRLECode(coding, myString->length);
-	strOptimize(encodedString);
+	fclose(tmpFile);
+	encodedString = fromFile("tmpOutPutFile");
+	//remove("tmpFile");
 	return encodedString;
 }
 
-// Decodifica uma string e retorna a sequência decodificada
-string* decodeRLE(string* myString)
+// Decodifica uma string codificada pelo RLE
+char* decodeRLE(char * myString)
 {
-	return NULL;
+	int stringSize;
+	int i = 0;
+	int charOccurrences;
+	FILE* tmpFile = fopen("tmpInputFile", "w");
+	char character;
+	char ocurrences[3] = { "\0" };
+	if (myString == NULL)
+		return NULL;
+	stringSize = strlen(myString);
+	for (i = 0; i <= stringSize;) {
+		fflush(stdout);
+		if (myString[i] == '@') {
+			character = myString[i + 1];
+			ocurrences[0] = myString[i + 2];
+ 			if ((myString[i + 3] > 47 && myString[i + 3] < 59)) {
+				ocurrences[1] = myString[i + 3];
+				i = i + 4;
+			} else {
+				i = i + 3;
+			}
+			charOccurrences = atoi(ocurrences);
+			for (int j = 1; j <= charOccurrences; j++) {
+				fflush(stdout);
+				fprintf(tmpFile, "%c", character);
+			}
+			ocurrences[1] = "\0";
+		} else {
+			fflush(stdout);
+			fprintf(tmpFile, "%c", myString[i]);
+			i = i + 1;
+		}
+	}
+	fclose(tmpFile);
+	return "NULL";
 }

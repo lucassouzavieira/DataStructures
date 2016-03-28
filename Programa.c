@@ -20,19 +20,13 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #define _CRT_SECURE_NO_WARNINGS 1 // Desabilita verificações de segurança
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "TAD.h"
 #include "Vector\Vector.h"
-#include "Vector\SortingAlgorithms.h"
-#include "Lists\LinkedList.h"
-#include "Lists\CircleList.h"
-#include "Lists\DoublyLinkedList.h"
-#include "Stack\Stack.h"
-#include "Queues\Queue.h"
-#include "Heap\Heap.h"
-#include "BinaryTrees\BinarySearchTree.h"
-#include "BinaryTrees\AVLTree.h"
+#include "Compression\Utilities.h"
+#include "Compression\RLE.h"
 
-// Testa as funções da Lista Encadeada
+/* Testa as funções da Lista Encadeada
 void LinkedListTest()
 {
 	list myList;
@@ -156,10 +150,21 @@ void BSTTest()
 	InsertInBST(&myTree, 4);
 	DrawBST(&myTree);
 	system("pause");
-}
+} */
+
 
 int main()
 {
-	BSTTest();
+	char* teste = "FFFFFFFFFFFFFJJJJFFFFFJJJJJYYYYYYPPPPPCCCCCO             OOOOOKKKKKASSDSDddnnoiionnninININIOOOOOOOO";
+	char* encode = encodeRLE(teste);
+	printf("%s \n", encode);
+	char* decode = decodeRLE(encode);
+	printf("%s \n", decode); 
+/*	char texto[3];
+	texto[0] = '1';
+	texto[1] = '2';
+	texto[2] = '\0';
+	printf("%d", atoi(texto)); */
+	system("pause");
 	return 0;
 }
