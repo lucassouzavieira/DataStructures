@@ -75,6 +75,12 @@
     <ClCompile Include="Compression\RLE.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Compression\Huffman.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Trie\Trie.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TAD.h">
@@ -138,6 +144,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Compression\RLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Compression\Huffman.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Trie\Trie.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

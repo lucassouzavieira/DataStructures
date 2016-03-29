@@ -152,6 +152,7 @@
     <ClCompile Include="BinaryTrees\AVLTree.c" />
     <ClCompile Include="BinaryTrees\BinarySearchTree.c" />
     <ClCompile Include="BinaryTrees\RedBlackTree.c" />
+    <ClCompile Include="Compression\Huffman.c" />
     <ClCompile Include="Compression\RLE.c" />
     <ClCompile Include="Compression\Utilities.c" />
     <ClCompile Include="Lists\CircleList.c" />
@@ -162,6 +163,7 @@
     <ClCompile Include="Programa.c" />
     <ClCompile Include="Queues\Deque.c" />
     <ClCompile Include="Queues\Queue.c" />
+    <ClCompile Include="Trie\Trie.c" />
     <ClCompile Include="Vector\SearchAlgorithms.c" />
     <ClCompile Include="Vector\SortingAlgorithms.c" />
     <ClCompile Include="Stack\Stack.c" />
@@ -174,6 +176,7 @@
     <ClInclude Include="BinaryTrees\AVLTree.h" />
     <ClInclude Include="BinaryTrees\BinarySearchTree.h" />
     <ClInclude Include="BinaryTrees\RedBlackTree.h" />
+    <ClInclude Include="Compression\Huffman.h" />
     <ClInclude Include="Compression\RLE.h" />
     <ClInclude Include="Compression\Utilities.h" />
     <ClInclude Include="Lists\CircleList.h" />
@@ -184,6 +187,7 @@
     <ClInclude Include="Lists\SkipList.h" />
     <ClInclude Include="Queues\Deque.h" />
     <ClInclude Include="Queues\Queue.h" />
+    <ClInclude Include="Trie\Trie.h" />
     <ClInclude Include="Vector\SearchAlgorithms.h" />
     <ClInclude Include="Vector\SortingAlgorithms.h" />
     <ClInclude Include="Stack\Stack.h" />

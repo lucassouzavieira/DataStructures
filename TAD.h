@@ -161,10 +161,22 @@ Algoritmos de Compressão de Strings
 
 typedef enum CompressionAlgorithm {RLE = 0, HUFFMAN = 1} CompressionAlgorithm;
 
-typedef struct RLEControlNode {
+typedef struct HuffmanNode {
 	char* character;
 	int occurrences;
-} rlecodenode;
+} huffmannode;
+
+typedef struct CharFrequency {
+	char* character;
+	double frequency;
+} charfrequency;
+
+typedef struct HuffmanTreeNode {
+	char* character;
+	struct HuffmanTreeNode* parent;
+	struct HuffmanTreeNode* left;
+	struct HuffmanTreeNode* right;
+} huffmantreenode;
 
 /******************************************************************************
 Redefinição de nomes

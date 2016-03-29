@@ -25,6 +25,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "Vector\Vector.h"
 #include "Compression\Utilities.h"
 #include "Compression\RLE.h"
+#include "Compression\Huffman.h"
 
 /* Testa as funções da Lista Encadeada
 void LinkedListTest()
@@ -155,16 +156,14 @@ void BSTTest()
 
 int main()
 {
-	char* teste = "FFFFFFFFFFFFFJJJJFFFFFJJJJJYYYYYYPPPPPCCCCCO             OOOOOKKKKKASSDSDddnnoiionnninININIOOOOOOOO";
-	char* encode = encodeRLE(teste);
-	printf("%s \n", encode);
-	char* decode = decodeRLE(encode);
-	printf("%s \n", decode); 
-/*	char texto[3];
-	texto[0] = '1';
-	texto[1] = '2';
-	texto[2] = '\0';
-	printf("%d", atoi(texto)); */
+	/*
+	Ahuahuahuahauhuahua
+	@huahuahuahauhuahua
+	@@ua@ua@ua@au@ua@ua
+	@@@a@@a@@a@a@@@a@@a
+	@@@@@@@@@@@@@@@@@@@
+	*/
+	encodeHuffman("Estou testando esta string");
 	system("pause");
 	return 0;
 }
