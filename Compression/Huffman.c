@@ -42,12 +42,38 @@ huffmantreenode* encodeHuffman(char* myString)
 		}
 		occurrence = 0;
 	}
+#ifdef DEBUG
 	for (int i = 0; i < vectorSize; i++) {
 		printf("%c \t %d \n", characters[i], occurrences[i]);
 	}
+#endif
 	for (int i = 0; i < vectorSize; i++) {
 		sum = sum + occurrences[i];
 	}
+	// Ordena os caracteres pela quantidade de ocorrencias
+	long int _intaux = 0;
+	static unsigned char _charaux = ' ';
+	for (long int i = 0; i < vectorSize; i++) {
+		for (long int j = 0; j < (vectorSize - 1); j++) {
+			if (occurrences[j] > occurrences[j + 1]) {
+				_intaux = occurrences[j];
+				occurrences[j] = occurrences[j + 1];
+				occurrences[j + 1] = _intaux;
+				
+				_charaux = characters[j];
+				characters[j] = characters[j + 1];
+				characters[j + 1] = _charaux;
+				
+			}
+		}
+	}
+#ifdef DEBUG
+	printf("\nOrdenado \n");
+	for (int i = 0; i < vectorSize; i++) {
+		printf("%c \t %d \n", characters[i], occurrences[i]);
+	}
+#endif
+
 	return NULL;
 }
 

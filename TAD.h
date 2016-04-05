@@ -25,77 +25,74 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 Listas, Pilhas e Filas
 ******************************************************************************/
 // Nó simples
-struct Node{
+typedef struct Node{
 	long int key;
 	struct Node* pointer;
-};
+} node;
 
 // Nó duplo
-struct DoubleNode {
+typedef struct DoubleNode {
 	long int key;
 	struct DoubleNode* next;
 	struct DoubleNode* previous;
-};
-
-typedef struct DoubleNode dnode;
-typedef struct Node node;
+} dnode;
 
 // Lista
-struct List {
+typedef struct List {
 	node* list;
 	node* last;
 	long int nodes;
-};
+}list;
 
 // Lista Circular
-struct CircleList {
+typedef struct CircleList {
 	node* list;
 	long int nodes;
-};
+} circlelist;
 
 // Lista Dupla
-struct DoublyList {
+typedef struct DoublyList {
 	dnode* list;
 	dnode* startOfList;
 	dnode* endOfList;
 	long int nodes;
-};
+} doublylist;
 
 // Pilha
-struct Stack {
+typedef struct Stack {
 	node* stack;
 	node* top;
 	unsigned long int nodes;
-};
+} stack;
 
 //Fila e Deque
-struct Queue {
+typedef struct Queue {
 	node* queue;
 	node* endOfQueue;
 	unsigned long int nodes;
-};
+} queue;
 
-struct Deque {
+typedef struct Deque {
 	node* startOfQueue;
 	node* endOfQueue;
 	unsigned long int nodes;
-};
+} deque;
 
 // Pilha e Fila Estáticas
-struct Array {
+typedef struct Array {
 	long int* vector;
 	unsigned long int size;
 	long int last;
-};
+} array;
 
 /******************************************************************************
 Heap
 ******************************************************************************/
-struct Heap{
+typedef struct Heap{
 	long int *vector;
 	long int elements;
 	long int maxElements;
-};
+} heap;
 
 /******************************************************************************
 Grafos
@@ -111,97 +108,67 @@ struct Graph{
 Árvores Binárias
 ******************************************************************************/
 // Árvore Binária de Busca
-struct nodeBST{
+typedef struct nodeBST{
 	long int key;
 	struct nodeBST* right;
 	struct nodeBST* left;
-};
-typedef struct nodeBST nodetree;
+} nodetree;
 
-struct BinarySearchTree{
+typedef struct BinarySearchTree{
 	nodetree* root;
 	long int nodes;
-};
+} BSTree;
 
 //Árvore AVL
-struct nodeAVL{
+typedef struct nodeAVL{
 	long int key;
 	int balanceFactor;
 	struct nodeAVL* right;
 	struct nodeAVL* left;
-};
-typedef struct nodeAVL nodeavl;
+} nodeavl;
 
-struct AVLTree{
+typedef struct AVLTree{
 	nodeavl* root;
 	long int nodes;
-};
+} AVLTree;
 
 //Árvore Red-Black
-enum Color { RED = 0, BLACK = 1 };
-typedef enum Color Color;
+typedef enum Color { RED = 0, BLACK = 1 } Color;
 
-struct nodeRB{
+typedef struct nodeRB{
 	long int key;
 	int blackHeight;
 	Color color;
 	struct nodeRB* right;
 	struct nodeRB* left;
 	struct nodeRB* father;
-};
-typedef struct nodeRB noderb;
+} noderb;
 
-struct RedBlackTree{
+typedef struct RedBlackTree{
 	noderb* root;
 	long int nodes;
-};
+} RBTree;
 /******************************************************************************
 Algoritmos de Compressão de Strings
 ******************************************************************************/
 
 typedef enum CompressionAlgorithm {RLE = 0, HUFFMAN = 1} CompressionAlgorithm;
 
-typedef struct HuffmanNode {
-	char* character;
-	int occurrences;
-} huffmannode;
-
-typedef struct CharFrequency {
-	char* character;
-	double frequency;
-} charfrequency;
-
 typedef struct HuffmanTreeNode {
-	char* character;
+	unsigned char character;
+	unsigned int occurrences;
 	struct HuffmanTreeNode* parent;
 	struct HuffmanTreeNode* left;
 	struct HuffmanTreeNode* right;
 } huffmantreenode;
 
 /******************************************************************************
-Redefinição de nomes
-******************************************************************************/
-typedef struct Array array;
-typedef struct List list;
-typedef struct CircleList circlelist;
-typedef struct DoublyList doublylist;
-typedef struct Stack stack;
-typedef struct Queue queue;
-typedef struct Deque deque;
-typedef struct Heap heap;
-typedef struct BinarySearchTree BSTree;
-typedef struct AVLTree AVLTree;
-typedef struct RedBlackTree RBTree;
-
-/******************************************************************************
 Estruturas Auxiliares
 ******************************************************************************/
 // Auxiliar nos desenhos das árvores
-struct Branches{
+typedef struct Branches{
 	struct Branches *previous;
 	char* str;
-};
-
-typedef struct Branches branches;
+} branches;
 
 #endif
