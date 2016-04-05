@@ -163,7 +163,7 @@ int main()
 	@@@a@@a@@a@a@@@a@@a
 	@@@@@@@@@@@@@@@@@@@
 	*/
-	encodeHuffman("Estou testando esta string");
+	encodeHuffman("sssssaaazzzt aososhkhe");
 	system("pause");
 	return 0;
 }
