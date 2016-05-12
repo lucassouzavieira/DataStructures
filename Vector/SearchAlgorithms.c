@@ -2,11 +2,11 @@
 #include "SortingAlgorithms.h"
 #define SEARCH_FAILURE 0000
 
-// Algoritmo de busca binária em vetores
-// Retorna a posição no vetor do elemento procurado
+/* Algoritmo de busca binária em vetores 
+   Retorna a posição no vetor do elemento procurado */
 long int BinarySearch(long int key, long int * vector, long int numberOfElements)
 {
-	vector = QuickSort(vector, numberOfElements); // Ordena o vetor
+	vector = QuickSort(vector, numberOfElements); /* Ordena o vetor */
 	long int inferiorLimit = 0;
 	long int upperLimit = numberOfElements;
 	while (inferiorLimit <= upperLimit) {

@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: Deque.c
 Descrição: Implementação de deque
@@ -21,7 +21,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include <stdio.h>
 #include "Deque.h"
 
-//Cria um deque 
+/* Cria um deque */
 deque CreateDeque()
 {
 	deque myDeque;
@@ -30,7 +30,7 @@ deque CreateDeque()
 	myDeque.nodes = 0;
 }
 
-//Verifica se há elementos no deque 
+/* Verifica se há elementos no deque */
 int CheckDeque(deque* myDeque) 
 {
 	if (myDeque->startOfQueue == NULL) {
@@ -39,7 +39,7 @@ int CheckDeque(deque* myDeque)
 	return 1;
 }
 
-//Insere elementos no deque 
+/* Insere elementos no deque */
 void InsertAtFront(deque* myDeque, long int element)
 {
 	if (myDeque == NULL)
@@ -52,7 +52,7 @@ void InsertAtFront(deque* myDeque, long int element)
 		myDeque->startOfQueue = newNode;
 		myDeque->nodes++;
 	}
-	// Atualiza o último nó do deque, caso necessário
+	/* Atualiza o último nó do deque, caso necessário */
 	if (myDeque->endOfQueue == NULL) {
 		node* current;
 		node* previous;
@@ -86,7 +86,7 @@ void InsertAtBack(deque* myDeque, long int element)
 	myDeque->nodes++;
 }
 
-//Remove elementos do deque 
+/* Remove elementos do deque */
 void RemoveFromFront(deque* myDeque) 
 {
 	if (myDeque == NULL || myDeque->startOfQueue == NULL)
@@ -112,7 +112,7 @@ void RemoveFromBack(deque* myDeque)
 	myDeque->nodes--;
 }
 
-//Imprime os elementos do deque 
+/* Imprime os elementos do deque */
 void ConsultDeque(deque* myDeque) 
 {
 	if (myDeque == NULL || myDeque->startOfQueue == NULL)
@@ -124,7 +124,7 @@ void ConsultDeque(deque* myDeque)
 	}
 }
 
-//Apaga todos os elementos e libera memória 
+/* Apaga todos os elementos e libera memória */
 int DestroyDeque(deque* myDeque) 
 {
 	node* current = NULL;

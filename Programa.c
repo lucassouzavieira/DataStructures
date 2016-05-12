@@ -11,13 +11,13 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: Programa.c
 Descrição: Teste das implementações das estruturas de dados
 Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
-#define _CRT_SECURE_NO_WARNINGS 1 // Desabilita verificações de segurança
+#define _CRT_SECURE_NO_WARNINGS 1 /* Desabilita verificações de segurança  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -27,7 +27,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "Compression\RLE.h"
 #include "Compression\Huffman.h"
 
-/* Testa as funções da Lista Encadeada
+/* Testa as funções da Lista Encadeada  */
 void LinkedListTest()
 {
 	list myList;
@@ -53,7 +53,7 @@ void LinkedListTest()
 	printf("Nodes: %ld \n", myList.nodes);
 }
 
-// Testa as funções de Inserção e Remoção de Heap
+/* Testa as funções de Inserção e Remoção de Heap */
 void HeapTest()
 {
 	heap* myHeap = CreateHeap(10);
@@ -80,7 +80,7 @@ void HeapTest()
 	ShowHeap(myHeap);
 }
 
-// Teste da Árvore AVL
+/* Teste da Árvore AVL 
 void AVLTest() 
 {
 	AVLTree myTree = CreateAVLTree();
@@ -94,9 +94,9 @@ void AVLTest()
 	DrawAVLTree(&myTree);
 	RemoveAVLTree(&myTree, 12);
 	DrawAVLTree(&myTree);
-}
+}  */
 
-// Teste da Árvore Binária
+/* Teste da Árvore Binária
 void BSTTest()
 {
 	BSTree myTree = CreateBST();

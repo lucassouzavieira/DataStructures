@@ -6,4 +6,4 @@ huffmantreenode* encodeHuffman(char* myString);
 
 char* decodeHuffman(huffmantreenode* huffmanTree);
 
-#endif // !HUFFMAN_H
+#endif /* !HUFFMAN_H */

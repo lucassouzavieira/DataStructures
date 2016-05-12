@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: AVLTree.h
 Descrição: Definições para estruturas do tipo árvore AVL
@@ -21,22 +21,22 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #define AVLTREE_H
 #include "..\TAD.h"
 
-/*Criar uma Árvore AVL*/
+/* Criar uma Árvore AVL */
 AVLTree CreateAVLTree();
 
-/*Inserir elementos na Árvore AVL*/
+/* Inserir elementos na Árvore AVL */
 void InsertInAVLTree(AVLTree* myTree, long int key);
 
-/*Buscar elementos na Árvore AVL*/
+/* Buscar elementos na Árvore AVL */
 nodeavl* SearchAVLTree(AVLTree* myTree, long int key);
 
-/*Remover elemento na Árvore AVL*/
+/* Remover elemento na Árvore AVL */
 void RemoveAVLTree(AVLTree* myTree, long int key);
 
-/*Destruir a árvore AVL*/
+/* Destruir a árvore AVL */
 void DestroyAVLTree(AVLTree* myTree);
 
-/*Desenha a árvore AVL*/
+/* Desenha a árvore AVL */
 void DrawAVLTree(AVLTree* myTree);
 
-#endif // AVLTREE_H
+#endif /* AVLTREE_H */

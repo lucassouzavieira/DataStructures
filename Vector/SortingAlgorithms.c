@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: SortingAlgorithms.c
 Descrição: Implementação de algoritmos de ordenação
@@ -27,10 +27,10 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 long int _count_merge_sort = 0;
 
-// BUBBLE SORT
+/* BUBBLE SORT */
 long int* BubbleSort (long int* vector, long int numberOfElements)
 {
-	// Primeiro laço percorre todo o vetor
+	/* Primeiro laço percorre todo o vetor */
 	long int aux = 0;
 	for (long int i = 1; i <= numberOfElements; i++){
 		/* Segundo laço percorre da primeira à penúltima posição
@@ -51,10 +51,10 @@ long int* BubbleSort (long int* vector, long int numberOfElements)
 
 long int* BubbleSortImproved (long int* vector, long int numberOfElements)
 {
-	// Primeiro laço percorre todo o vector 
+	/* Primeiro laço percorre todo o vector */
 	long int aux;
 	for (long int i = 0; i < numberOfElements; i++){
-		//O segundo laço não mais percorrerá as posições já ordenadas do vector 
+		/*O segundo laço não mais percorrerá as posições já ordenadas do vector */
 		for (long int j = (numberOfElements - 1); j >= i; j--){
 			/* Se o valor da posição j for maior que o valor da posição
 			j+1, então trocar a posição dos dois valores */
@@ -68,12 +68,12 @@ long int* BubbleSortImproved (long int* vector, long int numberOfElements)
 	return vector;
 }
 
-// INSERTION SORT
+/* INSERTION SORT */
 long int* InsertionSort (long int* vector, long int numberOfElements)
 {
 	long int j;
 	long int eleito;
-	// Primeiro laço percorre todo o vector , menos a primeira posição 
+	/* Primeiro laço percorre todo o vector , menos a primeira posição */
 	for (long int i = 1; i <= numberOfElements; i++){
 		eleito = vector[i];
 		j = i - 1;
@@ -89,14 +89,14 @@ long int* InsertionSort (long int* vector, long int numberOfElements)
 	return vector;
 }
 
-// SELECTION SORT
+/* SELECTION SORT */
 long int* SelectionSort (long int* vector, long int numberOfElements)
 {
 	long int i;
-	long int pos; // Posição
+	long int pos; /* Posição */
 	long int eleito;
 	for (i = numberOfElements; i > 0; i--){
-		//percorre o vector inteiro de trás pra frente, exceto a primeira posição
+		/*percorre o vector inteiro de trás pra frente, exceto a primeira posição */
 		eleito = vector[0];
 		pos = 0;
 		for ( long int j = 1; j <= i; j++){
@@ -107,20 +107,20 @@ long int* SelectionSort (long int* vector, long int numberOfElements)
 				pos = j;
 			}
 		}
-		//Ordena
+		/* Ordena */
 		vector[pos] = vector[i];
 		vector[i] = eleito;
 	}
 	return vector;
 }
 
-// MERGE SORT
+/* MERGE SORT */
 void merge (long int* vector, long int numberOfElements)
 {
 	long int meio;
 	long int i, j, k;
 	long int* tmp;
-	// Vetor temporário
+	/* Vetor temporário */
 	tmp = (long int* ) malloc(numberOfElements * sizeof(long int));
 	if (tmp == NULL) {
 		exit(1);
@@ -139,7 +139,7 @@ void merge (long int* vector, long int numberOfElements)
 		++k;
 	}
 
-	//Concatena as duas "partes" ordenadas
+	/* Concatena as duas "partes" ordenadas */
 	if (i == meio) {
 		while (j < numberOfElements) {
 			tmp[k++] = vector[j++];
@@ -151,20 +151,20 @@ void merge (long int* vector, long int numberOfElements)
 
 		}
 	}
-	/*Retorna os elementos de forma ordenada ao vector recebido
+	/* Retorna os elementos de forma ordenada ao vector recebido
 	como parâmetro */
 	for (i = 0; i < numberOfElements; ++i) {
 		vector[i] = tmp[i];
 	}
-	//Libera o vector auxiliar
+	/* Libera o vector auxiliar */
 	free(tmp);
 }
 
 void MergeSort (long int* vector, long int numberOfElements)
 {
-	// Variáveis auxiliares
+	/* Variáveis auxiliares */
 	long int meio;
-	//Divide o vector ao meio e efetua as chamadas recursivas
+	/*Divide o vector ao meio e efetua as chamadas recursivas*/
 	if (numberOfElements > 1){
 		meio = numberOfElements / 2;
 		MergeSort(vector, meio);
@@ -173,14 +173,14 @@ void MergeSort (long int* vector, long int numberOfElements)
 	}
 }
 
-// QUICK SORT
+/* QUICK SORT */
 void quick (long int* vector, long int pos_inicio, long int pos_final)
 {
 	long int i = pos_inicio;
 	long int j = pos_final;
-	long int pivo = vector[(pos_inicio + pos_final) / 2]; // Pivo é o elemento central do vector
+	long int pivo = vector[(pos_inicio + pos_final) / 2]; /* Pivo é o elemento central do vector */
 	long int aux;
-	//Inicio do procedimento
+	/*Inicio do procedimento */
 	while (i < j){
 		while (vector[i] < pivo){
 			i++;
@@ -208,40 +208,40 @@ long int* QuickSort (long int* vector, long int numberOfElements)
 {
 	long int pos_inicio = 0;
 	long int pos_final = numberOfElements;
-	//Efetua a chamada ao procedimento quick
+	/*Efetua a chamada ao procedimento quick */
 	quick(vector, pos_inicio, pos_final);
-	//Retorna um pointer para o vector ordenado
+	/*Retorna um pointer para o vector ordenado */
 	return vector;
 }
 
-// HEAP SORT
+/* HEAP SORT */
 void HeapSort (long int* vector, long int numberOfElements)
 {
-	//Checar se o Heap está vazio
+	/*Checar se o Heap está vazio */
 	if (numberOfElements == 0){
-		printf("O Heap esta vazio! \n");
+		printf("Empty Heap! \n");
 	}
-	long int aux; // Variável auxiliar
+	long int aux; /* Variável auxiliar */
 	long int n = numberOfElements;
 	long int father = numberOfElements / 2;
 	long int index, child;
 
 	while (1){
 		if (father > 0){
-			//Ordenar o Heap
+			/*Ordenar o Heap */
 			aux = vector[--father];
 		}
 		else {
-			//Extrair os elementos
+			/* Extrair os elementos */
 			n--;
 			if (n == 0){
-				//Quando o heap fica vazio, o algoritmo termina
+				/* Quando o heap fica vazio, o algoritmo termina */
 				return;
 			}
 			aux = vector[n];
 			vector[n] = vector[0]; 
 		}
-		//Empurrando t para baixo para recolocar o pai
+		/* Empurrando t para baixo para recolocar o pai */
 		index = father;
 		child = index * 2 + 1; 
 		while (child < n){
@@ -250,26 +250,26 @@ void HeapSort (long int* vector, long int numberOfElements)
 			}
 			if (vector[child] > aux){
 				vector[index] = vector[child]; 
-				index = child; //índice fica igual ao filho
-				child = index * 2 + 1; // Pega o filho da esquerda e repetir o processo
+				index = child; /* índice fica igual ao filho */
+				child = index * 2 + 1; /* Pega o filho da esquerda e repetir o processo */
 			}
 			else {
 				break;
 			}
 		}
-		//Novos valores são salvos temporáriamente em novas posições
+		/* Novos valores são salvos temporáriamente em novas posições */
 		vector[index] = aux;
 	}
 }
 
-// COMB SORT
+/* COMB SORT */
 long int* CombSort (long int* vector, long int numberOfElements)
 {
 	long int i, j, jump, aux, changes = 1;
 	jump = numberOfElements;
 
 	while (jump > 1 || changes == 1){
-		//Configura o jump
+		/* Configura o jump */
 		jump = jump * 10 / 13;
 		if (jump == 9 || jump == 10){
 			jump = 11;
@@ -279,7 +279,7 @@ long int* CombSort (long int* vector, long int numberOfElements)
 		}
 		changes = 0;
 		for (i = 0, j = jump; j < numberOfElements; i++, j++){
-			//Efetua comparações e trocas
+			/* Efetua comparações e trocas */
 			if (vector[i]>vector[j]){
 				aux = vector[i];
 				vector[i] = vector[j];
@@ -291,7 +291,7 @@ long int* CombSort (long int* vector, long int numberOfElements)
 	return vector;
 }
 
-// SHELL SORT
+/* SHELL SORT */
 void shell_sort_phase (long int* vector, long int numberOfElements, int jump)
 {
 	/*Executa como se fosse um Insertion Sort em elementos de []
@@ -308,7 +308,7 @@ void shell_sort_phase (long int* vector, long int numberOfElements, int jump)
 		}
 		vector[j + jump] = valor;
 	}
-	//Fim da função
+	/* Fim da função */
 }
 
 long int* ShellSort (long int* vector, long int numberOfElements)
@@ -316,26 +316,26 @@ long int* ShellSort (long int* vector, long int numberOfElements)
 	/* o jump deve se aproximar de uma progressão geométrica.
 	A seguinte sequência é a mais comhecida em termos de número médio
 	de comparações feitas */
-	numberOfElements = numberOfElements + 1; // + 1 para ajuste de posição
+	numberOfElements = numberOfElements + 1; /* + 1 para ajuste de posição */
 	static const int jump[] = { 1, 4, 10, 23, 57, 132, 301, 701 };
-	long int sizeIndex; // Índice de tamanho
+	long int sizeIndex; /* Índice de tamanho */
 	for (sizeIndex = (sizeof(jump) / sizeof(jump[0]) - 1); sizeIndex >= 0; --sizeIndex){
 		shell_sort_phase(vector, numberOfElements, jump[sizeIndex]);
 	}
 	return vector;
 }
 
-//GnoME SORT
+/* GnoME SORT */
 long int* GnomeSort (long int* vector, long int numberOfElements)
 {
 	long int aux;
 	for (long int i = 0; i <= numberOfElements;){
 		if (vector[i - 1] <= vector[i]){
-			//Faz as comparações
+			/* Faz as comparações */
 			++i;
 		}
 		else {
-			//Faz as trocas
+			/* Faz as trocas */
 			aux = vector[i];
 			vector[i] = vector[i - 1];
 			vector[i - 1] = aux;
@@ -349,11 +349,11 @@ long int* GnomeSort (long int* vector, long int numberOfElements)
 }
 
 
-//BOGO SORT
+/* BOGO SORT */
 int sorting (long int* vector, long int elements)
 {
 	long int n = elements; 
-	// Compara todos os elementos do vector a partir do último
+	/* Compara todos os elementos do vector a partir do último */
 	while (--n >= 1) {
 		if (vector[n] < vector[n - 1]){
 			return 0;
@@ -366,7 +366,7 @@ void shuffle (long int* vector, long int elements)
 {
 	long int aux, r; 
 	for (long int i = 0; i < elements; i++){
-		//Realiza a troca de posições
+		/* Realiza a troca de posições */
 		aux = vector[i];
 		r = rand() % elements;
 		vector[i] = vector[r];
@@ -382,25 +382,25 @@ long int* BogoSort (long int* vector, long int elements)
 	return vector;
 }
 
-//COUTING SORT
+/* COUTING SORT */
 int CSorting (long int* vector, long int elements, long int min, long int max)
 {
 	long int i, k;
 
-	long int range = max - min + 1; // Determinando faixa
-	long int *count = (long int*) malloc(range*sizeof(*vector)); // Declara vector auxiliar
+	long int range = max - min + 1; /* Determinando faixa */
+	long int *count = (long int*) malloc(range*sizeof(*vector)); /* Declara vector auxiliar */
 
 	for (i = 0; i < range; i++){
-		// Inicializa o vector auxiliar de contagem
+		/* Inicializa o vector auxiliar de contagem */
 		count[i] = 0;
 	}
 
 	for (int i = 0; i < elements; i++){
-		// vector de contagem recebe a qtde. de vezes (n) que um número k se repete
+		/* vector de contagem recebe a qtde. de vezes (n) que um número k se repete */
 		count[vector[i] - min]++;
 	}
 
-	// Substitui 'k' n vezes no vector original
+	/* Substitui 'k' n vezes no vector original */
 	for (i = min, k = 0; i <= max; i++){
 		for (long int j = 0; j < count[i - min]; j++){
 			vector[k++] = i;
@@ -422,7 +422,7 @@ long int* CoutingSort (long int* vector, long int elements)
 
 	min = max = vector[0]; 
 
-	// Primeiro passo: Achar o maior e o menor elemento do vector a ser ordenado
+	/* Primeiro passo: Achar o maior e o menor elemento do vector a ser ordenado */
 	for (i = 1; i < elements; i++){
 		if (vector[i] < min){
 			min = vector[i];
@@ -431,7 +431,7 @@ long int* CoutingSort (long int* vector, long int elements)
 		}
 	}
 
-	CSorting(vector, elements, min, max); // Passa para a função auxiliar
+	CSorting(vector, elements, min, max); /* Passa para a função auxiliar */
 
-	return vector; // Retorna o vector ordenado
+	return vector; /* Retorna o vector ordenado */
 }

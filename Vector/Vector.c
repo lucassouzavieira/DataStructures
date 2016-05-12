@@ -11,20 +11,20 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: Vector.c
 Descrição: Implementação de funções auxiliares para tratamento de vetores
 Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
-#define _CRT_SECURE_NO_WARNINGS 1 // Desabilita verificações de segurança
+#define _CRT_SECURE_NO_WARNINGS 1 /* Desabilita verificações de segurança */
 #define MAX 4000000
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include "..\TAD.h"
 
-// Imprime os elementos do vetor
+/* Imprime os elementos do vetor */
 void ShowVector (long int *vector, long int numberOfElements)
 {
 	long int* aux = vector;
@@ -33,7 +33,7 @@ void ShowVector (long int *vector, long int numberOfElements)
 	}
 }
 
-// Salva o vetor em um arquivo txt
+/* Salva o vetor em um arquivo txt */
 int SaveVector (const char* address, long int *vector, long int numberOfElements)
 {
 	FILE* file;
@@ -51,7 +51,7 @@ int SaveVector (const char* address, long int *vector, long int numberOfElements
 	return 0;
 }
 
-// Recupera o vetor de um arquivo
+/* Recupera o vetor de um arquivo */
 long int* RetrieveVector (const char* address, long *vector, long int numberOfElements)
 {
 	vector = (long int*)malloc((numberOfElements)*sizeof(long int));
@@ -71,7 +71,7 @@ long int* RetrieveVector (const char* address, long *vector, long int numberOfEl
 	return vector;
 }
 
-// Cria um vetor com números aleatórios
+/* Cria um vetor com números aleatórios */
 long int* CreateRandomVector (long int numberOfElements)
 {
 	/* A função gera inteiros aleatórios entre -1.310.680 e +1.638.350

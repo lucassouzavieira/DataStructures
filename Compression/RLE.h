@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: RLE.h
 Descrição: Algoritmo RLE para Compressão de Texto
@@ -28,4 +28,4 @@ char* encodeRLE(char* myString);
 
 char* decodeRLE(char* myString);
 
-#endif //RLE_H
+#endif /* RLE_H */

@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: LinkedList.h
 Descrição: Definições para Lista encadeada simples
@@ -21,34 +21,34 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #define LINKEDLIST_H
 
 #include "..\TAD.h"
-// Cria uma lista encadeada
+/* Cria uma lista encadeada */
 list CreateLinkedList();
 
-// Verifica uma lista encadeada (se vazia)
+/* Verifica uma lista encadeada (se vazia) */
 int CheckLinkedList(list* myList);
 
-// Insere no início da lista
+/* Insere no início da lista */
 void InsertAtStartLinkedList(list* myList, long int element);
 
-// Insere no meio da lista
+/* Insere no meio da lista */
 void InsertAtMiddleLinkedList(list* myList, long int element);
 
-// Insere no fim da lista
+/* Insere no fim da lista */
 void InsertAtEndLinkedList(list* myList, long int element);
 
-// Busca
+/* Busca */
 node* SearchLinkedList(list* myList, long int element);
 
-// Mostrar os elementos
+/* Mostrar os elementos */
 void ListElementsLinkedList(list* myList);
 
-// Retorna uma lista com os elementos em ordem invertida
+/* Retorna uma lista com os elementos em ordem invertida */
 list ReverseLinkedList(list* myList);
 
-// Remove elementos
+/* Remove elementos */
 void RemoveElementLinkedList(list* myList, long int element); 
 
-// Destruir a lista
+/* Destruir a lista */
 int DestroyLinkedList(list* myList); 
 
 #endif

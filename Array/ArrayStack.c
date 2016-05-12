@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: ArrayStack.c
 Descrição: Implementação para estruturas do tipo pilhas estáticas
@@ -21,7 +21,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include <stdio.h>
 #include "..\TAD.h"
 
-//Cria uma pilha
+/* Cria uma pilha */
 array* ArrayStackCreate (unsigned long int size)
 {
 	array* myArrayStack = (array *)malloc(sizeof(array));
@@ -31,7 +31,7 @@ array* ArrayStackCreate (unsigned long int size)
 	return myArrayStack;
 }
 
-//Verifica se a pilha está vazia ou não 
+/* Verifica se a pilha está vazia ou não */
 int ArrayStackCheck (array* myArrayStack) 
 {
 	if (myArrayStack->last == 0){
@@ -40,7 +40,7 @@ int ArrayStackCheck (array* myArrayStack)
 	return 1;
 }
 
-//Remove um elemento da pilha 
+/* Remove um elemento da pilha  */
 array* ArrayStackPop (array* myArrayStack) 
 {
 	if (myArrayStack->last == 0) {
@@ -51,7 +51,7 @@ array* ArrayStackPop (array* myArrayStack)
 	return myArrayStack;
 }
 
-//Insere um elemento na pilha 
+/* Insere um elemento na pilha  */
 array* ArrayStackPush (array* myArrayStack, long int element) 
 {
 	if (myArrayStack->last == myArrayStack->size - 1) {
@@ -63,7 +63,7 @@ array* ArrayStackPush (array* myArrayStack, long int element)
 	return myArrayStack;
 }
 
-//Imprime todos os elementos da pilha 
+/* Imprime todos os elementos da pilha  */
 void ArrayStackConsult (array* myArrayStack) 
 {
 	for (long int i = 0; i <= myArrayStack->last; i++) {
@@ -71,7 +71,7 @@ void ArrayStackConsult (array* myArrayStack)
 	}
 }
 
-//Apaga os elementos e libera memória 
+/* Apaga os elementos e libera memória  */
 array* ArrayStackDestroy (array* myArrayStack) 
 {
 	free(myArrayStack->vector);

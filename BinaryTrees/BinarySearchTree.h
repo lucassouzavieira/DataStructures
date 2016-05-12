@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: BinarySearchTree.h
 Descrição: Definições para estruturas do tipo árvore binária de busca
@@ -21,29 +21,29 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #define BINARYSEARCHTREE_H
 #include "..\TAD.h"
 
-// Criar a árvore  
+/* Criar a árvore   */
 BSTree CreateBST();
 
-// Insere um elemento na árvore 
+/* Insere um elemento na árvore  */
 void InsertInBST(BSTree* myTree, long int key);
 
-// Remove um elemento da árvore 
+/* Remove um elemento da árvore  */
 void RemoveBST(BSTree* myTree, long int key);
 
-// Busca um elemento na Árvore 
+/* Busca um elemento na Árvore  */
 nodetree* SearchBST(BSTree* myTree, long int key);
 
-// Maneiras de percorrer a árvore 
+/* Maneiras de percorrer a árvore  */
 void PreOrderBST(BSTree* myTree);
 void InOrderBST(BSTree* myTree);
 void PostOrderBST(BSTree* myTree);
 
-// Ilustra a estrutura da árvore - r-e-d (Préordem)  
+/* Ilustra a estrutura da árvore - r-e-d (Préordem)   */
 void DrawBST(BSTree* myTree);
 
-// Descobrir a altura da árvore 
+/* Descobrir a altura da árvore */ 
 int HeightOfBST(BSTree* myTree);
 
-// Destruir a árvore 
+/* Destruir a árvore */ 
 void DestroyBST(BSTree* myTree);
-#endif // !BST_H
+#endif /* !BST_H */

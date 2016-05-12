@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: ArrayQueue.h
 Descrição: Definições para estruturas do tipo filas estáticas
@@ -21,22 +21,22 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #define ARRAYQUEUE_H
 #include "..\TAD.h"
 
-//Cria uma fila 
+/* Cria uma fila  */
 array* ArrayQueueCreate(unsigned long int size);
 
-//Verifica se há elementos na fila 
+/* Verifica se há elementos na fila  */
 int ArrayQueueCheck(array* myArrayQueue);
 
-//Insere elementos na fila 
+/* Insere elementos na fila  */
 array* ArrayQueueEnqueue(array* myArrayQueue, long int element);
 
-//Remove elementos da fila 
+/* Remove elementos da fila  */
 array* ArrayQueueDequeue(array* myArrayQueue);
 
-//Imprime os elementos da fila 
+/* Imprime os elementos da fila  */
 void ArrayQueueConsult(array* myArrayQueue);
 
-//Apaga todos os elementos e libera memória 
+/* Apaga todos os elementos e libera memória  */
 array* ArrayQueueDestroy(array* myArrayQueue);
 
-#endif // !ARRAYQUEUE_H
+#endif /* !ARRAYQUEUE_H */

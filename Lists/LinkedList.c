@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: LinkedList.c
 Descrição: Implementação de Lista encadeada simples
@@ -22,7 +22,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include <stdio.h>
 #include "..\TAD.h"
 
-// Cria uma lista encadeada
+/* Cria uma lista encadeada */
 list CreateLinkedList ()
 {
 	list myList;
@@ -32,7 +32,7 @@ list CreateLinkedList ()
 	return myList;
 }
 
-// Verifica uma lista encadeada (se vazia)
+/* Verifica uma lista encadeada (se vazia) */
 int CheckLinkedList (list* myList)
 {
 	if(myList->nodes == 0){
@@ -41,7 +41,7 @@ int CheckLinkedList (list* myList)
 	return 1;
 }
 
-// Insere no início da lista
+/* Insere no início da lista */
 void InsertAtStartLinkedList (list* myList, long int element)
 {
 	node* newNode;
@@ -52,7 +52,7 @@ void InsertAtStartLinkedList (list* myList, long int element)
 		myList->list = newNode;
 		myList->nodes++;
 	}
-	// Atualiza o último nó da lista, caso necessário
+	/* Atualiza o último nó da lista, caso necessário */
 	if (myList->last == NULL) {
 		node* current;
 		node* previous;
@@ -65,7 +65,7 @@ void InsertAtStartLinkedList (list* myList, long int element)
 	}
 }
 
-// Insere no meio da lista
+/* Insere no meio da lista */
 void InsertAtMiddleLinkedList (list* myList, long int element) 
 {
 	node* newNode;
@@ -99,7 +99,7 @@ void InsertAtMiddleLinkedList (list* myList, long int element)
 	myList->nodes++;
 }
 
-// Insere no fim da lista
+/* Insere no fim da lista */
 void InsertAtEndLinkedList (list* myList, long int element)
 {
 	node* newNode;
@@ -119,7 +119,7 @@ void InsertAtEndLinkedList (list* myList, long int element)
 	myList->nodes++;
 }
 
-// Busca
+/* Busca */
 node* SearchLinkedList (list* myList, long int element)
 {
 	node* current;
@@ -130,7 +130,7 @@ node* SearchLinkedList (list* myList, long int element)
 	return current;
 }
 
-// Mostrar os elements
+/* Mostrar os elements */
 void ListElementsLinkedList (list* myList)
 {
 	node* current;
@@ -141,7 +141,7 @@ void ListElementsLinkedList (list* myList)
 	}
 }
 
-// Retorna uma lista com os elementos em ordem invertida
+/* Retorna uma lista com os elementos em ordem invertida */
 list ReverseLinkedList (list* myList) 
 {
 	list reverseList = CreateLinkedList();
@@ -153,7 +153,7 @@ list ReverseLinkedList (list* myList)
 	return reverseList;
 }
 
-// Remove elements
+/* Remove elements */
 void RemoveElementLinkedList (list* myList, long int element)
 {
 	node* current = myList->list;
@@ -176,7 +176,7 @@ void RemoveElementLinkedList (list* myList, long int element)
 	free(current);
 }
 
-// Destruir a lista
+/* Destruir a lista */
 int DestroyLinkedList (list* myList)
 {
 	node* current = NULL;

@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: TAD.h
 Descrição: Definição dos Tipos Abstratos de Dados básicas usadas no projeto
@@ -24,33 +24,33 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 /******************************************************************************
 Listas, Pilhas e Filas
 ******************************************************************************/
-// Nó simples
+/* Nó simples */
 typedef struct Node{
 	long int key;
 	struct Node* pointer;
 } node;
 
-// Nó duplo
+/* Nó duplo */
 typedef struct DoubleNode {
 	long int key;
 	struct DoubleNode* next;
 	struct DoubleNode* previous;
 } dnode;
 
-// Lista
+/* Lista */
 typedef struct List {
 	node* list;
 	node* last;
 	long int nodes;
 }list;
 
-// Lista Circular
+/* Lista Circular */
 typedef struct CircleList {
 	node* list;
 	long int nodes;
 } circlelist;
 
-// Lista Dupla
+/* Lista Dupla */
 typedef struct DoublyList {
 	dnode* list;
 	dnode* startOfList;
@@ -58,14 +58,14 @@ typedef struct DoublyList {
 	long int nodes;
 } doublylist;
 
-// Pilha
+/* Pilha */
 typedef struct Stack {
 	node* stack;
 	node* top;
 	unsigned long int nodes;
 } stack;
 
-//Fila e Deque
+/* Fila e Deque */
 typedef struct Queue {
 	node* queue;
 	node* endOfQueue;
@@ -78,7 +78,7 @@ typedef struct Deque {
 	unsigned long int nodes;
 } deque;
 
-// Pilha e Fila Estáticas
+/* Pilha e Fila Estáticas */
 typedef struct Array {
 	long int* vector;
 	unsigned long int size;
@@ -107,7 +107,7 @@ struct Graph{
 /******************************************************************************
 Árvores Binárias
 ******************************************************************************/
-// Árvore Binária de Busca
+/* Árvore Binária de Busca */
 typedef struct nodeBST{
 	long int key;
 	struct nodeBST* right;
@@ -119,7 +119,7 @@ typedef struct BinarySearchTree{
 	long int nodes;
 } BSTree;
 
-//Árvore AVL
+/* Árvore AVL */
 typedef struct nodeAVL{
 	long int key;
 	int balanceFactor;
@@ -132,7 +132,7 @@ typedef struct AVLTree{
 	long int nodes;
 } AVLTree;
 
-//Árvore Red-Black
+/*Árvore Red-Black */
 typedef enum Color { RED = 0, BLACK = 1 } Color;
 
 typedef struct nodeRB{
@@ -165,7 +165,7 @@ typedef struct HuffmanTreeNode {
 /******************************************************************************
 Estruturas Auxiliares
 ******************************************************************************/
-// Auxiliar nos desenhos das árvores
+/* Auxiliar nos desenhos das árvores */
 typedef struct Branches{
 	struct Branches *previous;
 	char* str;

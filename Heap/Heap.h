@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: Heap.h
 Descrição: Definições para estruturas Heap
@@ -20,21 +20,21 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #ifndef HEAP_H
 #define HEAP_H
 #include "..\TAD.h"
-// Criar um novo heap
+/* Criar um novo heap */
 heap* CreateHeap(long int maxElements);
 
-// Destruir um heap
+/* Destruir um heap */
 void DestroyHeap(heap* myHeap);
 
-// Insere um novo elemento no heap
+/* Insere um novo elemento no heap */
 int InsertInHeap(heap* myHeap, long int key);
 
-// Remove o elemento de maior prioridade no heap
+/* Remove o elemento de maior prioridade no heap */
 long int RemoveHeap(heap* myHeap);
 
-// Exibe o Heap
+/* Exibe o Heap */
 void ShowHeap(heap* myHeap);
 
-// Cria um Heap de Máximo dado um vetor
+/* Cria um Heap de Máximo dado um vetor */
 void MaxHeapSort(long int* vector, long int numberOfElements);
-#endif // !HEAP_H
+#endif /* !HEAP_H */

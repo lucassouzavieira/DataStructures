@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: CircleList.c
 Descrição: Implementação de Lista circular simples
@@ -22,7 +22,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include <stdio.h>
 #include "..\TAD.h"
 
-//Cria uma lista circular 
+/* Cria uma lista circular  */
 circlelist CreateCircleList ()
 {
 	circlelist myList;
@@ -31,7 +31,7 @@ circlelist CreateCircleList ()
 	return myList;
 }
 
-//Verifica se a lista está vazia ou não  
+/* Verifica se a lista está vazia ou não */
 int CheckCircleList (circlelist* myList)
 {
 	if (myList->list == NULL) {
@@ -40,7 +40,7 @@ int CheckCircleList (circlelist* myList)
 	return 1;
 }
 
-//Insere novos elements na lista
+/* Insere novos elements na lista  */
 void InsertAtCircleList (circlelist* myList, long int element)
 {
 	if (myList->list == NULL) {
@@ -63,7 +63,7 @@ void InsertAtCircleList (circlelist* myList, long int element)
 	}
 }
 
-//Busca um dado valor na lista
+/* Busca um dado valor na lista  */
 node* SearchElementCircleList (circlelist* myList, long int element) 
 {
 	node* aux = myList->list;
@@ -79,7 +79,7 @@ node* SearchElementCircleList (circlelist* myList, long int element)
 	}
 }
 
-//Imprime todos os elements da lista
+/* Imprime todos os elements da lista */
 void ListElementsCircleList (circlelist* myList)
 {
 	node* aux = myList->list;
@@ -94,7 +94,7 @@ void ListElementsCircleList (circlelist* myList)
 	}
 }
 
-//Apaga toda a lista e libera a memória 
+/* Apaga toda a lista e libera a memória  */
 void RemoveElementCircleList (circlelist* myList, long int element)
 {
 	node* current = myList->list;
@@ -116,7 +116,7 @@ void RemoveElementCircleList (circlelist* myList, long int element)
 	free(current);
 }
 
-// Destuir a Lista
+/* Destuir a Lista */
 int DestroyCircleList(circlelist* myList)
 {
 	node* aux = myList->list;

@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: ArrayQueue.c
 Descrição: Implementações para estruturas do tipo filas estáticas
@@ -21,7 +21,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include <stdio.h>
 #include "..\TAD.h"
 
-//Cria e retorna uma fila estática 
+/* Cria e retorna uma fila estática  */
 array* ArrayQueueCreate (unsigned long int size) 
 {
 	array* myArrayQueue = (array *)malloc(sizeof(array));
@@ -31,7 +31,7 @@ array* ArrayQueueCreate (unsigned long int size)
 	return myArrayQueue;
 }
 
-//Verifica se há elementos na fila 
+/* Verifica se há elementos na fila  */
 int ArrayQueueCheck (array* myArrayQueue) 
 {
 	if (myArrayQueue->last == 0)
@@ -39,7 +39,7 @@ int ArrayQueueCheck (array* myArrayQueue)
 	return 1;
 }
 
-//Insere elementos na fila 
+/* Insere elementos na fila  */
 array* ArrayQueueEnqueue (array* myArrayQueue, long int element) 
 {
 	if (myArrayQueue->last == myArrayQueue->size - 1){
@@ -51,7 +51,7 @@ array* ArrayQueueEnqueue (array* myArrayQueue, long int element)
 	return myArrayQueue;
 }
 
-//Remove elementos da fila 
+/* Remove elementos da fila  */
 array* ArrayQueueDequeue (array* myArrayQueue)
 {
 	if (myArrayQueue->last == 0){
@@ -65,7 +65,7 @@ array* ArrayQueueDequeue (array* myArrayQueue)
 	return myArrayQueue;
 }
 
-//Imprime os elementos da fila 
+/* Imprime os elementos da fila  */
 void ArrayQueueConsult (array* myArrayQueue) 
 {
 	for (long int i = 0; i <= myArrayQueue->last; i++) {
@@ -73,7 +73,7 @@ void ArrayQueueConsult (array* myArrayQueue)
 	}
 }
 
-//Apaga todos os elementos e libera memória 
+/* Apaga todos os elementos e libera memória  */
 array* ArrayQueueDestroy (array* myArrayQueue) 
 {
 	free(myArrayQueue->vector);

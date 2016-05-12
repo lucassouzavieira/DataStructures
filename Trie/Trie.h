@@ -3,4 +3,4 @@
 
 
 
-#endif // !TRIE_H
+#endif /* !TRIE_H */

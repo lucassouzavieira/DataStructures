@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: ArrayList.c
 Descrição: Implementações para estruturas do tipo listas estáticas
@@ -22,7 +22,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "../Vector/SortingAlgorithms.h"
 #include <stdio.h>
 
-//Cria uma pilha
+/* Cria uma pilha */
 array* ArrayListCreate(unsigned long int size)
 {
 	array* myArrayList = (array *)malloc(sizeof(array));
@@ -32,7 +32,7 @@ array* ArrayListCreate(unsigned long int size)
 	return myArrayList;
 }
 
-//Verifica se a lista está vazia ou não 
+/* Verifica se a lista está vazia ou não  */
 int ArrayListCheck(array * myList)
 {
 	if (myList->last == 0)
@@ -40,14 +40,14 @@ int ArrayListCheck(array * myList)
 	return 1;
 }
 
-//Remove um elemento da lista 
+/* Remove um elemento da lista  */
 array * ArrayListRemove(array * myList, long int key)
 {
 	/*Implements*/
 	return NULL;
 }
 
-//Insere um elemento na lista 
+/* Insere um elemento na lista  */
 array * ArrayListInsert(array * myList, long int element)
 {
 	if (myList->last <= myList->size - 1) {
@@ -60,7 +60,7 @@ array * ArrayListInsert(array * myList, long int element)
 	return myList;
 }
 
-//Imprime todos os elementos da lista 
+/* Imprime todos os elementos da lista  */
 void ArrayListConsult(array * myList)
 {
 	for (long int i = 0; i <= myList->last; i++) {
@@ -68,7 +68,7 @@ void ArrayListConsult(array * myList)
 	}
 }
 
-//Apaga os elementos e libera memória 
+/* Apaga os elementos e libera memória  */
 array * ArrayListDestroy(array * myList)
 {
 	free(myList->vector);

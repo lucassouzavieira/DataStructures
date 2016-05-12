@@ -5,14 +5,14 @@
 #include "Huffman.h"
 #define DEBUG
 
-// Codifica uma string em uma árvore de Huffman
+/* Codifica uma string em uma árvore de Huffman  */
 huffmantreenode* encodeHuffman(char* myString)
 {
 	int stringSize = strlen(myString);
 	int vectorSize = 0;
 	int position = 0;
 	int occurrence = 0; 
-	int sum = 0; // Quantidade Total de Strings
+	int sum = 0; /* Quantidade Total de Chars  */
 	double frequency;
 	char character;
 	if (myString == NULL)
@@ -23,7 +23,7 @@ huffmantreenode* encodeHuffman(char* myString)
 	char* string = (char*)malloc((stringSize + 1)*sizeof(char));
 	strcpy(string, myString);
 	FILE* file = fopen("tmpHuffmanOutputFile", "w");
-	// Conta as ocorrências de cada caractere
+	/* Conta as ocorrências de cada caractere  */
 	for (int i = 0; i < stringSize; i++) {
 		if (string[i] != '@') {
 			occurrence = 1;
@@ -50,7 +50,7 @@ huffmantreenode* encodeHuffman(char* myString)
 	for (int i = 0; i < vectorSize; i++) {
 		sum = sum + occurrences[i];
 	}
-	// Ordena os caracteres pela quantidade de ocorrencias
+	/* Ordena os caracteres pela quantidade de ocorrencias  */
 	long int _intaux = 0;
 	static unsigned char _charaux = ' ';
 	for (long int i = 0; i < vectorSize; i++) {
@@ -73,11 +73,10 @@ huffmantreenode* encodeHuffman(char* myString)
 		printf("%c \t %d \n", characters[i], occurrences[i]);
 	}
 #endif
-
 	return NULL;
 }
 
-// Decodifica uma árvore de Huffman
+/* Decodifica uma árvore de Huffman  */
 char* decodeHuffman(huffmantreenode* huffmanTree){
 	return NULL;
 }

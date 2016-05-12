@@ -11,27 +11,27 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: ArrayList.h
 Descrição: Definições para estruturas do tipo listas estáticas
 Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include "../TAD.h"
 
-//Cria uma lista estática
+/* Cria uma lista estática */
 array* ArrayListCreate(unsigned long int size);
 
-//Verifica se a lista está vazia ou não 
+/* Verifica se a lista está vazia ou não  */
 int ArrayListCheck(array* mystack);
 
-//Remove um elemento da lista 
+/* Remove um elemento da lista  */
 array* ArrayListRemove(array* mystack, long int key);
 
-//Insere um elemento na lista 
+/* Insere um elemento na lista  */
 array* ArrayListInsert(array* mystack, long int element);
 
-//Imprime todos os elementos da lista 
+/* Imprime todos os elementos da lista */ 
 void ArrayListConsult(array* mystack);
 
-//Apaga os elementos e libera memória 
+/* Apaga os elementos e libera memória  */
 array* ArrayListDestroy(array* mystack);

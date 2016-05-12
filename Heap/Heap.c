@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: Heap.c
 Descrição: Implementação para Heap
@@ -29,7 +29,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 void MaxHeapfy(heap* myHeap, long int position);
 void MaxHeapSort(long int* vector, long int numberOfElements);
 
-// Criar um novo heap
+/* Criar um novo heap */
 heap* CreateHeap (long int maxElements)
 {
 	heap* myHeap = (heap*)malloc(sizeof(heap));
@@ -43,14 +43,14 @@ heap* CreateHeap (long int maxElements)
 	}
 }
 
-// Destruir um heap
+/* Destruir um heap */
 void DestroyHeap (heap* myHeap)
 {
 	free(myHeap->vector);
 	free(myHeap);
 }
 
-// Build Heap
+/* Build Heap */
 void BuildHeap (heap* myHeap) 
 {
 	if (myHeap->elements == myHeap->maxElements) {
@@ -60,7 +60,7 @@ void BuildHeap (heap* myHeap)
 	}
 }
 
-// Reorganiza o heap caso o elemento i possa ser maior que seus filhos
+/* Reorganiza o heap caso o elemento i possa ser maior que seus filhos */
 void MaxHeapfy (heap* myHeap, long int position)
 {
 	long int left = LEFT(position);
@@ -83,7 +83,7 @@ void MaxHeapfy (heap* myHeap, long int position)
 	}
 }
 
-// Insere um novo elemento no heap
+/* Insere um novo elemento no heap */
 int InsertInHeap (heap* myHeap, long int key) 
 {
 	long int aux;
@@ -104,7 +104,7 @@ int InsertInHeap (heap* myHeap, long int key)
 	return 1;
 }
 
-// Remove o elemento de maior prioridade no heap
+/* Remove o elemento de maior prioridade no heap
 long int RemoveHeap (heap* myHeap)
 {
 	if (myHeap->elements == 0) {
@@ -119,41 +119,41 @@ long int RemoveHeap (heap* myHeap)
 	return max;
 }
 
-// Exibe o Heap
+/* Exibe o Heap
 void ShowHeap (heap* myHeap)
 {
 	ShowVector(myHeap->vector, myHeap->elements);
 }
 
-// HEAP SORT
-// Cria um Heap de Máximo dado um vetor
+/* HEAP SORT
+/* Cria um Heap de Máximo dado um vetor
 void MaxHeapSort (long int* vector, long int numberOfElements)
 {
-	//Checar se o Heap está vazio
+	/*Checar se o Heap está vazio
 	if (numberOfElements == 0) {
 		printf("O Heap esta vazio! \n");
 	}
-	long int aux; // Variável auxiliar
-	long int n = numberOfElements; // + 1 para ajuste de posição
+	long int aux; /* Variável auxiliar
+	long int n = numberOfElements; /* + 1 para ajuste de posição
 	long int father = numberOfElements / 2;
 	long int index, child;
 
 	while (1) {
 		if (father > 0) {
-			//Ordenar o Heap
+			/*Ordenar o Heap
 			aux = vector[--father];
 		}
 		else {
-			//Extrair os elementos
+			/*Extrair os elementos
 			n--;
 			if (n == 0) {
-				//Quando o heap fica vazio, o algoritmo termina
+				/*Quando o heap fica vazio, o algoritmo termina
 				return;
 			}
 			aux = vector[n];
 			vector[n] = vector[0];
 		}
-		//Empurrando t para baixo para recolocar o pai
+		/*Empurrando t para baixo para recolocar o pai
 		index = father;
 		child = index * 2 + 1;
 		while (child < n) {
@@ -162,14 +162,14 @@ void MaxHeapSort (long int* vector, long int numberOfElements)
 			}
 			if (vector[child] < aux) {
 				vector[index] = vector[child];
-				index = child; //índice fica igual ao filho
-				child = index * 2 + 1; // Pega o filho da esquerda e repetir o processo
+				index = child; /*índice fica igual ao filho
+				child = index * 2 + 1; /* Pega o filho da esquerda e repetir o processo
 			}
 			else {
 				break;
 			}
 		}
-		//Novos valores são salvos temporáriamente em novas posições
+		/*Novos valores são salvos temporáriamente em novas posições
 		vector[index] = aux;
 	}
 }

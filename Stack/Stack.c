@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: Stack.c
 Descrição: Implementação de pilha
@@ -25,7 +25,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 
 node* top;
 
-//Cria uma pilha
+/* Cria uma pilha */
 stack CreateStack ()
 {
 	stack myStack;
@@ -35,7 +35,7 @@ stack CreateStack ()
 	return myStack;
 }
 
-//Verifica se a pilha está vazia ou não
+/* Verifica se a pilha está vazia ou não */
 int CheckStack (stack* myStack) 
 {
 	if (myStack->stack == NULL){
@@ -44,7 +44,7 @@ int CheckStack (stack* myStack)
 	return 1;
 }
 
-//Remove um elemento da pist
+/* Remove um elemento da pilha */
 void Pop (stack* myStack)
 {
 	if (myStack->stack == NULL){
@@ -63,7 +63,7 @@ void Pop (stack* myStack)
 	myStack->nodes--;
 }
 
-//Insere um elemento na pilha 
+/* Insere um elemento na pilha */
 void Push (stack* myStack, int element)
 {
 	node* newNode;
@@ -85,7 +85,7 @@ void Push (stack* myStack, int element)
 	}
 }
 
-//Imprime todos os elementos da pilha 
+/* Imprime todos os elementos da pilha */
 void ConsultStack (stack* myStack) 
 {
 	node* aux = myStack->stack;
@@ -95,7 +95,7 @@ void ConsultStack (stack* myStack)
 	}
 }
 
-//Apaga os elementos e libera memória 
+/* Apaga os elementos e libera memória */
 int DestroyStack (stack* myStack)
 {
 	node* aux = myStack->stack;

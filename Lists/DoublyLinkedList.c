@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: DoubleLinkedList.c
 Descrição: Implementação de Lista dupla
@@ -22,7 +22,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #include <stdio.h>
 #include "..\TAD.h"
 
-//Cria uma list duplamente encadeada
+/* Cria uma list duplamente encadeada */
 doublylist CreateDLinkedList ()
 {
 	doublylist myDoublyList;
@@ -33,7 +33,7 @@ doublylist CreateDLinkedList ()
 	return myDoublyList;
 }
 
-//Verifica se há elementos na lista
+/* Verifica se há elementos na lista */
 int CheckDLinkedList (doublylist* myDoublyList)
 {
 	if (myDoublyList->list == NULL){
@@ -42,7 +42,7 @@ int CheckDLinkedList (doublylist* myDoublyList)
 	return 1;
 }
 
-//Insere elementos no início da lista
+/* Insere elementos no início da lista */
 void InsertAtStartDLinkedList (doublylist* myDoublyList, long int element)
 {
 	dnode* newNode;
@@ -66,7 +66,7 @@ void InsertAtStartDLinkedList (doublylist* myDoublyList, long int element)
 	}
 }
 
-//Insere elementos no meio da lista
+/* Insere elementos no meio da lista */
 void InsertAtMiddleDLinkedList (doublylist* myDoublyList, long int element)
 {
 	dnode* newNode;
@@ -84,26 +84,26 @@ void InsertAtMiddleDLinkedList (doublylist* myDoublyList, long int element)
 			dnode* aux = myDoublyList->startOfList;
 			dnode* previous = NULL;
 			while (aux != NULL && newNode->key > aux->key){
-				previous = aux; // Guarda a posição do nó previous à aux
+				previous = aux; /* Guarda a posição do nó previous à aux */
 				aux = aux->next;
 			}
 			if (aux == myDoublyList->startOfList){
-				// Insere no início
+				/* Insere no início */
 				newNode->next = myDoublyList->list;
 				newNode->previous = NULL;
 				myDoublyList->startOfList->previous = newNode;
 				myDoublyList->list = newNode;
 				myDoublyList->startOfList = newNode;
 			} else if (aux == NULL){
-				// Insere no fim
+				/* Insere no fim */
 				myDoublyList->endOfList->next = newNode; 
 				newNode->previous = myDoublyList->endOfList;
 				newNode->next = NULL;
 				myDoublyList->endOfList = newNode; 
 			} else {
-				// Meio
+				/* Meio */
 				newNode->next = aux;
-				previous->next = newNode; // Nó anterior aponta para o newNode nó
+				previous->next = newNode; /* Nó anterior aponta para o newNode nó */
 				newNode->previous = previous; 
 				aux->previous = newNode; 
 			}
@@ -111,7 +111,7 @@ void InsertAtMiddleDLinkedList (doublylist* myDoublyList, long int element)
 	}
 }
 
-//Insere elementos no fim da lista
+/* Insere elementos no fim da lista */
 void InsertAtEndDLinkedList (doublylist* myDoublyList, long int element)
 {
 	dnode* newNode;
@@ -134,7 +134,7 @@ void InsertAtEndDLinkedList (doublylist* myDoublyList, long int element)
 	}
 }
 
-//Busca um dado elemento na lista
+/* Busca um dado elemento na lista */
 dnode* SearchElementDLinkedList (doublylist* myDoublyList, long int element)
 {
 	int parametro; 
@@ -167,7 +167,7 @@ dnode* SearchElementDLinkedList (doublylist* myDoublyList, long int element)
 	return NULL;
 }
 
-//Imprime todos os elementos da lista
+/* Imprime todos os elementos da lista  */
 void ListElementsDLinkedList (doublylist* myDoublyList) 
 {
 	int parametro;
@@ -193,20 +193,20 @@ void ListElementsDLinkedList (doublylist* myDoublyList)
 	}
 }
 
-//Remove um dado elemento da lista
+/* Remove um dado elemento da lista */
 void RemoveElementDLinkedList (doublylist* myDoublyList, long int element)
 {
 	dnode* aux = myDoublyList->list; 
 	while (aux != NULL) { 
 		if (aux->key == element) { 
 			if (aux == myDoublyList->startOfList) { 
-				// Remove no início
+				/* Remove no início */
 				myDoublyList->startOfList = aux->next;
 				myDoublyList->startOfList->previous = NULL;
 				free(aux);
 				break;
 			} else if (aux != myDoublyList->endOfList){
-				// Remove no meio
+				/* Remove no meio */
 				aux->previous->next = aux->next; 
 				aux->previous->previous = aux->previous; 
 				dnode* aux2; 
@@ -215,7 +215,7 @@ void RemoveElementDLinkedList (doublylist* myDoublyList, long int element)
 				aux = aux2;
 				break;
 			} else {
-				// Remove no fim
+				/* Remove no fim */
 				myDoublyList->endOfList = myDoublyList->endOfList->previous;
 				myDoublyList->endOfList->next = NULL;
 				free(aux);
@@ -226,7 +226,7 @@ void RemoveElementDLinkedList (doublylist* myDoublyList, long int element)
 	}
 }
 
-//Apaga toda a lista e libera memória
+/* Apaga toda a lista e libera memória */
 int DestroyDLinkedList (doublylist* myDoublyList)
 {
 	dnode* aux = NULL;

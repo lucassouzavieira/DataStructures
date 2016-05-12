@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: Utilities.c
 Descrição: Implementações de funções utilitarias de manipulação de texto
@@ -20,7 +20,7 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #define _CRT_SECURE_NO_WARNINGS 1
 #include "Utilities.h"
 
-// Converte um inteiro em uma string
+/* Converte um inteiro em uma string */
 char* intToString(int integer)
 {
 	char buffer[10] = {'0'};
@@ -29,7 +29,7 @@ char* intToString(int integer)
 	return (buffer);
 }
 
-// Obtem o numero de linhas de um arquivo
+/* Obtem o numero de linhas de um arquivo */
 int getLines(char* filename) 
 {
 	int countLines = 0;
@@ -42,7 +42,7 @@ int getLines(char* filename)
 	return countLines++;
 }
 
-// Salva a string em um arquivo incluindo informações sobre a compressão realizada
+/* Salva a string em um arquivo incluindo informações sobre a compressão realizada */
 int toFile(char* myString, char* filename)
 {
 	FILE* file;
@@ -62,7 +62,7 @@ int toFile(char* myString, char* filename)
 	return 1;
 }
 
-// Recupera a string de um arquivo
+/* Recupera a string de um arquivo */
 char* fromFile(char* filename)
 {
 	FILE* file;

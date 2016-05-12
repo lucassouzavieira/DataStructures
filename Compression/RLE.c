@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: RLE.h
 Descrição: Algoritmo RLE para Compressão de Texto
@@ -32,11 +32,11 @@ Run-Length Encoding:
 *Exemplo:	Input:	'aaaaawwwwab   hhhhrrttttt332'
 			Output: '@4a@4wab$3-@4h@2r@5t#232'
 
-Tabela ASCII usada como base: <http://ic.unicamp.br/~everton/aulas/hardware/tabelaASCII.pdf>
+Tabela ASCII usada como base: <http:/*ic.unicamp.br/~everton/aulas/hardware/tabelaASCII.pdf>
 **********************************************************************************************/
 
 
-// Retorna a string codificada pelo RLE
+/* Retorna a string codificada pelo RLE */
 char* encodeRLE(char* myString)
 {
 	FILE* tmpFile = fopen("tmpOutPutFile", "w");
@@ -48,7 +48,7 @@ char* encodeRLE(char* myString)
 		if (myString[i] == myString[i - 1]) {
 			occurrences++;
 		} else if (occurrences < 4) {
-			// Otimização para RLE
+			/* Otimização para RLE  */
 			for (int j = 1; j <= occurrences; j++) {
 				fflush(stdout);
 				fprintf(tmpFile, "%c", myString[i - 1]);
@@ -62,11 +62,11 @@ char* encodeRLE(char* myString)
 	}
 	fclose(tmpFile);
 	encodedString = fromFile("tmpOutPutFile");
-	//remove("tmpFile");
+	/* remove("tmpFile");  */
 	return encodedString;
 }
 
-// Decodifica uma string codificada pelo RLE
+/* Decodifica uma string codificada pelo RLE  */
 char* decodeRLE(char * myString)
 {
 	int stringSize;

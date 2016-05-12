@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: SortingAlgorithms.h
 Descrição: Definição de algoritmos de ordenação
@@ -22,40 +22,40 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #define SORTINGALGORITHMS_H
 #include "..\TAD.h"
 
-// Algoritmo de ordenação Bubble Sort  
+/* Algoritmo de ordenação Bubble Sort  */
 long int* BubbleSort(long int* vector, long int numberOfElements); 
 
-// Algoritmo de ordenação Bubble Sort - Melhorado  
+/* Algoritmo de ordenação Bubble Sort - Melhorado  */
 long int* BubbleSortImproved(long int* vector, long int numberOfElements); 
 
-// Algoritmo de ordenação Insertion Sort  
+/* Algoritmo de ordenação Insertion Sort  */
 long int* InsertionSort(long int* vector, long int numberOfElements);  
 
-// Algoritmo de ordenação Selection Sort  
+/* Algoritmo de ordenação Selection Sort  */
 long int* SelectionSort(long int* vector, long int numberOfElements);   
 
-// Algoritmo de ordenação Merge Sort (Passar nº elementos + 1)  
+/* Algoritmo de ordenação Merge Sort (Passar nº elementos + 1)  */
 void MergeSort(long int* vector, long int numberOfElements);  
 
-// Algoritmo de ordenação Quick Sort  
+/* Algoritmo de ordenação Quick Sort  */
 long int* QuickSort(long int* vector, long int numberOfElements);  
 
-// Algoritmo de ordenação Heap Sort  
+/* Algoritmo de ordenação Heap Sort  */
 void HeapSort(long int* vector, long int numberOfElements);  
 
-// Algoritmo de ordenação Comb Sort 11  
+/* Algoritmo de ordenação Comb Sort 11  */
 long int* CombSort(long int* vector, long int numberOfElements);  
 
-// Algoritmo de ordenação Shell Sort  
+/* Algoritmo de ordenação Shell Sort  */
 long int* ShellSort(long int* vector, long int numberOfElements);  
 
-// Algoritmo de ordenação Gnome Sort  
+/* Algoritmo de ordenação Gnome Sort  */
 long int* GnomeSort(long int* vector, long int numberOfElements);  
 
-// Algoritmo de ordenação Bogo Sort  
+/* Algoritmo de ordenação Bogo Sort  */
 long int* BogoSort(long int* vector, long int numberOfElements); 
 
-// Algoritmo de ordenação Couting Sort  
+/* Algoritmo de ordenação Couting Sort  */
 long int* CoutingSort(long int* vector, long int numberOfElements);  
 
-#endif // !SORTINGALGORITHMS_H
+#endif /* !SORTINGALGORITHMS_H */

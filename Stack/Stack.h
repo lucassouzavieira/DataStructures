@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: Stack.h
 Descrição: Definições para estruturas do tipo pilhas 
@@ -21,22 +21,22 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 #define STACK_H
 #include "..\TAD.h"
 
-//Cria uma pilha
+/* Cria uma pilha */
 stack CreateStack();
 
-//Verifica se a pilha está vazia ou não 
+/* Verifica se a pilha está vazia ou não */
 int CheckStack(stack* myStack);
 
-//Remove um elemento da pista 
+/* Remove um elemento da pista */
 void Pop(stack* myStack);
 
-//Insere um elemento na pilha 
+/* Insere um elemento na pilha */
 void Push(stack* myStack, int element);
 
-//Imprime todos os elementos da pilha 
+/* Imprime todos os elementos da pilha */
 void ConsultStack(stack* myStack);
 
-//Apaga os elementos e libera memória 
+/* Apaga os elementos e libera memória */
 int DestroyStack(stack* myStack);
 
-#endif // STACK_H
+#endif /* STACK_H */

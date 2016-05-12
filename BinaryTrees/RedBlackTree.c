@@ -11,7 +11,7 @@ a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
 Licença Pública Geral GNU para maiores detalhes.
 
 Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http://www.gnu.org/licenses/>.
+com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: RedBlackTree.c
 Descrição: Implementação para estruturas do tipo árvore rubro-negras
@@ -24,13 +24,13 @@ Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
 Funções Utilitárias
 ******************************************************************************/
 
-//Retorna o pai do nó atual
+/* Retorna o pai do nó atual */
 noderb* Father(noderb* mynode)
 {
 	return mynode->father;
 }
 
-//Retorna o irmão do nó atual
+/* Retorna o irmão do nó atual */
 noderb* Brother(noderb* mynode) 
 {
 	noderb* father = Father(mynode);
@@ -43,7 +43,7 @@ noderb* Brother(noderb* mynode)
 	}
 }
 
-//Rotação à direita sobre o nó
+/* Rotação à direita sobre o nó  */
 noderb* RotateRightRedBlackTree(noderb* mynode) 
 {
 	noderb* aux = mynode->left;
@@ -55,60 +55,60 @@ noderb* RotateRightRedBlackTree(noderb* mynode)
 	else {
 		mynode->left = NULL;
 	}
-	// O nó atual vira filho direito do seu próprio filho
+	/* O nó atual vira filho direito do seu próprio filho */
 	aux->right = mynode;
 	return aux;
 }
 
-//Rotação à esquerda sobre o nó
+/* Rotação à esquerda sobre o nó  */
 noderb* RotateLeftRedBlackTree(noderb* mynode) 
 {
 	noderb* aux = mynode->right;
 	if (aux->left != NULL) {
 		/* Se o filho do nó atual tem sub-árvore à esquerda
-		Então o nó atual terá como filho a sub-árvore direita do filho*/
+		Então o nó atual terá como filho a sub-árvore direita do filho */
 		mynode->right = aux->left;
 	}
 	else {
 		mynode->right = NULL;
 	}
-	// O nó atual vira filho esquerda do seu próprio filho
+	/* O nó atual vira filho esquerda do seu próprio filho  */
 	aux->left = mynode;
 	return aux;
 }
 
-//Balanceia a altura negra de todos os nós
+/* Balanceia a altura negra de todos os nós  */
 int BlackHeight(noderb* mynode) 
 {
 	if (mynode == NULL) {
-		/*Nó nulo é por definição negro*/
+		/* Nó nulo é por definição negro */
 		return 1;
 	} else if (mynode->color == BLACK) {
-		/*Nó preto conta na altura negra*/
+		/* Nó preto conta na altura negra */
 		int rightBlackHeight = BlackHeight(mynode->right);
 		int leftBlackHeight = BlackHeight(mynode->left);
 		if (rightBlackHeight == leftBlackHeight) {
-			//return rightBlackHeight + 1;
+			/* return rightBlackHeight + 1;  */
 			return leftBlackHeight + 1;
 		} else {
-			// Árvore desbalanceada
+			/* Árvore desbalanceada */
 			return EXIT_FAILURE;
 		}
 	} else {
-		/*Nó vermelho não conta na altura negra*/
+		/* Nó vermelho não conta na altura negra */
 		int rightBlackHeight = BlackHeight(mynode->right);
 		int leftBlackHeight = BlackHeight(mynode->left);
 		if (rightBlackHeight == leftBlackHeight) {
-			//return rightBlackHeight;
+			/* return rightBlackHeight;  */
 			return leftBlackHeight;
 		} else {
-			// Árvore desbalanceada
+			/* Árvore desbalanceada  */
 			return EXIT_FAILURE;
 		}
 	}
 }
 
-//Calcula a altura da árvore
+/* Calcula a altura da árvore  */
 int Height(noderb* mytree) 
 {
 	if (mytree == NULL) {
@@ -116,8 +116,8 @@ int Height(noderb* mytree)
 		nesse caso tem altura n-1*/
 		return -1;
 	} else {
-		/*Nesse caso, calcular a altura das sub-árvores
-		Nesse caso, recursivamente*/
+		/* Nesse caso, calcular a altura das sub-árvores
+		Nesse caso, recursivamente */
 		int heightLeft = Height(mytree->left) + 1;
 		int heightRight = Height(mytree->right) + 1;
 		if (heightLeft < heightRight) {
@@ -128,30 +128,30 @@ int Height(noderb* mytree)
 	}
 }
 
-//Recalcula a altura negra de todos os nós da árvore
+/* Recalcula a altura negra de todos os nós da árvore  */
 void SetBlackHeight(noderb* mytree)
 {
 	if (mytree != NULL) {
-		//Percorre as sub-árvores configurando as alturas negras
+		/* Percorre as sub-árvores configurando as alturas negras */ 
 		SetBlackHeight(mytree->left);
 		SetBlackHeight(mytree->right);
-		// Ajusta o fator de balaceamento do nó current
+		/* Ajusta o fator de balaceamento do nó current  */
 		if ((BlackHeight(mytree->left) == BlackHeight(mytree->right))) {
-			// Nesse caso, a árvore está perfeitamente balaceada
+			/* Nesse caso, a árvore está perfeitamente balaceada */
 			mytree->blackHeight = BlackHeight(mytree->left);
-			//mytree->BlackHeight = BlackHeight(mytree->right);
+			/* mytree->BlackHeight = BlackHeight(mytree->right); */
 		} else {
-			// Retorna -1 para a altura negra do nó que está desbalanceado
+			/* Retorna -1 para a altura negra do nó que está desbalanceado  */
 			mytree->blackHeight = -1;
 		}
 	} else {
-		// Retorna se não houver árvore
+		/* Retorna se não houver árvore  */
 		return;
 	}
 	return;
 }
 
-//Altera a cor de um nó
+/* Altera a cor de um nó */
 void ChangeColor(noderb* mynode) {
 	if (mynode == NULL) {
 		return;
@@ -164,7 +164,7 @@ void ChangeColor(noderb* mynode) {
 	return;
 }
 
-// Verifica as condições das cores de todos os nós e promove ajustes
+/* Verifica as condições das cores de todos os nós e promove ajustes  */
 void ColorFixUp(noderb* mytree) {
 	if (mytree == NULL) {
 		return;
@@ -188,7 +188,7 @@ void ColorFixUp(noderb* mytree) {
 	return;
 }
 
-// Inicializa um nó
+/* Inicializa um nó  */
 noderb* CreateRedBlackNode(long int key) 
 {
 	noderb* newNode = (noderb*) malloc(sizeof(noderb));
@@ -201,7 +201,7 @@ noderb* CreateRedBlackNode(long int key)
 	return newNode;
 }
 
-// Troca as cores
+/* Troca as cores  */
 void swapColors(noderb* firstNode, noderb* secondNode) 
 {
 	Color tempColor = firstNode->color;
@@ -213,7 +213,7 @@ void swapColors(noderb* firstNode, noderb* secondNode)
 Funções Gerais
 ******************************************************************************/
 
-// Criar uma Árvore Red-Black
+/* Criar uma Árvore Red-Black  */
 RBTree CreateRedBlackTree()
 {
 	RBTree myTree;
@@ -222,7 +222,7 @@ RBTree CreateRedBlackTree()
 	return myTree;
 }
 
-// Ajusta as propriedades da árvore após a inserção
+/* Ajusta as propriedades da árvore após a inserção  */
 void InsertFixUp(noderb* root, noderb* newNode) 
 {
 	noderb* father = NULL;
@@ -233,8 +233,8 @@ void InsertFixUp(noderb* root, noderb* newNode)
 		father = Father(newNode);
 		grandFather = Father(Father(newNode));
 
-		// Caso 1:
-		// O pai do novo nó é o filho esquerdo do avô
+		/* Caso 1:
+		   O pai do novo nó é o filho esquerdo do avô  */
 		if (father == grandFather->left) {
 			uncle = grandFather->right;
 			if ((uncle != NULL) && (uncle->color == RED)) {
@@ -244,39 +244,39 @@ void InsertFixUp(noderb* root, noderb* newNode)
 				newNode = grandFather;
 			}
 			else {
-				// Caso 2:
-				// O novo nó é filho direito
+				/* Caso 2:
+				   O novo nó é filho direito  */
 				if (newNode == father->right) {
 					RotateLeftRedBlackTree(father);
 					newNode = father;
 					father = newNode->father;
 				}
 
-				// Caso 3:
-				// O novo nó é filho esquerdo
+				/* Caso 3:
+				   O novo nó é filho esquerdo  */
 				RotateRightRedBlackTree(grandFather);
 				swapColors(father, grandFather);
 				newNode = father;
 			}
 		} else {
 			noderb* uncle = grandFather->left;
-			// Caso 1:
-			// O tio é vermelho 
+			/* Caso 1:
+			   O tio é vermelho  */
 			if ((uncle != NULL) && (uncle->color == RED)){
 				grandFather->color = RED;
 				father->color = BLACK;
 				uncle->color = BLACK;
 				newNode = grandFather;
 			} else {
-				// Caso 2:
-				// Novo nó é filho esquerdo
+				/* Caso 2:
+				   Novo nó é filho esquerdo  */
 				if (newNode == father->left){
 					RotateRightRedBlackTree(father);
 					newNode = father;
 					father = newNode->father;
 				}
-				// Caso 3:
-				// Novo nó é filho direito
+				/* Caso 3:
+				   Novo nó é filho direito  */
 				RotateLeftRedBlackTree(grandFather);
 				swapColors(father, grandFather);
 				newNode = father;
@@ -287,12 +287,12 @@ void InsertFixUp(noderb* root, noderb* newNode)
 	SetBlackHeight(root);
 }
 
-// Inserir elementos na Árvore Red-Black
+/* Inserir elementos na Árvore Red-Black */
 void InsertInRedBlackTree(RBTree* myTree, long int key)
 {
 	noderb* newNode = (noderb *)(malloc(sizeof(noderb)));
 	if (myTree->root == NULL) {
-		// Árvore vazia
+		/* Árvore vazia */
 		if (newNode != NULL) {
 			newNode->key = key;
 			newNode->right = NULL;
@@ -311,7 +311,7 @@ void InsertInRedBlackTree(RBTree* myTree, long int key)
 			newNode->blackHeight = 0;
 			newNode->color = RED;
 		}
-		// Buscar a posição da nova folha
+		/* Buscar a posição da nova folha  */
 		noderb* father = NULL;
 		noderb* current = myTree->root;
 		while (current != NULL) {
@@ -335,13 +335,13 @@ void InsertInRedBlackTree(RBTree* myTree, long int key)
 	InsertFixUp(myTree->root, newNode);
 }
 
-/*Buscar elementos na Árvore Red-Black*/
+/* Buscar elementos na Árvore Red-Black */
 noderb* SearchRedBlackTree(RBTree* mytree, long int key);
 
-/*Remover elemento na Árvore Red-Black*/
+/* Remover elemento na Árvore Red-Black */
 noderb* RemoveRedBlackTree(RBTree* mytree, long int key);
 
 void DestroyRedBlackTree(RBTree* myTree);
 
-/*Destruir a árvore Red-Black*/
+/* Destruir a árvore Red-Black */
 void DrawRedBlackTree(RBTree* myTree);
