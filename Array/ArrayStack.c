@@ -15,7 +15,7 @@ com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: ArrayStack.c
 Descrição: Implementação para estruturas do tipo pilhas estáticas
-Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
+Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 
 #include <stdlib.h>
 #include <stdio.h>

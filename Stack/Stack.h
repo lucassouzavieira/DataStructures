@@ -15,7 +15,7 @@ com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: Stack.h
 Descrição: Definições para estruturas do tipo pilhas 
-Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
+Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 
 #ifndef STACK_H
 #define STACK_H

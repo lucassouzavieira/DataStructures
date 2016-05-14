@@ -13,7 +13,7 @@ com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: Graph.h
 Descrição: Definições para árvores binárias
-Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
+Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 
 #ifndef GRAPHS_H
 #define GRAPHS_H

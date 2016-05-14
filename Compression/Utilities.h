@@ -15,7 +15,7 @@ com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: Utilities.h
 Descrição: Definições para funções utilitarias de manipulação de texto
-Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
+Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 
 #ifndef UTILITIES_H
 #define UTILITIES_H

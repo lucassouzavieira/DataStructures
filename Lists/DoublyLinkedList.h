@@ -15,7 +15,7 @@ com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: DoublyLinkedList.h
 Descrição: Definições para listas duplas
-Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
+Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 
 #ifndef DOUBLYLINKEDLIST_H
 #define DOUBLYLINKEDLIST_H

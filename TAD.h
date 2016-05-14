@@ -15,7 +15,7 @@ com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: TAD.h
 Descrição: Definição dos Tipos Abstratos de Dados básicas usadas no projeto
-Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
+Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 
 #ifndef TAD_H
 #define TAD_H

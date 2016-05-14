@@ -15,7 +15,7 @@ com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: Utilities.c
 Descrição: Implementações de funções utilitarias de manipulação de texto
-Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
+Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 
 #define _CRT_SECURE_NO_WARNINGS 1
 #include "Utilities.h"

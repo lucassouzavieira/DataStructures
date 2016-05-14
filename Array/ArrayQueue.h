@@ -15,7 +15,7 @@ com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: ArrayQueue.h
 Descrição: Definições para estruturas do tipo filas estáticas
-Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
+Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 
 #ifndef ARRAYQUEUE_H
 #define ARRAYQUEUE_H

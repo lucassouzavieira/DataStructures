@@ -15,7 +15,7 @@ com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: BinarySearchTree.h
 Descrição: Definições para estruturas do tipo árvore binária de busca
-Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
+Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 
 #ifndef BINARYSEARCHTREE_H
 #define BINARYSEARCHTREE_H

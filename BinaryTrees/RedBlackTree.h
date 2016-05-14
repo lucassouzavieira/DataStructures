@@ -15,7 +15,7 @@ com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: RedBlackTree.h
 Descrição: Definição para estruturas do tipo árvore rubro-negra
-Autor: Lucas de Souza Vieira <lukaslka_my08@hotmail.com>	*/
+Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 
 #ifndef REDBLACKTREE_H
 #define REDBLACKTREE_H
