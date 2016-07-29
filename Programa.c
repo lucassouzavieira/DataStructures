@@ -1,23 +1,22 @@
 /**
-Este arquivo é parte do projeto Data Structures
-Este é um software livre; você pode redistribuí-lo e/ou
-modificá-lo dentro dos termos da Licença Pública Geral GNU como
-publicada pela Fundação do Software Livre (FSF); na versão 3 da
-Licença, ou (na sua opinião) qualquer versão.
+Este arquivo Ã© parte do projeto Data Structures
+Este Ã© um software livre; vocÃª pode redistribuÃ­-lo e/ou
+modificÃ¡-lo dentro dos termos da LicenÃ§a PÃºblica Geral GNU como
+publicada pela FundaÃ§Ã£o do Software Livre (FSF); na versÃ£o 3 da
+LicenÃ§a, ou (na sua opiniÃ£o) qualquer versÃ£o.
 
-Este programa é distribuído na esperança de que possa ser  útil,
-mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
-a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
-Licença Pública Geral GNU para maiores detalhes.
+Este programa Ã© distribuÃ­do na esperanÃ§a de que possa ser  Ãºtil,
+mas SEM NENHUMA GARANTIA; sem uma garantia implÃ­cita de ADEQUAÃ‡ÃƒO
+a qualquer MERCADO ou APLICAÃ‡ÃƒO EM PARTICULAR. Veja a
+LicenÃ§a PÃºblica Geral GNU para maiores detalhes.
 
-Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
+VocÃª deve ter recebido uma cÃ³pia da LicenÃ§a PÃºblica Geral GNU junto
+com este programa, Se nÃ£o, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: Programa.c
-Descrição: Teste das implementações das estruturas de dados
+DescriÃ§Ã£o: Teste das implementaÃ§Ãµes das estruturas de dados
 Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 
-#define _CRT_SECURE_NO_WARNINGS 1 /* Desabilita verificações de segurança  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -27,7 +26,7 @@ Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 #include "Compression\RLE.h"
 #include "Compression\Huffman.h"
 
-/* Testa as funções da Lista Encadeada  */
+/* Testa as funÃ§Ãµes da Lista Encadeada  */
 void LinkedListTest()
 {
 	list myList;
@@ -53,7 +52,7 @@ void LinkedListTest()
 	printf("Nodes: %ld \n", myList.nodes);
 }
 
-/* Testa as funções de Inserção e Remoção de Heap */
+/* Testa as funÃ§Ãµes de InserÃ§Ã£o e RemoÃ§Ã£o de Heap */
 void HeapTest()
 {
 	heap* myHeap = CreateHeap(10);
@@ -80,7 +79,7 @@ void HeapTest()
 	ShowHeap(myHeap);
 }
 
-/* Teste da Árvore AVL 
+/* Teste da Ã¡rvore AVL
 void AVLTest() 
 {
 	AVLTree myTree = CreateAVLTree();
@@ -96,7 +95,7 @@ void AVLTest()
 	DrawAVLTree(&myTree);
 }  */
 
-/* Teste da Árvore Binária
+/* Teste da ï¿½rvore Binï¿½ria
 void BSTTest()
 {
 	BSTree myTree = CreateBST();
