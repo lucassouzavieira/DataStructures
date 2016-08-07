@@ -1,61 +1,61 @@
 /**
-Este arquivo é parte do projeto Data Structures
-Este é um software livre; você pode redistribuí-lo e/ou
-modificá-lo dentro dos termos da Licença Pública Geral GNU como
-publicada pela Fundação do Software Livre (FSF); na versão 3 da
-Licença, ou (na sua opinião) qualquer versão.
+Este arquivo Ã© parte do projeto Data Structures
+Este Ã© um software livre; vocÃª pode redistribuÃ­-lo e/ou
+modificÃ¡-lo dentro dos termos da LicenÃ§a PÃºblica Geral GNU como
+publicada pela FundaÃ§Ã£o do Software Livre (FSF); na versÃ£o 3 da
+LicenÃ§a, ou (na sua opiniÃ£o) qualquer versÃ£o.
 
-Este programa é distribuído na esperança de que possa ser  útil,
-mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
-a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
-Licença Pública Geral GNU para maiores detalhes.
+Este programa Ã© distribuÃ­do na esperanÃ§a de que possa ser  Ãºtil,
+mas SEM NENHUMA GARANTIA; sem uma garantia implÃ­cita de ADEQUAÃ‡ÃƒO
+a qualquer MERCADO ou APLICAÃ‡ÃƒO EM PARTICULAR. Veja a
+LicenÃ§a PÃºblica Geral GNU para maiores detalhes.
 
-Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
+VocÃª deve ter recebido uma cÃ³pia da LicenÃ§a PÃºblica Geral GNU junto
+com este programa, Se nÃ£o, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: SortingAlgorithms.h
-Descrição: Definição de algoritmos de ordenação
+DescriÃ§Ã£o: DefiniÃ§Ã£o de algoritmos de ordenaÃ§Ã£o
 Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 
 
 #ifndef SORTINGALGORITHMS_H
 #define SORTINGALGORITHMS_H
-#include "..\TAD.h"
+#include "../TAD.h"
 
-/* Algoritmo de ordenação Bubble Sort  */
-long int* BubbleSort(long int* vector, long int numberOfElements); 
+/* Bubble Sort  */
+long int* BubbleSort(long int* vector, long int numberOfElements);
 
-/* Algoritmo de ordenação Bubble Sort - Melhorado  */
+/* Bubble Sort - Melhorado  */
 long int* BubbleSortImproved(long int* vector, long int numberOfElements); 
 
-/* Algoritmo de ordenação Insertion Sort  */
+/* Insertion Sort  */
 long int* InsertionSort(long int* vector, long int numberOfElements);  
 
-/* Algoritmo de ordenação Selection Sort  */
+/* Selection Sort  */
 long int* SelectionSort(long int* vector, long int numberOfElements);   
 
-/* Algoritmo de ordenação Merge Sort (Passar nº elementos + 1)  */
+/* Merge Sort */
 void MergeSort(long int* vector, long int numberOfElements);  
 
-/* Algoritmo de ordenação Quick Sort  */
+/* Quick Sort  */
 long int* QuickSort(long int* vector, long int numberOfElements);  
 
-/* Algoritmo de ordenação Heap Sort  */
+/* Heap Sort  */
 void HeapSort(long int* vector, long int numberOfElements);  
 
-/* Algoritmo de ordenação Comb Sort 11  */
+/* Comb Sort 11  */
 long int* CombSort(long int* vector, long int numberOfElements);  
 
-/* Algoritmo de ordenação Shell Sort  */
+/* Shell Sort  */
 long int* ShellSort(long int* vector, long int numberOfElements);  
 
-/* Algoritmo de ordenação Gnome Sort  */
+/* Gnome Sort  */
 long int* GnomeSort(long int* vector, long int numberOfElements);  
 
-/* Algoritmo de ordenação Bogo Sort  */
+/* Bogo Sort  */
 long int* BogoSort(long int* vector, long int numberOfElements); 
 
-/* Algoritmo de ordenação Couting Sort  */
+/* Couting Sort  */
 long int* CoutingSort(long int* vector, long int numberOfElements);  
 
 #endif /* !SORTINGALGORITHMS_H */

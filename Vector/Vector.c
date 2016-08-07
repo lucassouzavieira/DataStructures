@@ -1,28 +1,26 @@
 /**
-Este arquivo é parte do projeto Data Structures
-Este é um software livre; você pode redistribuí-lo e/ou
-modificá-lo dentro dos termos da Licença Pública Geral GNU como
-publicada pela Fundação do Software Livre (FSF); na versão 3 da
-Licença, ou (na sua opinião) qualquer versão.
+Este arquivo Ã© parte do projeto Data Structures
+Este Ã© um software livre; vocÃª pode redistribuÃ­-lo e/ou
+modificÃ¡-lo dentro dos termos da LicenÃ§a PÃºblica Geral GNU como
+publicada pela FundaÃ§Ã£o do Software Livre (FSF); na versÃ£o 3 da
+LicenÃ§a, ou (na sua opiniÃ£o) qualquer versÃ£o.
 
-Este programa é distribuído na esperança de que possa ser  útil,
-mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
-a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
-Licença Pública Geral GNU para maiores detalhes.
+Este programa Ã© distribuÃ­do na esperanÃ§a de que possa ser  Ãºtil,
+mas SEM NENHUMA GARANTIA; sem uma garantia implÃ­cita de ADEQUAÃ‡ÃƒO
+a qualquer MERCADO ou APLICAÃ‡ÃƒO EM PARTICULAR. Veja a
+LicenÃ§a PÃºblica Geral GNU para maiores detalhes.
 
-Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
+VocÃª deve ter recebido uma cÃ³pia da LicenÃ§a PÃºblica Geral GNU junto
+com este programa, Se nÃ£o, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: Vector.c
-Descrição: Implementação de funções auxiliares para tratamento de vetores
+DescriÃ§Ã£o: ImplementaÃ§Ã£o de funÃ§Ãµes auxiliares para tratamento de vetores
 Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 
-#define _CRT_SECURE_NO_WARNINGS 1 /* Desabilita verificações de segurança */
 #define MAX 4000000
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "..\TAD.h"
 
 /* Imprime os elementos do vetor */
 void ShowVector (long int *vector, long int numberOfElements)
@@ -71,16 +69,15 @@ long int* RetrieveVector (const char* address, long *vector, long int numberOfEl
 	return vector;
 }
 
-/* Cria um vetor com números aleatórios */
+/* Cria um vetor com valorer randomicos */
 long int* CreateRandomVector (long int numberOfElements)
 {
-	/* A função gera inteiros aleatórios entre -1.310.680 e +1.638.350
-	Última modificação de faixa em 05/12/2015, às 4:42PM */
+	/*Inteiros aleatï¿½rios entre -1.310.680 e +1.638.350*/
 	srand(time(NULL));
 	long int* vector; 
 	vector = (long int *)(malloc(numberOfElements*sizeof(long int)));
 	if (vector == NULL) {
-		printf("Erro durante a alocação de memória! \n");
+		printf("Memory allocation error! \n");
 		return NULL;
 	}
 	else {

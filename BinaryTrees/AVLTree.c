@@ -1,32 +1,32 @@
 /**
-Este arquivo é parte do projeto Data Structures
-Este é um software livre; você pode redistribuí-lo e/ou
-modificá-lo dentro dos termos da Licença Pública Geral GNU como
-publicada pela Fundação do Software Livre (FSF); na versão 3 da
-Licença, ou (na sua opinião) qualquer versão.
+Este arquivo Ã© parte do projeto Data Structures
+Este Ã© um software livre; vocÃª pode redistribuÃ­-lo e/ou
+modificÃ¡-lo dentro dos termos da LicenÃ§a PÃºblica Geral GNU como
+publicada pela FundaÃ§Ã£o do Software Livre (FSF); na versÃ£o 3 da
+LicenÃ§a, ou (na sua opiniÃ£o) qualquer versÃ£o.
 
-Este programa é distribuído na esperança de que possa ser  útil,
-mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
-a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
-Licença Pública Geral GNU para maiores detalhes.
+Este programa Ã© distribuÃ­do na esperanÃ§a de que possa ser  Ãºtil,
+mas SEM NENHUMA GARANTIA; sem uma garantia implÃ­cita de ADEQUAÃ‡ÃƒO
+a qualquer MERCADO ou APLICAÃ‡ÃƒO EM PARTICULAR. Veja a
+LicenÃ§a PÃºblica Geral GNU para maiores detalhes.
 
-Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
+VocÃª deve ter recebido uma cÃ³pia da LicenÃ§a PÃºblica Geral GNU junto
+com este programa, Se nÃ£o, veja <http:/*www.gnu.org/licenses/>.
 
 Arquivo: AVLTree.c
-Descrição: Implementação para estruturas do tipo árvore AVL
+Descriï¿½ï¿½o: Implementaï¿½ï¿½o para estruturas do tipo ï¿½rvore AVL
 Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 
-/* Funções utilitárias */
+/* Funï¿½ï¿½es utilitï¿½rias */
 #include <stdlib.h>
 #include <stdio.h>
 #include <Windows.h>
-#include "..\TAD.h"
+#include "../TAD.h"
 
 nodeavl* MaintenanceAVLTree(nodeavl* myTree);
 int CalculateBalanceFactor(nodeavl* mynode);
 
-/* Recebe a árvore (ou uma sub-árvore) e cálcula sua altura  */
+/* Recebe a ï¿½rvore (ou uma sub-ï¿½rvore) e cï¿½lcula sua altura  */
 int HeightAVLTree(nodeavl* myTree)
 {
 	if (myTree == NULL){
@@ -42,7 +42,7 @@ int HeightAVLTree(nodeavl* myTree)
 	}
 }
 
-/* Criar uma Árvore AVL  */
+/* Criar uma ï¿½rvore AVL  */
 AVLTree CreateAVLTree()
 {
 	AVLTree myTree;
@@ -51,7 +51,7 @@ AVLTree CreateAVLTree()
 	return myTree;
 }
 
-/* Inserir elementos na Árvore AVL */
+/* Inserir elementos na ï¿½rvore AVL */
 nodeavl* InsertAVLTree (nodeavl* myTree, long int key)
 {
 	if (myTree == NULL){
@@ -73,7 +73,7 @@ nodeavl* InsertAVLTree (nodeavl* myTree, long int key)
 			myTree->right = InsertAVLTree(myTree->right, key);
 		}
 	}
-	myTree = MaintenanceAVLTree(myTree); /* Verifica a manutenção  */
+	myTree = MaintenanceAVLTree(myTree); /* Verifica a manutenï¿½ï¿½o  */
 	return myTree;
 }
 
@@ -83,7 +83,7 @@ void InsertInAVLTree (AVLTree* myTree, long int key)
 	myTree->nodes++;
 }
 
-/* Buscar elementos na Árvore AVL  */
+/* Buscar elementos na ï¿½rvore AVL  */
 nodeavl* SearchAVLTree (AVLTree* myTree, long int key)
 {
 	nodeavl* aux = myTree->root;
@@ -101,7 +101,7 @@ nodeavl* SearchAVLTree (AVLTree* myTree, long int key)
 	return NULL;
 }
 
-/* Recebe um nó, faz a busca e o remove da árvore  */
+/* Recebe um nï¿½, faz a busca e o remove da ï¿½rvore  */
 nodeavl* RemoveAVL (nodeavl* myTree, long int key)
 {
 	nodeavl *toRemove = myTree;
@@ -109,7 +109,7 @@ nodeavl* RemoveAVL (nodeavl* myTree, long int key)
 	nodeavl	*substitute; 
 	nodeavl *aux;
 	nodeavl *heritor;
-	/* Busca o nó a ser removido  */
+	/* Busca o nï¿½ a ser removido  */
 	while (toRemove != NULL && toRemove->key != key){
 		father = toRemove;
 		if (key < toRemove->key){
@@ -122,16 +122,16 @@ nodeavl* RemoveAVL (nodeavl* myTree, long int key)
 		printf("Elemento nao encontrado ! \n");
 		return myTree;
 	}
-	/* Dois primeiros casos: O nó tem 0 ou 1 filho  */
+	/* Dois primeiros casos: O nï¿½ tem 0 ou 1 filho  */
 	if (toRemove->left == NULL){
 		substitute = toRemove->right;
 	} else if (toRemove->right == NULL){
 		substitute = toRemove->left;
 	} else {
-		/* Último caso: nó com 2 filhos  */
+		/* ï¿½ltimo caso: nï¿½ com 2 filhos  */
 		aux = toRemove;
 		substitute = toRemove->right;
-		heritor = substitute->left; /* Sucessor é sempre o filho mais esquerdo do substituto */
+		heritor = substitute->left; /* Sucessor ï¿½ sempre o filho mais esquerdo do substituto */
 		while (heritor != NULL) {
 			aux = substitute;
 			substitute = heritor;
@@ -141,8 +141,8 @@ nodeavl* RemoveAVL (nodeavl* myTree, long int key)
 			aux->left = substitute->right;
 			substitute->right = toRemove->right;
 		}
-		/*O substituto ocupa o lugar de nó removido, 
-		o filho esquerda do substituto é manipulado 
+		/*O substituto ocupa o lugar de nï¿½ removido, 
+		o filho esquerda do substituto ï¿½ manipulado 
 		para permitir isso*/
 		substitute->left = toRemove->left;
 	}
@@ -166,7 +166,7 @@ void RemoveAVLTree (AVLTree* myTree, long int key)
 	myTree->nodes--;
 }
 
-/* Destruir a árvore AVL  */
+/* Destruir a ï¿½rvore AVL  */
 void DestroyAVL (nodeavl* myTree)
 {
 	if (myTree == NULL){
@@ -191,13 +191,13 @@ int CalculateBalanceFactor (nodeavl* mynode)
 	if (mynode == NULL){
 		return 0;
 	} else {
-		/* Calcula a diferença de alturas entre as subárvores 
-		esquerda e direita de cada nó */ 
+		/* Calcula a diferenï¿½a de alturas entre as subï¿½rvores 
+		esquerda e direita de cada nï¿½ */ 
 		return (HeightAVLTree(mynode->left) - HeightAVLTree(mynode->right));
 	}
 }
 
-/* Ajustar os Fatores de Balanceamento de todos os nós da árvore  */
+/* Ajustar os Fatores de Balanceamento de todos os nï¿½s da ï¿½rvore  */
 void SetbalanceFactor (nodeavl* myTree)
 {
 	if (myTree != NULL){
@@ -210,18 +210,18 @@ void SetbalanceFactor (nodeavl* myTree)
 	return;
 }
 
-/* Funções utilitárias para as rotações */
+/* Funï¿½ï¿½es utilitï¿½rias para as rotaï¿½ï¿½es */
 nodeavl* RotateRightAVLTree (nodeavl* mynode)
 {
 	nodeavl* aux = mynode->left;
 	if (aux->right != NULL) {
-		/* Se o filho do nó atual tem sub-árvore à direita
-		Então o nó atual terá como filho a sub-árvore esquerda do filho*/
+		/* Se o filho do nï¿½ atual tem sub-ï¿½rvore ï¿½ direita
+		Entï¿½o o nï¿½ atual terï¿½ como filho a sub-ï¿½rvore esquerda do filho*/
 		mynode->left = aux->right;
 	}else{
 		mynode->left = NULL;
 	}
-	/* O nó atual vira filho direito do seu próprio filho  */
+	/* O nï¿½ atual vira filho direito do seu prï¿½prio filho  */
 	aux->right = mynode;
 	return aux;
 }
@@ -230,13 +230,13 @@ nodeavl* RotateLeftAVLTree (nodeavl* mynode)
 {
 	nodeavl* aux = mynode->right;
 	if (aux->left != NULL){
-		/* Se o filho do nó atual tem sub-árvore à esquerda
-		Então o nó atual terá como filho a sub-árvore direita do filho*/
+		/* Se o filho do nï¿½ atual tem sub-ï¿½rvore ï¿½ esquerda
+		Entï¿½o o nï¿½ atual terï¿½ como filho a sub-ï¿½rvore direita do filho*/
 		mynode->right = aux->left;
 	} else {
 		mynode->right = NULL;
 	}
-	/* O nó atual vira filho esquerda do seu próprio filho  */
+	/* O nï¿½ atual vira filho esquerda do seu prï¿½prio filho  */
 	aux->left = mynode;
 	return aux;
 }
@@ -247,16 +247,16 @@ nodeavl* DoubleRotateRightAVLTree (nodeavl* mynode)
 	nodeavl* rightGrandson = leftChild->right;
 	if (rightGrandson->left != NULL){
 		/*Se existe o filho esquerda do filho direito do filho esquerda do
-		nó atual, então o filho direito do filho esquerda do nó atual recebe
-		o filho esquerda do filho direito do filho esquerda do nó atual*/
+		nï¿½ atual, entï¿½o o filho direito do filho esquerda do nï¿½ atual recebe
+		o filho esquerda do filho direito do filho esquerda do nï¿½ atual*/
 		leftChild->right = rightGrandson->left;
 	} else {
 		leftChild->right = NULL;
 	}
 	if (rightGrandson->right != NULL){
 		/*Se existe o filho direito do filho direito do filho esquerda do
-		nó atual, então o filho direito do filho esquerda do nó atual recebe
-		o filho esquerda do filho direito do filho esquerda do nó atual*/
+		nï¿½ atual, entï¿½o o filho direito do filho esquerda do nï¿½ atual recebe
+		o filho esquerda do filho direito do filho esquerda do nï¿½ atual*/
 		leftChild->right = rightGrandson->left;
 	} else {
 		mynode->right = NULL;
@@ -272,16 +272,16 @@ nodeavl* DoubleRotateLeftAVLTree (nodeavl* mynode)
 	nodeavl* leftGrandson = rightChild->left;
 	if (leftGrandson->left != NULL) {
 		/*Se existe o filho esquerda do filho esquerda do filho direito do
-		nó atual, então o filho direito do nó atual passa a ser então o filho
-		esquerda do filho esquerda do filho direito do nó atual*/
+		nï¿½ atual, entï¿½o o filho direito do nï¿½ atual passa a ser entï¿½o o filho
+		esquerda do filho esquerda do filho direito do nï¿½ atual*/
 		mynode->right = leftGrandson->left;
 	} else {
 		mynode->right = NULL;
 	}
 	if (leftGrandson->right != NULL){
 		/*Se existe o filho direito do filho esquerda do filho direito do
-		nó atual, então o filho esquerda do filho direito passa a ser então o filho
-		direito do filho esquerda do filho direito do nó atual*/
+		nï¿½ atual, entï¿½o o filho esquerda do filho direito passa a ser entï¿½o o filho
+		direito do filho esquerda do filho direito do nï¿½ atual*/
 		rightChild->left = leftGrandson->right;
 	} else {
 		rightChild->left = NULL;
@@ -291,7 +291,7 @@ nodeavl* DoubleRotateLeftAVLTree (nodeavl* mynode)
 	return leftGrandson;
 }
 
-/* Manter a Árvore Balanceada  */
+/* Manter a ï¿½rvore Balanceada  */
 nodeavl* MaintenanceAVLTree (nodeavl* myTree)
 {
 	if (myTree != NULL){
@@ -319,7 +319,7 @@ nodeavl* MaintenanceAVLTree (nodeavl* myTree)
 	return myTree;
 }
 
-/* Desenha a árvore binária  */
+/* Desenha a ï¿½rvore binï¿½ria  */
 void ShowBranchAVL (branches *t)
 {
 	if (!t){
