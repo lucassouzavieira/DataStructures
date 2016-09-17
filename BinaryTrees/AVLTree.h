@@ -1,42 +1,40 @@
-/**
-Este arquivo é parte do projeto Data Structures
-Este é um software livre; você pode redistribuí-lo e/ou
-modificá-lo dentro dos termos da Licença Pública Geral GNU como
-publicada pela Fundação do Software Livre (FSF); na versão 3 da
-Licença, ou (na sua opinião) qualquer versão.
+/*
+ Implementacao de Arvore AVL
 
-Este programa é distribuído na esperança de que possa ser  útil,
-mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
-a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
-Licença Pública Geral GNU para maiores detalhes.
+ Copyright (C) 2016  Lucas S. Vieira
 
-Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
+ This program is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License,
+ or (at your option) any later version.
 
-Arquivo: AVLTree.h
-Descrição: Definições para estruturas do tipo árvore AVL
-Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 #ifndef AVLTREE_H
 #define AVLTREE_H
-#include "..\TAD.h"
+#include "../TAD.h"
 
-/* Criar uma Árvore AVL */
+/* Criar uma arvore AVL */
 AVLTree CreateAVLTree();
 
-/* Inserir elementos na Árvore AVL */
+/* Inserir elementos na arvore AVL */
 void InsertInAVLTree(AVLTree* myTree, long int key);
 
-/* Buscar elementos na Árvore AVL */
+/* Buscar elementos na arvore AVL */
 nodeavl* SearchAVLTree(AVLTree* myTree, long int key);
 
-/* Remover elemento na Árvore AVL */
+/* Remover elemento na arvore AVL */
 void RemoveAVLTree(AVLTree* myTree, long int key);
 
-/* Destruir a árvore AVL */
+/* Destruir a arvore AVL */
 void DestroyAVLTree(AVLTree* myTree);
 
-/* Desenha a árvore AVL */
+/* Desenha a arvore AVL */
 void DrawAVLTree(AVLTree* myTree);
 
 #endif /* AVLTREE_H */

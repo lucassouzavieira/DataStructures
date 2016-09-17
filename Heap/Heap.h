@@ -1,21 +1,19 @@
-/**
-Este arquivo é parte do projeto Data Structures
-Este é um software livre; você pode redistribuí-lo e/ou
-modificá-lo dentro dos termos da Licença Pública Geral GNU como
-publicada pela Fundação do Software Livre (FSF); na versão 3 da
-Licença, ou (na sua opinião) qualquer versão.
+/*
+ Implementacao de Heap
 
-Este programa é distribuído na esperança de que possa ser  útil,
-mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
-a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
-Licença Pública Geral GNU para maiores detalhes.
+ Copyright (C) 2016  Lucas S. Vieira
 
-Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
+ This program is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License,
+ or (at your option) any later version.
 
-Arquivo: Heap.h
-Descrição: Definições para estruturas Heap
-Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 #ifndef HEAP_H
 #define HEAP_H
@@ -35,6 +33,6 @@ long int RemoveHeap(heap* myHeap);
 /* Exibe o Heap */
 void ShowHeap(heap* myHeap);
 
-/* Cria um Heap de Máximo dado um vetor */
+/* Cria um Heap de Maximo dado um vetor */
 void MaxHeapSort(long int* vector, long int numberOfElements);
 #endif /* !HEAP_H */

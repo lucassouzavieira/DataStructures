@@ -1,32 +1,29 @@
-/**
-Este arquivo é parte do projeto Data Structures
-Este é um software livre; você pode redistribuí-lo e/ou
-modificá-lo dentro dos termos da Licença Pública Geral GNU como
-publicada pela Fundação do Software Livre (FSF); na versão 3 da
-Licença, ou (na sua opinião) qualquer versão.
+/*
+ Implementacao de Arvore AVL
 
-Este programa é distribuído na esperança de que possa ser  útil,
-mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
-a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
-Licença Pública Geral GNU para maiores detalhes.
+ Copyright (C) 2016  Lucas S. Vieira
 
-Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
+ This program is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License,
+ or (at your option) any later version.
 
-Arquivo: AVLTree.c
-Descri��o: Implementa��o para estruturas do tipo �rvore AVL
-Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-/* Fun��es utilit�rias */
+
 #include <stdlib.h>
 #include <stdio.h>
-#include <Windows.h>
 #include "../TAD.h"
 
 nodeavl* MaintenanceAVLTree(nodeavl* myTree);
 int CalculateBalanceFactor(nodeavl* mynode);
 
-/* Recebe a �rvore (ou uma sub-�rvore) e c�lcula sua altura  */
+/* Recebe a arvore e calcula sua altura  */
 int HeightAVLTree(nodeavl* myTree)
 {
 	if (myTree == NULL){
@@ -42,7 +39,7 @@ int HeightAVLTree(nodeavl* myTree)
 	}
 }
 
-/* Criar uma �rvore AVL  */
+/* Criar uma arvore AVL  */
 AVLTree CreateAVLTree()
 {
 	AVLTree myTree;
@@ -51,7 +48,7 @@ AVLTree CreateAVLTree()
 	return myTree;
 }
 
-/* Inserir elementos na �rvore AVL */
+/* Inserir elementos na arvore AVL */
 nodeavl* InsertAVLTree (nodeavl* myTree, long int key)
 {
 	if (myTree == NULL){
@@ -83,7 +80,7 @@ void InsertInAVLTree (AVLTree* myTree, long int key)
 	myTree->nodes++;
 }
 
-/* Buscar elementos na �rvore AVL  */
+/* Buscar elementos na arvore AVL  */
 nodeavl* SearchAVLTree (AVLTree* myTree, long int key)
 {
 	nodeavl* aux = myTree->root;
@@ -101,7 +98,7 @@ nodeavl* SearchAVLTree (AVLTree* myTree, long int key)
 	return NULL;
 }
 
-/* Recebe um n�, faz a busca e o remove da �rvore  */
+/* Recebe um no, faz a busca e o remove da arvore  */
 nodeavl* RemoveAVL (nodeavl* myTree, long int key)
 {
 	nodeavl *toRemove = myTree;
@@ -122,16 +119,16 @@ nodeavl* RemoveAVL (nodeavl* myTree, long int key)
 		printf("Elemento nao encontrado ! \n");
 		return myTree;
 	}
-	/* Dois primeiros casos: O n� tem 0 ou 1 filho  */
+	/* Dois primeiros casos: O no tem 0 ou 1 filho  */
 	if (toRemove->left == NULL){
 		substitute = toRemove->right;
 	} else if (toRemove->right == NULL){
 		substitute = toRemove->left;
 	} else {
-		/* �ltimo caso: n� com 2 filhos  */
+		/* ultimo caso: no com 2 filhos  */
 		aux = toRemove;
 		substitute = toRemove->right;
-		heritor = substitute->left; /* Sucessor � sempre o filho mais esquerdo do substituto */
+		heritor = substitute->left; /* Sucessor e sempre o filho mais esquerdo do substituto */
 		while (heritor != NULL) {
 			aux = substitute;
 			substitute = heritor;
@@ -166,7 +163,7 @@ void RemoveAVLTree (AVLTree* myTree, long int key)
 	myTree->nodes--;
 }
 
-/* Destruir a �rvore AVL  */
+/* Destruir a arvore AVL  */
 void DestroyAVL (nodeavl* myTree)
 {
 	if (myTree == NULL){

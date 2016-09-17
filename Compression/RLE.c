@@ -1,33 +1,30 @@
-/**
-Este arquivo é parte do projeto Data Structures
-Este é um software livre; você pode redistribuí-lo e/ou
-modificá-lo dentro dos termos da Licença Pública Geral GNU como
-publicada pela Fundação do Software Livre (FSF); na versão 3 da
-Licença, ou (na sua opinião) qualquer versão.
+/*
+ Algoritmo RLE para compressao de texto
 
-Este programa é distribuído na esperança de que possa ser  útil,
-mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
-a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
-Licença Pública Geral GNU para maiores detalhes.
+ Copyright (C) 2016  Lucas S. Vieira
 
-Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
+ This program is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License,
+ or (at your option) any later version.
 
-Arquivo: RLE.h
-Descrição: Algoritmo RLE para Compressão de Texto
-Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 #include "RLE.h"
 #include "Utilities.h"
-#include <stdio.h>
-#include <stdlib.h>
+
 #define _CRT_SECURE_NO_WARNINGS
 /*********************************************************************************************
 Run-Length Encoding:
 *Conjunto de Caracteres: A-Za-z ; 0-9;
-*Delimitadores: '@' para repetição de caracteres (A-Za-z);
-				'-' para espaços em branco
-				'RLE' para identificação dessa codificação no arquivo
+*Delimitadores: '@' para repeticao de caracteres (A-Za-z);
+				'-' para espacos em branco
+				'RLE' para identificacao dessa codificacao no arquivo
 
 *Exemplo:	Input:	'aaaaawwwwab   hhhhrrttttt332'
 			Output: '@4a@4wab$3-@4h@2r@5t#232'
@@ -39,16 +36,17 @@ Tabela ASCII usada como base: <http:/*ic.unicamp.br/~everton/aulas/hardware/tabe
 /* Retorna a string codificada pelo RLE */
 char* encodeRLE(char* myString)
 {
-	FILE* tmpFile = fopen("tmpOutPutFile", "w");
-	int occurrences = 1;
-	const char* encodedString = NULL;
+	FILE* 		tmpFile 		= fopen("tmpOutPutFile", "w");
+	int 		occurrences 	= 1;
+	const char* encodedString 	= NULL;
+
 	if (myString == NULL)
 		return NULL;
 	for (int i = 1; myString[i - 1] != '\0'; i++) {
 		if (myString[i] == myString[i - 1]) {
 			occurrences++;
 		} else if (occurrences < 4) {
-			/* Otimização para RLE  */
+			/* Otimizacao para RLE  */
 			for (int j = 1; j <= occurrences; j++) {
 				fflush(stdout);
 				fprintf(tmpFile, "%c", myString[i - 1]);
@@ -60,23 +58,26 @@ char* encodeRLE(char* myString)
 			occurrences = 1;
 		}
 	}
+
 	fclose(tmpFile);
 	encodedString = fromFile("tmpOutPutFile");
-	/* remove("tmpFile");  */
+
 	return encodedString;
 }
 
 /* Decodifica uma string codificada pelo RLE  */
 char* decodeRLE(char * myString)
 {
-	int stringSize;
-	int i = 0;
-	int charOccurrences;
-	FILE* tmpFile = fopen("tmpInputFile", "w");
-	char character;
-	char ocurrences[3] = { "\0" };
+	FILE* 	tmpFile 		= fopen("tmpInputFile", "w");
+	int 	stringSize		= 0;
+	int 	i 				= 0;
+	int 	charOccurrences = 0;
+	char 	character		= 0;
+	char 	ocurrences[3] 	= { "\0" };
+
 	if (myString == NULL)
 		return NULL;
+
 	stringSize = strlen(myString);
 	for (i = 0; i <= stringSize;) {
 		fflush(stdout);

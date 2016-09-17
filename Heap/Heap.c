@@ -1,26 +1,24 @@
-/**
-Este arquivo é parte do projeto Data Structures
-Este é um software livre; você pode redistribuí-lo e/ou
-modificá-lo dentro dos termos da Licença Pública Geral GNU como
-publicada pela Fundação do Software Livre (FSF); na versão 3 da
-Licença, ou (na sua opinião) qualquer versão.
+/*
+ Implementacao de Heap
 
-Este programa é distribuído na esperança de que possa ser  útil,
-mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
-a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
-Licença Pública Geral GNU para maiores detalhes.
+ Copyright (C) 2016  Lucas S. Vieira
 
-Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
+ This program is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License,
+ or (at your option) any later version.
 
-Arquivo: Heap.c
-Descrição: Implementação para Heap
-Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "..\TAD.h"
-#include "..\Vector\Vector.h"
+#include "../TAD.h"
+#include "../Vector/Vector.h"
 
 #define LEFT(x)  (2*x + 1)
 #define RIGHT(x) (2*x + 2)
@@ -126,15 +124,15 @@ void ShowHeap (heap* myHeap)
 }
 
 /* HEAP SORT
-/* Cria um Heap de Máximo dado um vetor
+/* Cria um Heap de Mï¿½ximo dado um vetor
 void MaxHeapSort (long int* vector, long int numberOfElements)
 {
-	/*Checar se o Heap está vazio
+	/*Checar se o Heap estï¿½ vazio
 	if (numberOfElements == 0) {
 		printf("O Heap esta vazio! \n");
 	}
-	long int aux; /* Variável auxiliar
-	long int n = numberOfElements; /* + 1 para ajuste de posição
+	long int aux; /* Variï¿½vel auxiliar
+	long int n = numberOfElements; /* + 1 para ajuste de posiï¿½ï¿½o
 	long int father = numberOfElements / 2;
 	long int index, child;
 
@@ -162,14 +160,14 @@ void MaxHeapSort (long int* vector, long int numberOfElements)
 			}
 			if (vector[child] < aux) {
 				vector[index] = vector[child];
-				index = child; /*índice fica igual ao filho
+				index = child; /*ï¿½ndice fica igual ao filho
 				child = index * 2 + 1; /* Pega o filho da esquerda e repetir o processo
 			}
 			else {
 				break;
 			}
 		}
-		/*Novos valores são salvos temporáriamente em novas posições
+		/*Novos valores sï¿½o salvos temporï¿½riamente em novas posiï¿½ï¿½es
 		vector[index] = aux;
 	}
 }

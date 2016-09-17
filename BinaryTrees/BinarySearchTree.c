@@ -1,29 +1,25 @@
-/**
-Este arquivo é parte do projeto Data Structures
-Este é um software livre; você pode redistribuí-lo e/ou
-modificá-lo dentro dos termos da Licença Pública Geral GNU como
-publicada pela Fundação do Software Livre (FSF); na versão 3 da
-Licença, ou (na sua opinião) qualquer versão.
+/*
+ Implementacao de Arvore Binaria de Busca
 
-Este programa é distribuído na esperança de que possa ser  útil,
-mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
-a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
-Licença Pública Geral GNU para maiores detalhes.
+ Copyright (C) 2016  Lucas S. Vieira
 
-Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
+ This program is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License,
+ or (at your option) any later version.
 
-Arquivo: BinarySearchTree.c
-Descrição: Implementação para estruturas do tipo árvore binária de busca
-Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-#define _CRT_SECURE_NO_WARNINGS 1;
 #include <stdlib.h>
 #include <stdio.h>
-#include <Windows.h>
-#include "..\TAD.h"
+#include "../TAD.h"
 
-/* Criar a árvore  */
+/* Criar a arvore  */
 BSTree CreateBST ()
 {
 	BSTree myBSTree;
@@ -32,11 +28,11 @@ BSTree CreateBST ()
 	return myBSTree;
 }
 
-/* Insere um elemento na árvore */
+/* Insere um elemento na ï¿½rvore */
 void InsertInBST (BSTree* myTree, long int key)
 {
 	if (myTree->root == NULL){
-		/* Árvore vazia */
+		/* ï¿½rvore vazia */
 		nodetree* newNode = (nodetree *)(malloc(sizeof(nodetree)));
 		if (newNode != NULL){
 			newNode->key = key;
@@ -51,7 +47,7 @@ void InsertInBST (BSTree* myTree, long int key)
 			newNode->right = NULL;
 			newNode->left = NULL;
 		} 
-		/* Buscar a posição da nova folha  */
+		/* Buscar a posiï¿½ï¿½o da nova folha  */
 		nodetree* father = NULL;
 		nodetree* current = myTree->root;
 		while (current != NULL){
@@ -72,8 +68,8 @@ void InsertInBST (BSTree* myTree, long int key)
 	myTree->nodes++;
 }
 
-/* Remoção de um elemento qualquer da árvore 
-   Busca o elemento mais à direita  */
+/* Remoï¿½ï¿½o de um elemento qualquer da ï¿½rvore 
+   Busca o elemento mais ï¿½ direita  */
 nodetree* MostRight (nodetree* tree)
 {
 	if (tree->right != NULL) {
@@ -88,7 +84,7 @@ nodetree* MostRight (nodetree* tree)
 		return aux;
 	}
 }
-/* Busca o elemento mais à esquerda  */
+/* Busca o elemento mais ï¿½ esquerda  */
 nodetree* MostLeft (nodetree* tree) 
 {
 	if (tree->left != NULL) {
@@ -103,7 +99,7 @@ nodetree* MostLeft (nodetree* tree)
 		return aux;
 	}
 }
-/* Busca e remove elementos da árvore binária  */
+/* Busca e remove elementos da ï¿½rvore binï¿½ria  */
 nodetree* RemoveBSTree (nodetree* myTree, long int key)
 {
 	nodetree *toRemove = myTree;
@@ -111,7 +107,7 @@ nodetree* RemoveBSTree (nodetree* myTree, long int key)
 	nodetree *substitute;
 	nodetree *aux;
 	nodetree *heritor;
-	/* Busca o nó a ser removido  */
+	/* Busca o nï¿½ a ser removido  */
 	while (toRemove != NULL && toRemove->key != key) {
 		father = toRemove;
 		if (key < toRemove->key) {
@@ -125,7 +121,7 @@ nodetree* RemoveBSTree (nodetree* myTree, long int key)
 		printf("Elemento nao encontrado ! \n");
 		return myTree;
 	}
-	/* Dois primeiros casos: O nó tem 0 ou 1 filho  */
+	/* Dois primeiros casos: O nï¿½ tem 0 ou 1 filho  */
 	if (toRemove->left == NULL) {
 		substitute = toRemove->right;
 	}
@@ -133,10 +129,10 @@ nodetree* RemoveBSTree (nodetree* myTree, long int key)
 		substitute = toRemove->left;
 	}
 	else {
-		/* Último caso: nó com 2 filhos  */
+		/* ï¿½ltimo caso: nï¿½ com 2 filhos  */
 		aux = toRemove;
 		substitute = toRemove->right;
-		heritor = substitute->left; /* Sucessor é sempre o filho mais esquerdo do substituto  */
+		heritor = substitute->left; /* Sucessor ï¿½ sempre o filho mais esquerdo do substituto  */
 		while (heritor != NULL) {
 			aux = substitute;
 			substitute = heritor;
@@ -146,8 +142,8 @@ nodetree* RemoveBSTree (nodetree* myTree, long int key)
 			aux->left = substitute->right;
 			substitute->right = toRemove->right;
 		}
-		/*O substituto ocupa o lugar de nó removido,
-		o filho esquerda do substituto é manipulado
+		/*O substituto ocupa o lugar de nï¿½ removido,
+		o filho esquerda do substituto ï¿½ manipulado
 		para permitir isso*/
 		substitute->left = toRemove->left;
 	}
@@ -172,7 +168,7 @@ void RemoveBST (BSTree* myTree, long int key)
 	myTree->nodes--;
 }
 
-/* Busca um elemento na Árvore */
+/* Busca um elemento na ï¿½rvore */
 nodetree* SearchBST (BSTree* myTree, long int key)
 {
 	nodetree* aux = myTree->root;
@@ -188,8 +184,8 @@ nodetree* SearchBST (BSTree* myTree, long int key)
 	return NULL;
 }
 
-/* Percorrer a árvore
-   Pré-ordem  */
+/* Percorrer a ï¿½rvore
+   Prï¿½-ordem  */
 void PreOrderBSTree (nodetree* tree)
 {
 	if (tree == NULL) {
@@ -225,7 +221,7 @@ void InOrderBST (BSTree* myTree)
 	InOrderBSTree(myTree->root);
 }
 
-/* Pos-Órdem  */
+/* Pos-ï¿½rdem  */
 void PostOrderBSTree (nodetree* tree)
 {
 	if (tree == NULL){
@@ -243,7 +239,7 @@ void PostOrderBST(BSTree* myTree)
 	PostOrderBSTree(myTree->root);
 }
 
-/* Descobrir a altura da árvore */
+/* Descobrir a altura da ï¿½rvore */
 int HeightOfBSTree (nodetree* myTree)
 {
 	if (myTree == NULL){
@@ -264,7 +260,7 @@ int HeightOfBST (BSTree* myTree)
 	return HeightOfBSTree(myTree->root);
 }
 
-/* Destruir a árvore  */
+/* Destruir a ï¿½rvore  */
 void DestroyBSTree (nodetree* myTree) 
 {
 	if (myTree == NULL){
@@ -282,8 +278,8 @@ void DestroyBST (BSTree* myTree)
 	DestroyBSTree(myTree->root);
 }
 
-/* Desenha a árvore binária
-   Mostra traços ligando os nós  */
+/* Desenha a ï¿½rvore binï¿½ria
+   Mostra traï¿½os ligando os nï¿½s  */
 void ShowBranch (branches *t)
 {
 	if (!t){
@@ -293,7 +289,7 @@ void ShowBranch (branches *t)
 	printf(t->str);
 }
 
-/* Desenha a árvore  */
+/* Desenha a ï¿½rvore  */
 void DrawBSTree (nodetree* myTree, branches *previous, int Left)
 {
 	if (myTree == NULL){
@@ -329,7 +325,7 @@ void DrawBSTree (nodetree* myTree, branches *previous, int Left)
 	}
 }
 
-/* Desenha a árvore binária  */
+/* Desenha a ï¿½rvore binï¿½ria  */
 void DrawBST(BSTree* myTree) 
 {
 	DrawBSTree(myTree->root, 0, 0);

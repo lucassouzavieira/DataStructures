@@ -1,21 +1,19 @@
-/**
-Este arquivo é parte do projeto Data Structures
-Este é um software livre; você pode redistribuí-lo e/ou
-modificá-lo dentro dos termos da Licença Pública Geral GNU como
-publicada pela Fundação do Software Livre (FSF); na versão 3 da
-Licença, ou (na sua opinião) qualquer versão.
+/*
+ Definicoes de tipos usados no projeto
 
-Este programa é distribuído na esperança de que possa ser  útil,
-mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
-a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
-Licença Pública Geral GNU para maiores detalhes.
+ Copyright (C) 2016  Lucas S. Vieira
 
-Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
+ This program is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License,
+ or (at your option) any later version.
 
-Arquivo: TAD.h
-Descrição: Definição dos Tipos Abstratos de Dados básicas usadas no projeto
-Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 #ifndef TAD_H
 #define TAD_H
@@ -24,13 +22,13 @@ Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
 /******************************************************************************
 Listas, Pilhas e Filas
 ******************************************************************************/
-/* Nó simples */
+/* Node simples */
 typedef struct Node{
 	long int key;
 	struct Node* pointer;
 } node;
 
-/* Nó duplo */
+/* Node duplo */
 typedef struct DoubleNode {
 	long int key;
 	struct DoubleNode* next;
@@ -78,7 +76,7 @@ typedef struct Deque {
 	unsigned long int nodes;
 } deque;
 
-/* Pilha e Fila Estáticas */
+/* Pilha e Fila Estaticas */
 typedef struct Array {
 	long int* vector;
 	unsigned long int size;
@@ -105,9 +103,10 @@ struct Graph{
 };
 
 /******************************************************************************
-Árvores Binárias
+Arvores Binarias
 ******************************************************************************/
-/* Árvore Binária de Busca */
+
+/* Arvore Binaria de Busca */
 typedef struct nodeBST{
 	long int key;
 	struct nodeBST* right;
@@ -119,7 +118,7 @@ typedef struct BinarySearchTree{
 	long int nodes;
 } BSTree;
 
-/* Árvore AVL */
+/* Arvore AVL */
 typedef struct nodeAVL{
 	long int key;
 	int balanceFactor;
@@ -132,7 +131,7 @@ typedef struct AVLTree{
 	long int nodes;
 } AVLTree;
 
-/*Árvore Red-Black */
+/*Arvore Red-Black */
 typedef enum Color { RED = 0, BLACK = 1 } Color;
 
 typedef struct nodeRB{
@@ -148,8 +147,9 @@ typedef struct RedBlackTree{
 	noderb* root;
 	long int nodes;
 } RBTree;
+
 /******************************************************************************
-Algoritmos de Compressão de Strings
+Algoritmos de Compressao
 ******************************************************************************/
 
 typedef enum CompressionAlgorithm {RLE = 0, HUFFMAN = 1} CompressionAlgorithm;
@@ -165,7 +165,7 @@ typedef struct HuffmanTreeNode {
 /******************************************************************************
 Estruturas Auxiliares
 ******************************************************************************/
-/* Auxiliar nos desenhos das árvores */
+/* Auxiliar nos desenhos das arvores */
 typedef struct Branches{
 	struct Branches *previous;
 	char* str;
