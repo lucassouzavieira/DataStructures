@@ -116,7 +116,7 @@ long int RemoveHeap (heap* myHeap)
 	myHeap->elements--;
 	MaxHeapfy(myHeap, 1);
 	return max;
-}
+} */
 
 /* Exibe o Heap
 void ShowHeap (heap* myHeap)
@@ -171,4 +171,4 @@ void MaxHeapSort (long int* vector, long int numberOfElements)
 		/*Novos valores sao salvos temporariamente em novas posicoes
 		vector[index] = aux;
 	}
-}
+} */

@@ -17,7 +17,7 @@
 
 #ifndef HUFFMAN_H
 #define HUFFMAN_H
-#include "..\TAD.h"
+#include "../TAD.h"
 
 void encodeHuffman(char* myString);
 

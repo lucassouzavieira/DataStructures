@@ -39,4 +39,4 @@ void DestroyRedBlackTree(RBTree* myTree);
 /* Desenhar a arvore Red-Black */
 void DrawRedBlackTree(RBTree* myTree);
 
-#endif /*!REDBLACKTREE_H
+#endif /* !REDBLACKTREE_H */

@@ -20,13 +20,19 @@
 #include <string.h>
 #include "TAD.h"
 #include "Vector/Vector.h"
-#include "Compression/Utilities.h"
-#include "Compression/RLE.h"
-#include "Compression/Huffman.h"
+#include "Vector/SortingAlgorithms.h"
 
 
 int main()
 {
-    // Enjoy
-	return 0;
+	long int* vector = CreateRandomVector(10);
+
+	printf("Desordenado \n");
+	ShowVector(vector, 10);
+
+	MergeSort(vector, 10);
+
+	printf("Ordenado \n");
+	ShowVector(vector, 10);
+	return 1;
 }

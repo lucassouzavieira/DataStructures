@@ -22,7 +22,6 @@ set(SOURCE_FILES
     Compression/RLE.h
     Compression/Utilities.c
     Compression/Utilities.h
-    Graphs/Graph.h
     Heap/Heap.c
     Heap/Heap.h
     Lists/CircleList.c
@@ -31,16 +30,12 @@ set(SOURCE_FILES
     Lists/DoublyLinkedList.h
     Lists/LinkedList.c
     Lists/LinkedList.h
-    Lists/SkipList.c
-    Lists/SkipList.h
     Queues/Deque.c
     Queues/Deque.h
     Queues/Queue.c
     Queues/Queue.h
     Stack/Stack.c
     Stack/Stack.h
-    Trie/Trie.c
-    Trie/Trie.h
     Vector/SearchAlgorithms.c
     Vector/SearchAlgorithms.h
     Vector/SortingAlgorithms.c

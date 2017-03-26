@@ -69,8 +69,6 @@ long int* RetrieveVector (const char* address, long *vector, long int numberOfEl
 /* Cria um vetor com valorer randomicos */
 long int* CreateRandomVector (long int numberOfElements)
 {
-	/*Inteiros aleatorios entre -1.310.680 e +1.638.350*/
-
 	srand(time(NULL));
 	long int* vector; 
 	vector = (long int *)(malloc(numberOfElements*sizeof(long int)));
@@ -80,8 +78,8 @@ long int* CreateRandomVector (long int numberOfElements)
 	}
 	else {
 		for (long int i = 0; i < numberOfElements; i++) {
-			int multiplicador = -40 + rand() % 50;
-			vector[i] = (32767 * multiplicador + 40 * rand());
+			int multiplicador = -40 + rand() % 20;
+			vector[i] = (32767 * multiplicador + 2 * rand());
 		}
 	}
 	return vector;
