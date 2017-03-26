@@ -20,58 +20,52 @@
 #include "../TAD.h"
 
 /* Cria uma pilha */
-array* ArrayStackCreate (unsigned long int size)
-{
-	array* myArrayStack = (array *)malloc(sizeof(array));
-	myArrayStack->size = size;
-	myArrayStack->vector = (long int*)malloc(size*sizeof(long int));
-	myArrayStack->last = 0;
-	return myArrayStack;
+array *ArrayStackCreate(unsigned long int size) {
+    array *myArrayStack = (array *) malloc(sizeof(array));
+    myArrayStack->size = size;
+    myArrayStack->vector = (long int *) malloc(size * sizeof(long int));
+    myArrayStack->last = 0;
+    return myArrayStack;
 }
 
 /* Verifica se a pilha esta vazia ou nao */
-int ArrayStackCheck (array* myArrayStack) 
-{
-	if (myArrayStack->last == 0){
-		return -1;
-	}
-	return 1;
+int ArrayStackCheck(array *myArrayStack) {
+    if (myArrayStack->last == 0) {
+        return -1;
+    }
+    return 1;
 }
 
 /* Remove um elemento da pilha  */
-array* ArrayStackPop (array* myArrayStack) 
-{
-	if (myArrayStack->last == 0) {
-		printf("Empty stack! \n");
-		return myArrayStack;
-	}
-	myArrayStack->last--;
-	return myArrayStack;
+array *ArrayStackPop(array *myArrayStack) {
+    if (myArrayStack->last == 0) {
+        printf("Empty stack! \n");
+        return myArrayStack;
+    }
+    myArrayStack->last--;
+    return myArrayStack;
 }
 
 /* Insere um elemento na pilha  */
-array* ArrayStackPush (array* myArrayStack, long int element) 
-{
-	if (myArrayStack->last == myArrayStack->size - 1) {
-		printf("Full stack! n");
-		return myArrayStack;
-	}
-	myArrayStack->vector[myArrayStack->last] = element;
-	myArrayStack->last++;
-	return myArrayStack;
+array *ArrayStackPush(array *myArrayStack, long int element) {
+    if (myArrayStack->last == myArrayStack->size - 1) {
+        printf("Full stack! n");
+        return myArrayStack;
+    }
+    myArrayStack->vector[myArrayStack->last] = element;
+    myArrayStack->last++;
+    return myArrayStack;
 }
 
 /* Imprime todos os elementos da pilha  */
-void ArrayStackConsult (array* myArrayStack) 
-{
-	for (long int i = 0; i <= myArrayStack->last; i++) {
-		printf("%ld \n", myArrayStack->vector[i]);
-	}
+void ArrayStackConsult(array *myArrayStack) {
+    for (long int i = 0; i <= myArrayStack->last; i++) {
+        printf("%ld \n", myArrayStack->vector[i]);
+    }
 }
 
 /* Apaga os elementos e libera memoria  */
-array* ArrayStackDestroy (array* myArrayStack) 
-{
-	free(myArrayStack->vector);
-	return myArrayStack;
+array *ArrayStackDestroy(array *myArrayStack) {
+    free(myArrayStack->vector);
+    return myArrayStack;
 }

@@ -15,24 +15,26 @@
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
+
+#define DEBUG 1
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "TAD.h"
 #include "Vector/Vector.h"
 #include "Vector/SortingAlgorithms.h"
+#include "BinaryTrees/BinarySearchTree.h"
 
 
-int main()
-{
-	long int* vector = CreateRandomVector(10);
+int main() {
+    long int *vector = CreateRandomVector(10);
 
-	printf("Desordenado \n");
-	ShowVector(vector, 10);
+    ShowVector(vector, 10);
+    vector = BubbleSortImproved(vector, 10);
 
-	MergeSort(vector, 10);
-
-	printf("Ordenado \n");
-	ShowVector(vector, 10);
-	return 1;
+#ifdef DEBUG
+    printf("----\n");
+#endif
+    ShowVector(vector, 10);
 }

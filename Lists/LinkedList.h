@@ -17,36 +17,37 @@
 
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
+
 #include "../TAD.h"
 
 /* Cria uma lista encadeada */
 list CreateLinkedList();
 
 /* Verifica uma lista encadeada (se vazia) */
-int CheckLinkedList(list* myList);
+int CheckLinkedList(list *myList);
 
 /* Insere no inicio da lista */
-void InsertAtStartLinkedList(list* myList, long int element);
+void InsertAtStartLinkedList(list *myList, long int element);
 
 /* Insere no meio da lista */
-void InsertAtMiddleLinkedList(list* myList, long int element);
+void InsertAtMiddleLinkedList(list *myList, long int element);
 
 /* Insere no fim da lista */
-void InsertAtEndLinkedList(list* myList, long int element);
+void InsertAtEndLinkedList(list *myList, long int element);
 
 /* Busca */
-node* SearchLinkedList(list* myList, long int element);
+node *SearchLinkedList(list *myList, long int element);
 
 /* Mostrar os elementos */
-void ListElementsLinkedList(list* myList);
+void ListElementsLinkedList(list *myList);
 
 /* Retorna uma lista com os elementos em ordem invertida */
-list ReverseLinkedList(list* myList);
+list ReverseLinkedList(list *myList);
 
 /* Remove elementos */
-void RemoveElementLinkedList(list* myList, long int element); 
+void RemoveElementLinkedList(list *myList, long int element);
 
 /* Destruir a lista */
-int DestroyLinkedList(list* myList); 
+int DestroyLinkedList(list *myList);
 
 #endif

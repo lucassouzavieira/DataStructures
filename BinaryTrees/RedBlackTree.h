@@ -25,18 +25,18 @@
 RBTree CreateRedBlackTree();
 
 /* Inserir elementos na arvore Red-Black */
-void InsertInRedBlackTree(RBTree* mytree, long int key);
+void InsertInRedBlackTree(RBTree *mytree, long int key);
 
 /* Buscar elementos na arvore Red-Black */
-noderb* SearchRedBlackTree(RBTree* mytree, long int key);
+noderb *SearchRedBlackTree(RBTree *mytree, long int key);
 
 /* Remover elemento na arvore Red-Black */
-noderb* RemoveRedBlackTree(RBTree* mytree, long int key);
+noderb *RemoveRedBlackTree(RBTree *mytree, long int key);
 
 /* Destruir a arvore Red-Black */
-void DestroyRedBlackTree(RBTree* myTree); 
+void DestroyRedBlackTree(RBTree *myTree);
 
 /* Desenhar a arvore Red-Black */
-void DrawRedBlackTree(RBTree* myTree);
+void DrawRedBlackTree(RBTree *myTree);
 
 #endif /* !REDBLACKTREE_H */

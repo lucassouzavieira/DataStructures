@@ -21,24 +21,24 @@
 #include "../TAD.h"
 
 /* Cria uma lista circular  */
-circlelist CreateCircleList(); 
+circlelist CreateCircleList();
 
 /* Verifica se a lista esta vazia ou nao  */
-int CheckCircleList(circlelist* myList);
+int CheckCircleList(circlelist *myList);
 
 /* Insere novos elementos na lista  */
-void InsertAtCircleList(circlelist* myList, long int element);
+void InsertAtCircleList(circlelist *myList, long int element);
 
 /* Busca um dado valor na lista  */
-node* SearchElementCircleList(circlelist* myList, long int element);
+node *SearchElementCircleList(circlelist *myList, long int element);
 
 /* Imprime todos os elementos da lista  */
-void ListElementsCircleList(circlelist* myList);
+void ListElementsCircleList(circlelist *myList);
 
 /* Remove um dado elemento da lista  */
-void RemoveElementCircleList(circlelist* myList, long int element);
+void RemoveElementCircleList(circlelist *myList, long int element);
 
 /* Apaga toda a lista e libera a memoria  */
-int DestroyCircleList(circlelist* myList);
+int DestroyCircleList(circlelist *myList);
 
 #endif /* !CIRCLELIST_H

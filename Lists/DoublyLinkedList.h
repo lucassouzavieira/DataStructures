@@ -17,33 +17,34 @@
 
 #ifndef DOUBLYLINKEDLIST_H
 #define DOUBLYLINKEDLIST_H
+
 #include "../TAD.h"
 
 /* Cria uma lista duplamente encadeada */
 doublylist CreateDLinkedList();
 
 /* Verifica se ha elementos na lista */
-int CheckDLinkedList(doublylist* myDoublyList);
+int CheckDLinkedList(doublylist *myDoublyList);
 
 /* Insere elementos no inicio da lista */
-void InsertAtStartDLinkedList(doublylist* myDoublyList, long int element);
+void InsertAtStartDLinkedList(doublylist *myDoublyList, long int element);
 
 /* Insere elementos no meio da lista */
-void InsertAtMiddleDLinkedList(doublylist* myDoublyList, long int element);
+void InsertAtMiddleDLinkedList(doublylist *myDoublyList, long int element);
 
 /* Insere elementos no fim da lista */
-void InsertAtEndDLinkedList(doublylist* myDoublyList, long int element);
+void InsertAtEndDLinkedList(doublylist *myDoublyList, long int element);
 
 /* Busca um dado elemento na lista */
-dnode* SearchElementDLinkedList(doublylist* myDoublyList, long int element);
+dnode *SearchElementDLinkedList(doublylist *myDoublyList, long int element);
 
 /* Imprime todos os elementos da lista */
-void ListElementsDLinkedList(doublylist* myDoublyList);
+void ListElementsDLinkedList(doublylist *myDoublyList);
 
 /* Remove um dado elemento da lista */
-void RemoveElementDLinkedList(doublylist* myDoublyList, long int element);
+void RemoveElementDLinkedList(doublylist *myDoublyList, long int element);
 
 /* Apaga toda a lista e libera memoria */
-int DestroyDLinkedList(doublylist* myDoublyList);
+int DestroyDLinkedList(doublylist *myDoublyList);
 
 #endif 

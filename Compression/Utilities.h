@@ -24,12 +24,12 @@
 #include <string.h>
 
 /* Converte um inteiro em uma string  */
-char* intToString(int integer);
+char *intToString(int integer);
 
 /* Salva a string em um arquivo incluindo informacoes sobre a compressao realizada */
-int toFile(char* myString, char* filename);
+int toFile(char *myString, char *filename);
 
 /* Recupera a string de um arquivo */
-char* fromFile(char* filename);
+char *fromFile(char *filename);
 
 #endif /* !UTILITIES_H */

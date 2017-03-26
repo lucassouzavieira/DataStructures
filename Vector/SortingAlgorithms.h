@@ -17,42 +17,43 @@
 
 #ifndef SORTINGALGORITHMS_H
 #define SORTINGALGORITHMS_H
+
 #include "../TAD.h"
 
 /* Bubble Sort  */
-long int* BubbleSort(long int* vector, long int numberOfElements);
+long int *BubbleSort(long int *vector, long int numberOfElements);
 
 /* Bubble Sort - Melhorado  */
-long int* BubbleSortImproved(long int* vector, long int numberOfElements); 
+long int *BubbleSortImproved(long int *vector, long int numberOfElements);
 
 /* Insertion Sort  */
-long int* InsertionSort(long int* vector, long int numberOfElements);  
+long int *InsertionSort(long int *vector, long int numberOfElements);
 
 /* Selection Sort  */
-long int* SelectionSort(long int* vector, long int numberOfElements);   
+long int *SelectionSort(long int *vector, long int numberOfElements);
 
 /* Merge Sort */
-void MergeSort(long int* vector, long int numberOfElements);  
+void MergeSort(long int *vector, long int numberOfElements);
 
 /* Quick Sort  */
-long int* QuickSort(long int* vector, long int numberOfElements);  
+long int *QuickSort(long int *vector, long int numberOfElements);
 
 /* Heap Sort  */
-void HeapSort(long int* vector, long int numberOfElements);  
+void HeapSort(long int *vector, long int numberOfElements);
 
 /* Comb Sort 11  */
-long int* CombSort(long int* vector, long int numberOfElements);  
+long int *CombSort(long int *vector, long int numberOfElements);
 
 /* Shell Sort  */
-long int* ShellSort(long int* vector, long int numberOfElements);  
+long int *ShellSort(long int *vector, long int numberOfElements);
 
 /* Gnome Sort  */
-long int* GnomeSort(long int* vector, long int numberOfElements);  
+long int *GnomeSort(long int *vector, long int numberOfElements);
 
 /* Bogo Sort  */
-long int* BogoSort(long int* vector, long int numberOfElements); 
+long int *BogoSort(long int *vector, long int numberOfElements);
 
 /* Couting Sort  */
-long int* CoutingSort(long int* vector, long int numberOfElements);  
+long int *CoutingSort(long int *vector, long int numberOfElements);
 
 #endif /* !SORTINGALGORITHMS_H */

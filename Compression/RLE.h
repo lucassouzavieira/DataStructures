@@ -17,13 +17,14 @@
 
 #ifndef RLE_H
 #define RLE_H
+
 #include "../TAD.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
-char* encodeRLE(char* myString);
+char *encodeRLE(char *myString);
 
-char* decodeRLE(char* myString);
+char *decodeRLE(char *myString);
 
 #endif /* RLE_H */

@@ -22,12 +22,12 @@
 void ShowVector(long int *vector, long int numberOfElements);
 
 /* Salva o vetor em um arquivo txt */
-int SaveVector(const char* address, long int *vector, long int numberOfElements);
+int SaveVector(const char *address, long int *vector, long int numberOfElements);
 
 /* Recupera o vetor de um arquivo */
-long int* RetrieveVector(const char* address, long *vector, long int numberOfElements);
+long int *RetrieveVector(const char *address, long *vector, long int numberOfElements);
 
 /* Cria um vetor com valores randomicos */
-long int* CreateRandomVector(long int numberOfElements);
+long int *CreateRandomVector(long int numberOfElements);
 
 #endif

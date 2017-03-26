@@ -17,26 +17,29 @@
 
 #ifndef DEQUE_H
 #define DEQUE_H
+
 #include "../TAD.h"
 
 /* Cria um deque */
 deque CreateDeque();
 
 /* Verifica se ha elementos no deque */
-int CheckDeque(deque* myDeque);
+int CheckDeque(deque *myDeque);
 
 /* Insere elementos no deque  */
-void InsertAtFront(deque* myQueue, long int element);
-void InsertAtBack(deque* myQueue, long int element);
+void InsertAtFront(deque *myQueue, long int element);
+
+void InsertAtBack(deque *myQueue, long int element);
 
 /* Remove elementos do deque */
-void RemoveFromFront(deque* myDeque);
-void RemoveFromBack(deque* myDeque);
+void RemoveFromFront(deque *myDeque);
+
+void RemoveFromBack(deque *myDeque);
 
 /* Imprime os elementos do deque */
-void ConsultDeque(deque* myDeque);
+void ConsultDeque(deque *myDeque);
 
 /* Apaga todos os elementos e libera memoria */
-int DestroyDeque(deque* myDeque);
+int DestroyDeque(deque *myDeque);
 
 #endif /* DEQUE_H */

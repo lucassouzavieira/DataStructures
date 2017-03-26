@@ -17,24 +17,25 @@
 
 #ifndef ARRAYQUEUE_H
 #define ARRAYQUEUE_H
+
 #include "../TAD.h"
 
 /* Cria uma fila  */
-array* ArrayQueueCreate(unsigned long int size);
+array *ArrayQueueCreate(unsigned long int size);
 
 /* Verifica se ha elementos na fila  */
-int ArrayQueueCheck(array* myArrayQueue);
+int ArrayQueueCheck(array *myArrayQueue);
 
 /* Insere elementos na fila  */
-array* ArrayQueueEnqueue(array* myArrayQueue, long int element);
+array *ArrayQueueEnqueue(array *myArrayQueue, long int element);
 
 /* Remove elementos da fila  */
-array* ArrayQueueDequeue(array* myArrayQueue);
+array *ArrayQueueDequeue(array *myArrayQueue);
 
 /* Imprime os elementos da fila  */
-void ArrayQueueConsult(array* myArrayQueue);
+void ArrayQueueConsult(array *myArrayQueue);
 
 /* Apaga todos os elementos e libera memoria  */
-array* ArrayQueueDestroy(array* myArrayQueue);
+array *ArrayQueueDestroy(array *myArrayQueue);
 
 #endif /* !ARRAYQUEUE_H */

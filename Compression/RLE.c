@@ -33,74 +33,72 @@ Tabela ASCII usada como base: <http:/*ic.unicamp.br/~everton/aulas/hardware/tabe
 
 
 /* Retorna a string codificada pelo RLE */
-char* encodeRLE(char* myString)
-{
-	FILE* 		tmpFile 		= fopen("tmpOutPutFile", "w");
-	int 		occurrences 	= 1;
-	const char* encodedString 	= NULL;
+char *encodeRLE(char *myString) {
+    FILE *tmpFile = fopen("tmpOutPutFile", "w");
+    int occurrences = 1;
+    const char *encodedString = NULL;
 
-	if (myString == NULL)
-		return NULL;
-	for (int i = 1; myString[i - 1] != '\0'; i++) {
-		if (myString[i] == myString[i - 1]) {
-			occurrences++;
-		} else if (occurrences < 4) {
-			/* Otimizacao para RLE  */
-			for (int j = 1; j <= occurrences; j++) {
-				fflush(stdout);
-				fprintf(tmpFile, "%c", myString[i - 1]);
-			}
-			occurrences = 1;
-		} else {
-			fflush(stdout);
-			fprintf(tmpFile, "@%c%d", myString[i - 1], occurrences);
-			occurrences = 1;
-		}
-	}
+    if (myString == NULL)
+        return NULL;
+    for (int i = 1; myString[i - 1] != '\0'; i++) {
+        if (myString[i] == myString[i - 1]) {
+            occurrences++;
+        } else if (occurrences < 4) {
+            /* Otimizacao para RLE  */
+            for (int j = 1; j <= occurrences; j++) {
+                fflush(stdout);
+                fprintf(tmpFile, "%c", myString[i - 1]);
+            }
+            occurrences = 1;
+        } else {
+            fflush(stdout);
+            fprintf(tmpFile, "@%c%d", myString[i - 1], occurrences);
+            occurrences = 1;
+        }
+    }
 
-	fclose(tmpFile);
-	encodedString = fromFile("tmpOutPutFile");
+    fclose(tmpFile);
+    encodedString = fromFile("tmpOutPutFile");
 
-	return encodedString;
+    return encodedString;
 }
 
 /* Decodifica uma string codificada pelo RLE  */
-char* decodeRLE(char * myString)
-{
-	FILE* 	tmpFile 		= fopen("tmpInputFile", "w");
-	int 	stringSize		= 0;
-	int 	i 				= 0;
-	int 	charOccurrences = 0;
-	char 	character		= 0;
-	char 	ocurrences[3] 	= { "\0" };
+char *decodeRLE(char *myString) {
+    FILE *tmpFile = fopen("tmpInputFile", "w");
+    int stringSize = 0;
+    int i = 0;
+    int charOccurrences = 0;
+    char character = 0;
+    char ocurrences[3] = {"\0"};
 
-	if (myString == NULL)
-		return NULL;
+    if (myString == NULL)
+        return NULL;
 
-	stringSize = strlen(myString);
-	for (i = 0; i <= stringSize;) {
-		fflush(stdout);
-		if (myString[i] == '@') {
-			character = myString[i + 1];
-			ocurrences[0] = myString[i + 2];
- 			if ((myString[i + 3] > 47 && myString[i + 3] < 59)) {
-				ocurrences[1] = myString[i + 3];
-				i = i + 4;
-			} else {
-				i = i + 3;
-			}
-			charOccurrences = atoi(ocurrences);
-			for (int j = 1; j <= charOccurrences; j++) {
-				fflush(stdout);
-				fprintf(tmpFile, "%c", character);
-			}
-			ocurrences[1] = "\0";
-		} else {
-			fflush(stdout);
-			fprintf(tmpFile, "%c", myString[i]);
-			i = i + 1;
-		}
-	}
-	fclose(tmpFile);
-	return "NULL";
+    stringSize = strlen(myString);
+    for (i = 0; i <= stringSize;) {
+        fflush(stdout);
+        if (myString[i] == '@') {
+            character = myString[i + 1];
+            ocurrences[0] = myString[i + 2];
+            if ((myString[i + 3] > 47 && myString[i + 3] < 59)) {
+                ocurrences[1] = myString[i + 3];
+                i = i + 4;
+            } else {
+                i = i + 3;
+            }
+            charOccurrences = atoi(ocurrences);
+            for (int j = 1; j <= charOccurrences; j++) {
+                fflush(stdout);
+                fprintf(tmpFile, "%c", character);
+            }
+            ocurrences[1] = "\0";
+        } else {
+            fflush(stdout);
+            fprintf(tmpFile, "%c", myString[i]);
+            i = i + 1;
+        }
+    }
+    fclose(tmpFile);
+    return "NULL";
 }

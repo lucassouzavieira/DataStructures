@@ -17,10 +17,11 @@
 
 #ifndef HUFFMAN_H
 #define HUFFMAN_H
+
 #include "../TAD.h"
 
-void encodeHuffman(char* myString);
+void encodeHuffman(char *myString);
 
-char* decodeHuffman(huffmantreenode* huffmanTree);
+char *decodeHuffman(huffmantreenode *huffmanTree);
 
 #endif /* !HUFFMAN_H */

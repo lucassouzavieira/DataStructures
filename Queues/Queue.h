@@ -20,22 +20,22 @@
 
 #include "../TAD.h"
 
-/* Cria uma fila */ 
+/* Cria uma fila */
 queue CreateQueue();
 
 /* Verifica se ha elementos na fila */
-int CheckQueue(queue* myQueue);
+int CheckQueue(queue *myQueue);
 
 /* Insere elementos na fila */
-void Enqueue(queue* myQueue, long int element);
+void Enqueue(queue *myQueue, long int element);
 
 /* Remove elementos da fila */
-void Dequeue(queue* myQueue);
+void Dequeue(queue *myQueue);
 
 /* Imprime os elementos da fila */
-void ConsultQueue(queue* myQueue);
+void ConsultQueue(queue *myQueue);
 
 /* Apaga todos os elementos e libera memoria */
-int DestroyQueue(queue* myQueue);
+int DestroyQueue(queue *myQueue);
 
 #endif /* !QUEUE_H */

@@ -18,19 +18,19 @@
 #include "../TAD.h"
 
 /* Cria uma lista estatica */
-array* ArrayListCreate(unsigned long int size);
+array *ArrayListCreate(unsigned long int size);
 
 /* Verifica se a lista esta vazia ou nao  */
-int ArrayListCheck(array* mystack);
+int ArrayListCheck(array *mystack);
 
 /* Remove um elemento da lista  */
-array* ArrayListRemove(array* mystack, long int key);
+array *ArrayListRemove(array *mystack, long int key);
 
 /* Insere um elemento na lista  */
-array* ArrayListInsert(array* mystack, long int element);
+array *ArrayListInsert(array *mystack, long int element);
 
-/* Imprime todos os elementos da lista */ 
-void ArrayListConsult(array* mystack);
+/* Imprime todos os elementos da lista */
+void ArrayListConsult(array *mystack);
 
 /* Apaga os elementos e libera memoria  */
-array* ArrayListDestroy(array* mystack);
+array *ArrayListDestroy(array *mystack);

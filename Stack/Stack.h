@@ -17,24 +17,25 @@
 
 #ifndef STACK_H
 #define STACK_H
+
 #include "../TAD.h"
 
 /* Cria uma pilha */
 stack CreateStack();
 
 /* Verifica se a pilha esta vazia ou nao */
-int CheckStack(stack* myStack);
+int CheckStack(stack *myStack);
 
 /* Remove um elemento da pista */
-void Pop(stack* myStack);
+void Pop(stack *myStack);
 
 /* Insere um elemento na pilha */
-void Push(stack* myStack, int element);
+void Push(stack *myStack, int element);
 
 /* Imprime todos os elementos da pilha */
-void ConsultStack(stack* myStack);
+void ConsultStack(stack *myStack);
 
 /* Apaga os elementos e libera memoria */
-int DestroyStack(stack* myStack);
+int DestroyStack(stack *myStack);
 
 #endif /* STACK_H */

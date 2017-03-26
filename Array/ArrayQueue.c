@@ -20,60 +20,54 @@
 #include "../TAD.h"
 
 /* Cria e retorna uma fila estatica  */
-array* ArrayQueueCreate (unsigned long int size) 
-{
-	array* myArrayQueue = (array *)malloc(sizeof(array));
-	myArrayQueue->size = size;
-	myArrayQueue->vector = (long int*)malloc(size*sizeof(long int));
-	myArrayQueue->last = 0;
-	return myArrayQueue;
+array *ArrayQueueCreate(unsigned long int size) {
+    array *myArrayQueue = (array *) malloc(sizeof(array));
+    myArrayQueue->size = size;
+    myArrayQueue->vector = (long int *) malloc(size * sizeof(long int));
+    myArrayQueue->last = 0;
+    return myArrayQueue;
 }
 
 /* Verifica se ha elementos na fila  */
-int ArrayQueueCheck (array* myArrayQueue) 
-{
-	if (myArrayQueue->last == 0)
-		return -1;
-	return 1;
+int ArrayQueueCheck(array *myArrayQueue) {
+    if (myArrayQueue->last == 0)
+        return -1;
+    return 1;
 }
 
 /* Insere elementos na fila  */
-array* ArrayQueueEnqueue (array* myArrayQueue, long int element) 
-{
-	if (myArrayQueue->last == myArrayQueue->size - 1){
-		printf("Pilha cheia! \n");
-		return myArrayQueue;
-	}
-	myArrayQueue->vector[myArrayQueue->last] = element;
-	myArrayQueue->last++;
-	return myArrayQueue;
+array *ArrayQueueEnqueue(array *myArrayQueue, long int element) {
+    if (myArrayQueue->last == myArrayQueue->size - 1) {
+        printf("Pilha cheia! \n");
+        return myArrayQueue;
+    }
+    myArrayQueue->vector[myArrayQueue->last] = element;
+    myArrayQueue->last++;
+    return myArrayQueue;
 }
 
 /* Remove elementos da fila  */
-array* ArrayQueueDequeue (array* myArrayQueue)
-{
-	if (myArrayQueue->last == 0){
-		printf("Fila vazia! \n");
-		return myArrayQueue;
-	}
-	for (long int i = 0; i < myArrayQueue->last; i++) {
-		myArrayQueue->vector[i] = myArrayQueue->vector[i + 1];
-	}
-	myArrayQueue->last--;
-	return myArrayQueue;
+array *ArrayQueueDequeue(array *myArrayQueue) {
+    if (myArrayQueue->last == 0) {
+        printf("Fila vazia! \n");
+        return myArrayQueue;
+    }
+    for (long int i = 0; i < myArrayQueue->last; i++) {
+        myArrayQueue->vector[i] = myArrayQueue->vector[i + 1];
+    }
+    myArrayQueue->last--;
+    return myArrayQueue;
 }
 
 /* Imprime os elementos da fila  */
-void ArrayQueueConsult (array* myArrayQueue) 
-{
-	for (long int i = 0; i <= myArrayQueue->last; i++) {
-		printf("%ld \n", myArrayQueue->vector[i]);
-	}
+void ArrayQueueConsult(array *myArrayQueue) {
+    for (long int i = 0; i <= myArrayQueue->last; i++) {
+        printf("%ld \n", myArrayQueue->vector[i]);
+    }
 }
 
 /* Apaga todos os elementos e libera memoria  */
-array* ArrayQueueDestroy (array* myArrayQueue) 
-{
-	free(myArrayQueue->vector);
-	return myArrayQueue;
+array *ArrayQueueDestroy(array *myArrayQueue) {
+    free(myArrayQueue->vector);
+    return myArrayQueue;
 }

@@ -17,24 +17,25 @@
 
 #ifndef ARRAYSTACK_H
 #define ARRAYSTACK_H
+
 #include "../TAD.h"
 
 /* Cria uma pilha estatica */
-array* ArrayStackCreate(unsigned long int size);
+array *ArrayStackCreate(unsigned long int size);
 
 /* Verifica se a pilha esta vazia ou nao  */
-int ArrayStackCheck(array* mystack);
+int ArrayStackCheck(array *mystack);
 
 /* Remove um elemento da pilha  */
-array* ArrayStackPop(array* mystack);
+array *ArrayStackPop(array *mystack);
 
 /* Insere um elemento na pilha  */
-array* ArrayStackPush(array* mystack, long int element);
+array *ArrayStackPush(array *mystack, long int element);
 
 /* Imprime todos os elementos da pilha  */
-void ArrayStackConsult(array* mystack);
+void ArrayStackConsult(array *mystack);
 
 /* Apaga os elementos e libera memoria  */
-array* ArrayStackDestroy(array* mystack);
+array *ArrayStackDestroy(array *mystack);
 
 #endif /* ARRAYSTACK_H */
