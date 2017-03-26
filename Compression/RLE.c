@@ -18,7 +18,6 @@
 #include "RLE.h"
 #include "Utilities.h"
 
-#define _CRT_SECURE_NO_WARNINGS
 /*********************************************************************************************
 Run-Length Encoding:
 *Conjunto de Caracteres: A-Za-z ; 0-9;

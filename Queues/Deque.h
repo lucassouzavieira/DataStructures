@@ -22,7 +22,7 @@
 /* Cria um deque */
 deque CreateDeque();
 
-/* Verifica se h� elementos no deque */
+/* Verifica se ha elementos no deque */
 int CheckDeque(deque* myDeque);
 
 /* Insere elementos no deque  */
@@ -36,7 +36,7 @@ void RemoveFromBack(deque* myDeque);
 /* Imprime os elementos do deque */
 void ConsultDeque(deque* myDeque);
 
-/* Apaga todos os elementos e libera mem�ria */
+/* Apaga todos os elementos e libera memoria */
 int DestroyDeque(deque* myDeque);
 
 #endif /* DEQUE_H */

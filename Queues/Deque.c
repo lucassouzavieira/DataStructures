@@ -14,6 +14,7 @@
  GNU General Public License for more details.
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>. */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "Deque.h"
@@ -27,7 +28,7 @@ deque CreateDeque()
 	myDeque.nodes = 0;
 }
 
-/* Verifica se h� elementos no deque */
+/* Verifica se ha elementos no deque */
 int CheckDeque(deque* myDeque) 
 {
 	if (myDeque->startOfQueue == NULL) {
@@ -49,7 +50,7 @@ void InsertAtFront(deque* myDeque, long int element)
 		myDeque->startOfQueue = newNode;
 		myDeque->nodes++;
 	}
-	/* Atualiza o �ltimo n� do deque, caso necess�rio */
+	/* Atualiza o ultimo no do deque, caso necessario */
 	if (myDeque->endOfQueue == NULL) {
 		node* current;
 		node* previous;
@@ -121,7 +122,7 @@ void ConsultDeque(deque* myDeque)
 	}
 }
 
-/* Apaga todos os elementos e libera mem�ria */
+/* Apaga todos os elementos e libera memoria */
 int DestroyDeque(deque* myDeque) 
 {
 	node* current = NULL;

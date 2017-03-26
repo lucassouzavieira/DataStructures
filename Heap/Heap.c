@@ -25,6 +25,7 @@
 #define FATHER(x)(x / 2)
 
 void MaxHeapfy(heap* myHeap, long int position);
+
 void MaxHeapSort(long int* vector, long int numberOfElements);
 
 /* Criar um novo heap */
@@ -124,15 +125,15 @@ void ShowHeap (heap* myHeap)
 }
 
 /* HEAP SORT
-/* Cria um Heap de M�ximo dado um vetor
+/* Cria um Heap de Maximo dado um vetor
 void MaxHeapSort (long int* vector, long int numberOfElements)
 {
-	/*Checar se o Heap est� vazio
+	/*Checar se o Heap esta vazio
 	if (numberOfElements == 0) {
 		printf("O Heap esta vazio! \n");
 	}
-	long int aux; /* Vari�vel auxiliar
-	long int n = numberOfElements; /* + 1 para ajuste de posi��o
+	long int aux; /* Variavel auxiliar
+	long int n = numberOfElements; /* + 1 para ajuste de posicao
 	long int father = numberOfElements / 2;
 	long int index, child;
 
@@ -160,14 +161,14 @@ void MaxHeapSort (long int* vector, long int numberOfElements)
 			}
 			if (vector[child] < aux) {
 				vector[index] = vector[child];
-				index = child; /*�ndice fica igual ao filho
+				index = child; /*indice fica igual ao filho
 				child = index * 2 + 1; /* Pega o filho da esquerda e repetir o processo
 			}
 			else {
 				break;
 			}
 		}
-		/*Novos valores s�o salvos tempor�riamente em novas posi��es
+		/*Novos valores sao salvos temporariamente em novas posicoes
 		vector[index] = aux;
 	}
 }

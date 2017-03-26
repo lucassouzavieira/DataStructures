@@ -23,7 +23,7 @@
 /* Cria uma fila */ 
 queue CreateQueue();
 
-/* Verifica se h� elementos na fila */
+/* Verifica se ha elementos na fila */
 int CheckQueue(queue* myQueue);
 
 /* Insere elementos na fila */
@@ -35,7 +35,7 @@ void Dequeue(queue* myQueue);
 /* Imprime os elementos da fila */
 void ConsultQueue(queue* myQueue);
 
-/* Apaga todos os elementos e libera mem�ria */
+/* Apaga todos os elementos e libera memoria */
 int DestroyQueue(queue* myQueue);
 
 #endif /* !QUEUE_H */

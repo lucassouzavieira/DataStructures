@@ -30,7 +30,7 @@ queue CreateQueue ()
 	return myQueue;
 }
 
-/* Verifica se a fila est� vazia ou n�o */
+/* Verifica se a fila esta vazia ou nao */
 int CheckQueue (queue* myQueue)
 {
 	if (myQueue->queue == NULL){
@@ -47,7 +47,7 @@ void Enqueue (queue* myQueue, long int element)
 	if (myQueue->queue == NULL){
 		if (newNode != NULL) {
 			newNode->key = element;
-			newNode->pointer = NULL; /* �ltimo elemento n�o aponta pra ningu�m */
+			newNode->pointer = NULL; /* Ultimo elemento nao aponta pra ninguem */
 			myQueue->queue = newNode;
 			myQueue->endOfQueue = newNode;
 			myQueue->nodes++;
@@ -85,7 +85,7 @@ void ConsultQueue (queue* myQueue)
 	}
 }
 
-/* Apaga todos os elementos e libera mem�ria */
+/* Apaga todos os elementos e libera memoria */
 int DestroyQueue (queue* myQueue)
 {
 	node* aux = myQueue->queue;

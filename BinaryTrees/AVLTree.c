@@ -70,7 +70,7 @@ nodeavl* InsertAVLTree (nodeavl* myTree, long int key)
 			myTree->right = InsertAVLTree(myTree->right, key);
 		}
 	}
-	myTree = MaintenanceAVLTree(myTree); /* Verifica a manuten��o  */
+	myTree = MaintenanceAVLTree(myTree); /* Verifica a manutencao  */
 	return myTree;
 }
 
@@ -188,13 +188,13 @@ int CalculateBalanceFactor (nodeavl* mynode)
 	if (mynode == NULL){
 		return 0;
 	} else {
-		/* Calcula a diferen�a de alturas entre as sub�rvores 
-		esquerda e direita de cada n� */ 
+		/* Calcula a diferenca de alturas entre as subarvores
+		esquerda e direita de cada no */
 		return (HeightAVLTree(mynode->left) - HeightAVLTree(mynode->right));
 	}
 }
 
-/* Ajustar os Fatores de Balanceamento de todos os n�s da �rvore  */
+/* Ajustar os Fatores de Balanceamento de todos os nos da arvore  */
 void SetbalanceFactor (nodeavl* myTree)
 {
 	if (myTree != NULL){
@@ -207,18 +207,18 @@ void SetbalanceFactor (nodeavl* myTree)
 	return;
 }
 
-/* Fun��es utilit�rias para as rota��es */
+/* Funcoes utilitarias para as rotacoes */
 nodeavl* RotateRightAVLTree (nodeavl* mynode)
 {
 	nodeavl* aux = mynode->left;
 	if (aux->right != NULL) {
-		/* Se o filho do n� atual tem sub-�rvore � direita
-		Ent�o o n� atual ter� como filho a sub-�rvore esquerda do filho*/
+		/* Se o filho do no atual tem sub-arvore a direita
+		Entao o no atual tera como filho a sub-arvore esquerda do filho*/
 		mynode->left = aux->right;
 	}else{
 		mynode->left = NULL;
 	}
-	/* O n� atual vira filho direito do seu pr�prio filho  */
+	/* O no atual vira filho direito do seu proprio filho  */
 	aux->right = mynode;
 	return aux;
 }
@@ -227,13 +227,13 @@ nodeavl* RotateLeftAVLTree (nodeavl* mynode)
 {
 	nodeavl* aux = mynode->right;
 	if (aux->left != NULL){
-		/* Se o filho do n� atual tem sub-�rvore � esquerda
-		Ent�o o n� atual ter� como filho a sub-�rvore direita do filho*/
+		/* Se o filho do no atual tem sub-arvore a esquerda
+		Entao o no atual tera como filho a sub-arvore direita do filho*/
 		mynode->right = aux->left;
 	} else {
 		mynode->right = NULL;
 	}
-	/* O n� atual vira filho esquerda do seu pr�prio filho  */
+	/* O no atual vira filho esquerda do seu proprio filho  */
 	aux->left = mynode;
 	return aux;
 }
@@ -244,16 +244,16 @@ nodeavl* DoubleRotateRightAVLTree (nodeavl* mynode)
 	nodeavl* rightGrandson = leftChild->right;
 	if (rightGrandson->left != NULL){
 		/*Se existe o filho esquerda do filho direito do filho esquerda do
-		n� atual, ent�o o filho direito do filho esquerda do n� atual recebe
-		o filho esquerda do filho direito do filho esquerda do n� atual*/
+		no atual, entao o filho direito do filho esquerda do no atual recebe
+		o filho esquerda do filho direito do filho esquerda do no atual*/
 		leftChild->right = rightGrandson->left;
 	} else {
 		leftChild->right = NULL;
 	}
 	if (rightGrandson->right != NULL){
 		/*Se existe o filho direito do filho direito do filho esquerda do
-		n� atual, ent�o o filho direito do filho esquerda do n� atual recebe
-		o filho esquerda do filho direito do filho esquerda do n� atual*/
+		no atual, entao o filho direito do filho esquerda do no atual recebe
+		o filho esquerda do filho direito do filho esquerda do no atual*/
 		leftChild->right = rightGrandson->left;
 	} else {
 		mynode->right = NULL;
@@ -269,16 +269,16 @@ nodeavl* DoubleRotateLeftAVLTree (nodeavl* mynode)
 	nodeavl* leftGrandson = rightChild->left;
 	if (leftGrandson->left != NULL) {
 		/*Se existe o filho esquerda do filho esquerda do filho direito do
-		n� atual, ent�o o filho direito do n� atual passa a ser ent�o o filho
-		esquerda do filho esquerda do filho direito do n� atual*/
+		no atual, entao o filho direito do no atual passa a ser entao o filho
+		esquerda do filho esquerda do filho direito do no atual*/
 		mynode->right = leftGrandson->left;
 	} else {
 		mynode->right = NULL;
 	}
 	if (leftGrandson->right != NULL){
 		/*Se existe o filho direito do filho esquerda do filho direito do
-		n� atual, ent�o o filho esquerda do filho direito passa a ser ent�o o filho
-		direito do filho esquerda do filho direito do n� atual*/
+		no atual, entao o filho esquerda do filho direito passa a ser entoo o filho
+		direito do filho esquerda do filho direito do no atual*/
 		rightChild->left = leftGrandson->right;
 	} else {
 		rightChild->left = NULL;
@@ -288,7 +288,7 @@ nodeavl* DoubleRotateLeftAVLTree (nodeavl* mynode)
 	return leftGrandson;
 }
 
-/* Manter a �rvore Balanceada  */
+/* Manter a arvore Balanceada  */
 nodeavl* MaintenanceAVLTree (nodeavl* myTree)
 {
 	if (myTree != NULL){
@@ -316,7 +316,7 @@ nodeavl* MaintenanceAVLTree (nodeavl* myTree)
 	return myTree;
 }
 
-/* Desenha a �rvore bin�ria  */
+/* Desenha a arvore binaria  */
 void ShowBranchAVL (branches *t)
 {
 	if (!t){
@@ -336,7 +336,6 @@ void DrawAVL (nodeavl* myTree, branches *previous, int left)
 	char *show_str = show.str;
 
 	DrawAVL(myTree->left, &show, 1);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
 	if (!previous){
 		show.str = "---";
 	} else if (left){
@@ -347,7 +346,6 @@ void DrawAVL (nodeavl* myTree, branches *previous, int left)
 		previous->str = show_str;
 	}
 	ShowBranchAVL(&show);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 	printf("%ld \n", myTree->key);
 
 	if (previous){

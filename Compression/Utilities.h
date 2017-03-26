@@ -18,7 +18,7 @@
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
-#include "..\TAD.h"
+#include "../TAD.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -26,7 +26,7 @@
 /* Converte um inteiro em uma string  */
 char* intToString(int integer);
 
-/* Salva a string em um arquivo incluindo informa��es sobre a compress�o realizada */
+/* Salva a string em um arquivo incluindo informacoes sobre a compressao realizada */
 int toFile(char* myString, char* filename);
 
 /* Recupera a string de um arquivo */

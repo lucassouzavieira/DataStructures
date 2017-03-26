@@ -28,11 +28,11 @@ BSTree CreateBST ()
 	return myBSTree;
 }
 
-/* Insere um elemento na �rvore */
+/* Insere um elemento na arvore */
 void InsertInBST (BSTree* myTree, long int key)
 {
 	if (myTree->root == NULL){
-		/* �rvore vazia */
+		/* arvore vazia */
 		nodetree* newNode = (nodetree *)(malloc(sizeof(nodetree)));
 		if (newNode != NULL){
 			newNode->key = key;
@@ -47,7 +47,7 @@ void InsertInBST (BSTree* myTree, long int key)
 			newNode->right = NULL;
 			newNode->left = NULL;
 		} 
-		/* Buscar a posi��o da nova folha  */
+		/* Buscar a posiaao da nova folha  */
 		nodetree* father = NULL;
 		nodetree* current = myTree->root;
 		while (current != NULL){
@@ -68,8 +68,8 @@ void InsertInBST (BSTree* myTree, long int key)
 	myTree->nodes++;
 }
 
-/* Remo��o de um elemento qualquer da �rvore 
-   Busca o elemento mais � direita  */
+/* Remoaao de um elemento qualquer da arvore
+   Busca o elemento mais a direita  */
 nodetree* MostRight (nodetree* tree)
 {
 	if (tree->right != NULL) {
@@ -84,7 +84,7 @@ nodetree* MostRight (nodetree* tree)
 		return aux;
 	}
 }
-/* Busca o elemento mais � esquerda  */
+/* Busca o elemento mais a esquerda  */
 nodetree* MostLeft (nodetree* tree) 
 {
 	if (tree->left != NULL) {
@@ -99,7 +99,7 @@ nodetree* MostLeft (nodetree* tree)
 		return aux;
 	}
 }
-/* Busca e remove elementos da �rvore bin�ria  */
+/* Busca e remove elementos da arvore binaria  */
 nodetree* RemoveBSTree (nodetree* myTree, long int key)
 {
 	nodetree *toRemove = myTree;
@@ -107,7 +107,7 @@ nodetree* RemoveBSTree (nodetree* myTree, long int key)
 	nodetree *substitute;
 	nodetree *aux;
 	nodetree *heritor;
-	/* Busca o n� a ser removido  */
+	/* Busca o na a ser removido  */
 	while (toRemove != NULL && toRemove->key != key) {
 		father = toRemove;
 		if (key < toRemove->key) {
@@ -121,7 +121,7 @@ nodetree* RemoveBSTree (nodetree* myTree, long int key)
 		printf("Elemento nao encontrado ! \n");
 		return myTree;
 	}
-	/* Dois primeiros casos: O n� tem 0 ou 1 filho  */
+	/* Dois primeiros casos: O na tem 0 ou 1 filho  */
 	if (toRemove->left == NULL) {
 		substitute = toRemove->right;
 	}
@@ -129,10 +129,10 @@ nodetree* RemoveBSTree (nodetree* myTree, long int key)
 		substitute = toRemove->left;
 	}
 	else {
-		/* �ltimo caso: n� com 2 filhos  */
+		/* altimo caso: na com 2 filhos  */
 		aux = toRemove;
 		substitute = toRemove->right;
-		heritor = substitute->left; /* Sucessor � sempre o filho mais esquerdo do substituto  */
+		heritor = substitute->left; /* Sucessor a sempre o filho mais esquerdo do substituto  */
 		while (heritor != NULL) {
 			aux = substitute;
 			substitute = heritor;
@@ -142,8 +142,8 @@ nodetree* RemoveBSTree (nodetree* myTree, long int key)
 			aux->left = substitute->right;
 			substitute->right = toRemove->right;
 		}
-		/*O substituto ocupa o lugar de n� removido,
-		o filho esquerda do substituto � manipulado
+		/*O substituto ocupa o lugar de na removido,
+		o filho esquerda do substituto a manipulado
 		para permitir isso*/
 		substitute->left = toRemove->left;
 	}
@@ -168,7 +168,7 @@ void RemoveBST (BSTree* myTree, long int key)
 	myTree->nodes--;
 }
 
-/* Busca um elemento na �rvore */
+/* Busca um elemento na arvore */
 nodetree* SearchBST (BSTree* myTree, long int key)
 {
 	nodetree* aux = myTree->root;
@@ -184,8 +184,8 @@ nodetree* SearchBST (BSTree* myTree, long int key)
 	return NULL;
 }
 
-/* Percorrer a �rvore
-   Pr�-ordem  */
+/* Percorrer a arvore
+   Pre-ordem  */
 void PreOrderBSTree (nodetree* tree)
 {
 	if (tree == NULL) {
@@ -221,7 +221,7 @@ void InOrderBST (BSTree* myTree)
 	InOrderBSTree(myTree->root);
 }
 
-/* Pos-�rdem  */
+/* Pos-ordem  */
 void PostOrderBSTree (nodetree* tree)
 {
 	if (tree == NULL){
@@ -239,7 +239,7 @@ void PostOrderBST(BSTree* myTree)
 	PostOrderBSTree(myTree->root);
 }
 
-/* Descobrir a altura da �rvore */
+/* Descobrir a altura da arvore */
 int HeightOfBSTree (nodetree* myTree)
 {
 	if (myTree == NULL){
@@ -260,7 +260,7 @@ int HeightOfBST (BSTree* myTree)
 	return HeightOfBSTree(myTree->root);
 }
 
-/* Destruir a �rvore  */
+/* Destruir a arvore  */
 void DestroyBSTree (nodetree* myTree) 
 {
 	if (myTree == NULL){
@@ -278,8 +278,8 @@ void DestroyBST (BSTree* myTree)
 	DestroyBSTree(myTree->root);
 }
 
-/* Desenha a �rvore bin�ria
-   Mostra tra�os ligando os n�s  */
+/* Desenha a arvore binaria
+   Mostra traaos ligando os nas  */
 void ShowBranch (branches *t)
 {
 	if (!t){
@@ -289,7 +289,7 @@ void ShowBranch (branches *t)
 	printf(t->str);
 }
 
-/* Desenha a �rvore  */
+/* Desenha a arvore  */
 void DrawBSTree (nodetree* myTree, branches *previous, int Left)
 {
 	if (myTree == NULL){
@@ -300,7 +300,6 @@ void DrawBSTree (nodetree* myTree, branches *previous, int Left)
 	char *show_str = show.str;
 
 	DrawBSTree(myTree->left, &show, 1);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
 	if (!previous){
 		show.str = "---";
 	} else if (Left){
@@ -311,7 +310,6 @@ void DrawBSTree (nodetree* myTree, branches *previous, int Left)
 		previous->str = show_str;
 	}
 	ShowBranch(&show);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 	printf("%ld \n",myTree->key);
 	
 	if (previous){
@@ -325,7 +323,7 @@ void DrawBSTree (nodetree* myTree, branches *previous, int Left)
 	}
 }
 
-/* Desenha a �rvore bin�ria  */
+/* Desenha a arvore binaria  */
 void DrawBST(BSTree* myTree) 
 {
 	DrawBSTree(myTree->root, 0, 0);

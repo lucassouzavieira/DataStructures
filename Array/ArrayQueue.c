@@ -17,7 +17,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "..\TAD.h"
+#include "../TAD.h"
 
 /* Cria e retorna uma fila estatica  */
 array* ArrayQueueCreate (unsigned long int size) 

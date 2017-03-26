@@ -14,7 +14,7 @@
  GNU General Public License for more details.
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>. */
-#define _CRT_SECURE_NO_WARNINGS 1
+
 #include "Utilities.h"
 
 /* Converte um inteiro em uma string */
@@ -39,7 +39,7 @@ int getLines(char* filename)
 	return countLines++;
 }
 
-/* Salva a string em um arquivo incluindo informa��es sobre a compress�o realizada */
+/* Salva a string em um arquivo incluindo informacoes sobre a compressao realizada */
 int toFile(char* myString, char* filename)
 {
 	FILE* file;

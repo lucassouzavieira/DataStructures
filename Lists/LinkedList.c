@@ -1,26 +1,23 @@
-/**
-Este arquivo é parte do projeto Data Structures
-Este é um software livre; você pode redistribuí-lo e/ou
-modificá-lo dentro dos termos da Licença Pública Geral GNU como
-publicada pela Fundação do Software Livre (FSF); na versão 3 da
-Licença, ou (na sua opinião) qualquer versão.
+/*
+ Implementacao de Lista simples
 
-Este programa é distribuído na esperança de que possa ser  útil,
-mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO
-a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
-Licença Pública Geral GNU para maiores detalhes.
+ Copyright (C) 2016  Lucas S. Vieira
 
-Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
-com este programa, Se não, veja <http:/*www.gnu.org/licenses/>.
+ This program is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License,
+ or (at your option) any later version.
 
-Arquivo: LinkedList.c
-Descrição: Implementação de Lista encadeada simples
-Autor: Lucas de Souza Vieira <lucassouzavieiraengcomp@gmail.com>	*/
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-#define _CRT_SECURE_NO_WARNINGS 1
 #include <stdlib.h>
 #include <stdio.h>
-#include "..\TAD.h"
+#include "../TAD.h"
 
 /* Cria uma lista encadeada */
 list CreateLinkedList ()
@@ -41,7 +38,7 @@ int CheckLinkedList (list* myList)
 	return 1;
 }
 
-/* Insere no início da lista */
+/* Insere no inicio da lista */
 void InsertAtStartLinkedList (list* myList, long int element)
 {
 	node* newNode;
@@ -52,7 +49,7 @@ void InsertAtStartLinkedList (list* myList, long int element)
 		myList->list = newNode;
 		myList->nodes++;
 	}
-	/* Atualiza o último nó da lista, caso necessário */
+	/* Atualiza o ultimo no da lista, caso necessario */
 	if (myList->last == NULL) {
 		node* current;
 		node* previous;
@@ -73,15 +70,15 @@ void InsertAtMiddleLinkedList (list* myList, long int element)
 	if (newNode != NULL){
 		newNode->key = element;
 	}
-	/* Buscar a posição do novo nó
-	Critério = element armazenado */
+	/* Buscar a posicao do novo no
+	Criterio = element armazenado */
 	node* previous = NULL;
 	node* current = myList->list;
 	while (current != NULL && current->key < element){
 		previous = current;
 		current = current->pointer;
 	}
-	/* Insere no começo caso previous = NULL*/
+	/* Insere no comeco caso previous = NULL*/
 	if (previous == NULL){
 		newNode->pointer = myList->list;
 		myList->list = newNode;

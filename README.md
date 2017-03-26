@@ -32,7 +32,6 @@ Busca Binária (SearchAlgorithms)
 ## Árvores Binárias
 Árvore Binária de Busca (BinarySearchTree)  
 Árvore AVL (AVLTree)  
-Árvore Rubro-Negra (RedBlackTree)  
 
 ## Processamento de Texto  
 Run-Lenghth Enconding (RLE)  

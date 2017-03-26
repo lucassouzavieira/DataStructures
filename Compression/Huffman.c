@@ -101,7 +101,7 @@ void encodeHuffman(char* myString)
 #endif
 }
 
-/* Decodifica uma �rvore de Huffman  */
+/* Decodifica uma arvore de Huffman  */
 char* decodeHuffman(huffmantreenode* huffmanTree){
 	return NULL;
 }

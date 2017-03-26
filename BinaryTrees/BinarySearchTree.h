@@ -19,29 +19,29 @@
 #define BINARYSEARCHTREE_H
 #include "../TAD.h"
 
-/* Criar a �rvore   */
+/* Criar a Arvore   */
 BSTree CreateBST();
 
-/* Insere um elemento na �rvore  */
+/* Insere um elemento na Arvore  */
 void InsertInBST(BSTree* myTree, long int key);
 
-/* Remove um elemento da �rvore  */
+/* Remove um elemento da Arvore  */
 void RemoveBST(BSTree* myTree, long int key);
 
-/* Busca um elemento na �rvore  */
+/* Busca um elemento na Arvore  */
 nodetree* SearchBST(BSTree* myTree, long int key);
 
-/* Maneiras de percorrer a �rvore  */
+/* Maneiras de percorrer a Arvore  */
 void PreOrderBST(BSTree* myTree);
 void InOrderBST(BSTree* myTree);
 void PostOrderBST(BSTree* myTree);
 
-/* Ilustra a estrutura da �rvore - r-e-d (Pr�ordem)   */
+/* Ilustra a estrutura da Arvore - r-e-d (Pre-ordem)   */
 void DrawBST(BSTree* myTree);
 
-/* Descobrir a altura da �rvore */ 
+/* Descobrir a altura da Arvore */
 int HeightOfBST(BSTree* myTree);
 
-/* Destruir a �rvore */ 
+/* Destruir a Arvore */
 void DestroyBST(BSTree* myTree);
 #endif /* !BST_H */
