@@ -1,5 +1,5 @@
 /*
- Testes das implementacoes
+ Testes de algoritmos de ordenacao
 
  Copyright (C) 2016  Lucas S. Vieira
 
@@ -15,24 +15,32 @@
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
+#include "SortingTests.h"
 
-#define DEBUG 1
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "TAD.h"
-#include "Vector/Vector.h"
-#include "Vector/SortingAlgorithms.h"
-#include "BinaryTrees/BinarySearchTree.h"
-#include "Tests/SortingTests.h"
-
-
-int main()
+double testBubbleSort(long int elements)
 {
-    double tempoMerge = testMergeSort(100000);
-    double tempoBubble = testBubbleSort(100000);
+    long int* vector = CreateRandomVector(elements);
+    clock_t start = 0;
+    clock_t end = 0;
 
-    printf("Tempo merge: %f ms \n", tempoMerge);
-    printf("Tempo bubble: %f ms \n", tempoBubble);
+    start = clock();
+    vector = BubbleSort(vector, elements);
+    end = clock();
+
+    double time = ((end - start) * 1000) / CLOCKS_PER_SEC;
+    return time;
+}
+
+double testMergeSort(long int elements)
+{
+    long int* vector = CreateRandomVector(elements);
+    clock_t start = 0;
+    clock_t end = 0;
+
+    start = clock();
+    MergeSort(vector, elements);
+    end = clock();
+
+    double time = ((end - start) * 1000) / CLOCKS_PER_SEC;
+    return time;
 }
