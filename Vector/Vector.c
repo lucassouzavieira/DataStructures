@@ -22,6 +22,11 @@ void show_vector(long int *vector, long int numberOfElements) {
 
     long int *aux = vector;
 
+    if(vector == NULL){
+        printf("Null vector \n");
+        return;
+    }
+
     for (long int i = 0; i < numberOfElements; i++) {
         printf("%ld \n", aux[i]);
     }
@@ -41,6 +46,7 @@ int save_vector(const char *address, long int *vector, long int numberOfElements
         fflush(stdout);
         fprintf(file, "%ld \n", vector[i]);
     }
+
     fclose(file);
     printf("Successfully saved file! \n");
 
@@ -48,6 +54,7 @@ int save_vector(const char *address, long int *vector, long int numberOfElements
 }
 
 long int *retrieve_vector(const char *address, long *vector, long int numberOfElements) {
+
     vector  = (long int *) malloc((numberOfElements) * sizeof(long int));
     *vector = 0;
     FILE    *file;
@@ -70,17 +77,19 @@ long int *retrieve_vector(const char *address, long *vector, long int numberOfEl
 
 long int *create_random_vector(long int numberOfElements) {
 
-    srand(time(NULL));
-    long int *vector;
+    long int *vector = NULL;
+
     vector = (long int *) (malloc(numberOfElements * sizeof(long int)));
+    srand(time(NULL));
+
     if (vector == NULL) {
         printf("Memory allocation error! \n");
         return NULL;
-    } else {
-        for (long int i = 0; i < numberOfElements; i++) {
-            int multiplicador = -40 + rand() % 20;
-            vector[i] = (32767 * multiplicador + 2 * rand());
-        }
+    }
+
+    for (long int i = 0; i < numberOfElements; i++) {
+        int multiplicador = -40 + rand() % 20;
+        vector[i] = (32767 * multiplicador + 2 * rand());
     }
 
     return vector;
