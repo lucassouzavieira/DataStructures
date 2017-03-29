@@ -14,70 +14,62 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef TAD_H
-#define TAD_H
+#ifndef TYPES_H
+#define TYPES_H
 
 #define LINE_MAX_LENGTH 500
 
 /******************************************************************************
 Lists, stacks and queues
 ******************************************************************************/
-/* Node simples */
-typedef struct Node {
+typedef struct node {
     long int key;
-    struct Node *pointer;
+    struct node *pointer;
 } node;
 
-/* Node duplo */
-typedef struct DoubleNode {
+typedef struct double_node {
     long int key;
-    struct DoubleNode *next;
-    struct DoubleNode *previous;
-} dnode;
+    struct double_node *next;
+    struct double_node *previous;
+} double_node;
 
-/* Lista */
-typedef struct List {
+typedef struct list {
     node *list;
     node *last;
     long int nodes;
 } list;
 
-/* Lista Circular */
-typedef struct CircleList {
+typedef struct circle_list {
     node *list;
     long int nodes;
-} circlelist;
+} circle_list;
 
-/* Lista Dupla */
-typedef struct DoublyList {
-    dnode *list;
-    dnode *startOfList;
-    dnode *endOfList;
+typedef struct doubly_list {
+    double_node *list;
+    double_node *startOfList;
+    double_node *endOfList;
     long int nodes;
-} doublylist;
+} doubly_list;
 
-/* Pilha */
-typedef struct Stack {
+typedef struct stack {
     node *stack;
     node *top;
     unsigned long int nodes;
 } stack;
 
-/* Fila e Deque */
-typedef struct Queue {
+typedef struct queue {
     node *queue;
     node *endOfQueue;
     unsigned long int nodes;
 } queue;
 
-typedef struct Deque {
+typedef struct deque {
     node *startOfQueue;
     node *endOfQueue;
     unsigned long int nodes;
 } deque;
 
-/* Pilha e Fila Estaticas */
-typedef struct Array {
+typedef struct array {
     long int *vector;
     unsigned long int size;
     long int last;
@@ -86,90 +78,81 @@ typedef struct Array {
 /******************************************************************************
 Heap
 ******************************************************************************/
-typedef struct Heap {
+
+typedef struct heap {
     long int *vector;
     long int elements;
     long int maxElements;
 } heap;
 
 /******************************************************************************
-Graphs
-******************************************************************************/
-struct Graph {
-    int weighing;
-    int vertices;
-    int maxDegree;
-
-};
-
-/******************************************************************************
 Binary trees
 ******************************************************************************/
 
-typedef struct nodeBST {
+typedef struct bs_tree_node {
     long int key;
-    struct nodeBST *right;
-    struct nodeBST *left;
-} nodetree;
+    struct bs_tree_node *right;
+    struct bs_tree_node *left;
+} bs_tree_node;
 
-typedef struct BinarySearchTree {
-    nodetree *root;
+typedef struct binary_search_tree {
+    bs_tree_node *root;
     long int nodes;
-} BSTree;
+} bstree;
 
-typedef struct nodeAVL {
+typedef struct avl_tree_node {
     long int key;
     int balanceFactor;
-    struct nodeAVL *right;
-    struct nodeAVL *left;
-} nodeavl;
+    struct avl_tree_node *right;
+    struct avl_tree_node *left;
+} avl_tree_node;
 
-typedef struct AVLTree {
-    nodeavl *root;
+typedef struct avl_tree {
+    avl_tree_node *root;
     long int nodes;
-} AVLTree;
+} avl_tree;
 
 // Red black
-typedef enum Color {
+typedef enum color {
     RED = 0, BLACK = 1
-} Color;
+} color;
 
-typedef struct nodeRB {
+typedef struct red_black_tree_node {
     long int key;
     int blackHeight;
-    Color color;
-    struct nodeRB *right;
-    struct nodeRB *left;
-    struct nodeRB *father;
-} noderb;
+    color color;
+    struct red_black_tree_node *right;
+    struct red_black_tree_node *left;
+    struct red_black_tree_node *father;
+} red_black_tree_node;
 
-typedef struct RedBlackTree {
-    noderb *root;
+typedef struct red_black_tree {
+    red_black_tree_node *root;
     long int nodes;
-} RBTree;
+} red_black_tree;
 
 /******************************************************************************
 Compression algorithms
 ******************************************************************************/
 
-typedef enum CompressionAlgorithm {
+typedef enum compression_algorithm {
     RLE = 0, HUFFMAN = 1
-} CompressionAlgorithm;
+} compression_algorithm;
 
-typedef struct HuffmanTreeNode {
+typedef struct huffman_tree_node {
     unsigned char character;
     unsigned int occurrences;
-    struct HuffmanTreeNode *parent;
-    struct HuffmanTreeNode *left;
-    struct HuffmanTreeNode *right;
-} huffmantreenode;
+    struct huffman_tree_node *parent;
+    struct huffman_tree_node *left;
+    struct huffman_tree_node *right;
+} huffman_tree_node;
 
 /******************************************************************************
 Auxiliar structures
 ******************************************************************************/
 
-typedef struct Branches {
-    struct Branches *previous;
+typedef struct branches {
+    struct branches *previous;
     char *str;
 } branches;
 

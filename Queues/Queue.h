@@ -18,7 +18,7 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-#include "../TAD.h"
+#include "../Types.h"
 
 /* Cria uma fila */
 queue CreateQueue();

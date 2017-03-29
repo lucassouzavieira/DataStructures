@@ -18,7 +18,7 @@
 #ifndef BINARYSEARCHTREE_H
 #define BINARYSEARCHTREE_H
 
-#include "../TAD.h"
+#include "../Types.h"
 
 /* Criar a Arvore   */
 BSTree CreateBST();

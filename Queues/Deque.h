@@ -18,7 +18,7 @@
 #ifndef DEQUE_H
 #define DEQUE_H
 
-#include "../TAD.h"
+#include "../Types.h"
 
 /* Cria um deque */
 deque CreateDeque();

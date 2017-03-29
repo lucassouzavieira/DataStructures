@@ -18,7 +18,7 @@
 #ifndef DOUBLYLINKEDLIST_H
 #define DOUBLYLINKEDLIST_H
 
-#include "../TAD.h"
+#include "../Types.h"
 
 /* Cria uma lista duplamente encadeada */
 doublylist CreateDLinkedList();

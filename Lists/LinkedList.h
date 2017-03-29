@@ -18,7 +18,7 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
-#include "../TAD.h"
+#include "../Types.h"
 
 /* Cria uma lista encadeada */
 list CreateLinkedList();

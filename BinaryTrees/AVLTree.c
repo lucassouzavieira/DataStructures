@@ -18,7 +18,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "../TAD.h"
+#include "../Types.h"
 
 nodeavl *MaintenanceAVLTree(nodeavl *myTree);
 

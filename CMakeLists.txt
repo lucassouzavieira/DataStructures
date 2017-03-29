@@ -43,6 +43,6 @@ set(SOURCE_FILES
     Vector/Vector.c
     Vector/Vector.h
     Programa.c
-    TAD.h Tests/SortingTests.c Tests/SortingTests.h)
+        Types.h Tests/SortingTests.c Tests/SortingTests.h)
 
 add_executable(DataStructures ${SOURCE_FILES})

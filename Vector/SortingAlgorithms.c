@@ -150,8 +150,8 @@ void merge_sort(long int *vector, long int numberOfElements) {
 
     if (numberOfElements > 1) {
         middle = numberOfElements / 2;
-        MergeSort(vector, middle);
-        MergeSort(vector + middle, numberOfElements - middle);
+        merge_sort(vector, middle);
+        merge_sort(vector + middle, numberOfElements - middle);
         merge(vector, numberOfElements);
     }
 }

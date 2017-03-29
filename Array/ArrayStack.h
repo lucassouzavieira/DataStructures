@@ -18,7 +18,7 @@
 #ifndef ARRAYSTACK_H
 #define ARRAYSTACK_H
 
-#include "../TAD.h"
+#include "../Types.h"
 
 /* Cria uma pilha estatica */
 array *ArrayStackCreate(unsigned long int size);

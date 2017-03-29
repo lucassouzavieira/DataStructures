@@ -17,7 +17,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "../TAD.h"
+#include "../Types.h"
 
 /* Criar a arvore  */
 BSTree CreateBST() {

@@ -17,7 +17,7 @@
 
 #ifndef HEAP_H
 #define HEAP_H
-#include "../TAD.h"
+#include "../Types.h"
 
 /* Criar um novo heap */
 heap* CreateHeap(long int maxElements);

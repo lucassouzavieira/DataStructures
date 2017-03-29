@@ -19,7 +19,7 @@
 #ifndef REDBLACKTREE_H
 #define REDBLACKTREE_H
 
-#include "../TAD.h"
+#include "../Types.h"
 
 /* Criar uma arvore Red-Black */
 RBTree CreateRedBlackTree();

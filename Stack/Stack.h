@@ -18,7 +18,7 @@
 #ifndef STACK_H
 #define STACK_H
 
-#include "../TAD.h"
+#include "../Types.h"
 
 /* Cria uma pilha */
 stack CreateStack();

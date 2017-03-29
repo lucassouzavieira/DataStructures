@@ -18,7 +18,7 @@
 #ifndef CIRCLELIST_H
 #define CIRCLELIST_H
 
-#include "../TAD.h"
+#include "../Types.h"
 
 /* Cria uma lista circular  */
 circlelist CreateCircleList();

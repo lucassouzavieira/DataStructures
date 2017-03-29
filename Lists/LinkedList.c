@@ -17,7 +17,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "../TAD.h"
+#include "../Types.h"
 
 /* Cria uma lista encadeada */
 list CreateLinkedList() {

@@ -18,7 +18,7 @@
 #ifndef AVLTREE_H
 #define AVLTREE_H
 
-#include "../TAD.h"
+#include "../Types.h"
 
 /* Criar uma arvore AVL */
 AVLTree CreateAVLTree();

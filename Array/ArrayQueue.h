@@ -18,7 +18,7 @@
 #ifndef ARRAYQUEUE_H
 #define ARRAYQUEUE_H
 
-#include "../TAD.h"
+#include "../Types.h"
 
 /* Cria uma fila  */
 array *ArrayQueueCreate(unsigned long int size);
