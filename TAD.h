@@ -1,26 +1,26 @@
 /*
- Definicoes de tipos usados no projeto
-
- Copyright (C) 2016  Lucas S. Vieira
-
- This program is free software: you can redistribute it and/or modify it
- under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License,
- or (at your option) any later version.
-
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>. */
+ * Copyright (C) 2016  Lucas S. Vieira
+ *
+ * This program is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License,
+ * or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 #ifndef TAD_H
 #define TAD_H
+
 #define LINE_MAX_LENGTH 500
 
 /******************************************************************************
-Listas, Pilhas e Filas
+Lists, stacks and queues
 ******************************************************************************/
 /* Node simples */
 typedef struct Node {
@@ -93,7 +93,7 @@ typedef struct Heap {
 } heap;
 
 /******************************************************************************
-Grafos
+Graphs
 ******************************************************************************/
 struct Graph {
     int weighing;
@@ -103,10 +103,9 @@ struct Graph {
 };
 
 /******************************************************************************
-Arvores Binarias
+Binary trees
 ******************************************************************************/
 
-/* Arvore Binaria de Busca */
 typedef struct nodeBST {
     long int key;
     struct nodeBST *right;
@@ -118,7 +117,6 @@ typedef struct BinarySearchTree {
     long int nodes;
 } BSTree;
 
-/* Arvore AVL */
 typedef struct nodeAVL {
     long int key;
     int balanceFactor;
@@ -131,7 +129,7 @@ typedef struct AVLTree {
     long int nodes;
 } AVLTree;
 
-/*Arvore Red-Black */
+// Red black
 typedef enum Color {
     RED = 0, BLACK = 1
 } Color;
@@ -151,7 +149,7 @@ typedef struct RedBlackTree {
 } RBTree;
 
 /******************************************************************************
-Algoritmos de Compressao
+Compression algorithms
 ******************************************************************************/
 
 typedef enum CompressionAlgorithm {
@@ -167,9 +165,9 @@ typedef struct HuffmanTreeNode {
 } huffmantreenode;
 
 /******************************************************************************
-Estruturas Auxiliares
+Auxiliar structures
 ******************************************************************************/
-/* Auxiliar nos desenhos das arvores */
+
 typedef struct Branches {
     struct Branches *previous;
     char *str;
