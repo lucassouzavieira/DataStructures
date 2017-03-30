@@ -20,22 +20,16 @@
 
 #include "../Types.h"
 
-/* Cria uma fila */
-queue CreateQueue();
+queue queue_create();
 
-/* Verifica se ha elementos na fila */
-int CheckQueue(queue *myQueue);
+int queue_check(queue *myQueue);
 
-/* Insere elementos na fila */
-void Enqueue(queue *myQueue, long int element);
+void queue_enqueue(queue *myQueue, long int element);
 
-/* Remove elementos da fila */
-void Dequeue(queue *myQueue);
+void queue_dequeue(queue *myQueue);
 
-/* Imprime os elementos da fila */
-void ConsultQueue(queue *myQueue);
+void queue_print(queue *myQueue);
 
-/* Apaga todos os elementos e libera memoria */
-int DestroyQueue(queue *myQueue);
+int queue_destroy(queue *myQueue);
 
 #endif /* !QUEUE_H */

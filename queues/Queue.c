@@ -20,74 +20,84 @@
 #include "../Types.h"
 
 
-/* Cria uma fila */
-queue CreateQueue() {
+queue queue_create() {
     queue myQueue;
+
     myQueue.queue = NULL;
     myQueue.endOfQueue = NULL;
     myQueue.nodes = 0;
+
     return myQueue;
 }
 
-/* Verifica se a fila esta vazia ou nao */
-int CheckQueue(queue *myQueue) {
+int queue_check(queue *myQueue) {
+
     if (myQueue->queue == NULL) {
         return -1;
     }
+
     return 1;
 }
 
-/* Insere elementos na fila */
-void Enqueue(queue *myQueue, long int element) {
+void queue_enqueue(queue *myQueue, long int element) {
+
     node *newNode;
     newNode = (node *) (malloc(sizeof(node)));
+
+    if(newNode == NULL){
+        printf("Fail at trying insert element at queue! \n");
+        return;
+    }
+
     if (myQueue->queue == NULL) {
-        if (newNode != NULL) {
-            newNode->key = element;
-            newNode->pointer = NULL; /* Ultimo elemento nao aponta pra ninguem */
-            myQueue->queue = newNode;
-            myQueue->endOfQueue = newNode;
-            myQueue->nodes++;
-        }
-    } else {
         newNode->key = element;
-        newNode->pointer = NULL;
-        myQueue->endOfQueue->pointer = newNode;
+        newNode->pointer = NULL; /* Last element */
+        myQueue->queue = newNode;
         myQueue->endOfQueue = newNode;
         myQueue->nodes++;
+        return;
     }
+
+    newNode->key = element;
+    newNode->pointer = NULL;
+    myQueue->endOfQueue->pointer = newNode;
+    myQueue->endOfQueue = newNode;
+    myQueue->nodes++;
 }
 
-/* Remove elementos da fila */
-void Dequeue(queue *myQueue) {
+void queue_dequeue(queue *myQueue) {
+
     if (myQueue->queue == NULL) {
         printf("A Fila esta vazia!\n");
         return;
-    } else {
-        node *remove = myQueue->queue;
-        myQueue->queue = remove->pointer;
-        free(remove);
-        myQueue->nodes--;
     }
+
+    node *remove = myQueue->queue;
+    myQueue->queue = remove->pointer;
+    free(remove);
+    myQueue->nodes--;
 }
 
-/* Imprime os elementos da fila */
-void ConsultQueue(queue *myQueue) {
+void queue_print(queue *myQueue) {
+
     node *aux = myQueue->queue;
+
     while (aux != NULL) {
         printf("%ld ->", &aux->key);
         aux = aux->pointer;
     }
 }
 
-/* Apaga todos os elementos e libera memoria */
-int DestroyQueue(queue *myQueue) {
+int queue_destroy(queue *myQueue) {
+
     node *aux = myQueue->queue;
-    node *node_rem = NULL;
+    node *nodeToRem = NULL;
+
     while (aux != NULL) {
-        node_rem = aux;
+        nodeToRem = aux;
         aux = aux->pointer;
-        free(node_rem);
+        free(nodeToRem);
     }
-    return CheckQueue(myQueue);
+
+    return queue_check(myQueue);
 }

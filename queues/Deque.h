@@ -20,26 +20,20 @@
 
 #include "../Types.h"
 
-/* Cria um deque */
-deque CreateDeque();
+deque deque_create();
 
-/* Verifica se ha elementos no deque */
-int CheckDeque(deque *myDeque);
+int deque_check(deque *myDeque);
 
-/* Insere elementos no deque  */
-void InsertAtFront(deque *myQueue, long int element);
+void deque_insert_at_front(deque *myQueue, long int element);
 
-void InsertAtBack(deque *myQueue, long int element);
+void deque_insert_at_back(deque *myQueue, long int element);
 
-/* Remove elementos do deque */
-void RemoveFromFront(deque *myDeque);
+void deque_shift(deque *myDeque);
 
-void RemoveFromBack(deque *myDeque);
+void deque_pop(deque *myDeque);
 
-/* Imprime os elementos do deque */
-void ConsultDeque(deque *myDeque);
+void deque_print(deque *myDeque);
 
-/* Apaga todos os elementos e libera memoria */
-int DestroyDeque(deque *myDeque);
+int deque_destroy(deque *myDeque);
 
 #endif /* DEQUE_H */

@@ -18,35 +18,41 @@
 #include <stdio.h>
 #include "Deque.h"
 
-/* Cria um deque */
-deque CreateDeque() {
+deque deque_create() {
+
     deque myDeque;
     myDeque.startOfQueue = NULL;
     myDeque.endOfQueue = NULL;
     myDeque.nodes = 0;
+
+    return myDeque;
 }
 
-/* Verifica se ha elementos no deque */
-int CheckDeque(deque *myDeque) {
+int deque_check(deque *myDeque) {
+
     if (myDeque->startOfQueue == NULL) {
         return -1;
     }
+
     return 1;
 }
 
-/* Insere elementos no deque */
-void InsertAtFront(deque *myDeque, long int element) {
-    if (myDeque == NULL)
+void deque_insert_at_front(deque *myDeque, long int element) {
+
+    if (myDeque == NULL){
         return;
+    }
+
     node *newNode;
     newNode = (node *) (malloc(sizeof(node)));
+
     if (newNode != NULL) {
         newNode->key = element;
         newNode->pointer = myDeque->startOfQueue;
         myDeque->startOfQueue = newNode;
         myDeque->nodes++;
     }
-    /* Atualiza o ultimo no do deque, caso necessario */
+
     if (myDeque->endOfQueue == NULL) {
         node *current;
         node *previous;
@@ -59,41 +65,51 @@ void InsertAtFront(deque *myDeque, long int element) {
     }
 }
 
-void InsertAtBack(deque *myDeque, long int element) {
+void deque_insert_at_back(deque *myDeque, long int element) {
+
     if (myDeque == NULL)
         return;
+
     node *newNode;
     newNode = (node *) (malloc(sizeof(node)));
+
     if (newNode != NULL) {
         newNode->key = element;
         newNode->pointer = NULL;
     }
+
     node *current = myDeque->startOfQueue;
     node *previous = NULL;
+
     while (current->pointer != NULL) {
         current = current->pointer;
         previous = current;
     }
+
     current->pointer = newNode;
     myDeque->endOfQueue = newNode;
     myDeque->nodes++;
 }
 
-/* Remove elementos do deque */
-void RemoveFromFront(deque *myDeque) {
+void deque_shift(deque *myDeque) {
+
     if (myDeque == NULL || myDeque->startOfQueue == NULL)
         return;
+
     node *tempNode = myDeque->startOfQueue;
     myDeque->startOfQueue = tempNode->pointer;
     free(tempNode);
     myDeque->nodes--;
 }
 
-void RemoveFromBack(deque *myDeque) {
+void deque_pop(deque *myDeque) {
+
     if (myDeque == NULL || myDeque->startOfQueue == NULL)
         return;
+
     node *current = myDeque->startOfQueue;
     node *previous = NULL;
+
     while (current->pointer != NULL) {
         current = current->pointer;
         previous = current;
@@ -103,24 +119,27 @@ void RemoveFromBack(deque *myDeque) {
     myDeque->nodes--;
 }
 
-/* Imprime os elementos do deque */
-void ConsultDeque(deque *myDeque) {
+void deque_print(deque *myDeque) {
+
     if (myDeque == NULL || myDeque->startOfQueue == NULL)
         return;
+
     node *current = myDeque->startOfQueue;
+
     while (current != NULL) {
         printf("%ld \n", current->key);
         current = current->pointer;
     }
 }
 
-/* Apaga todos os elementos e libera memoria */
-int DestroyDeque(deque *myDeque) {
+int deque_destroy(deque *myDeque) {
     node *current = NULL;
+
     while (myDeque->startOfQueue != NULL) {
         current = myDeque->startOfQueue->pointer;
         free(myDeque->startOfQueue);
         myDeque->startOfQueue = current;
     }
+
     return EXIT_SUCCESS;
 }
