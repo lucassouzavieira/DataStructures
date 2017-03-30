@@ -22,13 +22,13 @@
 
 #define DEBUG
 
-/* Codifica uma string em uma arvore de Huffman  */
-void encodeHuffman(char *myString) {
+void huffman_enconde(char *myString) {
+
     int stringSize = strlen(myString);
     int vectorSize = 0;
     int position = 0;
     int occurrence = 0;
-    int sum = 0; /* Quantidade Total de Chars  */
+    int sum = 0;
     double frequency = 0;
     char character = 0;
     long int _intaux = 0;
@@ -47,7 +47,6 @@ void encodeHuffman(char *myString) {
     strcpy(string, myString);
     FILE *file = fopen("tmpHuffmanOutputFile", "w");
 
-    /* Conta as ocorrencias de cada caractere  */
     for (int i = 0; i < stringSize; i++) {
         if (string[i] != '@') {
             occurrence = 1;
@@ -77,7 +76,6 @@ void encodeHuffman(char *myString) {
         sum = sum + occurrences[i];
     }
 
-    /* Ordena os caracteres pela quantidade de ocorrencias  */
     for (long int i = 0; i < vectorSize; i++) {
         for (long int j = 0; j < (vectorSize - 1); j++) {
             if (occurrences[j] > occurrences[j + 1]) {
@@ -101,8 +99,8 @@ void encodeHuffman(char *myString) {
 #endif
 }
 
-/* Decodifica uma arvore de Huffman  */
-char *decodeHuffman(huffmantreenode *huffmanTree) {
+char *decodeHuffman(huffman_tree_node *huffmanTree) {
+    // TODO
     return NULL;
 }
 

@@ -20,8 +20,8 @@
 
 #include "../Types.h"
 
-void encodeHuffman(char *myString);
+void huffman_enconde(char *myString);
 
-char *decodeHuffman(huffmantreenode *huffmanTree);
+char *huffman_decode(huffman_tree_node *huffmanTree);
 
 #endif /* !HUFFMAN_H */

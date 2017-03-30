@@ -1,19 +1,18 @@
 /*
- Algoritmo RLE para compressao de texto
-
- Copyright (C) 2016  Lucas S. Vieira
-
- This program is free software: you can redistribute it and/or modify it
- under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License,
- or (at your option) any later version.
-
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>. */
+ * Copyright (C) 2016  Lucas S. Vieira
+ *
+ * This program is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License,
+ * or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 #include "RLE.h"
 #include "Utilities.h"
@@ -32,14 +31,16 @@ Tabela ASCII usada como base: <http:/*ic.unicamp.br/~everton/aulas/hardware/tabe
 **********************************************************************************************/
 
 
-/* Retorna a string codificada pelo RLE */
-char *encodeRLE(char *myString) {
+char *rle_enconde(char *myString) {
+
     FILE *tmpFile = fopen("tmpOutPutFile", "w");
     int occurrences = 1;
-    const char *encodedString = NULL;
+    char *encodedString = NULL;
 
-    if (myString == NULL)
+    if (myString == NULL) {
         return NULL;
+    }
+
     for (int i = 1; myString[i - 1] != '\0'; i++) {
         if (myString[i] == myString[i - 1]) {
             occurrences++;
@@ -58,13 +59,13 @@ char *encodeRLE(char *myString) {
     }
 
     fclose(tmpFile);
-    encodedString = fromFile("tmpOutPutFile");
+    encodedString = from_file("tmpOutPutFile");
 
     return encodedString;
 }
 
-/* Decodifica uma string codificada pelo RLE  */
-char *decodeRLE(char *myString) {
+char *rle_decode(char *myString) {
+
     FILE *tmpFile = fopen("tmpInputFile", "w");
     int stringSize = 0;
     int i = 0;
@@ -72,10 +73,12 @@ char *decodeRLE(char *myString) {
     char character = 0;
     char ocurrences[3] = {"\0"};
 
-    if (myString == NULL)
+    if (myString == NULL) {
         return NULL;
+    }
 
-    stringSize = strlen(myString);
+    stringSize = (int) strlen(myString);
+
     for (i = 0; i <= stringSize;) {
         fflush(stdout);
         if (myString[i] == '@') {
@@ -99,6 +102,7 @@ char *decodeRLE(char *myString) {
             i = i + 1;
         }
     }
+
     fclose(tmpFile);
     return "NULL";
 }
