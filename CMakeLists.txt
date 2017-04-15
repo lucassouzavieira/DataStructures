@@ -30,10 +30,16 @@ set(SOURCE_FILES
         vector/SortingAlgorithms.h
         vector/Vector.c
         vector/Vector.h
-        Programa.c
+        main.c
         Types.h
         tests/SortingTests.c
-        tests/SortingTests.h
-        examples/vector.c)
+        tests/SortingTests.h)
 
 add_executable(DataStructures ${SOURCE_FILES})
+
+set(VECTOR_EXAMPLE_SOURCES
+        vector/Vector.h
+        vector/Vector.c
+        examples/vector.c)
+
+add_executable(vector ${VECTOR_EXAMPLE_SOURCES})
