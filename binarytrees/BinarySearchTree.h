@@ -20,32 +20,24 @@
 
 #include "../Types.h"
 
-/* Criar a Arvore   */
 BSTree CreateBST();
 
-/* Insere um elemento na Arvore  */
 void InsertInBST(BSTree *myTree, long int key);
 
-/* Remove um elemento da Arvore  */
 void RemoveBST(BSTree *myTree, long int key);
 
-/* Busca um elemento na Arvore  */
 nodetree *SearchBST(BSTree *myTree, long int key);
 
-/* Maneiras de percorrer a Arvore  */
 void PreOrderBST(BSTree *myTree);
 
 void InOrderBST(BSTree *myTree);
 
 void PostOrderBST(BSTree *myTree);
 
-/* Ilustra a estrutura da Arvore - r-e-d (Pre-ordem)   */
 void DrawBST(BSTree *myTree);
 
-/* Descobrir a altura da Arvore */
 int HeightOfBST(BSTree *myTree);
 
-/* Destruir a Arvore */
 void DestroyBST(BSTree *myTree);
 
 #endif /* !BST_H */

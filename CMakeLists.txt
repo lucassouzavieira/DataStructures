@@ -10,12 +10,6 @@ set(SOURCE_FILES
         array/ArrayQueue.h
         array/ArrayStack.c
         array/ArrayStack.h
-        binarytrees/AVLTree.c
-        binarytrees/AVLTree.h
-        binarytrees/BinarySearchTree.c
-        binarytrees/BinarySearchTree.h
-        binarytrees/RedBlackTree.c
-        binarytrees/RedBlackTree.h
         compression/Huffman.c
         compression/Huffman.h
         compression/RLE.c
@@ -24,12 +18,6 @@ set(SOURCE_FILES
         compression/Utilities.h
         heap/Heap.c
         heap/Heap.h
-        lists/CircleList.c
-        lists/CircleList.h
-        lists/DoublyLinkedList.c
-        lists/DoublyLinkedList.h
-        lists/LinkedList.c
-        lists/LinkedList.h
         queues/Deque.c
         queues/Deque.h
         queues/Queue.c
@@ -42,7 +30,18 @@ set(SOURCE_FILES
         vector/SortingAlgorithms.h
         vector/Vector.c
         vector/Vector.h
-        Programa.c
-        Types.h tests/SortingTests.c tests/SortingTests.h)
+        main.c
+        Types.h
+        tests/SortingTests.c
+        tests/SortingTests.h)
 
 add_executable(DataStructures ${SOURCE_FILES})
+
+
+# Example executables
+set(VECTOR_EXAMPLE_SOURCES
+        vector/Vector.h
+        vector/Vector.c
+        examples/vector.c)
+
+add_executable(vector ${VECTOR_EXAMPLE_SOURCES})

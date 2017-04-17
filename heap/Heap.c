@@ -18,7 +18,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "../Types.h"
-#include "../Vector/Vector.h"
+#include "../vector/Vector.h"
 
 #define LEFT(x)  (2*x + 1)
 #define RIGHT(x) (2*x + 2)

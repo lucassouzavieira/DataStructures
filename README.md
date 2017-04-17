@@ -34,9 +34,7 @@ Busca Binária (SearchAlgorithms)
 Árvore AVL (AVLTree)  
 
 ## Processamento de Texto  
-Run-Lenghth Enconding (RLE)  
-Algoritmo de Huffman (Huffman)  
-
+Run-Lenghth Enconding (RLE)
 
 
 

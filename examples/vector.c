@@ -14,15 +14,27 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <time.h>
+#define ELEMENTS 10
+
+#include <stdio.h>
+#include <stdlib.h>
 #include "../vector/Vector.h"
-#include "../vector/SortingAlgorithms.h"
 
-#ifndef SORTINGTESTS_H
-#define SORTINGTESTS_H
+const char* filename = "example.txt";
 
-double test_bubble_sort(long int elements);
+int main(int argc, char **argv[]) {
 
-double test_merge_sort(long int elements);
+    printf("Random array with 10 elements \n");
+    long int *vector = create_random_vector(ELEMENTS);
+    show_vector(vector, ELEMENTS);
 
-#endif //SORTINGTESTS_H
+    printf("Save array to file \n");
+    save_vector(filename, vector, ELEMENTS);
+
+    printf("Retrieve array from file \n");
+    free(vector);
+    vector = retrieve_vector(filename, vector, ELEMENTS);
+    show_vector(vector, ELEMENTS);
+
+    return 0;
+}
