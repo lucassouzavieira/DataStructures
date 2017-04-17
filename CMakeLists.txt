@@ -37,6 +37,8 @@ set(SOURCE_FILES
 
 add_executable(DataStructures ${SOURCE_FILES})
 
+
+# Example executables
 set(VECTOR_EXAMPLE_SOURCES
         vector/Vector.h
         vector/Vector.c

@@ -20,22 +20,16 @@
 
 #include "../Types.h"
 
-/* Criar uma arvore AVL */
 AVLTree CreateAVLTree();
 
-/* Inserir elementos na arvore AVL */
 void InsertInAVLTree(AVLTree *myTree, long int key);
 
-/* Buscar elementos na arvore AVL */
 nodeavl *SearchAVLTree(AVLTree *myTree, long int key);
 
-/* Remover elemento na arvore AVL */
 void RemoveAVLTree(AVLTree *myTree, long int key);
 
-/* Destruir a arvore AVL */
 void DestroyAVLTree(AVLTree *myTree);
 
-/* Desenha a arvore AVL */
 void DrawAVLTree(AVLTree *myTree);
 
 #endif /* AVLTREE_H */

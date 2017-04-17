@@ -19,7 +19,6 @@
 #include <stdio.h>
 #include "../Types.h"
 
-/* Criar a arvore  */
 BSTree CreateBST() {
     BSTree myBSTree;
     myBSTree.root = NULL;
@@ -27,11 +26,9 @@ BSTree CreateBST() {
     return myBSTree;
 }
 
-/* Insere um elemento na arvore */
 void InsertInBST(BSTree *myTree, long int key) {
     if (myTree->root == NULL) {
-        /* arvore vazia */
-        nodetree *newNode = (nodetree *) (malloc(sizeof(nodetree)));
+        nodetree *newNode = (nodetree * )(malloc(sizeof(nodetree)));
         if (newNode != NULL) {
             newNode->key = key;
             newNode->right = NULL;
@@ -39,15 +36,16 @@ void InsertInBST(BSTree *myTree, long int key) {
         }
         myTree->root = newNode;
     } else {
-        nodetree *newNode = (nodetree *) (malloc(sizeof(nodetree)));
+        nodetree *newNode = (nodetree * )(malloc(sizeof(nodetree)));
         if (newNode != NULL) {
             newNode->key = key;
             newNode->right = NULL;
             newNode->left = NULL;
         }
-        /* Buscar a posiaao da nova folha  */
+
         nodetree *father = NULL;
         nodetree *current = myTree->root;
+
         while (current != NULL) {
             if (current->key <= newNode->key) {
                 father = current;
@@ -57,6 +55,7 @@ void InsertInBST(BSTree *myTree, long int key) {
                 current = current->left;
             }
         }
+
         if (father->key > newNode->key) {
             father->left = newNode;
         } else if (father->key <= newNode->key) {
@@ -66,8 +65,6 @@ void InsertInBST(BSTree *myTree, long int key) {
     myTree->nodes++;
 }
 
-/* Remoaao de um elemento qualquer da arvore
-   Busca o elemento mais a direita  */
 nodetree *MostRight(nodetree *tree) {
     if (tree->right != NULL) {
         return MostRight(tree->right);
@@ -82,7 +79,6 @@ nodetree *MostRight(nodetree *tree) {
     }
 }
 
-/* Busca o elemento mais a esquerda  */
 nodetree *MostLeft(nodetree *tree) {
     if (tree->left != NULL) {
         return MostLeft(tree->left);
@@ -97,14 +93,13 @@ nodetree *MostLeft(nodetree *tree) {
     }
 }
 
-/* Busca e remove elementos da arvore binaria  */
 nodetree *RemoveBSTree(nodetree *myTree, long int key) {
     nodetree *toRemove = myTree;
     nodetree *father = NULL;
     nodetree *substitute;
     nodetree *aux;
     nodetree *heritor;
-    /* Busca o na a ser removido  */
+
     while (toRemove != NULL && toRemove->key != key) {
         father = toRemove;
         if (key < toRemove->key) {
@@ -113,32 +108,31 @@ nodetree *RemoveBSTree(nodetree *myTree, long int key) {
             toRemove = toRemove->right;
         }
     }
+
     if (toRemove == NULL) {
-        printf("Elemento nao encontrado ! \n");
+        printf("Key not found ! \n");
         return myTree;
     }
-    /* Dois primeiros casos: O na tem 0 ou 1 filho  */
+
     if (toRemove->left == NULL) {
         substitute = toRemove->right;
     } else if (toRemove->right == NULL) {
         substitute = toRemove->left;
     } else {
-        /* altimo caso: na com 2 filhos  */
         aux = toRemove;
         substitute = toRemove->right;
-        heritor = substitute->left; /* Sucessor a sempre o filho mais esquerdo do substituto  */
+        heritor = substitute->left;
+
         while (heritor != NULL) {
             aux = substitute;
             substitute = heritor;
             heritor = heritor->left;
         }
+
         if (aux != toRemove) {
             aux->left = substitute->right;
             substitute->right = toRemove->right;
         }
-        /*O substituto ocupa o lugar de na removido,
-        o filho esquerda do substituto a manipulado
-        para permitir isso*/
         substitute->left = toRemove->left;
     }
     if (father == NULL) {
@@ -159,7 +153,6 @@ void RemoveBST(BSTree *myTree, long int key) {
     myTree->nodes--;
 }
 
-/* Busca um elemento na arvore */
 nodetree *SearchBST(BSTree *myTree, long int key) {
     nodetree *aux = myTree->root;
     while (aux != NULL) {
@@ -174,8 +167,6 @@ nodetree *SearchBST(BSTree *myTree, long int key) {
     return NULL;
 }
 
-/* Percorrer a arvore
-   Pre-ordem  */
 void PreOrderBSTree(nodetree *tree) {
     if (tree == NULL) {
         return;
@@ -190,7 +181,6 @@ void PreOrderBST(BSTree *myTree) {
     PreOrderBSTree(myTree->root);
 }
 
-/* Em Ordem  */
 void InOrderBSTree(nodetree *tree) {
     if (tree == NULL) {
         return;
@@ -205,7 +195,6 @@ void InOrderBST(BSTree *myTree) {
     InOrderBSTree(myTree->root);
 }
 
-/* Pos-ordem  */
 void PostOrderBSTree(nodetree *tree) {
     if (tree == NULL) {
         return;
@@ -220,7 +209,6 @@ void PostOrderBST(BSTree *myTree) {
     PostOrderBSTree(myTree->root);
 }
 
-/* Descobrir a altura da arvore */
 int HeightOfBSTree(nodetree *myTree) {
     if (myTree == NULL) {
         return 1;
@@ -239,7 +227,6 @@ int HeightOfBST(BSTree *myTree) {
     return HeightOfBSTree(myTree->root);
 }
 
-/* Destruir a arvore  */
 void DestroyBSTree(nodetree *myTree) {
     if (myTree == NULL) {
         return;
@@ -255,8 +242,6 @@ void DestroyBST(BSTree *myTree) {
     DestroyBSTree(myTree->root);
 }
 
-/* Desenha a arvore binaria
-   Mostra traaos ligando os nas  */
 void ShowBranch(branches *t) {
     if (!t) {
         return;
@@ -265,7 +250,6 @@ void ShowBranch(branches *t) {
     printf(t->str);
 }
 
-/* Desenha a arvore  */
 void DrawBSTree(nodetree *myTree, branches *previous, int Left) {
     if (myTree == NULL) {
         return;
@@ -298,7 +282,6 @@ void DrawBSTree(nodetree *myTree, branches *previous, int Left) {
     }
 }
 
-/* Desenha a arvore binaria  */
 void DrawBST(BSTree *myTree) {
     DrawBSTree(myTree->root, 0, 0);
 }
