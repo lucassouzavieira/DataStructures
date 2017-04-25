@@ -20,16 +20,16 @@
 
 #include "../Types.h"
 
-AVLTree CreateAVLTree();
+avl_tree create_avl_tree();
 
-void InsertInAVLTree(AVLTree *myTree, long int key);
+void insert_avl_tree(AVLTree *myTree, long int key);
 
-nodeavl *SearchAVLTree(AVLTree *myTree, long int key);
+nodeavl *search_avl_tree(AVLTree *myTree, long int key);
 
-void RemoveAVLTree(AVLTree *myTree, long int key);
+void remove_avl_tree(AVLTree *myTree, long int key);
 
-void DestroyAVLTree(AVLTree *myTree);
+void destroy_avl_tree(AVLTree *myTree);
 
-void DrawAVLTree(AVLTree *myTree);
+void draw_avl_tree(AVLTree *myTree);
 
 #endif /* AVLTREE_H */

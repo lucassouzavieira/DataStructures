@@ -17,23 +17,25 @@
 
 #ifndef HEAP_H
 #define HEAP_H
+
 #include "../Types.h"
 
 /* Criar um novo heap */
-heap* CreateHeap(long int maxElements);
+heap *create_heap(long int maxElements);
 
 /* Destruir um heap */
-void DestroyHeap(heap* myHeap);
+void destroy_heap(heap *myHeap);
 
 /* Insere um novo elemento no heap */
-int InsertInHeap(heap* myHeap, long int key);
+int insert_heap(heap *myHeap, long int key);
 
 /* Remove o elemento de maior prioridade no heap */
-long int RemoveHeap(heap* myHeap);
+long int remove_heap(heap *myHeap);
 
 /* Exibe o Heap */
-void ShowHeap(heap* myHeap);
+void show_heap(heap *myHeap);
 
 /* Cria um Heap de Maximo dado um vetor */
-void MaxHeapSort(long int* vector, long int numberOfElements);
+void max_heap_sort(long int *vector, long int numberOfElements);
+
 #endif /* !HEAP_H */

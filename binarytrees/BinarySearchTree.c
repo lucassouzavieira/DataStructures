@@ -19,14 +19,14 @@
 #include <stdio.h>
 #include "../Types.h"
 
-BSTree CreateBST() {
-    BSTree myBSTree;
+bstree create_bstree() {
+    bstree myBSTree;
     myBSTree.root = NULL;
     myBSTree.nodes = 0;
     return myBSTree;
 }
 
-void InsertInBST(BSTree *myTree, long int key) {
+void insert_bstree(bstree *myTree, long int key) {
     if (myTree->root == NULL) {
         nodetree *newNode = (nodetree * )(malloc(sizeof(nodetree)));
         if (newNode != NULL) {
@@ -65,9 +65,9 @@ void InsertInBST(BSTree *myTree, long int key) {
     myTree->nodes++;
 }
 
-nodetree *MostRight(nodetree *tree) {
+nodetree *most_right(nodetree *tree) {
     if (tree->right != NULL) {
-        return MostRight(tree->right);
+        return most_right(tree->right);
     } else {
         nodetree *aux = tree;
         if (tree->left != NULL) {
@@ -79,9 +79,9 @@ nodetree *MostRight(nodetree *tree) {
     }
 }
 
-nodetree *MostLeft(nodetree *tree) {
+nodetree *most_left(nodetree *tree) {
     if (tree->left != NULL) {
-        return MostLeft(tree->left);
+        return most_left(tree->left);
     } else {
         nodetree *aux = tree;
         if (tree->right != NULL) {
@@ -93,7 +93,7 @@ nodetree *MostLeft(nodetree *tree) {
     }
 }
 
-nodetree *RemoveBSTree(nodetree *myTree, long int key) {
+nodetree *remove_bst(nodetree *myTree, long int key) {
     nodetree *toRemove = myTree;
     nodetree *father = NULL;
     nodetree *substitute;
@@ -148,12 +148,12 @@ nodetree *RemoveBSTree(nodetree *myTree, long int key) {
     return myTree;
 }
 
-void RemoveBST(BSTree *myTree, long int key) {
-    myTree->root = RemoveBSTree(myTree->root, key);
+void remove_bstree(bstree *myTree, long int key) {
+    myTree->root = remove_bst(myTree->root, key);
     myTree->nodes--;
 }
 
-nodetree *SearchBST(BSTree *myTree, long int key) {
+nodetree *search_bstree(bstree *myTree, long int key) {
     nodetree *aux = myTree->root;
     while (aux != NULL) {
         if (key < aux->key) {
@@ -167,54 +167,54 @@ nodetree *SearchBST(BSTree *myTree, long int key) {
     return NULL;
 }
 
-void PreOrderBSTree(nodetree *tree) {
+void pre_order_bst(nodetree *tree) {
     if (tree == NULL) {
         return;
     } else {
         printf("%ld", tree->key);
-        PreOrderBSTree(tree->left);
-        PreOrderBSTree(tree->right);
+        pre_order_bst(tree->left);
+        pre_order_bst(tree->right);
     }
 }
 
-void PreOrderBST(BSTree *myTree) {
-    PreOrderBSTree(myTree->root);
+void pre_order_bstree(bstree *myTree) {
+    pre_order_bst(myTree->root);
 }
 
-void InOrderBSTree(nodetree *tree) {
+void in_order_bst(nodetree *tree) {
     if (tree == NULL) {
         return;
     } else {
-        InOrderBSTree(tree->left);
+        in_order_bst(tree->left);
         printf("%ld ", tree->key);
-        InOrderBSTree(tree->right);
+        in_order_bst(tree->right);
     }
 }
 
-void InOrderBST(BSTree *myTree) {
-    InOrderBSTree(myTree->root);
+void in_order_bstree(bstree *myTree) {
+    in_order_bst(myTree->root);
 }
 
-void PostOrderBSTree(nodetree *tree) {
+void post_order_bst(nodetree *tree) {
     if (tree == NULL) {
         return;
     } else {
-        PostOrderBSTree(tree->left);
-        PostOrderBSTree(tree->right);
+        post_order_bst(tree->left);
+        post_order_bst(tree->right);
         printf("%ld", tree->key);
     }
 }
 
-void PostOrderBST(BSTree *myTree) {
-    PostOrderBSTree(myTree->root);
+void post_order_bstree(bstree *myTree) {
+    post_order_bst(myTree->root);
 }
 
-int HeightOfBSTree(nodetree *myTree) {
+int height_bst(nodetree *myTree) {
     if (myTree == NULL) {
         return 1;
     } else {
-        int leftSubtreeHeight = HeightOfBSTree(myTree->left) + 1;
-        int rightSubtreeHeight = HeightOfBSTree(myTree->right) + 1;
+        int leftSubtreeHeight = height_bst(myTree->left) + 1;
+        int rightSubtreeHeight = height_bst(myTree->right) + 1;
         if (leftSubtreeHeight < rightSubtreeHeight) {
             return rightSubtreeHeight;
         } else {
@@ -223,34 +223,34 @@ int HeightOfBSTree(nodetree *myTree) {
     }
 }
 
-int HeightOfBST(BSTree *myTree) {
-    return HeightOfBSTree(myTree->root);
+int height_bstree(bstree *myTree) {
+    return height_bst(myTree->root);
 }
 
-void DestroyBSTree(nodetree *myTree) {
+void destroy_bst(nodetree *myTree) {
     if (myTree == NULL) {
         return;
     } else {
-        DestroyBSTree(myTree->left);
-        DestroyBSTree(myTree->right);
+        destroy_bst(myTree->left);
+        destroy_bst(myTree->right);
         free(myTree);
         myTree = NULL;
     }
 }
 
-void DestroyBST(BSTree *myTree) {
-    DestroyBSTree(myTree->root);
+void destroy_bstree(BSTree *myTree) {
+    destroy_bst(myTree->root);
 }
 
-void ShowBranch(branches *t) {
+void show_branch_bstree(branches *t) {
     if (!t) {
         return;
     }
-    ShowBranch(t->previous);
+    show_branch_bstree(t->previous);
     printf(t->str);
 }
 
-void DrawBSTree(nodetree *myTree, branches *previous, int Left) {
+void draw_bst(nodetree *myTree, branches *previous, int Left) {
     if (myTree == NULL) {
         return;
     }
@@ -258,7 +258,7 @@ void DrawBSTree(nodetree *myTree, branches *previous, int Left) {
     branches show = {previous, "    "};
     char *show_str = show.str;
 
-    DrawBSTree(myTree->left, &show, 1);
+    draw_bst(myTree->left, &show, 1);
     if (!previous) {
         show.str = "---";
     } else if (Left) {
@@ -268,7 +268,7 @@ void DrawBSTree(nodetree *myTree, branches *previous, int Left) {
         show.str = "`--";
         previous->str = show_str;
     }
-    ShowBranch(&show);
+    show_branch_bstree(&show);
     printf("%ld \n", myTree->key);
 
     if (previous) {
@@ -276,12 +276,12 @@ void DrawBSTree(nodetree *myTree, branches *previous, int Left) {
     }
     show.str = "   |";
 
-    DrawBSTree(myTree->right, &show, 0);
+    draw_bst(myTree->right, &show, 0);
     if (!previous) {
         printf("");
     }
 }
 
-void DrawBST(BSTree *myTree) {
-    DrawBSTree(myTree->root, 0, 0);
+void draw_bstree(BSTree *myTree) {
+    draw_bst(myTree->root, 0, 0);
 }

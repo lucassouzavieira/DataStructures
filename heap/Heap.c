@@ -24,87 +24,79 @@
 #define RIGHT(x) (2*x + 2)
 #define FATHER(x)(x / 2)
 
-void MaxHeapfy(heap* myHeap, long int position);
+void max_heapfy(heap *myHeap, long int position);
 
-void MaxHeapSort(long int* vector, long int numberOfElements);
+void max_heap_sort(long int *vector, long int numberOfElements);
 
-/* Criar um novo heap */
-heap* CreateHeap (long int maxElements)
-{
-	heap* myHeap = (heap*)malloc(sizeof(heap));
-	if (myHeap != NULL) {
-		myHeap->vector = (long int*)malloc((maxElements)*sizeof(long int));
-		myHeap->maxElements = maxElements;
-		myHeap->elements = 0;
-		return myHeap;
-	} else {
-		return NULL;
-	}
+heap *create_heap(long int maxElements) {
+    heap *myHeap = (heap *) malloc(sizeof(heap));
+    if (myHeap != NULL) {
+        myHeap->vector = (long int *) malloc((maxElements) * sizeof(long int));
+        myHeap->maxElements = maxElements;
+        myHeap->elements = 0;
+        return myHeap;
+    } else {
+        return NULL;
+    }
 }
 
-/* Destruir um heap */
-void DestroyHeap (heap* myHeap)
-{
-	free(myHeap->vector);
-	free(myHeap);
+void destroy_heap(heap *myHeap) {
+    free(myHeap->vector);
+    free(myHeap);
 }
 
-/* Build Heap */
-void BuildHeap (heap* myHeap) 
-{
-	if (myHeap->elements == myHeap->maxElements) {
-		for (long int i = (myHeap->elements) / 2; i--; i >= 1) {
-			MaxHeapfy(myHeap, i);
-		}
-	}
+void build_heap(heap *myHeap) {
+    if (myHeap->elements == myHeap->maxElements) {
+        for (long int i = (myHeap->elements) / 2; i--; i >= 1) {
+            max_heapfy(myHeap, i);
+        }
+    }
 }
 
 /* Reorganiza o heap caso o elemento i possa ser maior que seus filhos */
-void MaxHeapfy (heap* myHeap, long int position)
-{
-	long int left = LEFT(position);
-	long int right = RIGHT(position);
-	long int aux;
-	long int bigger = position;
-	if ((left <= myHeap->elements) && 
-		(myHeap->vector[left] > myHeap->vector[position])){
-		bigger = left;
-	}
-	if ((right <= myHeap->elements) &&
-		(myHeap->vector[right] > myHeap->vector[bigger])) {
-		bigger = right;
-	}
-	if (bigger != position) {
-		aux = myHeap->vector[position];
-		myHeap->vector[position] = myHeap->vector[bigger];
-		myHeap->vector[bigger] = aux;
-		MaxHeapfy(myHeap, bigger);
-	}
+void max_heapfy(heap *myHeap, long int position) {
+    long int left = LEFT(position);
+    long int right = RIGHT(position);
+    long int aux;
+    long int bigger = position;
+    if ((left <= myHeap->elements) &&
+        (myHeap->vector[left] > myHeap->vector[position])) {
+        bigger = left;
+    }
+    if ((right <= myHeap->elements) &&
+        (myHeap->vector[right] > myHeap->vector[bigger])) {
+        bigger = right;
+    }
+    if (bigger != position) {
+        aux = myHeap->vector[position];
+        myHeap->vector[position] = myHeap->vector[bigger];
+        myHeap->vector[bigger] = aux;
+        max_heapfy(myHeap, bigger);
+    }
 }
 
 /* Insere um novo elemento no heap */
-int InsertInHeap (heap* myHeap, long int key) 
-{
-	long int aux;
-	long int position;
-	if (myHeap->elements == myHeap->maxElements) {
-		return 0;
-	}
-	position = myHeap->elements;
-	myHeap->elements++;
-	myHeap->vector[position] = key;
-	while ((position > 1) && 
-		(myHeap->vector[FATHER(position)] < myHeap->vector[position])) {
-		aux = myHeap->vector[position];
-		myHeap->vector[position] = myHeap->vector[FATHER(position)];
-		myHeap->vector[FATHER(position)] = aux;
-		position = FATHER(position);
-	}
-	return 1;
+int insert_heap(heap *myHeap, long int key) {
+    long int aux;
+    long int position;
+    if (myHeap->elements == myHeap->maxElements) {
+        return 0;
+    }
+    position = myHeap->elements;
+    myHeap->elements++;
+    myHeap->vector[position] = key;
+    while ((position > 1) &&
+           (myHeap->vector[FATHER(position)] < myHeap->vector[position])) {
+        aux = myHeap->vector[position];
+        myHeap->vector[position] = myHeap->vector[FATHER(position)];
+        myHeap->vector[FATHER(position)] = aux;
+        position = FATHER(position);
+    }
+    return 1;
 }
 
 /* Remove o elemento de maior prioridade no heap
-long int RemoveHeap (heap* myHeap)
+long int remove_heap (heap* myHeap)
 {
 	if (myHeap->elements == 0) {
 		printf("Heap Vazio \n");
@@ -118,15 +110,14 @@ long int RemoveHeap (heap* myHeap)
 	return max;
 } */
 
-/* Exibe o Heap
-void ShowHeap (heap* myHeap)
+void show_heap(heap* myHeap)
 {
-	ShowVector(myHeap->vector, myHeap->elements);
+	show_vector(myHeap->vector, myHeap->elements);
 }
 
 /* HEAP SORT
 /* Cria um Heap de Maximo dado um vetor
-void MaxHeapSort (long int* vector, long int numberOfElements)
+void max_heap_sort(long int* vector, long int numberOfElements)
 {
 	/*Checar se o Heap esta vazio
 	if (numberOfElements == 0) {

@@ -22,14 +22,14 @@
 
 avl_tree_node *MaintenanceAVLTree(avl_tree_node *myTree);
 
-int CalculateBalanceFactor(avl_tree_node *mynode);
+int calculate_balance_factor(avl_tree_node *mynode);
 
-int HeightAVLTree(avl_tree_node *myTree) {
+int height_avl_tree(avl_tree_node *myTree) {
     if (myTree == NULL) {
         return 0;
     } else {
-        int leftSubtreeHeight = HeightAVLTree(myTree->left) + 1;
-        int rightSubtreeHeight = HeightAVLTree(myTree->right) + 1;
+        int leftSubtreeHeight = height_avl_tree(myTree->left) + 1;
+        int rightSubtreeHeight = height_avl_tree(myTree->right) + 1;
         if (leftSubtreeHeight < rightSubtreeHeight) {
             return rightSubtreeHeight;
         } else {
@@ -38,14 +38,14 @@ int HeightAVLTree(avl_tree_node *myTree) {
     }
 }
 
-avl_tree CreateAVLTree() {
+avl_tree create_avl_tree() {
     avl_tree myTree;
     myTree.root = NULL;
     myTree.nodes = 0;
     return myTree;
 }
 
-avl_tree_node *InsertAVLTree(avl_tree_node *myTree, long int key) {
+avl_tree_node *insert_avl(avl_tree_node *myTree, long int key) {
     if (myTree == NULL) {
         avl_tree_node *newNode = (avl_tree_node *) malloc(sizeof(avl_tree_node));;
         if (newNode == NULL) {
@@ -60,21 +60,21 @@ avl_tree_node *InsertAVLTree(avl_tree_node *myTree, long int key) {
         return myTree;
     } else {
         if (key < myTree->key) {
-            myTree->left = InsertAVLTree(myTree->left, key);
+            myTree->left = insert_avl(myTree->left, key);
         } else {
-            myTree->right = InsertAVLTree(myTree->right, key);
+            myTree->right = insert_avl(myTree->right, key);
         }
     }
     myTree = MaintenanceAVLTree(myTree); /* tree maintenance  */
     return myTree;
 }
 
-void InsertInAVLTree(AVLTree *myTree, long int key) {
-    myTree->root = InsertAVLTree(myTree->root, key);
+void insert_avl_tree(AVLTree *myTree, long int key) {
+    myTree->root = insert_avl(myTree->root, key);
     myTree->nodes++;
 }
 
-avl_tree_node *SearchAVLTree(AVLTree *myTree, long int key) {
+avl_tree_node *search_avl_tree(AVLTree *myTree, long int key) {
     avl_tree_node *aux = myTree->root;
     while (aux != NULL) {
         if (key < aux->key) {
@@ -90,7 +90,7 @@ avl_tree_node *SearchAVLTree(AVLTree *myTree, long int key) {
     return NULL;
 }
 
-avl_tree_node *RemoveAVL(avl_tree_node *myTree, long int key) {
+avl_tree_node *remove_avl(avl_tree_node *myTree, long int key) {
     avl_tree_node *toRemove = myTree;
     avl_tree_node *father = NULL;
     avl_tree_node *substitute;
@@ -144,46 +144,46 @@ avl_tree_node *RemoveAVL(avl_tree_node *myTree, long int key) {
     }
 
     free(toRemove);
-    myTree = MaintenanceAVLTree(myTree);
+    myTree = maintenance_avl_tree(myTree);
 
     return myTree;
 }
 
-void RemoveAVLTree(AVLTree *myTree, long int key) {
-    myTree->root = RemoveAVL(myTree->root, key);
+void remove_avl_tree(AVLTree *myTree, long int key) {
+    myTree->root = remove_avl(myTree->root, key);
     myTree->nodes--;
 }
 
-void DestroyAVL(avl_tree_node *myTree) {
+void destroy_avl(avl_tree_node *myTree) {
     if (myTree == NULL) {
         return;
     } else {
-        DestroyAVL(myTree->left);
-        DestroyAVL(myTree->right);
+        destroy_avl(myTree->left);
+        destroy_avl(myTree->right);
         free(myTree);
         myTree = NULL;
     }
 }
 
-void DestroyAVLTree(AVLTree *myTree) {
-    DestroyAVL(myTree->root);
+void destroy_avl_tree(AVLTree *myTree) {
+    destroy_avl(myTree->root);
     myTree->nodes = 0;
 }
 
-int CalculateBalanceFactor(avl_tree_node *mynode) {
+int calculate_balance_factor(avl_tree_node *mynode) {
     if (mynode == NULL) {
         return 0;
     } else {
-        return (HeightAVLTree(mynode->left) - HeightAVLTree(mynode->right));
+        return (height_avl_tree(mynode->left) - height_avl_tree(mynode->right));
     }
 }
 
-void SetbalanceFactor(avl_tree_node *myTree) {
+void set_balance_factor(avl_tree_node *myTree) {
 
     if (myTree != NULL) {
-        myTree->balanceFactor = (HeightAVLTree(myTree->left) - HeightAVLTree(myTree->right));
-        SetbalanceFactor(myTree->left);
-        SetbalanceFactor(myTree->right);
+        myTree->balanceFactor = (height_avl_tree(myTree->left) - height_avl_tree(myTree->right));
+        set_balance_factor(myTree->left);
+        set_balance_factor(myTree->right);
     } else {
         return;
     }
@@ -191,7 +191,7 @@ void SetbalanceFactor(avl_tree_node *myTree) {
     return;
 }
 
-avl_tree_node *RotateRightAVLTree(avl_tree_node *mynode) {
+avl_tree_node *rotate_right_avl_tree(avl_tree_node *mynode) {
     avl_tree_node *aux = mynode->left;
     if (aux->right != NULL) {
         mynode->left = aux->right;
@@ -203,7 +203,7 @@ avl_tree_node *RotateRightAVLTree(avl_tree_node *mynode) {
     return aux;
 }
 
-avl_tree_node *RotateLeftAVLTree(avl_tree_node *mynode) {
+avl_tree_node *rotate_left_avl_tree(avl_tree_node *mynode) {
     avl_tree_node *aux = mynode->right;
     if (aux->left != NULL) {
         mynode->right = aux->left;
@@ -214,7 +214,7 @@ avl_tree_node *RotateLeftAVLTree(avl_tree_node *mynode) {
     return aux;
 }
 
-avl_tree_node *DoubleRotateRightAVLTree(avl_tree_node *mynode) {
+avl_tree_node *double_rotate_right_avl_tree(avl_tree_node *mynode) {
     avl_tree_node *leftChild = mynode->left;
     avl_tree_node *rightGrandson = leftChild->right;
     if (rightGrandson->left != NULL) {
@@ -232,7 +232,7 @@ avl_tree_node *DoubleRotateRightAVLTree(avl_tree_node *mynode) {
     return rightGrandson;
 }
 
-avl_tree_node *DoubleRotateLeftAVLTree(avl_tree_node *mynode) {
+avl_tree_node *double_rotate_left_avl_tree(avl_tree_node *mynode) {
     avl_tree_node *rightChild = mynode->right;
     avl_tree_node *leftGrandson = rightChild->left;
 
@@ -253,41 +253,41 @@ avl_tree_node *DoubleRotateLeftAVLTree(avl_tree_node *mynode) {
     return leftGrandson;
 }
 
-avl_tree_node *MaintenanceAVLTree(avl_tree_node *myTree) {
+avl_tree_node *maintenance_avl_tree(avl_tree_node *myTree) {
     if (myTree != NULL) {
-        SetbalanceFactor(myTree);
-        myTree->balanceFactor = CalculateBalanceFactor(myTree);
+        set_balance_factor(myTree);
+        myTree->balanceFactor = calculate_balance_factor(myTree);
         if (myTree->balanceFactor == 2) {
-            myTree->left->balanceFactor = CalculateBalanceFactor(myTree->left);
+            myTree->left->balanceFactor = calculate_balance_factor(myTree->left);
             if (myTree->left->balanceFactor > 0) {
-                myTree = RotateRightAVLTree(myTree);
+                myTree = rotate_right_avl_tree(myTree);
             } else {
-                myTree = DoubleRotateRightAVLTree(myTree);
+                myTree = double_rotate_right_avl_tree(myTree);
             }
         } else if (myTree->balanceFactor == -2) {
-            myTree->right->balanceFactor = CalculateBalanceFactor(myTree->right);
+            myTree->right->balanceFactor = calculate_balance_factor(myTree->right);
             if (myTree->right->balanceFactor < 0) {
-                myTree = RotateLeftAVLTree(myTree);
+                myTree = rotate_left_avl_tree(myTree);
             } else {
-                myTree = DoubleRotateLeftAVLTree(myTree);
+                myTree = double_rotate_left_avl_tree(myTree);
             }
         }
-        myTree->left = MaintenanceAVLTree(myTree->left);
-        myTree->right = MaintenanceAVLTree(myTree->right);
+        myTree->left = maintenance_avl_tree(myTree->left);
+        myTree->right = maintenance_avl_tree(myTree->right);
     }
-    SetbalanceFactor(myTree);
+    set_balance_factor(myTree);
     return myTree;
 }
 
-void ShowBranchAVL(branches *t) {
+void show_branch_avl(branches *t) {
     if (!t) {
         return;
     }
-    ShowBranchAVL(t->previous);
+    show_branch_avl(t->previous);
     printf(t->str);
 }
 
-void DrawAVL(avl_tree_node *myTree, branches *previous, int left) {
+void draw_avl(avl_tree_node *myTree, branches *previous, int left) {
     if (myTree == NULL) {
         return;
     }
@@ -295,7 +295,7 @@ void DrawAVL(avl_tree_node *myTree, branches *previous, int left) {
     branches show = {previous, "    "};
     char *show_str = show.str;
 
-    DrawAVL(myTree->left, &show, 1);
+    draw_avl(myTree->left, &show, 1);
     if (!previous) {
         show.str = "---";
     } else if (left) {
@@ -305,7 +305,7 @@ void DrawAVL(avl_tree_node *myTree, branches *previous, int left) {
         show.str = "`--";
         previous->str = show_str;
     }
-    ShowBranchAVL(&show);
+    show_branch_avl(&show);
     printf("%ld \n", myTree->key);
 
     if (previous) {
@@ -313,12 +313,12 @@ void DrawAVL(avl_tree_node *myTree, branches *previous, int left) {
     }
     show.str = "   |";
 
-    DrawAVL(myTree->right, &show, 0);
+    draw_avl(myTree->right, &show, 0);
     if (!previous) {
         printf("");
     }
 }
 
-void DrawAVLTree(AVLTree *myTree) {
-    DrawAVL(myTree->root, 0, 0);
+void draw_avl_tree(AVLTree *myTree) {
+    draw_avl(myTree->root, 0, 0);
 }
