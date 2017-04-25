@@ -19,8 +19,7 @@
 #include <stdio.h>
 #include "../Types.h"
 
-/* Cria uma list duplamente encadeada */
-doublylist CreateDLinkedList() {
+doublylist create_doubly_linked_list() {
     doublylist myDoublyList;
     myDoublyList.list = NULL;
     myDoublyList.startOfList = NULL;
@@ -29,18 +28,17 @@ doublylist CreateDLinkedList() {
     return myDoublyList;
 }
 
-/* Verifica se ha elementos na lista */
-int CheckDLinkedList(doublylist *myDoublyList) {
+int check_doubly_linked_list(doublylist *myDoublyList) {
     if (myDoublyList->list == NULL) {
         return -1;
     }
     return 1;
 }
 
-/* Insere elementos no inicio da lista */
-void InsertAtStartDLinkedList(doublylist *myDoublyList, long int element) {
+void insert_start_doubly_linked_list(doublylist *myDoublyList, long int element) {
     dnode *newNode;
     newNode = (dnode *) (malloc(sizeof(dnode)));
+
     if (newNode != NULL) {
         if (myDoublyList->list == NULL) {
             newNode->key = element;
@@ -60,8 +58,7 @@ void InsertAtStartDLinkedList(doublylist *myDoublyList, long int element) {
     }
 }
 
-/* Insere elementos no meio da lista */
-void InsertAtMiddleDLinkedList(doublylist *myDoublyList, long int element) {
+void insert_middle_doubly_linked_list(doublylist *myDoublyList, long int element) {
     dnode *newNode;
     newNode = (dnode *) (malloc(sizeof(dnode)));
     if (newNode != NULL) {
@@ -81,14 +78,12 @@ void InsertAtMiddleDLinkedList(doublylist *myDoublyList, long int element) {
                 aux = aux->next;
             }
             if (aux == myDoublyList->startOfList) {
-                /* Insere no in�cio */
                 newNode->next = myDoublyList->list;
                 newNode->previous = NULL;
                 myDoublyList->startOfList->previous = newNode;
                 myDoublyList->list = newNode;
                 myDoublyList->startOfList = newNode;
             } else if (aux == NULL) {
-                /* Insere no fim */
                 myDoublyList->endOfList->next = newNode;
                 newNode->previous = myDoublyList->endOfList;
                 newNode->next = NULL;
@@ -105,7 +100,7 @@ void InsertAtMiddleDLinkedList(doublylist *myDoublyList, long int element) {
 }
 
 /* Insere elementos no fim da lista */
-void InsertAtEndDLinkedList(doublylist *myDoublyList, long int element) {
+void insert_end_doubly_linked_list(doublylist *myDoublyList, long int element) {
     dnode *newNode;
     newNode = (dnode *) (malloc(sizeof(dnode)));
     if (newNode != NULL) {
@@ -127,7 +122,7 @@ void InsertAtEndDLinkedList(doublylist *myDoublyList, long int element) {
 }
 
 /* Busca um dado elemento na lista */
-dnode *SearchElementDLinkedList(doublylist *myDoublyList, long int element) {
+dnode *search_doubly_linked_list(doublylist *myDoublyList, long int element) {
     int parametro;
     dnode *aux;
     printf("Busca Lista Duplamente Encadeada\n1 - Do inicio para o final \t2 - Do final para o inicio\n");
@@ -158,8 +153,7 @@ dnode *SearchElementDLinkedList(doublylist *myDoublyList, long int element) {
     return NULL;
 }
 
-/* Imprime todos os elementos da lista  */
-void ListElementsDLinkedList(doublylist *myDoublyList) {
+void list_elements_doubly_linked_list(doublylist *myDoublyList) {
     int parametro;
     dnode *current;
 
@@ -183,7 +177,7 @@ void ListElementsDLinkedList(doublylist *myDoublyList) {
 }
 
 /* Remove um dado elemento da lista */
-void RemoveElementDLinkedList(doublylist *myDoublyList, long int element) {
+void remove_doubly_linked_list(doublylist *myDoublyList, long int element) {
     dnode *aux = myDoublyList->list;
     while (aux != NULL) {
         if (aux->key == element) {
@@ -214,8 +208,7 @@ void RemoveElementDLinkedList(doublylist *myDoublyList, long int element) {
     }
 }
 
-/* Apaga toda a lista e libera memoria */
-int DestroyDLinkedList(doublylist *myDoublyList) {
+int destroy_doubly_linked_list(doublylist *myDoublyList) {
     dnode *aux = NULL;
     int teste = 0;
     while (myDoublyList->list != NULL) {
@@ -223,5 +216,5 @@ int DestroyDLinkedList(doublylist *myDoublyList) {
         free(myDoublyList->list);
         myDoublyList->list = aux;
     }
-    return CheckDLinkedList(myDoublyList);
+    return check_doubly_linked_list(myDoublyList);
 }
