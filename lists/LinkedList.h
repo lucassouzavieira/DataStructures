@@ -20,34 +20,24 @@
 
 #include "../Types.h"
 
-/* Cria uma lista encadeada */
-list CreateLinkedList();
+list create_linked_list();
 
-/* Verifica uma lista encadeada (se vazia) */
-int CheckLinkedList(list *myList);
+int check_linked_list(list *myList);
 
-/* Insere no inicio da lista */
-void InsertAtStartLinkedList(list *myList, long int element);
+void insert_start_linked_list(list *myList, long int element);
 
-/* Insere no meio da lista */
-void InsertAtMiddleLinkedList(list *myList, long int element);
+void insert_middle_linked_list(list *myList, long int element);
 
-/* Insere no fim da lista */
-void InsertAtEndLinkedList(list *myList, long int element);
+void insert_end_linked_list(list *myList, long int element);
 
-/* Busca */
-node *SearchLinkedList(list *myList, long int element);
+node *search_linked_list(list *myList, long int element);
 
-/* Mostrar os elementos */
-void ListElementsLinkedList(list *myList);
+void list_elements_linked_list(list *myList);
 
-/* Retorna uma lista com os elementos em ordem invertida */
-list ReverseLinkedList(list *myList);
+list reverse_linked_list(list *myList);
 
-/* Remove elementos */
-void RemoveElementLinkedList(list *myList, long int element);
+void remove_linked_list(list *myList, long int element);
 
-/* Destruir a lista */
-int DestroyLinkedList(list *myList);
+int destroy_linked_list(list *myList);
 
 #endif

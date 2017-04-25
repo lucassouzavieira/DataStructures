@@ -19,8 +19,7 @@
 #include <stdio.h>
 #include "../Types.h"
 
-/* Cria uma lista encadeada */
-list CreateLinkedList() {
+list create_linked_list() {
     list myList;
     myList.list = NULL;
     myList.last = NULL;
@@ -28,8 +27,7 @@ list CreateLinkedList() {
     return myList;
 }
 
-/* Verifica uma lista encadeada (se vazia) */
-int CheckLinkedList(list *myList) {
+int check_linked_list(list *myList) {
     if (myList->nodes == 0) {
         return -1;
     }
@@ -37,7 +35,7 @@ int CheckLinkedList(list *myList) {
 }
 
 /* Insere no inicio da lista */
-void InsertAtStartLinkedList(list *myList, long int element) {
+void insert_start_linked_list(list *myList, long int element) {
     node *newNode;
     newNode = (node *) (malloc(sizeof(node)));
     if (newNode != NULL) {
@@ -60,26 +58,26 @@ void InsertAtStartLinkedList(list *myList, long int element) {
 }
 
 /* Insere no meio da lista */
-void InsertAtMiddleLinkedList(list *myList, long int element) {
+void insert_middle_linked_list(list *myList, long int element) {
     node *newNode;
     newNode = (node *) (malloc(sizeof(node)));
+
     if (newNode != NULL) {
         newNode->key = element;
     }
-    /* Buscar a posicao do novo no
-    Criterio = element armazenado */
+
     node *previous = NULL;
     node *current = myList->list;
+
     while (current != NULL && current->key < element) {
         previous = current;
         current = current->pointer;
     }
-    /* Insere no comeco caso previous = NULL*/
+
     if (previous == NULL) {
         newNode->pointer = myList->list;
         myList->list = newNode;
     } else {
-        /* Insere no meio ou no fim*/
         if (previous->pointer == NULL) {
             newNode->pointer = previous->pointer;
             previous->pointer = newNode;
@@ -92,37 +90,40 @@ void InsertAtMiddleLinkedList(list *myList, long int element) {
     myList->nodes++;
 }
 
-/* Insere no fim da lista */
-void InsertAtEndLinkedList(list *myList, long int element) {
+void insert_end_linked_list(list *myList, long int element) {
     node *newNode;
     newNode = (node *) (malloc(sizeof(node)));
+
     if (newNode != NULL) {
         newNode->key = element;
         newNode->pointer = NULL;
     }
+
     node *current = myList->list;
     node *previous = NULL;
+
     while (current->pointer != NULL) {
         current = current->pointer;
         previous = current;
     }
+
     current->pointer = newNode;
     myList->last = newNode;
     myList->nodes++;
 }
 
-/* Busca */
-node *SearchLinkedList(list *myList, long int element) {
+node *search_linked_list(list *myList, long int element) {
     node *current;
     current = myList->list;
+
     while (current != NULL && current->key != element) {
         current = current->pointer;
     }
+
     return current;
 }
 
-/* Mostrar os elements */
-void ListElementsLinkedList(list *myList) {
+void list_elements_linked_list(list *myList) {
     node *current;
     current = myList->list;
     while (current != NULL) {
@@ -131,19 +132,17 @@ void ListElementsLinkedList(list *myList) {
     }
 }
 
-/* Retorna uma lista com os elementos em ordem invertida */
-list ReverseLinkedList(list *myList) {
-    list reverseList = CreateLinkedList();
+list reverse_linked_list(list *myList) {
+    list reverseList = create_linked_list();
     node *current = myList->list;
     while (current != NULL) {
-        InsertAtStartLinkedList(&reverseList, current->key);
+        insert_start_linked_list(&reverseList, current->key);
         current = current->pointer;
     }
     return reverseList;
 }
 
-/* Remove elements */
-void RemoveElementLinkedList(list *myList, long int element) {
+void remove_linked_list(list *myList, long int element) {
     node *current = myList->list;
     node *previous = NULL;
     while (current != NULL && current->key != element) {
@@ -151,7 +150,7 @@ void RemoveElementLinkedList(list *myList, long int element) {
         current = current->pointer;
     }
     if (current == NULL) {
-        printf("Elemento nao encontrado\n");
+        printf("Element not found!\n");
         return;
     }
     if (previous == NULL) {
@@ -164,13 +163,12 @@ void RemoveElementLinkedList(list *myList, long int element) {
     free(current);
 }
 
-/* Destruir a lista */
-int DestroyLinkedList(list *myList) {
+int destroy_linked_list(list *myList) {
     node *current = NULL;
     while (myList->list != NULL) {
         current = myList->list->pointer;
         free(myList->list);
         myList->list = current;
     }
-    return CheckLinkedList(myList);
+    return check_linked_list(myList);
 }
