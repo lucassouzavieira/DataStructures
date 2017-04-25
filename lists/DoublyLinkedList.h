@@ -20,31 +20,24 @@
 
 #include "../Types.h"
 
-/* Cria uma lista duplamente encadeada */
-doublylist CreateDLinkedList();
+doublylist create_doubly_linked_list();
 
 /* Verifica se ha elementos na lista */
-int CheckDLinkedList(doublylist *myDoublyList);
+int check_doubly_linked_list(doublylist *myDoublyList);
 
 /* Insere elementos no inicio da lista */
-void InsertAtStartDLinkedList(doublylist *myDoublyList, long int element);
+void insert_start_doubly_linked_list(doublylist *myDoublyList, long int element);
 
-/* Insere elementos no meio da lista */
-void InsertAtMiddleDLinkedList(doublylist *myDoublyList, long int element);
+void insert_middle_doubly_linked_list(doublylist *myDoublyList, long int element);
 
-/* Insere elementos no fim da lista */
-void InsertAtEndDLinkedList(doublylist *myDoublyList, long int element);
+void insert_end_doubly_linked_list(doublylist *myDoublyList, long int element);
 
-/* Busca um dado elemento na lista */
-dnode *SearchElementDLinkedList(doublylist *myDoublyList, long int element);
+dnode *search_doubly_linked_list(doublylist *myDoublyList, long int element);
 
-/* Imprime todos os elementos da lista */
-void ListElementsDLinkedList(doublylist *myDoublyList);
+void list_elements_doubly_linked_list(doublylist *myDoublyList);
 
-/* Remove um dado elemento da lista */
-void RemoveElementDLinkedList(doublylist *myDoublyList, long int element);
+void remove_doubly_linked_list(doublylist *myDoublyList, long int element);
 
-/* Apaga toda a lista e libera memoria */
-int DestroyDLinkedList(doublylist *myDoublyList);
+int destroy_doubly_linked_list(doublylist *myDoublyList);
 
 #endif 

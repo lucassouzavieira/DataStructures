@@ -19,16 +19,14 @@
 #include <stdio.h>
 #include "../Types.h"
 
-/* Cria uma lista circular  */
-circlelist CreateCircleList() {
+circlelist create_circle_list() {
     circlelist myList;
     myList.list = NULL;
     myList.nodes = 0;
     return myList;
 }
 
-/* Verifica se a lista esta vazia ou nao */
-int CheckCircleList(circlelist *myList) {
+int check_circle_list(circlelist *myList) {
     if (myList->list == NULL) {
         return -1;
     }
@@ -36,7 +34,7 @@ int CheckCircleList(circlelist *myList) {
 }
 
 /* Insere novos elements na lista  */
-void InsertAtCircleList(circlelist *myList, long int element) {
+void insert_circle_list(circlelist *myList, long int element) {
     if (myList->list == NULL) {
         node *newNode;
         newNode = (node *) (malloc(sizeof(node)));
@@ -57,8 +55,7 @@ void InsertAtCircleList(circlelist *myList, long int element) {
     }
 }
 
-/* Busca um dado valor na lista  */
-node *SearchElementCircleList(circlelist *myList, long int element) {
+node *search_circle_list(circlelist *myList, long int element) {
     node *aux = myList->list;
 
     while (aux != myList->list && aux->key != element) {
@@ -71,8 +68,7 @@ node *SearchElementCircleList(circlelist *myList, long int element) {
     }
 }
 
-/* Imprime todos os elements da lista */
-void ListElementsCircleList(circlelist *myList) {
+void list_elements_circle_list(circlelist *myList) {
     node *aux = myList->list;
     if (myList->nodes == 0) {
         printf("Lista vazia! \n");
@@ -85,8 +81,7 @@ void ListElementsCircleList(circlelist *myList) {
     }
 }
 
-/* Apaga toda a lista e libera a memoria  */
-void RemoveElementCircleList(circlelist *myList, long int element) {
+void remove_circle_list(circlelist *myList, long int element) {
     node *current = myList->list;
     node *previous = NULL;
     while (current != myList->list && current->key != element) {
@@ -105,8 +100,7 @@ void RemoveElementCircleList(circlelist *myList, long int element) {
     free(current);
 }
 
-/* Destuir a Lista */
-int DestroyCircleList(circlelist *myList) {
+int destroy_circle_list(circlelist *myList) {
     node *aux = myList->list;
     while (aux != myList->list) {
         aux = myList->list;
@@ -114,5 +108,5 @@ int DestroyCircleList(circlelist *myList) {
         myList->list = aux;
     }
     myList->list = NULL;
-    return CheckCircleList(myList);
+    return check_circle_list(myList);
 }

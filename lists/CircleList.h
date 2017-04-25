@@ -20,25 +20,18 @@
 
 #include "../Types.h"
 
-/* Cria uma lista circular  */
-circlelist CreateCircleList();
+circlelist create_circle_list();
 
-/* Verifica se a lista esta vazia ou nao  */
-int CheckCircleList(circlelist *myList);
+int check_circle_list(circlelist *myList);
 
-/* Insere novos elementos na lista  */
-void InsertAtCircleList(circlelist *myList, long int element);
+void insert_circle_list(circlelist *myList, long int element);
 
-/* Busca um dado valor na lista  */
-node *SearchElementCircleList(circlelist *myList, long int element);
+node *search_circle_list(circlelist *myList, long int element);
 
-/* Imprime todos os elementos da lista  */
-void ListElementsCircleList(circlelist *myList);
+void list_elements_circle_list(circlelist *myList);
 
-/* Remove um dado elemento da lista  */
-void RemoveElementCircleList(circlelist *myList, long int element);
+void remove_circle_list(circlelist *myList, long int element);
 
-/* Apaga toda a lista e libera a memoria  */
-int DestroyCircleList(circlelist *myList);
+int destroy_circle_list(circlelist *myList);
 
 #endif /* !CIRCLELIST_H
