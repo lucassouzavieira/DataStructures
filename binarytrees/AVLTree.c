@@ -20,7 +20,7 @@
 #include <stdio.h>
 #include "../Types.h"
 
-avl_tree_node *MaintenanceAVLTree(avl_tree_node *myTree);
+avl_tree_node *maintenance_avl_tree(avl_tree_node *myTree);
 
 int calculate_balance_factor(avl_tree_node *mynode);
 
@@ -65,7 +65,7 @@ avl_tree_node *insert_avl(avl_tree_node *myTree, long int key) {
             myTree->right = insert_avl(myTree->right, key);
         }
     }
-    myTree = MaintenanceAVLTree(myTree); /* tree maintenance  */
+    myTree = maintenance_avl_tree(myTree); /* tree maintenance  */
     return myTree;
 }
 
