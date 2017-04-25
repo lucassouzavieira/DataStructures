@@ -20,24 +20,24 @@
 
 #include "../Types.h"
 
-BSTree CreateBST();
+bstree create_bstree();
 
-void InsertInBST(BSTree *myTree, long int key);
+void insert_bstree(bstree *myTree, long int key);
 
-void RemoveBST(BSTree *myTree, long int key);
+void remove_bstree(bstree *myTree, long int key);
 
-nodetree *SearchBST(BSTree *myTree, long int key);
+nodetree *search_bstree(bstree *myTree, long int key);
 
-void PreOrderBST(BSTree *myTree);
+void pre_order_bstree(bstree *myTree);
 
-void InOrderBST(BSTree *myTree);
+void in_order_bstree(bstree *myTree);
 
-void PostOrderBST(BSTree *myTree);
+void post_order_bstree(bstree *myTree);
 
-void DrawBST(BSTree *myTree);
+void draw_bstree(bstree *myTree);
 
-int HeightOfBST(BSTree *myTree);
+int height_bstree(bstree *myTree);
 
-void DestroyBST(BSTree *myTree);
+void destroy_bstree(bstree *myTree);
 
 #endif /* !BST_H */
