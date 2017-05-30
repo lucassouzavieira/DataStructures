@@ -1,20 +1,20 @@
-# DataStructures
-Implementação de Estruturas de Dados em C
+# Data Structures
+C code for Data Structures
 
-## Estruturas de Dados Básicas
-Lista Encadeada (LinkedList)  
-Lista Duplamente Encadeada (DoublyLinkedList)  
-Lista Circular (CircleList)  
-Fila Estática (ArrayQueue)  
-Pilha Estática (ArrayStack)  
-Fila (Queue)  
-Deque (Deque)  
-Pilha (Stack)  
-Heap (Heap)
+## Basic Data Structures
+Linked List
+Doubly Linked List
+CircleList)
+Queue
+Deque
+Array Queue
+Array Stack
+Stack
+Heap
 
-## Algoritmos de Ordenação (SortingAlgorithms)
+## Sorting Algorithms
 Bubble Sort  
-Bubble Sort (Melhorado)  
+Bubble Sort (Improved)
 Insertion Sort  
 Selection Sort  
 Merge Sort  
@@ -26,15 +26,15 @@ Gnome Sort
 Bogo Sort  
 Couting Sort  
 
-## Pesquisa  
-Busca Binária (SearchAlgorithms)  
+## Search
+Binary Search
 
-## Árvores Binárias
-Árvore Binária de Busca (BinarySearchTree)  
-Árvore AVL (AVLTree)  
+## Trees
+Binary Search Tree
+AVL Tree
 
-## Processamento de Texto  
-Run-Lenghth Enconding (RLE)
+## String processing
+Run-Length Encoding
 
 
 
