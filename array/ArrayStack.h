@@ -17,7 +17,7 @@
 #ifndef ARRAYSTACK_H
 #define ARRAYSTACK_H
 
-#include "../Types.h"
+#include "Types.h"
 #include <stdio.h>
 #include <stdlib.h>
 

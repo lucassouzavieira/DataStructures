@@ -18,7 +18,7 @@
 #ifndef AVLTREE_H
 #define AVLTREE_H
 
-#include "../Types.h"
+#include "Types.h"
 
 avl_tree create_avl_tree();
 

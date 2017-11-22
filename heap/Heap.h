@@ -18,7 +18,7 @@
 #ifndef HEAP_H
 #define HEAP_H
 
-#include "../Types.h"
+#include "Types.h"
 
 /* Criar um novo heap */
 heap *create_heap(long int maxElements);

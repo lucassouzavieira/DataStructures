@@ -17,7 +17,7 @@
 #ifndef ARRAYQUEUE_H
 #define ARRAYQUEUE_H
 
-#include "../Types.h"
+#include "Types.h"
 #include <stdlib.h>
 #include <stdio.h>
 

@@ -18,7 +18,7 @@
 #ifndef BINARYSEARCHTREE_H
 #define BINARYSEARCHTREE_H
 
-#include "../Types.h"
+#include "Types.h"
 
 bstree create_bstree();
 

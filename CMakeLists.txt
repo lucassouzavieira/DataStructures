@@ -24,6 +24,17 @@ file(GLOB SOURCE_FILES
 
 add_executable(DataStructures ${SOURCE_FILES})
 
+include_directories(
+        .
+        array
+        binarytrees
+        compression
+        heap
+        queues
+        stack
+        lists
+        vector)
+
 set_property(TARGET DataStructures PROPERTY C_STANDARD 99)
 
 # Example executables

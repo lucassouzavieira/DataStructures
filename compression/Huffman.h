@@ -18,7 +18,7 @@
 #ifndef HUFFMAN_H
 #define HUFFMAN_H
 
-#include "../Types.h"
+#include "Types.h"
 
 void huffman_enconde(char *myString);
 

@@ -14,8 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "../Types.h"
-#include "../vector/SortingAlgorithms.h"
+#include "Types.h"
+#include "SortingAlgorithms.h"
 #include <stdio.h>
 #include <stdlib.h>
 

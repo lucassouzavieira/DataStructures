@@ -17,7 +17,7 @@
 #ifndef RLE_H
 #define RLE_H
 
-#include "../Types.h"
+#include "Types.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>

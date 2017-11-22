@@ -18,7 +18,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../vector/Vector.h"
+#include "Vector.h"
 
 const char* filename = "example.txt";
 

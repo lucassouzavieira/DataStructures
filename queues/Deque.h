@@ -18,7 +18,7 @@
 #ifndef DEQUE_H
 #define DEQUE_H
 
-#include "../Types.h"
+#include "Types.h"
 
 deque deque_create();
 
