@@ -20,7 +20,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "Types.h"
+#include "types.h"
 
 stack stack_create();
 

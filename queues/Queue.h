@@ -18,7 +18,7 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-#include "Types.h"
+#include "types.h"
 
 queue queue_create();
 

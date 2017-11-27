@@ -17,20 +17,6 @@
 #include "RLE.h"
 #include "Utilities.h"
 
-/*********************************************************************************************
-Run-Length Encoding:
-*Conjunto de Caracteres: A-Za-z ; 0-9;
-*Delimitadores: '@' para repeticao de caracteres (A-Za-z);
-				'-' para espacos em branco
-				'RLE' para identificacao dessa codificacao no arquivo
-
-*Exemplo:	Input:	'aaaaawwwwab   hhhhrrttttt332'
-			Output: '@4a@4wab$3-@4h@2r@5t#232'
-
-Tabela ASCII usada como base: <http:/*ic.unicamp.br/~everton/aulas/hardware/tabelaASCII.pdf>
-**********************************************************************************************/
-
-
 char *rle_enconde(char *myString) {
 
     FILE *tmpFile = fopen("tmpOutPutFile", "w");

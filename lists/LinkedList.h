@@ -17,7 +17,7 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
-#include "Types.h"
+#include "types.h"
 
 list create_linked_list();
 

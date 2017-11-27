@@ -17,7 +17,7 @@
 #ifndef DOUBLYLINKEDLIST_H
 #define DOUBLYLINKEDLIST_H
 
-#include "Types.h"
+#include "types.h"
 
 doublylist create_doubly_linked_list();
 

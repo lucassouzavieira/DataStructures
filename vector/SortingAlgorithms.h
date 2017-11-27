@@ -17,7 +17,7 @@
 #ifndef SORTINGALGORITHMS_H
 #define SORTINGALGORITHMS_H
 
-#include "../Types.h"
+#include "types.h"
 
 long int *bubble_sort(long int *vector, long int numberOfElements);
 

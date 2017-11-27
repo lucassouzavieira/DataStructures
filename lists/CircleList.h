@@ -17,7 +17,7 @@
 #ifndef CIRCLELIST_H
 #define CIRCLELIST_H
 
-#include "Types.h"
+#include "types.h"
 
 circlelist create_circle_list();
 

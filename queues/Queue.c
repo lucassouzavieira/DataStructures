@@ -17,7 +17,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "../Types.h"
+#include "types.h"
 
 
 queue queue_create() {
