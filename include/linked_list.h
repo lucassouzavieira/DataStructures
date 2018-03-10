@@ -14,24 +14,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef LINKED_LIST_H
+#define LINKED_LIST_H
 
-#ifndef STACK_H
-#define STACK_H
+#include <types.h>
 
-#include <stdlib.h>
-#include <stdio.h>
-#include "types.h"
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-stack stack_create();
+// Linked list functions headers
 
-int stack_check(stack *myStack);
+#ifdef __cplusplus
+};
+#endif
 
-void stack_pop(stack *myStack);
 
-void stack_push(stack *myStack, int element);
 
-void stack_print(stack *myStack);
 
-int stack_destroy(stack *myStack);
-
-#endif /* STACK_H */
+#endif // LINKED_LIST_H

@@ -14,15 +14,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef VECTOR_H
-#define VECTOR_H
+#ifndef LINKED_LIST_H
+#define LINKED_LIST_H
 
-void show_vector(long int *vector, long int numberOfElements);
+#include <types.h>
+#include <linked_list.h>
 
-int save_vector(const char *address, long int *vector, long int numberOfElements);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-long int *retrieve_vector(const char *address, long *vector, long int numberOfElements);
+// Linked list functions implementation
 
-long int *create_random_vector(long int numberOfElements);
-
+#ifdef __cplusplus
+};
 #endif
