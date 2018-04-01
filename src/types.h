@@ -53,10 +53,10 @@ inline node *new_node(void *data, node *pointer) {
  *
  * @param node* first
  * @param node* second
- * @param int* function function to compare
+ * @param bool* function function to compare
  * @return bool
  */
-_Bool node_compare(node *first, node *second, int *function(node *a, node *b)) {
+_Bool node_compare(node *first, node *second, bool *function(node *a, node *b)) {
 
     if (function) {
         return (bool) *function(first, second);
@@ -65,6 +65,13 @@ _Bool node_compare(node *first, node *second, int *function(node *a, node *b)) {
     // Fallback to size
     return false;
 }
+
+// Linked lists
+typedef struct list {
+    node *list;
+    node *last;
+    long int nodes;
+} list;
 
 
 #ifdef __cplusplus

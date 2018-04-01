@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016  Lucas S. Vieira
+ * Copyright (C) 2018  Lucas S. Vieira
  *
  * This program is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -17,13 +17,16 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
-#include <types.h>
+#include <src/types.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 // Linked list functions headers
+list* create_linked_list();
+
+bool check_linked_list(list* linkedList);
 
 #ifdef __cplusplus
 };
