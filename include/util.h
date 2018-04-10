@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016  Lucas S. Vieira
+ * Copyright (C) 2018  Lucas S. Vieira
  *
  * This program is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -26,12 +26,13 @@ extern "C" {
 #endif
 
 /**
- * Init any struct type
+ * Alloc memory and cast any struct type
+ *
  * @param type
  * @return
  */
 void *init(void* type) {
-    return (typeof(type)*) malloc(sizeof(type));
+    return (typeof(type)*) malloc(sizeof(typeof(type)));
 }
 
 /**
@@ -64,7 +65,7 @@ bool node_compare(node *first, node *second, bool *function(node *a, node *b)) {
     }
 
     // Fallback to size
-    return false;
+    return sizeof(first->data) > sizeof(second->data);
 }
 
 #ifdef __cplusplus

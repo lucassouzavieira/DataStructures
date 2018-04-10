@@ -14,17 +14,35 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * util.h UNIT TESTS
+ */
 
-#define DEBUG 1
-
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-int main(int argc, char **argv[]) {
-    /*
-     * Main code
-     */
+#include <util.h>
+#include <acutest.h>
 
-    return 0;
+typedef struct test_struct_ {
+    double key;
+    long int value;
+} test_struct_;
+
+void test_init(void) {
+    test_struct_ *ptr = init(ptr);
+    TEST_CHECK(ptr != NULL);
+
+    ptr->key = 4.5;
+    ptr->value = 10;
+
+    TEST_CHECK((bool) ptr->key);
+    TEST_CHECK((bool) ptr->value);
 }
+
+/*
+ * Tests list
+ */
+TEST_LIST = {
+        {"init", test_init},
+        {0}
+};

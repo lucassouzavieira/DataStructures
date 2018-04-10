@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016  Lucas S. Vieira
+ * Copyright (C) 2018  Lucas S. Vieira
  *
  * This program is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
