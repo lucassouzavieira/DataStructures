@@ -33,49 +33,6 @@ struct node {
     struct node *pointer;
 } node;
 
-
-/**
- * Init any struct type
- * @param type
- * @return
- */
-void *init(void* type) {
-    return (typeof(type)*) malloc(sizeof(type));
-}
-
-/**
- * Initialize a new node element
- *
- * @param void* data
- * @param node* pointer
- * @return node* new node element
- */
-node *new_node(void *data, node *pointer) {
-    node *element = (node *) malloc(sizeof(node));
-    element->data = data;
-    element->pointer = pointer;
-
-    return element;
-}
-
-/**
- * Compares two nodes
- *
- * @param node* first
- * @param node* second
- * @param bool* function function to compare
- * @return bool
- */
-bool node_compare(node *first, node *second, bool *function(node *a, node *b)) {
-
-    if (function != NULL) {
-        return (bool) *function(first, second);
-    }
-
-    // Fallback to size
-    return false;
-}
-
 // Linked lists
 typedef struct list {
     node *list;
