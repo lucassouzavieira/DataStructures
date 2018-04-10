@@ -45,21 +45,21 @@ void test_new_node(void) {
     ptr->key = 5.2;
     ptr->value = 10;
 
-    node* nodeptr = new_node(ptr, NULL);
+    node* node_ptr = new_node(ptr, NULL);
 
-    TEST_CHECK(nodeptr != NULL);
+    TEST_CHECK(node_ptr != NULL);
 
     // Check values
-    test_struct_ *fromNode = (test_struct_*) nodeptr->data;
+    test_struct_ *node_data = (test_struct_*) node_ptr->data;
 
-    double nodeKey = fromNode->key;
-    long int nodeValue = fromNode->value;
+    double node_key = node_data->key;
+    long int node_value = node_data->value;
 
-    TEST_CHECK(ptr->key == nodeKey);
-    TEST_CHECK(ptr->value == nodeValue);
+    TEST_CHECK(ptr->key == node_key);
+    TEST_CHECK(ptr->value == node_value);
 
     // Pointer
-    TEST_CHECK(nodeptr->pointer == NULL);
+    TEST_CHECK(node_ptr->pointer == NULL);
 }
 
 /*
