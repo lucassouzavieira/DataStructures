@@ -21,6 +21,7 @@
 #include <stdlib.h>
 
 #include <util.h>
+#include <types.h>
 #include <acutest.h>
 
 typedef struct test_struct_ {
@@ -39,10 +40,33 @@ void test_init(void) {
     TEST_CHECK((bool) ptr->value);
 }
 
+void test_new_node(void) {
+    test_struct_ *ptr = init(ptr);
+    ptr->key = 5.2;
+    ptr->value = 10;
+
+    node* nodeptr = new_node(ptr, NULL);
+
+    TEST_CHECK(nodeptr != NULL);
+
+    // Check values
+    test_struct_ *fromNode = (test_struct_*) nodeptr->data;
+
+    double nodeKey = fromNode->key;
+    long int nodeValue = fromNode->value;
+
+    TEST_CHECK(ptr->key == nodeKey);
+    TEST_CHECK(ptr->value == nodeValue);
+
+    // Pointer
+    TEST_CHECK(nodeptr->pointer == NULL);
+}
+
 /*
  * Tests list
  */
 TEST_LIST = {
-        {"init", test_init},
+        {"test_init", test_init},
+        {"test_new_node", test_new_node},
         {0}
 };
