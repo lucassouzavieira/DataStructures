@@ -33,6 +33,16 @@ struct node {
     struct node *pointer;
 } node;
 
+
+/**
+ * Init any struct type
+ * @param type
+ * @return
+ */
+void *init(void* type) {
+    return (typeof(type)*) malloc(sizeof(type));
+}
+
 /**
  * Initialize a new node element
  *
@@ -40,7 +50,7 @@ struct node {
  * @param node* pointer
  * @return node* new node element
  */
-inline node *new_node(void *data, node *pointer) {
+node *new_node(void *data, node *pointer) {
     node *element = (node *) malloc(sizeof(node));
     element->data = data;
     element->pointer = pointer;
@@ -56,9 +66,9 @@ inline node *new_node(void *data, node *pointer) {
  * @param bool* function function to compare
  * @return bool
  */
-_Bool node_compare(node *first, node *second, bool *function(node *a, node *b)) {
+bool node_compare(node *first, node *second, bool *function(node *a, node *b)) {
 
-    if (function) {
+    if (function != NULL) {
         return (bool) *function(first, second);
     }
 
@@ -78,4 +88,4 @@ typedef struct list {
 };
 #endif
 
-#endif // TYPES.H
+#endif //TYPES.H

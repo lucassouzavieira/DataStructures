@@ -24,11 +24,8 @@
 extern "C" {
 #endif
 
-// Linked list functions headers
-list* create_linked_list();
-
-inline bool check_linked_list(list* linkedList);
-
 #ifdef __cplusplus
 };
+#endif
+
 #endif

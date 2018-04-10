@@ -6,22 +6,23 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(SOURCE_FILES
         main.c)
 
-file(GLOB SOURCE_FILES
+file(GLOB INCLUDE_FILES
         include/*.c
-        include/*.h
-        src/*.h
-        src/*.h
-        *.c
-        *.h)
+        include/*.h)
 
-add_executable(DataStructures ${SOURCE_FILES})
+file(GLOB SRC_FILES
+        src/*.c
+        src/*.h)
 
 include_directories(
         include
         src
         .)
 
-set_property(TARGET DataStructures PROPERTY C_STANDARD 99)
+add_executable(mainExecutable ${SOURCE_FILES} ${INCLUDE_FILES})
+set_property(TARGET mainExecutable PROPERTY C_STANDARD 99)
+
 
 # Example executables
-set_property(TARGET DataStructures PROPERTY C_STANDARD 99)
+set_property(TARGET mainExecutable PROPERTY C_STANDARD 99)
+

@@ -17,16 +17,9 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
-#include <src/types.h>
-
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-// Linked list functions headers
-list* create_linked_list();
-
-bool check_linked_list(list* linkedList);
 
 #ifdef __cplusplus
 };
