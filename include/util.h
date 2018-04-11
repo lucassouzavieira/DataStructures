@@ -31,9 +31,7 @@ extern "C" {
  * @param type
  * @return
  */
-void *init(void* type) {
-    return (typeof(type)*) malloc(sizeof(typeof(type)));
-}
+void *init(void* type);
 
 /**
  * Initialize a new node element
@@ -42,13 +40,7 @@ void *init(void* type) {
  * @param node* pointer
  * @return node* new node element
  */
-node *new_node(void *data, node *pointer) {
-    node *element = (node *) malloc(sizeof(node));
-    element->data = data;
-    element->pointer = pointer;
-
-    return element;
-}
+node *new_node(void *data, node *pointer);
 
 /**
  * Compares two nodes
@@ -58,15 +50,7 @@ node *new_node(void *data, node *pointer) {
  * @param bool* function function to compare
  * @return bool
  */
-bool node_compare(node *first, node *second, bool *function(node *a, node *b)) {
-
-    if (function != NULL) {
-        return (bool) *function(first, second);
-    }
-
-    // Fallback to size
-    return sizeof(first->data) > sizeof(second->data);
-}
+bool node_compare(node *first, node *second, bool function(node *a, node *b));
 
 #ifdef __cplusplus
 };

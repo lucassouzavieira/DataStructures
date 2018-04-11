@@ -15,8 +15,8 @@ file(GLOB SRC_FILES
         src/*.h)
 
 file(GLOB THRD_PARTY
-        3thparty/*.h
-        3thparty/*.c)
+        3thd_party/*.h
+        3thd_party/*.c)
 
 file(GLOB UNIT_TESTS
         tests/*.c)
@@ -24,7 +24,7 @@ file(GLOB UNIT_TESTS
 include_directories(
         include
         src
-        3thparty)
+        3thd_party)
 
 # Main executable
 add_executable(mainExecutable ${SOURCE_FILES} ${INCLUDE_FILES})
@@ -34,7 +34,7 @@ set_property(TARGET mainExecutable PROPERTY C_STANDARD 99)
 set_property(TARGET mainExecutable PROPERTY C_STANDARD 99)
 
 # Unit tests executables
-add_executable(utilTest ${INCLUDE_FILES} ${THRD_PARTY} ${UNIT_TESTS})
+add_executable(utilTest ${INCLUDE_FILES} ${SRC_FILES} ${THRD_PARTY} ${UNIT_TESTS})
 set_property(TARGET utilTest PROPERTY C_STANDARD 99)
 
 
