@@ -52,6 +52,14 @@ node *new_node(void *data, node *pointer);
  */
 bool node_compare(node *first, node *second, bool function(node *a, node *b));
 
+/**
+ * Gets the node data with proper typecast
+ *
+ * @param ptr
+ * @return *void with node data
+ */
+void* node_data(node* ptr);
+
 #ifdef __cplusplus
 };
 #endif

@@ -30,8 +30,8 @@ typedef struct test_struct_ {
 } test_struct_;
 
 bool test_compare_(node *first, node *second) {
-    test_struct_ *first_data = (test_struct_ *) first->data;
-    test_struct_ *second_data = (test_struct_ *) second->data;
+    test_struct_ *first_data = node_data(first);
+    test_struct_ *second_data = node_data(second);
 
     return first_data->value > second_data->value;
 }
@@ -90,12 +90,35 @@ void test_node_compare(void) {
     TEST_CHECK(node_compare(second_ptr, first_ptr, test_compare_));
 }
 
+void test_node_data(void) {
+    test_struct_ *ptr = init(ptr);
+
+    ptr->key = 6.3;
+    ptr->value = 50;
+
+    node *node_ptr = new_node(ptr, NULL);
+
+    TEST_CHECK(node_ptr != NULL);
+    test_struct_ *node_data_ = node_data(node_ptr);
+
+    double node_key = node_data_->key;
+    long int node_value = node_data_->value;
+
+    // Data must be the same
+    TEST_CHECK(ptr->key == node_key);
+    TEST_CHECK(ptr->value == node_value);
+
+    // Memory address must be the same
+    TEST_CHECK(ptr == node_data_);
+}
+
 /*
  * Tests list
  */
 TEST_LIST = {
         {"test_init",         test_init},
         {"test_new_node",     test_new_node},
+        {"test_node_data",    test_node_data},
         {"test_node_compare", test_node_compare},
         {0}
 };

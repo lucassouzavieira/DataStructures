@@ -44,6 +44,11 @@ bool node_compare(node *first, node *second, bool (*function)(node *, node *)) {
     return sizeof(first->data) > sizeof(second->data);
 }
 
+void* node_data(node* ptr) {
+    return (typeof(ptr->data)*) ptr->data;
+}
+
+
 #ifdef __cplusplus
 };
 #endif
