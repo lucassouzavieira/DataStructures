@@ -14,42 +14,30 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * linked_list.h UNIT TESTS
+ */
+
 #include <stdlib.h>
-#include <stdbool.h>
 
-#ifndef TYPES_H
-#define TYPES_H
+#include <util.h>
+#include <types.h>
+#include <acutest.h>
+#include <linked_list.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+void test_create_linked_list(void) {
+    list* ptr = create_linked_list();
 
-/******************************************************************************
-Lists, stacks and queues
-******************************************************************************/
-typedef
-struct node {
-    void *data;
-    struct node *pointer;
-} node;
+    TEST_CHECK(ptr != NULL);
+    TEST_CHECK(ptr->list == NULL);
+    TEST_CHECK(ptr->last == NULL);
+    TEST_CHECK(ptr->nodes == 0);
+}
 
-// Linked lists
-typedef
-enum insert_strategy {
-    START = 0,
-    MIDDLE = 1,
-    END = 2
-} insert_strategy;
-
-typedef struct list {
-    node *list;
-    node *last;
-    long int nodes;
-} list;
-
-
-#ifdef __cplusplus
+/*
+ * Tests list
+ */
+TEST_LIST = {
+        {"test_create_linked_list", test_create_linked_list},
+        {0}
 };
-#endif
-
-#endif //TYPES.H

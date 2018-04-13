@@ -17,15 +17,34 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
+#include <util.h>
 #include <types.h>
-#include <stdbool.h>
+#include <linked_list.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+list *create_linked_list() {
+    list *ptr = init(ptr);
+
+    ptr->list = NULL;
+    ptr->last = NULL;
+    ptr->nodes = 0;
+
+    return ptr;
+}
+
+bool is_empty_linked_list(list *ptr) {
+    if (ptr->last != NULL && ptr->list == NULL) {
+        return true;
+    }
+
+    return false;
+}
+
 #ifdef __cplusplus
 };
 #endif
 
-#endif
+#endif // LINKED_LIST_H

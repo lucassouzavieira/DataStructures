@@ -34,8 +34,11 @@ set_property(TARGET mainExecutable PROPERTY C_STANDARD 99)
 set_property(TARGET mainExecutable PROPERTY C_STANDARD 99)
 
 # Unit tests executables
-add_executable(utilTest ${INCLUDE_FILES} ${SRC_FILES} ${THRD_PARTY} ${UNIT_TESTS})
+add_executable(utilTest ${INCLUDE_FILES} ${SRC_FILES} ${THRD_PARTY} tests/util_test.c)
 set_property(TARGET utilTest PROPERTY C_STANDARD 99)
+
+add_executable(linkedListTest ${INCLUDE_FILES} ${SRC_FILES} ${THRD_PARTY} tests/linked_list_test.c)
+set_property(TARGET linkedListTest PROPERTY C_STANDARD 99)
 
 
 

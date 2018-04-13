@@ -17,9 +17,53 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
+#include <util.h>
+#include <types.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
+/**
+ * Create a new linked list
+ * @return list*
+ */
+list *create_linked_list();
+
+/**
+ * Check if a linked list is empty
+ * @param ptr
+ * @return true if is empty, false otherwise
+ */
+bool is_empty_linked_list(list* ptr);
+
+/**
+ * Insert an new element in
+ * @param ptr
+ * @param data
+ * @return bool
+ */
+bool insert_linked_list(list *ptr, node *data, insert_strategy);
+
+/**
+ * Reverse a linked list
+ * @param ptr
+ * @return bool
+ */
+bool reverse_linked_list(list *ptr);
+
+/**
+ * Destroy a linked list
+ * @param ptr
+ * @return bool
+ */
+bool destroy_linked_list(list *ptr);
+
+/**
+ * Walk a linked list with an user defined function
+ * @param ptr
+ * @return bool
+ */
+void walk_linked_list(list *ptr, void function(node *element));
 
 #ifdef __cplusplus
 };
