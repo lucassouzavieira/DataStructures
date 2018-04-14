@@ -14,8 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef LINKED_LIST_H
-#define LINKED_LIST_H
+#ifndef LINKED_LIST
+#define LINKED_LIST
 
 #include <util.h>
 #include <types.h>
@@ -23,9 +23,10 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+
 /**
  * Create a new linked list
- * @return list*
+ * @return list
  */
 list *create_linked_list();
 
@@ -34,15 +35,15 @@ list *create_linked_list();
  * @param ptr
  * @return true if is empty, false otherwise
  */
-bool is_empty_linked_list(list* ptr);
+bool is_empty_linked_list(list *ptr);
 
 /**
  * Insert an new element in
  * @param ptr
- * @param data
+ * @param elem
  * @return bool
  */
-bool insert_linked_list(list *ptr, node *data, insert_strategy);
+bool insert_linked_list(list *ptr, node *elem);
 
 /**
  * Reverse a linked list

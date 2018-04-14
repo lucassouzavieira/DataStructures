@@ -17,8 +17,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#ifndef TYPES_H
-#define TYPES_H
+#ifndef TYPES
+#define TYPES
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,13 +34,6 @@ struct node {
 } node;
 
 // Linked lists
-typedef
-enum insert_strategy {
-    START = 0,
-    MIDDLE = 1,
-    END = 2
-} insert_strategy;
-
 typedef struct list {
     node *list;
     node *last;

@@ -18,8 +18,8 @@
 #include <stdbool.h>
 #include <types.h>
 
-#ifndef UTIL_H
-#define UTIL_H
+#ifndef UTIL
+#define UTIL
 
 #ifdef __cplusplus
 extern "C" {

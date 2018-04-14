@@ -26,7 +26,7 @@
 #include <linked_list.h>
 
 void test_create_linked_list(void) {
-    list* ptr = create_linked_list();
+    list *ptr = create_linked_list();
 
     TEST_CHECK(ptr != NULL);
     TEST_CHECK(ptr->list == NULL);
@@ -34,10 +34,52 @@ void test_create_linked_list(void) {
     TEST_CHECK(ptr->nodes == 0);
 }
 
+void test_is_empty_linked_list(void) {
+    list *ptr = create_linked_list();
+
+    TEST_CHECK(is_empty_linked_list(ptr));
+
+    node *elem = init(elem);
+
+    insert_linked_list(ptr, elem);
+
+    TEST_CHECK(!is_empty_linked_list(ptr));
+}
+
+void test_insert_linked_list(void) {
+    list *ptr = create_linked_list();
+    node *elem = init(elem);
+
+    TEST_CHECK(ptr->nodes == 0);
+    TEST_CHECK(ptr->list == NULL);
+    TEST_CHECK(ptr->last == NULL);
+
+    insert_linked_list(ptr, elem);
+
+    TEST_CHECK(ptr->nodes == 1);
+    TEST_CHECK(ptr->list != NULL);
+    TEST_CHECK(ptr->last != NULL);
+
+    // With one element list his head is equals his tail
+    TEST_CHECK(ptr->list == ptr->last);
+
+    node *snd_node = init(snd_node);
+    insert_linked_list(ptr, snd_node);
+
+    TEST_CHECK(ptr->nodes == 2);
+    TEST_CHECK(ptr->list != NULL);
+    TEST_CHECK(ptr->last != NULL);
+
+    // With more than one element list his head is not equals his tail
+    TEST_CHECK(ptr->list != ptr->last);
+}
+
 /*
  * Tests list
  */
 TEST_LIST = {
-        {"test_create_linked_list", test_create_linked_list},
+        {"test_create_linked_list",   test_create_linked_list},
+        {"test_insert_linked_list",   test_insert_linked_list},
+        {"test_is_empty_linked_list", test_is_empty_linked_list},
         {0}
 };

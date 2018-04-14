@@ -20,6 +20,7 @@
 #include <util.h>
 #include <types.h>
 #include <linked_list.h>
+#include <assert.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -36,12 +37,41 @@ list *create_linked_list() {
 }
 
 bool is_empty_linked_list(list *ptr) {
-    if (ptr->last != NULL && ptr->list == NULL) {
+    if (ptr->last != NULL && ptr->list != NULL) {
+        return false;
+    }
+
+    return true;
+}
+
+bool insert_linked_list(list *ptr, node *elem) {
+    if (ptr == NULL || elem == NULL) {
+        return false;
+    }
+
+    node *last = NULL;
+    node *current = ptr->list;
+
+    bool is_empty = is_empty_linked_list(ptr);
+
+    if (is_empty_linked_list(ptr)) {
+        ptr->list = ptr->last = elem;
+        ptr->nodes++;
         return true;
     }
 
-    return false;
+    while (current != NULL && current->pointer != NULL) {
+        last = current;
+        current = last->pointer;
+    }
+
+    current->pointer = elem;
+    ptr->last = elem;
+    ptr->nodes++;
+
+    return true;
 }
+
 
 #ifdef __cplusplus
 };
