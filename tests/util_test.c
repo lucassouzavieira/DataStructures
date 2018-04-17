@@ -112,11 +112,23 @@ void test_node_data(void) {
     TEST_CHECK(ptr == node_data_);
 }
 
+void test_destroy(void) {
+    test_struct_ *ptr = init(ptr);
+    ptr->key = 6.3;
+    ptr->value = 50;
+
+    bool result = destroy(ptr);
+
+    TEST_CHECK(result);
+    TEST_CHECK(ptr == NULL);
+}
+
 /*
  * Tests list
  */
 TEST_LIST = {
         {"test_init",         test_init},
+        {"test_destroy",      test_destroy},
         {"test_new_node",     test_new_node},
         {"test_node_data",    test_node_data},
         {"test_node_compare", test_node_compare},

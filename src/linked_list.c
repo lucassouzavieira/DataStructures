@@ -72,6 +72,23 @@ bool insert_linked_list(list *ptr, node *elem) {
     return true;
 }
 
+bool destroy_linked_list(list *ptr) {
+
+    node *last = NULL;
+    node *current = ptr->list;
+
+    while (current != NULL && current->pointer != NULL) {
+        node_destroy(last);
+
+        last = current;
+        current = last->pointer;
+    }
+
+    free(ptr);
+
+    return is_empty_linked_list(ptr);
+}
+
 
 #ifdef __cplusplus
 };

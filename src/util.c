@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <types.h>
+#include <malloc.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -44,10 +45,23 @@ bool node_compare(node *first, node *second, bool (*function)(node *, node *)) {
     return sizeof(first->data) > sizeof(second->data);
 }
 
-void* node_data(node* ptr) {
-    return (typeof(ptr->data)*) ptr->data;
+void *node_data(node *ptr) {
+    return (typeof(ptr->data) *) ptr->data;
 }
 
+bool destroy(void *ptr) {
+    free(ptr);
+    realloc(ptr, 0);
+    ptr = NULL;
+
+    size_t res = malloc_usable_size(ptr);
+    return true;
+}
+
+bool node_destroy(node *elem) {
+    return destroy(elem->data) &&
+           destroy(elem->pointer) && destroy(elem);
+}
 
 #ifdef __cplusplus
 };

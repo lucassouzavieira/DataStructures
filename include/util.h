@@ -34,6 +34,14 @@ extern "C" {
 void *init(void* type);
 
 /**
+ * Destroys any pointer
+ *
+ * @param ptr
+ * @return bool
+ */
+bool destroy(void *ptr);
+
+/**
  * Initialize a new node element
  *
  * @param void* data
@@ -59,6 +67,14 @@ bool node_compare(node *first, node *second, bool function(node *a, node *b));
  * @return *void with node data
  */
 void* node_data(node* ptr);
+
+/**
+ * Destroys a node
+ *
+ * @param elem
+ * @return boolean
+ */
+bool node_destroy(node *elem);
 
 #ifdef __cplusplus
 };
