@@ -38,12 +38,20 @@ list *create_linked_list();
 bool is_empty_linked_list(list *ptr);
 
 /**
- * Insert an new element in
+ * Prepend an new element
  * @param ptr
  * @param elem
  * @return bool
  */
-bool insert_linked_list(list *ptr, node *elem);
+bool prepend_linked_list(list *ptr, node *elem);
+
+/**
+ * Append an new element
+ * @param ptr
+ * @param elem
+ * @return bool
+ */
+bool append_linked_list(list *ptr, node *elem);
 
 /**
  * Reverse a linked list

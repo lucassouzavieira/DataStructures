@@ -44,15 +44,31 @@ bool is_empty_linked_list(list *ptr) {
     return true;
 }
 
-bool insert_linked_list(list *ptr, node *elem) {
+bool prepend_linked_list(list *ptr, node *elem) {
+    if (ptr == NULL || elem == NULL) {
+        return false;
+    }
+
+    node *current = ptr->list;
+
+    if (is_empty_linked_list(ptr)) {
+        return append_linked_list(ptr, elem);
+    }
+
+    ptr->list = elem;
+    elem->pointer = current;
+    ptr->nodes++;
+
+    return true;
+}
+
+bool append_linked_list(list *ptr, node *elem) {
     if (ptr == NULL || elem == NULL) {
         return false;
     }
 
     node *last = NULL;
     node *current = ptr->list;
-
-    bool is_empty = is_empty_linked_list(ptr);
 
     if (is_empty_linked_list(ptr)) {
         ptr->list = ptr->last = elem;
@@ -88,7 +104,6 @@ bool destroy_linked_list(list *ptr) {
 
     return is_empty_linked_list(ptr);
 }
-
 
 #ifdef __cplusplus
 };

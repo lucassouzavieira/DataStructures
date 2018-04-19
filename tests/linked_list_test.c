@@ -41,12 +41,12 @@ void test_is_empty_linked_list(void) {
 
     node *elem = init(elem);
 
-    insert_linked_list(ptr, elem);
+    append_linked_list(ptr, elem);
 
     TEST_CHECK(!is_empty_linked_list(ptr));
 }
 
-void test_insert_linked_list(void) {
+void test_append_linked_list(void) {
     list *ptr = create_linked_list();
     node *elem = init(elem);
 
@@ -54,21 +54,59 @@ void test_insert_linked_list(void) {
     TEST_CHECK(ptr->list == NULL);
     TEST_CHECK(ptr->last == NULL);
 
-    insert_linked_list(ptr, elem);
+    bool operation = append_linked_list(ptr, elem);
 
+    TEST_CHECK(operation);
     TEST_CHECK(ptr->nodes == 1);
     TEST_CHECK(ptr->list != NULL);
     TEST_CHECK(ptr->last != NULL);
+
+    void* last = ptr->list;
+    void* first = ptr->list;
 
     // With one element list his head is equals his tail
     TEST_CHECK(ptr->list == ptr->last);
 
     node *snd_node = init(snd_node);
-    insert_linked_list(ptr, snd_node);
+    operation = append_linked_list(ptr, snd_node);
 
+    TEST_CHECK(operation);
     TEST_CHECK(ptr->nodes == 2);
+    TEST_CHECK(ptr->list == first);
+    TEST_CHECK(ptr->last != last);
+
+    // With more than one element list his head is not equals his tail
+    TEST_CHECK(ptr->list != ptr->last);
+}
+
+void test_prepend_linked_list(void) {
+    list *ptr = create_linked_list();
+    node *elem = init(elem);
+
+    TEST_CHECK(ptr->nodes == 0);
+    TEST_CHECK(ptr->list == NULL);
+    TEST_CHECK(ptr->last == NULL);
+
+    bool operation = prepend_linked_list(ptr, elem);
+
+    TEST_CHECK(operation);
+    TEST_CHECK(ptr->nodes == 1);
     TEST_CHECK(ptr->list != NULL);
     TEST_CHECK(ptr->last != NULL);
+
+    void* last = ptr->list;
+    void* first = ptr->list;
+
+    // With one element list his head is equals his tail
+    TEST_CHECK(ptr->list == ptr->last);
+
+    node *snd_node = init(snd_node);
+    operation = prepend_linked_list(ptr, snd_node);
+
+    TEST_CHECK(operation);
+    TEST_CHECK(ptr->nodes == 2);
+    TEST_CHECK(ptr->list != first);
+    TEST_CHECK(ptr->last == last);
 
     // With more than one element list his head is not equals his tail
     TEST_CHECK(ptr->list != ptr->last);
@@ -79,7 +117,8 @@ void test_insert_linked_list(void) {
  */
 TEST_LIST = {
         {"test_create_linked_list",   test_create_linked_list},
-        {"test_insert_linked_list",   test_insert_linked_list},
+        {"test_append_linked_list",   test_append_linked_list},
+        {"test_prepend_linked_list",  test_prepend_linked_list},
         {"test_is_empty_linked_list", test_is_empty_linked_list},
         {0}
 };
