@@ -14,9 +14,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <types.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <types.h>
+#include <handler.h>
 
 #ifndef UTIL
 #define UTIL

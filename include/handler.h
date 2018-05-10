@@ -14,20 +14,32 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef HANDLER_H
+#define HANDLER_H
 
-#define DEBUG 1
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <handler.h>
+#include <signal.h>
 
-int main(int argc, char **argv[]) {
-    /*
-     * Main code
-     */
+/**
+ * Default handler for all SIG errors
+ *
+ * @param signal
+ */
+void default_handler(int signal);
 
-    int a = 10 / 0;
+/**
+ * Called before main
+ *
+ * Defines errors to be handled
+ */
+void __attribute__((constructor)) initialize();
 
-    return 0;
-}
+#ifdef __cplusplus
+};
+#endif
+
+#endif //DS_HANDLER.H

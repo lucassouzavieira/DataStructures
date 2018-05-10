@@ -27,7 +27,7 @@ include_directories(
         3thd_party)
 
 # Main executable
-add_executable(mainExecutable ${SOURCE_FILES} ${INCLUDE_FILES})
+add_executable(mainExecutable ${SRC_FILES} ${INCLUDE_FILES} main.c)
 set_property(TARGET mainExecutable PROPERTY C_STANDARD 99)
 
 # Example executables

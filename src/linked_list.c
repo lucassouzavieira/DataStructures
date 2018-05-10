@@ -19,8 +19,8 @@
 
 #include <util.h>
 #include <types.h>
-#include <linked_list.h>
 #include <assert.h>
+#include <linked_list.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -98,6 +98,7 @@ bool destroy_linked_list(list *ptr) {
 
         last = current;
         current = last->pointer;
+        ptr->nodes--;
     }
 
     free(ptr);

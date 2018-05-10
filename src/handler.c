@@ -14,20 +14,42 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef HANDLER_H
+#define HANDLER_H
 
-#define DEBUG 1
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <handler.h>
+#include <signal.h>
+#include <execinfo.h>
 
-int main(int argc, char **argv[]) {
-    /*
-     * Main code
-     */
+void default_handler(int signal) {
+    void *callstack[256];
 
-    int a = 10 / 0;
+    printf("OS Signal %d \n", signal);
+    printf("Backtrace: \n");
 
-    return 0;
+    int frames = backtrace(callstack, 256);
+    char **callstack_strs = backtrace_symbols(callstack, frames);
+
+    for (int i = 0; i < frames; i++) {
+        printf("\t %s \n", callstack_strs[i]);
+    }
+
+    exit(0);
 }
+
+void __attribute__((constructor)) initialize() {
+    signal(SIGFPE, default_handler);
+    signal(SIGSEGV, default_handler);
+    signal(SIGABRT, default_handler);
+}
+
+#ifdef __cplusplus
+};
+#endif
+
+#endif //DS_HANDLER.H

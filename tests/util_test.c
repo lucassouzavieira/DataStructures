@@ -120,7 +120,6 @@ void test_destroy(void) {
     bool result = destroy(ptr);
 
     TEST_CHECK(result);
-    TEST_CHECK(ptr == NULL);
 }
 
 /*
