@@ -18,10 +18,10 @@
  * util.h UNIT TESTS
  */
 
-#include <stdlib.h>
-
 #include <util.h>
 #include <types.h>
+#include <stdlib.h>
+#include <malloc.h>
 #include <acutest.h>
 
 typedef struct test_struct_ {
@@ -114,6 +114,7 @@ void test_node_data(void) {
 
 void test_destroy(void) {
     test_struct_ *ptr = init(ptr);
+
     ptr->key = 6.3;
     ptr->value = 50;
 

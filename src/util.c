@@ -50,14 +50,12 @@ void *node_data(node *ptr) {
 }
 
 bool destroy(void *ptr) {
-
     if (ptr) {
         free(ptr);
         realloc(ptr, 0);
         ptr = NULL;
 
-        size_t res = malloc_usable_size(ptr);
-        return true;
+        return malloc_usable_size(ptr) == 0;
     }
 
     return false;
