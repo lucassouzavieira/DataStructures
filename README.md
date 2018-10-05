@@ -26,4 +26,7 @@ This project are being rewritten. You can check old code at [v1.0.1 tag](https:/
 
 ## Data Structures ##
 
-We will provide a list of Data Structures available along the rewrite process. 
+* Lists
+    * Linked List. 
+
+## [Contributing](CONTRIBUTING.md) ## 
